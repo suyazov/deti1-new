@@ -118,7 +118,7 @@ export function CompactInfo() {
               <TabsTrigger
                 key={t.value}
                 value={t.value}
-                className="rounded-full text-xs md:text-sm data-[state=active]:bg-[#0a1f1f] data-[state=active]:text-white py-2"
+                className="rounded-full text-xs md:text-sm text-[#1a1a1a]/70 hover:text-[#1a1a1a] data-[state=active]:bg-[#0a1f1f] data-[state=active]:text-white py-2 transition-colors"
               >
                 {t.label}
               </TabsTrigger>
