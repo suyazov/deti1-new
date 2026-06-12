@@ -29,3 +29,15 @@ Structure:
   tailwind.config.js   Configures Tailwind's theme, plugins, etc.
   vite.config.ts       Main build and dev server settings for Vite
   postcss.config.js    Config file for CSS post-processing tools
+
+Recent project changes:
+- Added server-side prerender for SEO (`prerender.js`, Puppeteer).
+  Build command: `npm run build:prerender`.
+- Form submissions are sent to a Telegram chat via `/api/send.php`.
+  The bot token is configured in `public/api/send.php`.
+- Email across the site is `anna@deti1.ru`.
+- Phone input uses `@react-input/mask` with `+7 (___) ___-__-__`.
+- Footer/FounderWords icons unified in Lucide style (MAX uses `Globe`).
+- Images are served as WebP with explicit `width`/`height` and lazy loading.
+- `CompactInfo` is lazy-loaded to reduce initial JS bundle size.
+- Yandex.Metrika is loaded after page load to reduce render blocking.

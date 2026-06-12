@@ -9,6 +9,7 @@ import {
 import {
   Video, ShieldCheck, FileBadge, Stethoscope, UtensilsCrossed, GraduationCap,
   Cloud, Briefcase, TrendingUp, Building2, UserCog, HeartHandshake,
+  Languages, ClipboardCheck, Heart,
   Check, Sparkles, ArrowRight,
 } from 'lucide-react';
 
@@ -19,6 +20,9 @@ const advantages = [
   { icon: Stethoscope, title: 'Медицинский уход', desc: 'В каждом саду работает медицинский работник' },
   { icon: UtensilsCrossed, title: 'Полноценное питание', desc: 'Чёткий режим дня и тёплая, комфортная атмосфера' },
   { icon: GraduationCap, title: 'Готовность к школе', desc: 'Программа развития — ребёнок 100% готов к школе' },
+  { icon: Languages, title: 'Билингвальное образование', desc: 'Утро на русском, день на английском. 87% малышей начинают строить фразы уже в первый год' },
+  { icon: ClipboardCheck, title: 'Единый стандарт качества', desc: 'Конспекты и планы занятий обеспечивают одинаковый уровень в каждом филиале' },
+  { icon: Heart, title: 'Забота о каждой семье', desc: 'Фото и видео в приложении, внимание к запросам родителей и забота о каждом ребёнке' },
 ];
 
 const features = [
@@ -82,6 +86,10 @@ const faqs = [
     q: 'Можно ли купить только документы?',
     a: 'Да, есть базовый пакет за 300 000 ₽ без роялти и сопровождения. Он подойдёт, если у вас уже есть опыт.',
   },
+  {
+    q: 'Нужна ли образовательная лицензия?',
+    a: 'Не всегда. В одних регионах она обязательна, в других сад прекрасно работает без неё. Мы заранее подскажем, как обстоят дела именно в вашем городе: если лицензия даёт преимущества — соберём документы, подготовим помещение и проведём через проверки. Если нет — вы сэкономите время и начнёте работать быстрее.',
+  },
 ];
 
 export function CompactInfo() {
@@ -93,21 +101,21 @@ export function CompactInfo() {
   };
 
   return (
-    <section id="advantages" className="section-light py-12 md:py-16 relative overflow-hidden">
+    <section id="advantages" className="section-light py-12 md:py-16 xl:py-10 relative overflow-hidden">
       <div className="glow-orb w-[500px] h-[500px] bg-[#00c9a7]/10 -right-60 top-0" />
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-5">
-        <div className="blur-reveal text-center mb-6 md:mb-8" style={{ transitionDelay: '0.05s' }}>
+        <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-5" style={{ transitionDelay: '0.05s' }}>
           <span className="inline-block text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,201,167,0.1)] text-[#00c9a7] border border-[rgba(0,201,167,0.15)] px-4 py-1.5 rounded-full mb-4">
             ВСЁ О ФРАНШИЗЕ
           </span>
-          <h2 className="text-[clamp(28px,3.8vw,52px)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mx-auto">
+          <h2 className="text-[clamp(28px,3.8vw,52px)] xl:text-[clamp(26px,3.2vw,44px)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mx-auto">
             Всё необходимое в одном месте
           </h2>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full max-w-2xl mx-auto mb-6 md:mb-8 grid grid-cols-5 h-auto p-1 bg-[#0a1f1f]/5 rounded-full">
+          <TabsList className="w-full max-w-2xl mx-auto mb-6 md:mb-8 flex overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden p-1 bg-[#0a1f1f]/5 rounded-full">
             {[
               { value: 'advantages', label: 'Преимущества' },
               { value: 'features', label: 'Что входит' },
@@ -118,7 +126,7 @@ export function CompactInfo() {
               <TabsTrigger
                 key={t.value}
                 value={t.value}
-                className="rounded-full text-xs md:text-sm text-[#1a1a1a]/70 hover:text-[#1a1a1a] data-[state=active]:bg-[#0a1f1f] data-[state=active]:text-white py-2 transition-colors"
+                className="flex-shrink-0 rounded-full text-xs md:text-sm text-[#1a1a1a]/70 hover:text-[#1a1a1a] data-[state=active]:bg-[#0a1f1f] data-[state=active]:text-white py-2 px-3 sm:px-4 transition-colors"
               >
                 {t.label}
               </TabsTrigger>
@@ -128,7 +136,7 @@ export function CompactInfo() {
           <TabsContent value="advantages" className="mt-0">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
               {advantages.map((a, i) => (
-                <div key={i} className="scroll-reveal light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
+                <div key={i} className="light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-[rgba(0,201,167,0.1)] flex items-center justify-center mb-4">
                     <a.icon className="w-5 h-5 text-[#00c9a7]" />
                   </div>
@@ -143,7 +151,7 @@ export function CompactInfo() {
             <div className="glass-card rounded-3xl p-6 md:p-10 bg-[#0a1f1f]">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
                 {features.map((f, i) => (
-                  <div key={i} className="scroll-reveal flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-white/5 border border-white/10">
                     <div className="w-8 h-8 rounded-lg bg-[#00c9a7]/15 flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-[#00c9a7]" />
                     </div>
@@ -157,7 +165,7 @@ export function CompactInfo() {
           <TabsContent value="audience" className="mt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
               {audiences.map((a, i) => (
-                <div key={i} className="scroll-reveal light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
+                <div key={i} className="light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
                   <div className="w-11 h-11 rounded-xl bg-[rgba(0,201,167,0.1)] flex items-center justify-center mb-4">
                     <a.icon className="w-5 h-5 text-[#00c9a7]" />
                   </div>
@@ -170,7 +178,7 @@ export function CompactInfo() {
 
           <TabsContent value="pricing" className="mt-0">
             <div className="grid md:grid-cols-2 gap-5 max-w-[1000px] mx-auto stagger-children">
-              <div className="scroll-reveal glass-card rounded-[28px] p-6 md:p-8 relative overflow-hidden bg-[#0a1f1f]">
+              <div className="glass-card rounded-[28px] p-6 md:p-8 relative overflow-hidden bg-[#0a1f1f]">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00c9a7] to-[#00c9a7]/50" />
                 <div className="flex items-center justify-between mb-5">
                   <h3 className="text-xl font-bold text-white">Франшиза «Под ключ»</h3>
@@ -199,7 +207,7 @@ export function CompactInfo() {
                 </a>
               </div>
 
-              <div className="scroll-reveal glass-card rounded-[28px] p-6 md:p-8 bg-[#0a1f1f]">
+              <div className="glass-card rounded-[28px] p-6 md:p-8 bg-[#0a1f1f]">
                 <h3 className="text-xl font-bold text-white mb-5">Базовый пакет</h3>
                 <div className="mb-5">
                   <span className="text-4xl font-bold text-white">300 000 ₽</span>

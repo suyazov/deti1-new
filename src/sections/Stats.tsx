@@ -1,263 +1,74 @@
-import { useRef, useEffect, type ReactNode } from 'react';
-import { Award, Building2, CheckCircle2, Clock, TrendingUp, Users } from 'lucide-react';
+import { Calendar, FileBadge, ExternalLink, ShieldCheck, Users, UserCheck } from 'lucide-react';
 
-function AreaChart() {
-  return (
-    <svg viewBox="0 0 200 80" className="w-full h-20 mt-4" preserveAspectRatio="none">
-      <defs>
-        <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#00c9a7" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="#00c9a7" stopOpacity="0" />
-        </linearGradient>
-      </defs>
-      <path
-        d="M0,60 C30,55 50,45 70,50 C90,55 110,30 130,25 C150,20 170,35 200,15 L200,80 L0,80 Z"
-        fill="url(#areaGradient)"
-      />
-      <path
-        d="M0,60 C30,55 50,45 70,50 C90,55 110,30 130,25 C150,20 170,35 200,15"
-        fill="none"
-        stroke="#00c9a7"
-        strokeWidth="2"
-        className="animate-chart-draw"
-        style={{ strokeDasharray: 1000 }}
-      />
-    </svg>
-  );
-}
+const TM_LINK = 'https://www1.fips.ru/fips_servl/fips_servlet?DB=RUTM&DocNumber=1019709';
 
-function OccupancyVisual() {
-  return (
-    <div className="mt-4 grid grid-cols-12 gap-1">
-      {Array.from({ length: 24 }).map((_, i) => (
-        <div
-          key={i}
-          className={`aspect-square rounded-sm ${i < 18 ? 'bg-[#00c9a7]' : 'bg-white/10'}`}
-          style={{ animationDelay: `${i * 30}ms` }}
-        />
-      ))}
-    </div>
-  );
-}
-
-const awards = [
-  'Лучший молодой предприниматель России',
-  'Лучшее семейное предприятие',
-  'Лучший социальный проект года',
-  '3× Золотой Меркурий',
+const stats = [
+  {
+    icon: Calendar,
+    title: 'С 2016 года',
+    desc: 'Развиваем модель детского сада и передаём наработки партнёрам.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Лицензия Минобрнауки',
+    desc: 'Рег. № Л035-01217-26/00681824 от 19.09.2023',
+  },
+  {
+    icon: FileBadge,
+    title: 'Торговая марка',
+    desc: '№ 1019709, зарегистрирована в ФИПС',
+    link: TM_LINK,
+  },
+  {
+    icon: Users,
+    title: '4,5+ года',
+    desc: 'Средний срок обучения ребёнка в саду',
+  },
+  {
+    icon: UserCheck,
+    title: '85–90%',
+    desc: 'Сотрудников остаются с нами ежегодно',
+  },
 ];
 
-interface BentoCardProps {
-  children: ReactNode;
-  className?: string;
-  style?: React.CSSProperties;
-  delay?: number;
-}
-
-function BentoCard({ children, className = '', style, delay = 0 }: BentoCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const card = cardRef.current;
-    if (!card) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      card.style.setProperty('--spotlight-x', `${x}%`);
-      card.style.setProperty('--spotlight-y', `${y}%`);
-    };
-
-    const handleMouseLeave = () => {
-      card.style.setProperty('--spotlight-opacity', '0');
-    };
-
-    const handleMouseEnter = () => {
-      card.style.setProperty('--spotlight-opacity', '1');
-    };
-
-    card.addEventListener('mousemove', handleMouseMove);
-    card.addEventListener('mouseleave', handleMouseLeave);
-    card.addEventListener('mouseenter', handleMouseEnter);
-
-    return () => {
-      card.removeEventListener('mousemove', handleMouseMove);
-      card.removeEventListener('mouseleave', handleMouseLeave);
-      card.removeEventListener('mouseenter', handleMouseEnter);
-    };
-  }, []);
-
-  return (
-    <div
-      ref={cardRef}
-      className={`bento-card blur-reveal ${className}`}
-      style={{ ...style, transitionDelay: `${delay}s` }}
-    >
-      {children}
-    </div>
-  );
-}
-
 export function Stats() {
-  const gridRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const grid = gridRef.current;
-    if (!grid) return;
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = grid.getBoundingClientRect();
-      grid.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
-      grid.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
-    };
-
-    const handleMouseLeave = () => {
-      grid.style.setProperty('--grid-spotlight-opacity', '0');
-    };
-
-    const handleMouseEnter = () => {
-      grid.style.setProperty('--grid-spotlight-opacity', '1');
-    };
-
-    grid.addEventListener('mousemove', handleMouseMove);
-    grid.addEventListener('mouseleave', handleMouseLeave);
-    grid.addEventListener('mouseenter', handleMouseEnter);
-
-    return () => {
-      grid.removeEventListener('mousemove', handleMouseMove);
-      grid.removeEventListener('mouseleave', handleMouseLeave);
-      grid.removeEventListener('mouseenter', handleMouseEnter);
-    };
-  }, []);
-
   return (
-    <section id="about" className="section-dark py-12 md:py-16 relative overflow-hidden">
-      <div className="glow-orb w-[500px] h-[500px] bg-[#00c9a7]/10 -left-60 top-1/2" />
+    <section id="about" className="section-dark py-10 md:py-14 lg:py-16 xl:py-10 relative overflow-hidden">
+      <div className="glow-orb w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#00c9a7]/10 -left-40 md:-left-60 top-1/2" />
 
-      <div className="relative z-10 max-w-[1240px] mx-auto px-5">
-        <div className="blur-reveal mb-8 md:mb-10" style={{ transitionDelay: '0.05s' }}>
-          <h2 className="text-[clamp(28px,3.8vw,52px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl">
-            Цифры, которые говорят сами за себя
+      <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
+        <div className="blur-reveal mb-5 md:mb-6 xl:mb-4" style={{ transitionDelay: '0.05s' }}>
+          <h2 className="text-[clamp(26px,6vw,52px)] xl:text-[clamp(28px,3.5vw,46px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl">
+            Факты о франшизе
           </h2>
         </div>
 
-        <div
-          ref={gridRef}
-          className="bento-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-5 auto-rows-fr"
-        >
-          {/* Large left card */}
-          <BentoCard
-            className="md:row-span-2 flex flex-col justify-between min-h-[260px] p-5"
-            delay={0.1}
-          >
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#00c9a7]/15 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-[#00c9a7]" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4 xl:gap-3">
+          {stats.map((s, i) => (
+            <div
+              key={i}
+              className="blur-reveal glass-card rounded-2xl p-5 xl:p-4 flex flex-col transition-transform duration-300 hover:-translate-y-1"
+              style={{ transitionDelay: `${0.1 + i * 0.05}s` }}
+            >
+              <div className="flex items-center gap-2.5 mb-3">
+                <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
+                  <s.icon className="w-5 h-5 text-[#00c9a7]" />
                 </div>
-                <span className="text-sm text-white/50">Опыт</span>
+                <h3 className="text-base font-semibold text-white">{s.title}</h3>
               </div>
-              <div className="flex items-baseline gap-2 mb-3">
-                <span className="text-6xl md:text-7xl font-bold text-white tracking-tight">10</span>
-                <span className="text-2xl font-semibold text-[#00c9a7]">лет</span>
-              </div>
-              <p className="text-white/70 leading-relaxed max-w-sm">
-                Отточенный механизм детского сада. Не набор советов — рабочая модель с понятной экономикой и живой поддержкой.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {awards.map((a, i) => (
-                <span
-                  key={i}
-                  className="inline-flex items-center gap-1.5 glass-card rounded-full px-3 py-1.5 text-xs text-white/80"
+              <p className="text-sm xl:text-[13px] text-white/60 leading-relaxed flex-grow">{s.desc}</p>
+              {s.link && (
+                <a
+                  href={s.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-xs text-[#00c9a7] hover:text-[#00e0bb] transition-colors"
                 >
-                  <Award className="w-3 h-3 text-[#00c9a7]" />
-                  {a}
-                </span>
-              ))}
+                  Проверить в ФИПС
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
             </div>
-          </BentoCard>
-
-          {/* Top middle card */}
-          <BentoCard className="p-5" delay={0.15}>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
-                <TrendingUp className="w-5 h-5 text-[#00c9a7]" />
-              </div>
-              <span className="text-sm text-white/50">Прибыль</span>
-            </div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">420K</span>
-              <span className="text-xl font-semibold text-[#00c9a7]">₽</span>
-            </div>
-            <p className="text-sm text-white/60 mt-1">в месяц собственного сада</p>
-            <AreaChart />
-          </BentoCard>
-
-          {/* Top right card */}
-          <BentoCard className="p-5" delay={0.2}>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
-                <Award className="w-5 h-5 text-[#00c9a7]" />
-              </div>
-              <span className="text-sm text-white/50">Признание</span>
-            </div>
-            <div className="flex items-baseline gap-1 mb-2">
-              <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">3×</span>
-              <span className="text-lg font-semibold text-[#00c9a7]">Золотой Меркурий</span>
-            </div>
-            <div className="grid grid-cols-3 gap-2 mt-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="aspect-square rounded-xl bg-[#00c9a7]/10 flex items-center justify-center border border-[#00c9a7]/20">
-                  <Award className="w-5 h-5 text-[#00c9a7]" />
-                </div>
-              ))}
-            </div>
-          </BentoCard>
-
-          {/* Bottom middle card */}
-          <BentoCard className="p-5" delay={0.25}>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
-                <Building2 className="w-5 h-5 text-[#00c9a7]" />
-              </div>
-              <span className="text-sm text-white/50">Запуск</span>
-            </div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">2–3</span>
-              <span className="text-xl font-semibold text-[#00c9a7]">мес</span>
-            </div>
-            <p className="text-sm text-white/60 mt-1">до первых детей в саду</p>
-            <div className="mt-4 h-2 w-full bg-white/10 rounded-full overflow-hidden">
-              <div className="h-full bg-gradient-to-r from-[#00c9a7] to-[#00c9a7]/60 rounded-full animate-progress-fill" style={{ width: '75%' }} />
-            </div>
-          </BentoCard>
-
-          {/* Bottom right card */}
-          <BentoCard className="p-5" delay={0.3}>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
-                <Users className="w-5 h-5 text-[#00c9a7]" />
-              </div>
-              <span className="text-sm text-white/50">Загрузка</span>
-            </div>
-            <div className="flex items-baseline gap-1">
-              <span className="text-4xl md:text-5xl font-bold text-white tracking-tight">72</span>
-              <span className="text-xl font-semibold text-[#00c9a7]">ребёнка</span>
-            </div>
-            <p className="text-sm text-white/60 mt-1">при полной загрузке</p>
-            <OccupancyVisual />
-          </BentoCard>
-        </div>
-
-        {/* Compact trust tags */}
-        <div className="mt-6 flex flex-wrap gap-3 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-          {['Лицензия и документы', 'Клиенты до открытия', 'СанПиН аудит', 'CRM и аналитика'].map((tag, i) => (
-            <span key={i} className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 text-sm text-white/80">
-              <CheckCircle2 className="w-4 h-4 text-[#00c9a7]" />
-              {tag}
-            </span>
           ))}
         </div>
       </div>
