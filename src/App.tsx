@@ -9,6 +9,7 @@ import { CompactInfo } from '@/sections/CompactInfo';
 import { CTA } from '@/sections/CTA';
 import { Footer } from '@/sections/Footer';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { ScrollToTop } from '@/components/ScrollToTop';
 
 export default function App() {
   useScrollReveal();
@@ -27,6 +28,7 @@ export default function App() {
         <CTA />
       </main>
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }
