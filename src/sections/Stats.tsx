@@ -1,3 +1,4 @@
+import { useRef, useEffect, type ReactNode } from 'react';
 import { Award, Building2, CheckCircle2, Clock, TrendingUp, Users } from 'lucide-react';
 
 function AreaChart() {
@@ -46,7 +47,90 @@ const awards = [
   '3× Золотой Меркурий',
 ];
 
+interface BentoCardProps {
+  children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  delay?: number;
+}
+
+function BentoCard({ children, className = '', style, delay = 0 }: BentoCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = card.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      card.style.setProperty('--spotlight-x', `${x}%`);
+      card.style.setProperty('--spotlight-y', `${y}%`);
+    };
+
+    const handleMouseLeave = () => {
+      card.style.setProperty('--spotlight-opacity', '0');
+    };
+
+    const handleMouseEnter = () => {
+      card.style.setProperty('--spotlight-opacity', '1');
+    };
+
+    card.addEventListener('mousemove', handleMouseMove);
+    card.addEventListener('mouseleave', handleMouseLeave);
+    card.addEventListener('mouseenter', handleMouseEnter);
+
+    return () => {
+      card.removeEventListener('mousemove', handleMouseMove);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+      card.removeEventListener('mouseenter', handleMouseEnter);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={cardRef}
+      className={`bento-card blur-reveal ${className}`}
+      style={{ ...style, transitionDelay: `${delay}s` }}
+    >
+      {children}
+    </div>
+  );
+}
+
 export function Stats() {
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const rect = grid.getBoundingClientRect();
+      grid.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+      grid.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+    };
+
+    const handleMouseLeave = () => {
+      grid.style.setProperty('--grid-spotlight-opacity', '0');
+    };
+
+    const handleMouseEnter = () => {
+      grid.style.setProperty('--grid-spotlight-opacity', '1');
+    };
+
+    grid.addEventListener('mousemove', handleMouseMove);
+    grid.addEventListener('mouseleave', handleMouseLeave);
+    grid.addEventListener('mouseenter', handleMouseEnter);
+
+    return () => {
+      grid.removeEventListener('mousemove', handleMouseMove);
+      grid.removeEventListener('mouseleave', handleMouseLeave);
+      grid.removeEventListener('mouseenter', handleMouseEnter);
+    };
+  }, []);
+
   return (
     <section id="about" className="section-dark py-12 md:py-16 relative overflow-hidden">
       <div className="glow-orb w-[500px] h-[500px] bg-[#00c9a7]/10 -left-60 top-1/2" />
@@ -58,11 +142,14 @@ export function Stats() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-5 auto-rows-fr">
+        <div
+          ref={gridRef}
+          className="bento-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.2fr_1fr_1fr] gap-4 md:gap-5 auto-rows-fr"
+        >
           {/* Large left card */}
-          <div
-            className="bento-card blur-reveal md:row-span-2 flex flex-col justify-between min-h-[260px] p-5"
-            style={{ transitionDelay: '0.1s' }}
+          <BentoCard
+            className="md:row-span-2 flex flex-col justify-between min-h-[260px] p-5"
+            delay={0.1}
           >
             <div>
               <div className="flex items-center gap-3 mb-4">
@@ -90,10 +177,10 @@ export function Stats() {
                 </span>
               ))}
             </div>
-          </div>
+          </BentoCard>
 
           {/* Top middle card */}
-          <div className="bento-card blur-reveal p-5" style={{ transitionDelay: '0.15s' }}>
+          <BentoCard className="p-5" delay={0.15}>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
                 <TrendingUp className="w-5 h-5 text-[#00c9a7]" />
@@ -106,10 +193,10 @@ export function Stats() {
             </div>
             <p className="text-sm text-white/60 mt-1">в месяц собственного сада</p>
             <AreaChart />
-          </div>
+          </BentoCard>
 
           {/* Top right card */}
-          <div className="bento-card blur-reveal p-5" style={{ transitionDelay: '0.2s' }}>
+          <BentoCard className="p-5" delay={0.2}>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
                 <Award className="w-5 h-5 text-[#00c9a7]" />
@@ -127,10 +214,10 @@ export function Stats() {
                 </div>
               ))}
             </div>
-          </div>
+          </BentoCard>
 
           {/* Bottom middle card */}
-          <div className="bento-card blur-reveal p-5" style={{ transitionDelay: '0.25s' }}>
+          <BentoCard className="p-5" delay={0.25}>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
                 <Building2 className="w-5 h-5 text-[#00c9a7]" />
@@ -145,10 +232,10 @@ export function Stats() {
             <div className="mt-4 h-2 w-full bg-white/10 rounded-full overflow-hidden">
               <div className="h-full bg-gradient-to-r from-[#00c9a7] to-[#00c9a7]/60 rounded-full animate-progress-fill" style={{ width: '75%' }} />
             </div>
-          </div>
+          </BentoCard>
 
           {/* Bottom right card */}
-          <div className="bento-card blur-reveal p-5" style={{ transitionDelay: '0.3s' }}>
+          <BentoCard className="p-5" delay={0.3}>
             <div className="flex items-center gap-3 mb-2">
               <div className="w-10 h-10 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
                 <Users className="w-5 h-5 text-[#00c9a7]" />
@@ -161,7 +248,7 @@ export function Stats() {
             </div>
             <p className="text-sm text-white/60 mt-1">при полной загрузке</p>
             <OccupancyVisual />
-          </div>
+          </BentoCard>
         </div>
 
         {/* Compact trust tags */}

@@ -206,13 +206,86 @@
                 transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  .bento-grid {
+    position: relative;
+    --mouse-x: 50%;
+    --mouse-y: 50%;
+    --grid-spotlight-opacity: 0;
+    border-radius: 2rem;
+  }
+
+  .bento-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      700px circle at var(--mouse-x) var(--mouse-y),
+      rgba(0, 201, 167, 0.18),
+      transparent 55%
+    );
+    opacity: var(--grid-spotlight-opacity);
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   .bento-card {
-    @apply glass-card rounded-3xl p-6 md:p-8 transition-all duration-300;
+    @apply rounded-3xl p-6 md:p-8 transition-all duration-300;
+    position: relative;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    --spotlight-x: 50%;
+    --spotlight-y: 50%;
+    --spotlight-opacity: 0;
+    z-index: 1;
+  }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1.5px;
+    background: radial-gradient(
+      350px circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(0, 201, 167, 0.85),
+      rgba(0, 201, 167, 0.25) 40%,
+      transparent 70%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: var(--spotlight-opacity);
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .bento-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(
+      350px circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(0, 201, 167, 0.18),
+      transparent 55%
+    );
+    opacity: var(--spotlight-opacity);
+    transition: opacity 0.25s ease;
+    pointer-events: none;
+    z-index: 1;
   }
 
   .bento-card:hover {
-    box-shadow: 0 0 30px rgba(0, 201, 167, 0.3);
-    border-color: rgba(0, 201, 167, 0.3);
+    box-shadow: 0 0 45px rgba(0, 201, 167, 0.30), inset 0 0 20px rgba(0, 201, 167, 0.06);
+    border-color: rgba(0, 201, 167, 0.30);
     transform: translateY(-4px);
   }
 
