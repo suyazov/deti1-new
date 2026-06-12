@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const galleryItems = [
   { num: '01', title: 'Аудит и локация', img: '/anna-white-laptop.jpg' },
@@ -9,15 +10,40 @@ const galleryItems = [
 ];
 
 export function HowWeDoIt() {
-  const [active, setActive] = useState(0);
-  const trackRef = useRef<HTMLDivElement>(null);
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    containScroll: 'trimSnaps',
+  });
+  const [selected, setSelected] = useState(0);
+
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return;
+    setSelected(emblaApi.selectedScrollSnap() % galleryItems.length);
+  }, [emblaApi]);
 
   useEffect(() => {
+    if (!emblaApi) return;
+    onSelect();
+    emblaApi.on('select', onSelect);
+    return () => {
+      emblaApi.off('select', onSelect);
+    };
+  }, [emblaApi, onSelect]);
+
+  // Autoplay
+  useEffect(() => {
+    if (!emblaApi) return;
     const interval = setInterval(() => {
-      setActive((prev) => (prev + 1) % galleryItems.length);
+      emblaApi.scrollNext();
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [emblaApi]);
+
+  const scrollTo = useCallback(
+    (i: number) => emblaApi?.scrollTo(i),
+    [emblaApi]
+  );
 
   return (
     <section className="section-dark py-12 md:py-16 relative overflow-hidden">
@@ -34,27 +60,31 @@ export function HowWeDoIt() {
         </div>
       </div>
 
-      <div className="relative w-full overflow-hidden group">
-        <div ref={trackRef} className="marquee-track py-2">
-          {[...galleryItems, ...galleryItems].map((item, i) => (
-            <div
-              key={i}
-              className="relative flex-shrink-0 w-[260px] md:w-[320px] h-[180px] md:h-[220px] rounded-2xl overflow-hidden glass-card p-2 transition-transform duration-300 hover:scale-[1.02]"
-            >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-full object-cover rounded-xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-2xl" />
-              <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
-                <span className="text-xs font-bold text-white">{item.num}</span>
+      <div className="relative z-10 max-w-[1240px] mx-auto px-5">
+        <div className="overflow-hidden -mx-5 px-5" ref={emblaRef}>
+          <div className="flex gap-4">
+            {galleryItems.map((item, i) => (
+              <div
+                key={i}
+                className="flex-[0_0_78%] sm:flex-[0_0_48%] md:flex-[0_0_320px] min-w-0"
+              >
+                <div className="relative h-[180px] md:h-[220px] rounded-2xl overflow-hidden glass-card p-2 transition-transform duration-300 hover:scale-[1.02]">
+                  <img
+                    src={item.img}
+                    alt={item.title}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent rounded-2xl" />
+                  <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center">
+                    <span className="text-xs font-bold text-white">{item.num}</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <p className="text-lg font-semibold text-white">{item.title}</p>
+                  </div>
+                </div>
               </div>
-              <div className="absolute bottom-4 left-4 right-4">
-                <p className="text-lg font-semibold text-white">{item.title}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
 
@@ -63,9 +93,9 @@ export function HowWeDoIt() {
           {galleryItems.map((_, i) => (
             <button
               key={i}
-              onClick={() => setActive(i)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                active === i ? 'bg-[#00c9a7] w-6' : 'bg-white/20 hover:bg-white/40'
+              onClick={() => scrollTo(i)}
+              className={`h-2 rounded-full transition-all duration-300 ${
+                selected === i ? 'bg-[#00c9a7] w-6' : 'w-2 bg-white/20 hover:bg-white/40'
               }`}
               aria-label={`Перейти к слайду ${i + 1}`}
             />
