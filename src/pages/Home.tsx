@@ -1,11 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { Hero } from '@/sections/Hero';
-import { Stats } from '@/sections/Stats';
-import { ProfitCalculator } from '@/components/ProfitCalculator';
-import { HowWeDoIt } from '@/sections/HowWeDoIt';
-import { TextReveal } from '@/sections/TextReveal';
 import { FloatingCards } from '@/sections/FloatingCards';
+import { HowWeDoIt } from '@/sections/HowWeDoIt';
 import { StepsSlider } from '@/sections/StepsSlider';
+import { ProfitCalculator } from '@/components/ProfitCalculator';
+import { Stats } from '@/sections/Stats';
 import { FounderWords } from '@/sections/FounderWords';
 import { HistoryTimeline } from '@/sections/HistoryTimeline';
 import { TeamDepartments } from '@/sections/TeamDepartments';
@@ -19,19 +18,25 @@ export default function Home() {
 
   return (
     <>
+      {/* Для них: привлечение и выгода */}
       <Hero />
-      <Stats />
-      <ProfitCalculator />
-      <HowWeDoIt />
-      <TextReveal />
       <FloatingCards />
-      <StepsSlider />
       <Suspense fallback={<div className="min-h-[480px]" aria-hidden="true" />}>
         <CompactInfo />
       </Suspense>
+
+      {/* Как это работает */}
+      <HowWeDoIt />
+      <StepsSlider />
+      <ProfitCalculator />
+
+      {/* О нас: компания, основатель, история, команда */}
+      <Stats />
       <FounderWords />
       <HistoryTimeline />
       <TeamDepartments />
+
+      {/* Заявка */}
       <CTA />
     </>
   );

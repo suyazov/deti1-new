@@ -31,7 +31,7 @@ export function Footer() {
               <span className="text-white font-semibold">Дети в приоритете</span>
             </div>
             <p className="text-sm text-white/60 leading-relaxed">
-              Готовая система запуска детского сада. 10 лет опыта, образовательная лицензия и сопровождение на всех этапах.
+              Готовая система запуска детского сада. С 2016 года, образовательная лицензия и сопровождение на всех этапах.
             </p>
             <div className="mt-4 text-xs text-white/50 space-y-1">
               <p>ИП Суязова Анна Игоревна</p>

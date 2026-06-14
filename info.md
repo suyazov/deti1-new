@@ -34,6 +34,9 @@ Recent project changes:
 - Added server-side prerender for SEO (`prerender.js`, Puppeteer).
   Build command: `npm run build:prerender`.
 - Deploy command (preserves /v1 archive): `rsync -avz --exclude=v1 --delete dist/ /var/www/deti1.ru/`.
+- Page structure: partner benefits first, then company info.
+- Copy: "10 лет опыта" replaced with "с 2016 года" across the site.
+- Visual style: added colorful kid-friendly icons, badges, and light sections.
 - Form submissions are sent to a Telegram chat via `/api/send.php`.
   The bot token is configured in `public/api/send.php`.
 - Email across the site is `anna@deti1.ru`.

@@ -18,12 +18,12 @@ export function FounderWords() {
           <div className="relative z-10 max-w-4xl mx-auto">
             <p className="text-lg sm:text-xl md:text-2xl xl:text-xl font-medium text-white leading-relaxed mb-6">
               Мы вложили в ваш будущий результат сотни миллионов рублей и{' '}
-              <span className="text-[#00c9a7]">десятки тысяч часов</span> усердной работы.
+              <span className="text-[#00c9a7]">тысячи часов</span> усердной работы.
             </p>
 
             <div className="space-y-4 text-white/70 text-sm sm:text-base xl:text-sm leading-relaxed">
               <p>
-                Эти цифры — не просто показатель масштаба. Это сотни переговоров, десятки смет, сотни педагогов.
+                Эти цифры — не просто показатель масштаба. Это сотни переговоров, проработанные сметы, сотни педагогов.
                 Это ошибки, которые мы уже пережили за других партнёров. И каждый раз мы находили решение и превращали опыт в систему.
               </p>
               <p>
