@@ -304,3 +304,29 @@
 - Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
 - Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_004252`.
 - Коммит и push: `ff8ca1c refactor FloatingCards: replace 6 vague cards with 9 detailed features from franchise presentation`.
+
+## 2026-06-15 — Новый блок «Почему родители нас выбирают»
+
+### Что сделано
+- Добавлен новый компонент `src/sections/WhyParentsChoose.tsx`.
+- Текст взят слово в слово из PDF-презентации `/root/deti1-assets/franchise-presentation.pdf` (раздел «ПОЧЕМУ РОДИТЕЛИ НАС ВЫБИРАЮТ»).
+- 7 карточек:
+  1. Онлайн-видеонаблюдение
+  2. Безопасная среда
+  3. Работаем по лицензии
+  4. Медицинский работник
+  5. Полноценное питание и режим
+  6. Современные мероприятия
+  7. Готовность к школе
+- Блок подключён в `src/pages/Home.tsx` после `FloatingCards`.
+- Добавлен `id="parents"` для якорной навигации.
+
+### Проверка
+- Скриншот: `/tmp/parents-section.png`.
+- Lighthouse Accessibility: **1.0**, ошибок контраста — **0**.
+
+### Деплой
+- Собран production-бандл (`npm run build`).
+- Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
+- Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_005419`.
+- Коммит и push: `217c73b add WhyParentsChoose section with 7 cards from franchise presentation`.
