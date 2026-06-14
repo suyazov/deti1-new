@@ -16,11 +16,10 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[auto] lg:min-h-[92vh] xl:min-h-[100vh] hero-gradient flex items-center overflow-hidden pt-16 lg:pt-20">
+    <section className="relative min-h-[auto] lg:min-h-[auto] hero-gradient flex items-center overflow-hidden pt-20 lg:pt-24 pb-10 lg:pb-16">
       {/* Decorative colored orbs */}
-      <div className="glow-orb w-[350px] h-[350px] md:w-[500px] md:h-[500px] bg-sky-400/15 -top-20 -right-20 animate-pulse-glow" />
-      <div className="glow-orb w-[300px] h-[300px] md:w-[450px] md:h-[450px] bg-pink-400/10 -bottom-20 -left-20" />
-      <div className="glow-orb w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-yellow-400/10 top-1/3 left-1/4 animate-float hidden sm:block" />
+      <div className="glow-orb w-[280px] h-[280px] md:w-[400px] md:h-[400px] bg-sky-300/20 -top-10 -right-10 animate-pulse-glow" />
+      <div className="glow-orb w-[240px] h-[240px] md:w-[360px] md:h-[360px] bg-pink-300/15 -bottom-10 -left-10" />
 
       {/* Floating icons */}
       {decorations.map((d, i) => (
@@ -51,10 +50,10 @@ export function Hero() {
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
             >
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              <span className="text-[11px] sm:text-xs font-medium text-white/90 tracking-wide">Франшиза частного детского сада</span>
+              <span className="text-[11px] sm:text-xs font-medium text-[#2D3436]/90 tracking-wide">Франшиза частного детского сада</span>
             </div>
 
-            <h1 className="text-[clamp(28px,9vw,56px)] sm:text-[clamp(32px,7vw,64px)] lg:text-[clamp(38px,5vw,56px)] xl:text-[clamp(38px,4vw,50px)] font-bold leading-[1.08] lg:leading-[1.05] xl:leading-[1.05] tracking-tight text-white mb-4 sm:mb-6 xl:mb-4 break-words">
+            <h1 className="text-[clamp(28px,9vw,56px)] sm:text-[clamp(32px,7vw,64px)] lg:text-[clamp(38px,5vw,56px)] xl:text-[clamp(38px,4vw,50px)] font-bold leading-[1.08] lg:leading-[1.05] xl:leading-[1.05] tracking-tight text-[#2D3436] mb-4 sm:mb-6 xl:mb-4 break-words">
               <span className="block text-reveal-line" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.2s' }}>детский сад</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.3s' }}>
@@ -64,7 +63,7 @@ export function Hero() {
             </h1>
 
             <p
-              className="text-base sm:text-lg md:text-lg xl:text-[15px] text-white/80 leading-relaxed xl:leading-[1.5] mb-5 sm:mb-6 xl:mb-4 max-w-[560px] opacity-0 animate-blur-reveal"
+              className="text-base sm:text-lg md:text-lg xl:text-[15px] text-[#2D3436]/80 leading-relaxed xl:leading-[1.5] mb-5 sm:mb-6 xl:mb-4 max-w-[560px] opacity-0 animate-blur-reveal"
               style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
             >
               Готовая система запуска частного детского сада. С 2016 года, действующие сады, образовательная лицензия и первые заявки ещё до открытия.
@@ -76,7 +75,7 @@ export function Hero() {
                 'Помощь с лицензией, помещением и персоналом',
                 'Маркетинг и первые клиенты до запуска',
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-white/70">
+                <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-[#2D3436]/70">
                   <span className="w-5 h-5 rounded-full bg-sky-400/20 flex items-center justify-center flex-shrink-0">
                     <Star className="w-3 h-3 text-sky-400" />
                   </span>
@@ -100,7 +99,7 @@ export function Hero() {
               <a
                 href="#about"
                 onClick={(e) => handleClick(e, '#about')}
-                className="inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-8 xl:px-6 py-3.5 sm:py-4 xl:py-3 text-sm sm:text-base xl:text-sm font-semibold text-white border border-white/20 hover:bg-white/10 transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 rounded-full px-6 sm:px-8 xl:px-6 py-3.5 sm:py-4 xl:py-3 text-sm sm:text-base xl:text-sm font-semibold text-[#2D3436] border border-black/10 hover:bg-black/5 transition-all duration-200 w-full sm:w-auto"
               >
                 Узнать подробнее
               </a>
@@ -116,7 +115,7 @@ export function Hero() {
               <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 to-pink-400/10 rounded-2xl lg:rounded-3xl blur-2xl" />
               <div className="relative glass-card rounded-2xl lg:rounded-3xl p-2 sm:p-3">
                 <img
-                  src="/photos/11.jpg"
+                  src="/photos/kids-shelf.jpeg"
                   alt="Дети в детском саду «Дети в приоритете»"
                   width="700"
                   height="875"
@@ -126,9 +125,9 @@ export function Hero() {
               </div>
 
               {/* Floating mini photo */}
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-24 sm:w-32 rounded-xl sm:rounded-2xl border-4 border-[#0a1f1f] overflow-hidden shadow-2xl hidden sm:block">
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-24 sm:w-32 rounded-xl sm:rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block">
                 <img
-                  src="/photos/8-1.jpg"
+                  src="/photos/kids-sofa.jpeg"
                   alt="Экскурсия для детей"
                   width="200"
                   height="250"
@@ -143,8 +142,8 @@ export function Hero() {
                   <Smile className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-400" />
                 </div>
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-white">2000+</p>
-                  <p className="text-[10px] sm:text-xs text-white/60">воспитанников</p>
+                  <p className="text-xs sm:text-sm font-bold text-[#2D3436]">2000+</p>
+                  <p className="text-[10px] sm:text-xs text-[#2D3436]/60">воспитанников</p>
                 </div>
               </div>
             </div>

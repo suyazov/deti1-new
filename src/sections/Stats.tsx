@@ -48,10 +48,10 @@ export function Stats() {
 
       <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
         <div className="blur-reveal mb-5 md:mb-6 xl:mb-4" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-white/10 text-sky-400 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-sky-400 border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
             О НАС
           </span>
-          <h2 className="text-[clamp(26px,6vw,52px)] xl:text-[clamp(28px,3.5vw,46px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl">
+          <h2 className="text-[clamp(26px,6vw,52px)] xl:text-[clamp(28px,3.5vw,46px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl">
             О франшизе
           </h2>
         </div>
@@ -67,9 +67,9 @@ export function Stats() {
                 <div className={`w-10 h-10 rounded-xl ${s.bg} flex items-center justify-center`}>
                   <s.icon className={`w-5 h-5 ${s.color}`} />
                 </div>
-                <h3 className="text-base font-semibold text-white">{s.title}</h3>
+                <h3 className="text-base font-semibold text-[#2D3436]">{s.title}</h3>
               </div>
-              <p className="text-sm xl:text-[13px] text-white/60 leading-relaxed flex-grow">{s.desc}</p>
+              <p className="text-sm xl:text-[13px] text-[#2D3436]/60 leading-relaxed flex-grow">{s.desc}</p>
               {s.link && (
                 <a
                   href={s.link}

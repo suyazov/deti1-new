@@ -67,9 +67,9 @@ export function Navigation() {
                 alt="Дети в приоритете"
                 width="56"
                 height="56"
-                className="h-12 sm:h-12 md:h-14 w-auto brightness-0 invert"
+                className="h-12 sm:h-12 md:h-14 w-auto"
               />
-              <span className="text-sm font-semibold text-white hidden sm:block">
+              <span className="text-sm font-semibold text-[#2D3436] hidden sm:block">
                 Дети в приоритете
               </span>
             </Link>
@@ -80,7 +80,7 @@ export function Navigation() {
                 href={contacts.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+                className="text-sm font-medium text-[#2D3436]/70 hover:text-[#2D3436] transition-colors"
               >
                 {contacts.phone}
               </a>
@@ -93,7 +93,7 @@ export function Navigation() {
               </Link>
               <button
                 onClick={() => setMobileOpen(true)}
-                className="flex items-center gap-2 pl-4 pr-5 py-2 rounded-full border border-white/10 text-white hover:bg-white/10 transition-colors"
+                className="flex items-center gap-2 pl-4 pr-5 py-2 rounded-full border border-black/10 text-[#2D3436] hover:bg-black/5 transition-colors"
                 aria-label="Открыть меню"
               >
                 <Menu className="w-4 h-4" />
@@ -104,7 +104,7 @@ export function Navigation() {
             {/* Mobile burger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 text-white hover:bg-white/15 active:scale-95 transition-all"
+              className="lg:hidden flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/5 text-[#2D3436] hover:bg-black/10 active:scale-95 transition-all"
               aria-label={mobileOpen ? 'Закрыть меню' : 'Открыть меню'}
               aria-expanded={mobileOpen}
             >
@@ -125,7 +125,7 @@ export function Navigation() {
       >
         {/* Backdrop */}
         <div
-          className="absolute inset-0 bg-[#0a1f1f]/95 backdrop-blur-md"
+          className="absolute inset-0 bg-[#FDFBF7]/95 backdrop-blur-md"
           onClick={() => setMobileOpen(false)}
         />
 
@@ -156,15 +156,15 @@ export function Navigation() {
                   alt="Дети в приоритете"
                   width="56"
                   height="56"
-                  className="h-14 w-auto brightness-0 invert"
+                  className="h-14 w-auto"
                 />
-                <span className="text-base font-semibold text-white">
+                <span className="text-base font-semibold text-[#2D3436]">
                   Дети в приоритете
                 </span>
               </Link>
               <button
                 onClick={() => setMobileOpen(false)}
-                className="flex items-center justify-center w-11 h-11 rounded-full bg-white/10 text-white hover:bg-white/15 active:scale-95 transition-all"
+                className="flex items-center justify-center w-11 h-11 rounded-full bg-black/5 text-[#2D3436] hover:bg-black/10 active:scale-95 transition-all"
                 aria-label="Закрыть меню"
               >
                 <X className="w-5 h-5" />
@@ -178,13 +178,13 @@ export function Navigation() {
                   key={link.href}
                   to={`/${link.href}`}
                   onClick={(e) => handleClick(e, link.href)}
-                  className="group flex items-center justify-between border-b border-white/10 py-5 lg:py-6 transition-colors"
+                  className="group flex items-center justify-between border-b border-black/10 py-5 lg:py-6 transition-colors"
                   style={{ animationDelay: `${index * 40}ms` }}
                 >
-                  <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white/90 group-hover:text-white transition-colors">
+                  <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2D3436]/90 group-hover:text-[#2D3436] transition-colors">
                     {link.label}
                   </span>
-                  <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-white/30 group-hover:text-[#00c9a7] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-[#2D3436]/30 group-hover:text-[#00b894] group-hover:translate-x-1 transition-all" />
                 </Link>
               ))}
             </nav>
@@ -195,10 +195,10 @@ export function Navigation() {
               <div className="space-y-3">
                 <a
                   href={contacts.phoneHref}
-                  className="flex items-center gap-3 text-white/90 hover:text-white px-2 py-2 transition-colors"
+                  className="flex items-center gap-3 text-[#2D3436]/90 hover:text-[#2D3436] px-2 py-2 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#00c9a7]" />
+                  <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#00b894]" />
                   </div>
                   <span className="text-lg font-medium">{contacts.phone}</span>
                 </a>
@@ -206,10 +206,10 @@ export function Navigation() {
                   href={contacts.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/90 hover:text-white px-2 py-2 transition-colors"
+                  className="flex items-center gap-3 text-[#2D3436]/90 hover:text-[#2D3436] px-2 py-2 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5 text-[#00c9a7]" />
+                  <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
+                    <MessageCircle className="w-5 h-5 text-[#00b894]" />
                   </div>
                   <span className="text-lg font-medium">WhatsApp</span>
                 </a>
@@ -217,11 +217,11 @@ export function Navigation() {
                   href={contacts.telegram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/90 hover:text-white px-2 py-2 transition-colors"
+                  className="flex items-center gap-3 text-[#2D3436]/90 hover:text-[#2D3436] px-2 py-2 transition-colors"
                 >
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-[#00c9a7]"
+                      className="w-5 h-5 text-[#00b894]"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -234,7 +234,7 @@ export function Navigation() {
 
               {/* CTA */}
               <div className="flex flex-col justify-end">
-                <p className="text-white/60 mb-4 px-2">
+                <p className="text-[#2D3436]/60 mb-4 px-2">
                   Получите презентацию франшизы и финансовую модель
                 </p>
                 <Link

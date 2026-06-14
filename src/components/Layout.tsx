@@ -12,7 +12,7 @@ export function Layout() {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen bg-[#0a1f1f]">
+    <div className="min-h-screen bg-[#FDFBF7]">
       <Navigation />
       <main>
         <Outlet />

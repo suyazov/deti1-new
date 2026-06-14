@@ -31,7 +31,7 @@ export function TextReveal() {
       ref={sectionRef}
       className="relative min-h-[28vh] sm:min-h-[38vh] lg:min-h-[55vh] xl:min-h-[45vh] section-dark flex items-center justify-center overflow-hidden py-8 sm:py-10 lg:py-0"
     >
-      <div className="glow-orb w-[600px] h-[600px] bg-[#00c9a7]/10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
+      <div className="glow-orb w-[600px] h-[600px] bg-[#00b894]/10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" />
 
       <div className="relative z-10 max-w-[1100px] mx-auto px-5 text-center">
         {lines.map((line, i) => {
@@ -43,7 +43,7 @@ export function TextReveal() {
           return (
             <p
               key={i}
-              className="text-[clamp(22px,6vw,56px)] sm:text-[clamp(28px,5vw,56px)] xl:text-[clamp(24px,4vw,48px)] font-bold leading-[1.2] tracking-tight text-white"
+              className="text-[clamp(22px,6vw,56px)] sm:text-[clamp(28px,5vw,56px)] xl:text-[clamp(24px,4vw,48px)] font-bold leading-[1.2] tracking-tight text-[#2D3436]"
               style={{
                 filter: `blur(${blur}px)`,
                 opacity,

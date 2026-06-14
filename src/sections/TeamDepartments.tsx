@@ -20,13 +20,13 @@ export function TeamDepartments() {
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-5">
         <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-5" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-white/10 text-[#00c9a7] border border-white/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-[#00b894] border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
             КОМАНДА ПОДДЕРЖКИ
           </span>
-          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl mx-auto">
+          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto">
             20+ отделов работают на ваш результат
           </h2>
-          <p className="text-white/60 max-w-2xl mx-auto mt-3 text-sm sm:text-base xl:text-sm">
+          <p className="text-[#2D3436]/60 max-w-2xl mx-auto mt-3 text-sm sm:text-base xl:text-sm">
             Каждый отдел отвечает за свою часть: от маркетинга и HR до методики и юристов.
           </p>
         </div>
@@ -39,11 +39,11 @@ export function TeamDepartments() {
                 key={i}
                 className="scroll-reveal glass-card glass-card-hover rounded-2xl p-4 sm:p-5"
               >
-                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center mb-3">
-                  <Icon className="w-5 h-5 text-[#00c9a7]" />
+                <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl bg-[#00b894]/15 flex items-center justify-center mb-3">
+                  <Icon className="w-5 h-5 text-[#00b894]" />
                 </div>
-                <h3 className="text-base font-semibold text-white mb-1">{d.title}</h3>
-                <p className="text-xs sm:text-sm text-white/60 leading-relaxed">{d.desc}</p>
+                <h3 className="text-base font-semibold text-[#2D3436] mb-1">{d.title}</h3>
+                <p className="text-xs sm:text-sm text-[#2D3436]/60 leading-relaxed">{d.desc}</p>
               </div>
             );
           })}

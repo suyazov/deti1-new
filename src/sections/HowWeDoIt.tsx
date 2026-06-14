@@ -50,13 +50,13 @@ export function HowWeDoIt() {
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-5">
         <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-6" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-white/10 text-sky-400 border border-white/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-sky-400 border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
             ЭТАПЫ ЗАПУСКА
           </span>
-          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl mx-auto">
+          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto">
             От идеи до открытия — 5 чётких шагов
           </h2>
-          <p className="mt-3 md:mt-4 text-sm md:text-base xl:text-sm text-white/60 max-w-2xl mx-auto">
+          <p className="mt-3 md:mt-4 text-sm md:text-base xl:text-sm text-[#2D3436]/60 max-w-2xl mx-auto">
             Этапы запуска конкретного сада, а не общее описание сотрудничества
           </p>
         </div>
@@ -74,8 +74,8 @@ export function HowWeDoIt() {
                 </div>
                 <span className={`text-xs font-bold ${step.color}`}>{step.num}</span>
               </div>
-              <h3 className="text-lg font-semibold text-white mb-2">{step.title}</h3>
-              <p className="text-sm xl:text-[13px] text-white/60 leading-relaxed">{step.desc}</p>
+              <h3 className="text-lg font-semibold text-[#2D3436] mb-2">{step.title}</h3>
+              <p className="text-sm xl:text-[13px] text-[#2D3436]/60 leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

@@ -39,19 +39,19 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
         dark: {
-          DEFAULT: "#0a1f1f",
-          soft: "#0d2b2b",
-          card: "#122e2e",
+          DEFAULT: "#FDFBF7",
+          soft: "#F8F5EF",
+          card: "#ffffff",
         },
         teal: {
-          DEFAULT: "#00c9a7",
-          soft: "rgba(0, 201, 167, 0.12)",
+          DEFAULT: "#00b894",
+          soft: "rgba(0, 184, 148, 0.12)",
         },
         coral: {
           DEFAULT: "#e73c47",
           soft: "rgba(231, 60, 71, 0.12)",
         },
-        mint: "#f8faf9",
+        mint: "#FDFBF7",
       },
       borderRadius: {
         xl: "calc(var(--radius) + 4px)",

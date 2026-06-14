@@ -32,8 +32,8 @@ export function FloatingCards() {
           {/* Photo card */}
           <div className="bg-white rounded-2xl md:rounded-3xl p-2 sm:p-3 shadow-sm border border-black/5">
             <img
-              src="/photos/11.jpg"
-              alt="Дети занимаются в детском саду"
+              src="/photos/class-reading.jpeg"
+              alt="Дети на занятии в детском саду"
               loading="lazy"
               width="700"
               height="875"
