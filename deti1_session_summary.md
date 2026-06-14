@@ -222,3 +222,27 @@
 
 ## Рабочая папка проекта
 /tmp/deti1-upload/app — React/Vite проект сайта
+
+## 2026-06-15 — Фикс видимости range slider в калькуляторе
+
+### Проблема
+После перехода на светлую палитру треки ползунков в `ProfitCalculator` стали почти незаметны: незаполненная часть использовала `rgba(255,255,255,0.1)` и сливалась с фоном `#FDFBF7`.
+
+### Решение
+- `src/components/ProfitCalculator.tsx`:
+  - unfilled track color изменён с `#d1d5db` на `#9ca3af`;
+  - высота слайдера увеличена с `h-2` до `h-3`.
+- `src/index.css`:
+  - `range-track-light` трек увеличен до `0.75rem`;
+  - добавлены стили `::-moz-range-track` для Firefox;
+  - скорректирован `margin-top` thumb (`-0.1875rem`) под новую высоту трека.
+
+### Проверка
+- Скриншот секции калькулятора: `/tmp/calculator-after.png`.
+- Lighthouse Accessibility: **1.0**, ошибок контраста — **0**.
+
+### Деплой
+- Собран production-бандл (`npm run build`).
+- Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
+- Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_002443`.
+- Коммит и push: `2f85252 fix: make calculator range slider track visible on light background`.
