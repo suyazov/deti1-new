@@ -246,3 +246,28 @@
 - Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
 - Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_002443`.
 - Коммит и push: `2f85252 fix: make calculator range slider track visible on light background`.
+
+## 2026-06-15 — Редизайн блока «Слово основателя»
+
+### Проблема
+Блок выглядел неаккуратно: перекрывающая иконка кавычек, разрозненные зоны текста, избыточные отступы, нечёткая визуальная иерархия.
+
+### Решение
+- `src/sections/FounderWords.tsx` полностью переработан:
+  - чистая белая карточка с мягкой тенью и скруглением `32–40px`;
+  - двухколоночный layout: фото + подпись + соцсети слева, текст + цитата + биография справа;
+  - убрана громоздкая иконка Quote;
+  - цитата выделена мягким teal-фоном без левой границы;
+  - добавлен `id="founder"` для якорной навигации;
+  - размеры шрифтов приведены к единой шкале.
+- `AGENTS.md` обновлён описанием изменений.
+
+### Проверка
+- Скриншот: `/tmp/founder-after.png`.
+- Lighthouse Accessibility: **1.0**, ошибок контраста — **0**.
+
+### Деплой
+- Собран production-бандл (`npm run build`).
+- Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
+- Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_003450`.
+- Коммит и push: `3e155a1 redesign FounderWords section: cleaner two-column layout, better spacing, visible social links`.
