@@ -1,5 +1,6 @@
 import { Hero } from '@/sections/Hero';
 import { FloatingCards } from '@/sections/FloatingCards';
+import { WhyParentsChoose } from '@/sections/WhyParentsChoose';
 import { HowWeDoIt } from '@/sections/HowWeDoIt';
 import { StepsSlider } from '@/sections/StepsSlider';
 import { ProfitCalculator } from '@/components/ProfitCalculator';
@@ -20,6 +21,7 @@ export default function Home() {
       {/* Для них: привлечение и выгода */}
       <Hero />
       <FloatingCards />
+      <WhyParentsChoose />
       <CompactInfo />
 
       {/* Как это работает */}
