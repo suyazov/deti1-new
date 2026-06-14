@@ -1,12 +1,79 @@
-import { Palette, FileText, Calculator, Users, BookOpen, Shield } from 'lucide-react';
+import {
+  Palette,
+  FolderOpen,
+  Calculator,
+  Users,
+  GraduationCap,
+  ClipboardList,
+  PenTool,
+  HeartHandshake,
+  UserCircle,
+} from 'lucide-react';
 
 const features = [
-  { icon: Palette, title: 'Готовый бренд', desc: 'Фирменное оформление, логотип, шаблоны', color: 'text-sky-500', bg: 'bg-sky-100' },
-  { icon: FileText, title: 'Все документы', desc: 'По кадрам, питанию, охране труда', color: 'text-pink-500', bg: 'bg-pink-100' },
-  { icon: Calculator, title: 'Финмодель', desc: 'Расчёты вложений и возврата', color: 'text-yellow-500', bg: 'bg-yellow-100' },
-  { icon: Users, title: 'Клиенты сразу', desc: 'Готовая система привлечения родителей', color: 'text-green-500', bg: 'bg-green-100' },
-  { icon: BookOpen, title: 'Обучение', desc: 'Администраторы, воспитатели и руководитель', color: 'text-purple-500', bg: 'bg-purple-100' },
-  { icon: Shield, title: 'Юрподдержка', desc: 'Помощь с лицензией и договорами', color: 'text-orange-500', bg: 'bg-orange-100' },
+  {
+    icon: Palette,
+    title: 'Готовый бренд и стиль',
+    desc: 'Фирменное оформление, логотип и шаблоны — чтобы сразу выглядеть профессионально.',
+    color: 'text-sky-600',
+    bg: 'bg-sky-100',
+  },
+  {
+    icon: FolderOpen,
+    title: 'Документы и юрподдержка',
+    desc: 'Полный комплект по кадрам, питанию, охране труда + помощь с лицензией и договорами.',
+    color: 'text-pink-600',
+    bg: 'bg-pink-100',
+  },
+  {
+    icon: Calculator,
+    title: 'Финансовая модель',
+    desc: 'Сколько вложить, когда вернётся, точка безубыточности и варианты роста под ваше помещение.',
+    color: 'text-yellow-600',
+    bg: 'bg-yellow-100',
+  },
+  {
+    icon: Users,
+    title: 'Клиенты с первого месяца',
+    desc: 'Настраиваем систему привлечения родителей и лидогенерацию, чтобы к вам приходили ваши клиенты.',
+    color: 'text-green-600',
+    bg: 'bg-green-100',
+  },
+  {
+    icon: GraduationCap,
+    title: 'Обучение и методист',
+    desc: 'Администраторы учатся продавать, воспитатели — работать с детьми, вы — руководить. Готовые планы занятий от штатного методиста.',
+    color: 'text-purple-600',
+    bg: 'bg-purple-100',
+  },
+  {
+    icon: ClipboardList,
+    title: 'Смета и поставщики',
+    desc: 'Готовая смета на запуск: от мебели и игрушек до туалетных принадлежностей. Проверенные поставщики и цены.',
+    color: 'text-orange-600',
+    bg: 'bg-orange-100',
+  },
+  {
+    icon: PenTool,
+    title: 'Дизайнер в команде',
+    desc: 'Поможем оформить посты, листовки и презентации в едином фирменном стиле.',
+    color: 'text-indigo-600',
+    bg: 'bg-indigo-100',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Поддержка команды',
+    desc: 'Регулярно контролируем работу филиалов, сохраняем единые стандарты и качество сервиса.',
+    color: 'text-teal-600',
+    bg: 'bg-teal-100',
+  },
+  {
+    icon: UserCircle,
+    title: 'Личное сопровождение Анны',
+    desc: 'Анна лично включается в запуск: помогает выстроить команду, процессы и устойчивую систему.',
+    color: 'text-rose-600',
+    bg: 'bg-rose-100',
+  },
 ];
 
 export function FloatingCards() {
@@ -24,7 +91,7 @@ export function FloatingCards() {
             Всё, что нужно для уверенного старта
           </h2>
           <p className="mt-3 text-sm md:text-base text-[#636e72] max-w-2xl mx-auto">
-            Берём на себя самое сложное: от бренда и документов до клиентов и обучения команды
+            Берём на себя самое сложное: от бренда и документов до клиентов, обучения и личного сопровождения
           </p>
         </div>
 
@@ -46,7 +113,7 @@ export function FloatingCards() {
           </div>
 
           {/* Features list */}
-          <div className="grid grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 stagger-children">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 stagger-children">
             {features.map((f, i) => (
               <div
                 key={i}
