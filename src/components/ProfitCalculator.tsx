@@ -55,9 +55,9 @@ function RangeInput({
           setLocalValue(val);
           onChange(val);
         }}
-        className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-black/5 accent-[#00897b] hover:accent-[#00796b] focus:outline-none focus:ring-2 focus:ring-[#00897b]/30"
+        className="w-full h-3 rounded-lg appearance-none cursor-pointer accent-[#00897b] hover:accent-[#00796b] focus:outline-none focus:ring-2 focus:ring-[#00897b]/30 range-track-light"
         style={{
-          background: `linear-gradient(to right, #00897b 0%, #00897b ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) 100%)`,
+          background: `linear-gradient(to right, #00897b 0%, #00897b ${((localValue - min) / (max - min)) * 100}%, #9ca3af ${((localValue - min) / (max - min)) * 100}%, #9ca3af 100%)`,
         }}
       />
       <div className="flex justify-between text-[11px] text-[#636e72]">

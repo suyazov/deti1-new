@@ -363,4 +363,45 @@
   .animate-fade-in-up {
     animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
+
+  /* Range input styles for light theme */
+  input[type="range"].range-track-light::-webkit-slider-runnable-track {
+    height: 0.75rem;
+    border-radius: 9999px;
+  }
+
+  input[type="range"].range-track-light::-moz-range-track {
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: transparent;
+  }
+
+  input[type="range"].range-track-light::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin-top: -0.1875rem;
+    border-radius: 9999px;
+    background: #00897b;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  input[type="range"].range-track-light::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  input[type="range"].range-track-light::-moz-range-thumb {
+    width: 1.125rem;
+    height: 1.125rem;
+    border-radius: 9999px;
+    background: #00897b;
+    border: 2px solid #ffffff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
 }
