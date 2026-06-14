@@ -34,7 +34,7 @@ Recent project changes:
 - Added server-side prerender for SEO (`prerender.js`, Puppeteer).
   Build command: `npm run build:prerender`.
 - Deploy command (preserves /v1 archive): `rsync -avz --exclude=v1 --delete dist/ /var/www/deti1.ru/`.
-- Page structure: partner benefits first, then company info.
+- Page structure: partner benefits first, then company info, plus new `WeArePractitioners` section.
 - Copy: "10 лет опыта" replaced with "с 2016 года" across the site.
 - Visual style: added colorful kid-friendly icons, badges, and light sections.
 - Form submissions are sent to a Telegram chat via `/api/send.php`.
@@ -43,5 +43,5 @@ Recent project changes:
 - Phone input uses `@react-input/mask` with `+7 (___) ___-__-__`.
 - Footer/FounderWords icons unified in Lucide style (MAX uses `Globe`).
 - Images are served as WebP with explicit `width`/`height` and lazy loading.
-- `CompactInfo` is lazy-loaded to reduce initial JS bundle size.
+- `CompactInfo` is rendered synchronously so its SEO content is included in prerender.
 - Yandex.Metrika is loaded after page load to reduce render blocking.
