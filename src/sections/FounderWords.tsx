@@ -10,37 +10,40 @@ export function FounderWords() {
           <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-white/10 text-[#00c9a7] border border-white/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
             СЛОВО ОСНОВАТЕЛЯ
           </span>
+          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl mx-auto">
+            С искренностью и заботой
+          </h2>
         </div>
 
         <div className="glass-card rounded-3xl p-6 md:p-10 xl:p-8 relative">
           <Quote className="absolute top-6 left-6 w-10 h-10 md:w-14 md:h-14 text-[#00c9a7]/20" />
 
           <div className="relative z-10 max-w-4xl mx-auto">
-            <p className="text-lg sm:text-xl md:text-2xl xl:text-xl font-medium text-white leading-relaxed mb-6">
-              Мы вложили в ваш будущий результат сотни миллионов рублей и{' '}
-              <span className="text-[#00c9a7]">тысячи часов</span> усердной работы.
-            </p>
+            <div className="space-y-4 text-white/80 text-sm sm:text-base xl:text-sm leading-relaxed mb-6">
+              <p className="text-lg sm:text-xl md:text-2xl xl:text-xl font-medium text-white leading-relaxed">
+                Моя цель — помочь девушкам открыть детский сад правильно, спокойно и без финансовых потерь.
+              </p>
+              <p>
+                В наших садах — уважение к детям, внимание к запросам родителей и забота о каждом сотруднике.
+                Мы создаём пространство, где комфортно всем: детям, родителям, команде и партнёрам.
+              </p>
+              <p>
+                С вами — честно и открыто: не обещаем «золотые горы», а показываем реальные цифры, риски и точки роста.
+              </p>
+            </div>
 
-            <div className="space-y-4 text-white/70 text-sm sm:text-base xl:text-sm leading-relaxed">
-              <p>
-                Эти цифры — не просто показатель масштаба. Это сотни переговоров, проработанные сметы, сотни педагогов.
-                Это ошибки, которые мы уже пережили за других партнёров. И каждый раз мы находили решение и превращали опыт в систему.
-              </p>
-              <p>
-                Теперь всё это работает на вас. Вы заходите в проект с командой, которая уже знает, как избежать большинства рисков.
-              </p>
-              <p>
-                Сеть «Дети в приоритете» — доказательство того, что модель работает в разных городах, районах, условиях.
-                А ещё это тысячи детей и родителей, которые выбрали нас.
-              </p>
-              <p className="text-white font-medium">
-                Мы будем рядом, чтобы ваш филиал стал следующим успешным примером.
+            <div className="rounded-2xl border-l-4 border-[#00c9a7] bg-white/5 p-5 md:p-6 mb-6">
+              <p className="text-white/90 text-sm sm:text-base xl:text-sm leading-relaxed italic">
+                «Я сама прошла через трудности и хочу, чтобы вы не повторяли этих ошибок.
+                Хочу, чтобы дети были окружены заботой, уважением со стороны взрослых,
+                получали качественное образование и находились в безопасной среде»
               </p>
             </div>
 
             <div className="mt-8 pt-6 border-t border-white/10">
-              <p className="text-white font-semibold text-base">Анна Игоревна Суязова</p>
-              <p className="text-white/50 text-sm">Основатель и генеральный директор сети</p>
+              <p className="text-white font-semibold text-base">Анна Суязова</p>
+              <p className="text-white/50 text-sm">Предприниматель, основатель франшизы «Дети в приоритете»</p>
+              <p className="text-white/40 text-xs mt-1">С 2015 года в сфере дошкольного развития. Управляю работающими детскими садами, которые открыла с нуля.</p>
 
               <div className="mt-4">
                 <p className="text-xs text-white/40 mb-3">Следите за развитием сети в каналах основателя</p>
