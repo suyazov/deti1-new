@@ -189,10 +189,8 @@ export function CompactInfo() {
                 <div className="mb-5">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-white">650 000 ₽</span>
-                    <span className="text-base text-white/50 line-through">850 000 ₽</span>
                   </div>
                   <p className="text-white/60 text-sm mt-1">Паушальный взнос + 40 000 ₽/мес роялти</p>
-                  <p className="text-sm text-[#e73c47] font-medium mt-1">Скидка 200 000 ₽ для первых партнёров</p>
                 </div>
                 <ul className="space-y-2 mb-6">
                   {franchiseFeatures.map((f, i) => (

@@ -10,7 +10,7 @@ const stats = [
   },
   {
     icon: ShieldCheck,
-    title: 'Лицензия Минобрнауки',
+    title: 'Образовательная лицензия',
     desc: 'Рег. № Л035-01217-26/00681824 от 19.09.2023',
   },
   {
@@ -39,7 +39,7 @@ export function Stats() {
       <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
         <div className="blur-reveal mb-5 md:mb-6 xl:mb-4" style={{ transitionDelay: '0.05s' }}>
           <h2 className="text-[clamp(26px,6vw,52px)] xl:text-[clamp(28px,3.5vw,46px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl">
-            Факты о франшизе
+            О франшизе
           </h2>
         </div>
 

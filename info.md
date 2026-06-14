@@ -33,6 +33,7 @@ Structure:
 Recent project changes:
 - Added server-side prerender for SEO (`prerender.js`, Puppeteer).
   Build command: `npm run build:prerender`.
+- Deploy command (preserves /v1 archive): `rsync -avz --exclude=v1 --delete dist/ /var/www/deti1.ru/`.
 - Form submissions are sent to a Telegram chat via `/api/send.php`.
   The bot token is configured in `public/api/send.php`.
 - Email across the site is `anna@deti1.ru`.

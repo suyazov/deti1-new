@@ -1,6 +1,4 @@
-import { ArrowRight, Mouse } from 'lucide-react';
-import { HeroVisual } from '@/components/HeroVisual';
-import { HeroMiniSlider } from '@/components/HeroMiniSlider';
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -8,33 +6,16 @@ export function Hero() {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const headlineLines = [
-    'Откройте свой',
-    'детский сад',
-    'с прибылью от',
-    '420 000 ₽ в месяц',
-  ];
-
   return (
     <section className="relative min-h-[auto] lg:min-h-[92vh] xl:min-h-[100vh] hero-gradient flex items-center overflow-hidden pt-16 lg:pt-20">
-      {/* Decorative glow orbs - hidden on small mobile */}
+      {/* Decorative glow orbs */}
       <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#00c9a7]/20 -top-40 -right-40 animate-pulse-glow" />
       <div className="glow-orb w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-[#122e2e] -bottom-40 -left-40" />
-      <div className="glow-orb w-[250px] h-[250px] md:w-[350px] md:h-[350px] bg-[#00c9a7]/10 top-1/2 left-1/4 animate-float hidden sm:block" />
-
-      {/* Subtle grid overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
-      />
 
       <div className="relative z-10 w-full max-w-[1240px] mx-auto px-4 sm:px-5 py-8 md:py-10 lg:py-12 xl:py-6 xl:pb-12">
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10 xl:gap-8">
           {/* Left column - content */}
-          <div className="flex-1 xl:max-w-[700px] min-w-0 w-full">
+          <div className="flex-1 xl:max-w-[620px] min-w-0 w-full">
             <div
               className="inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 xl:mb-4 opacity-0 animate-fade-in-up"
               style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
@@ -44,41 +25,20 @@ export function Hero() {
             </div>
 
             <h1 className="text-[clamp(28px,9vw,56px)] sm:text-[clamp(32px,7vw,64px)] lg:text-[clamp(38px,5vw,56px)] xl:text-[clamp(38px,4vw,50px)] font-bold leading-[1.08] lg:leading-[1.05] xl:leading-[1.05] tracking-tight text-white mb-4 sm:mb-6 xl:mb-4 break-words">
-              {headlineLines.map((line, i) => (
-                <span
-                  key={i}
-                  className="block text-reveal-line"
-                  style={{
-                    transitionDelay: `${0.1 + i * 0.1}s`,
-                    animationDelay: `${0.1 + i * 0.1}s`,
-                  }}
-                >
-                  {i === 3 ? (
-                    <>
-                      <span className="text-gradient">{line.split(' ').slice(0, 2).join(' ')}</span>{' '}
-                      {line.split(' ').slice(2).join(' ')}
-                    </>
-                  ) : (
-                    line
-                  )}
-                </span>
-              ))}
+              <span className="block text-reveal-line" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
+              <span className="block text-reveal-line" style={{ animationDelay: '0.2s' }}>детский сад</span>
+              <span className="block text-reveal-line" style={{ animationDelay: '0.3s' }}>
+                <span className="text-gradient">с прибылью</span> от 420 000 ₽
+              </span>
+              <span className="block text-reveal-line" style={{ animationDelay: '0.4s' }}>в месяц</span>
             </h1>
 
             <p
               className="text-base sm:text-lg md:text-lg xl:text-[15px] text-white/70 leading-relaxed xl:leading-[1.5] mb-5 sm:mb-6 xl:mb-4 max-w-[560px] opacity-0 animate-blur-reveal"
               style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
             >
-              Готовая система запуска под контролем основателя Анны Суязовой. 10 лет опыта, действующие сады, лицензия и первые заявки ещё до открытия.
+              Готовая система запуска детского сада. 10 лет опыта, действующие сады, образовательная лицензия и первые заявки ещё до открытия.
             </p>
-
-            {/* Mini slider */}
-            <div
-              className="mb-6 sm:mb-8 xl:mb-5 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}
-            >
-              <HeroMiniSlider />
-            </div>
 
             {/* CTA */}
             <div
@@ -102,20 +62,26 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Right column - visual directions */}
+          {/* Right column - photo */}
           <div
-            className="flex-1 w-full max-w-[600px] xl:max-w-[480px] min-w-0 opacity-0 animate-slide-in-right"
+            className="flex-1 w-full max-w-[600px] xl:max-w-[520px] min-w-0 opacity-0 animate-slide-in-right"
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
-            <HeroVisual />
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00c9a7]/20 to-[#e73c47]/10 rounded-2xl lg:rounded-3xl blur-2xl" />
+              <div className="relative glass-card rounded-2xl lg:rounded-3xl p-2 sm:p-3">
+                <img
+                  src="/photos/img_3759.jpg"
+                  alt="Интерьер детского сада «Дети в приоритете»"
+                  width="800"
+                  height="600"
+                  loading="eager"
+                  className="w-full h-auto rounded-xl lg:rounded-2xl object-cover aspect-[4/3]"
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator */}
-      <div className="hidden sm:flex absolute bottom-6 md:bottom-8 xl:bottom-10 left-1/2 -translate-x-1/2 flex-col items-center gap-2 opacity-0 animate-fade-in-up" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
-        <Mouse className="w-5 h-5 md:w-6 md:h-6 text-white/40" />
-        <span className="w-1.5 h-1.5 rounded-full bg-[#00c9a7] animate-scroll-bounce" />
       </div>
     </section>
   );
