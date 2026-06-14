@@ -23,7 +23,7 @@ export function FloatingCards() {
           <h2 className="text-[clamp(24px,4vw,42px)] xl:text-[clamp(26px,3vw,38px)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mx-auto">
             Всё, что нужно для уверенного старта
           </h2>
-          <p className="mt-3 text-sm md:text-base text-[#666666] max-w-2xl mx-auto">
+          <p className="mt-3 text-sm md:text-base text-[#636e72] max-w-2xl mx-auto">
             Берём на себя самое сложное: от бренда и документов до клиентов и обучения команды
           </p>
         </div>
@@ -41,7 +41,7 @@ export function FloatingCards() {
             />
             <div className="mt-2 sm:mt-3 px-1 sm:px-2 pb-0.5 sm:pb-1">
               <p className="text-xs sm:text-sm font-semibold text-[#1a1a1a]">Реальные дети, реальные занятия</p>
-              <p className="text-[10px] sm:text-xs text-[#666666]">Работаем с 2016 года</p>
+              <p className="text-[10px] sm:text-xs text-[#636e72]">Работаем с 2016 года</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ export function FloatingCards() {
                   <f.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${f.color}`} />
                 </div>
                 <h3 className="text-xs sm:text-sm font-semibold text-[#1a1a1a] mb-0.5">{f.title}</h3>
-                <p className="text-[10px] sm:text-[11px] text-[#666666] leading-snug">{f.desc}</p>
+                <p className="text-[10px] sm:text-[11px] text-[#636e72] leading-snug">{f.desc}</p>
               </div>
             ))}
           </div>

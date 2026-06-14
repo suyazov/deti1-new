@@ -75,7 +75,7 @@ export function Hero() {
                 'Помощь с лицензией, помещением и персоналом',
                 'Маркетинг и первые клиенты до запуска',
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-[#2D3436]/70">
+                <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-[#636e72]">
                   <span className="w-5 h-5 rounded-full bg-sky-400/20 flex items-center justify-center flex-shrink-0">
                     <Star className="w-3 h-3 text-sky-400" />
                   </span>
@@ -143,7 +143,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-xs sm:text-sm font-bold text-[#2D3436]">2000+</p>
-                  <p className="text-[10px] sm:text-xs text-[#2D3436]/60">воспитанников</p>
+                  <p className="text-[10px] sm:text-xs text-[#636e72]">воспитанников</p>
                 </div>
               </div>
             </div>

@@ -33,13 +33,13 @@ function RangeInput({
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2 text-white/80">
-          <Icon className="w-4 h-4 text-[#00c9a7]" />
+        <div className="flex items-center gap-2 text-[#2D3436]/80">
+          <Icon className="w-4 h-4 text-[#00897b]" />
           <span className="text-sm font-medium">{label}</span>
         </div>
         <div className="text-right">
-          <span className="text-lg font-bold text-white">{formatMoney(localValue)}</span>
-          <span className="text-xs text-white/50 ml-1">{unit}</span>
+          <span className="text-lg font-bold text-[#2D3436]">{formatMoney(localValue)}</span>
+          <span className="text-xs text-[#636e72] ml-1">{unit}</span>
         </div>
       </div>
       <input
@@ -55,12 +55,12 @@ function RangeInput({
           setLocalValue(val);
           onChange(val);
         }}
-        className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-white/10 accent-[#00c9a7] hover:accent-[#00b597] focus:outline-none focus:ring-2 focus:ring-[#00c9a7]/30"
+        className="w-full h-2 rounded-lg appearance-none cursor-pointer bg-black/5 accent-[#00897b] hover:accent-[#00796b] focus:outline-none focus:ring-2 focus:ring-[#00897b]/30"
         style={{
-          background: `linear-gradient(to right, #00c9a7 0%, #00c9a7 ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) 100%)`,
+          background: `linear-gradient(to right, #00897b 0%, #00897b ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) ${((localValue - min) / (max - min)) * 100}%, rgba(255,255,255,0.1) 100%)`,
         }}
       />
-      <div className="flex justify-between text-[11px] text-white/60">
+      <div className="flex justify-between text-[11px] text-[#636e72]">
         <span>{formatMoney(min)}</span>
         <span>{formatMoney(max)}</span>
       </div>
@@ -114,19 +114,19 @@ export function ProfitCalculator() {
   }, [children, avgCheck, rent]);
 
   return (
-    <section id="calculator" className="section-dark py-10 md:py-14 xl:py-8 relative overflow-hidden">
-      <div className="glow-orb w-[400px] h-[400px] bg-[#00c9a7]/10 -left-40 top-0" />
-      <div className="glow-orb w-[300px] h-[300px] bg-[#e73c47]/5 -right-40 bottom-0" />
+    <section id="calculator" className="section-light py-10 md:py-14 xl:py-8 relative overflow-hidden">
+      <div className="glow-orb w-[400px] h-[400px] bg-[#00897b]/10 -left-40 top-0" />
+      <div className="glow-orb w-[300px] h-[300px] bg-[#dc2626]/5 -right-40 bottom-0" />
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-5">
         <div className="text-center mb-5 md:mb-6 xl:mb-4">
-          <span className="inline-block text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,201,167,0.1)] text-[#00c9a7] border border-[rgba(0,201,167,0.15)] px-4 py-1.5 rounded-full mb-4">
+          <span className="inline-block text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,137,123,0.1)] text-[#00897b] border border-[rgba(0,137,123,0.15)] px-4 py-1.5 rounded-full mb-4">
             КАЛЬКУЛЯТОР
           </span>
-          <h2 className="text-[clamp(26px,3.5vw,48px)] xl:text-[clamp(24px,3vw,40px)] font-bold leading-[1.1] tracking-tight text-white max-w-3xl mx-auto mb-3">
+          <h2 className="text-[clamp(26px,3.5vw,48px)] xl:text-[clamp(24px,3vw,40px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto mb-3">
             Оцените операционную прибыль своего сада
           </h2>
-          <p className="text-white/60 max-w-xl mx-auto text-sm xl:text-xs">
+          <p className="text-[#636e72] max-w-xl mx-auto text-sm xl:text-xs">
             Подвигайте ползунки — это упрощённая оценка. Полный расчёт с точками безубыточности и сценариями — в пакете франшизы.
           </p>
         </div>
@@ -135,10 +135,10 @@ export function ProfitCalculator() {
           {/* Inputs */}
           <div className="glass-card rounded-3xl p-5 md:p-6">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-[#00c9a7]/15 flex items-center justify-center">
-                <Calculator className="w-4.5 h-4.5 text-[#00c9a7]" />
+              <div className="w-9 h-9 rounded-xl bg-[#00897b]/15 flex items-center justify-center">
+                <Calculator className="w-4.5 h-4.5 text-[#00897b]" />
               </div>
-              <h3 className="text-base font-semibold text-white">Параметры</h3>
+              <h3 className="text-base font-semibold text-[#2D3436]">Параметры</h3>
             </div>
 
             <div className="space-y-4 md:space-y-5">
@@ -179,45 +179,45 @@ export function ProfitCalculator() {
           <div className="flex flex-col gap-4">
             <div className="glass-card rounded-3xl p-5 md:p-6 flex-1">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-xl bg-[#e73c47]/15 flex items-center justify-center">
-                  <TrendingUp className="w-4.5 h-4.5 text-[#e73c47]" />
+                <div className="w-9 h-9 rounded-xl bg-[#dc2626]/15 flex items-center justify-center">
+                  <TrendingUp className="w-4.5 h-4.5 text-[#dc2626]" />
                 </div>
-                <h3 className="text-base font-semibold text-white">Результат в месяц</h3>
+                <h3 className="text-base font-semibold text-[#2D3436]">Результат в месяц</h3>
               </div>
 
               <div className="space-y-3">
-                <div className="flex items-center justify-between p-3 rounded-2xl bg-white/5">
-                  <span className="text-white/70 text-sm">Выручка</span>
-                  <span className="text-lg font-bold text-white">{formatMoney(calculation.revenue)} ₽</span>
+                <div className="flex items-center justify-between p-3 rounded-2xl bg-black/5">
+                  <span className="text-[#636e72] text-sm">Выручка</span>
+                  <span className="text-lg font-bold text-[#2D3436]">{formatMoney(calculation.revenue)} ₽</span>
                 </div>
 
-                <div className="flex items-center justify-between p-3 rounded-2xl bg-white/5">
-                  <span className="text-white/70 text-sm">Расходы</span>
-                  <span className="text-lg font-bold text-white">{formatMoney(calculation.totalExpenses)} ₽</span>
+                <div className="flex items-center justify-between p-3 rounded-2xl bg-black/5">
+                  <span className="text-[#636e72] text-sm">Расходы</span>
+                  <span className="text-lg font-bold text-[#2D3436]">{formatMoney(calculation.totalExpenses)} ₽</span>
                 </div>
 
-                <div className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-[#00c9a7]/20 to-[#00c9a7]/5 border border-[#00c9a7]/20">
-                  <span className="text-white font-medium text-sm">Прогноз операционной прибыли</span>
-                  <span className={`text-2xl md:text-3xl font-bold ${calculation.operatingProfit >= 0 ? 'text-[#00c9a7]' : 'text-[#e73c47]'}`}>
+                <div className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-[#00897b]/20 to-[#00897b]/5 border border-[#00897b]/20">
+                  <span className="text-[#2D3436] font-medium text-sm">Прогноз операционной прибыли</span>
+                  <span className={`text-2xl md:text-3xl font-bold ${calculation.operatingProfit >= 0 ? 'text-[#005a4f]' : 'text-[#dc2626]'}`}>
                     {formatMoney(calculation.operatingProfit)} ₽
                   </span>
                 </div>
               </div>
 
-              <div className="mt-4 pt-4 border-t border-white/10">
-                <p className="text-[11px] text-white/60 leading-relaxed">
+              <div className="mt-4 pt-4 border-t border-black/10">
+                <p className="text-[11px] text-[#636e72] leading-relaxed">
                   Расчёт приблизительный: включает персонал, питание, эквайринг, аренду, коммунальные услуги и базовый маркетинг. Не учитывает амортизацию, налоги на прибыль/патент и капитальные затраты. Точные цифры зависят от города, помещения и выбранного пакета.
                 </p>
               </div>
             </div>
 
             {/* Mini formula visualization */}
-            <div className="glass-card rounded-2xl p-3 flex items-center justify-center gap-2 text-white/60 text-xs flex-wrap">
-              <span className="bg-white/5 px-2.5 py-1 rounded-lg">Выручка</span>
+            <div className="glass-card rounded-2xl p-3 flex items-center justify-center gap-2 text-[#636e72] text-xs flex-wrap">
+              <span className="bg-black/5 px-2.5 py-1 rounded-lg">Выручка</span>
               <Minus className="w-3.5 h-3.5" />
-              <span className="bg-white/5 px-2.5 py-1 rounded-lg">Расходы</span>
+              <span className="bg-black/5 px-2.5 py-1 rounded-lg">Расходы</span>
               <Equal className="w-3.5 h-3.5" />
-              <span className="bg-[#00c9a7]/10 text-[#00c9a7] px-2.5 py-1 rounded-lg font-medium">Операционная прибыль</span>
+              <span className="bg-[#00897b]/10 text-[#005a4f] px-2.5 py-1 rounded-lg font-medium">Операционная прибыль</span>
             </div>
           </div>
         </div>

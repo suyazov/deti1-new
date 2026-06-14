@@ -56,7 +56,7 @@ export function HowWeDoIt() {
           <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto">
             От идеи до открытия — 5 чётких шагов
           </h2>
-          <p className="mt-3 md:mt-4 text-sm md:text-base xl:text-sm text-[#2D3436]/60 max-w-2xl mx-auto">
+          <p className="mt-3 md:mt-4 text-sm md:text-base xl:text-sm text-[#636e72] max-w-2xl mx-auto">
             Этапы запуска конкретного сада, а не общее описание сотрудничества
           </p>
         </div>
@@ -75,7 +75,7 @@ export function HowWeDoIt() {
                 <span className={`text-xs font-bold ${step.color}`}>{step.num}</span>
               </div>
               <h3 className="text-lg font-semibold text-[#2D3436] mb-2">{step.title}</h3>
-              <p className="text-sm xl:text-[13px] text-[#2D3436]/60 leading-relaxed">{step.desc}</p>
+              <p className="text-sm xl:text-[13px] text-[#636e72] leading-relaxed">{step.desc}</p>
             </div>
           ))}
         </div>

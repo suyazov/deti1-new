@@ -10,19 +10,19 @@
     --card-foreground: 195 10% 19%;
     --popover: 0 0% 100%;
     --popover-foreground: 195 10% 19%;
-    --primary: 174 60% 45%;
+    --primary: 174 100% 30%;
     --primary-foreground: 0 0% 100%;
     --secondary: 40 30% 95%;
     --secondary-foreground: 195 10% 19%;
     --muted: 40 20% 94%;
-    --muted-foreground: 195 8% 45%;
-    --accent: 174 60% 45%;
+    --muted-foreground: 195 8% 35%;
+    --accent: 174 100% 30%;
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84% 60%;
+    --destructive: 0 74% 45%;
     --destructive-foreground: 0 0% 100%;
     --border: 40 20% 90%;
     --input: 40 20% 90%;
-    --ring: 174 60% 45%;
+    --ring: 174 100% 30%;
     --radius: 0.75rem;
 
     --bg-dark: #FDFBF7;
@@ -32,11 +32,11 @@
     --bg-light-card: #ffffff;
     --text-dark: #2D3436;
     --text-secondary: #636e72;
-    --text-muted: rgba(45, 52, 54, 0.65);
-    --accent-teal: #00b894;
-    --accent-teal-soft: rgba(0, 184, 148, 0.12);
-    --accent-coral: #e73c47;
-    --accent-coral-soft: rgba(231, 60, 71, 0.12);
+    --text-muted: rgba(99, 110, 114, 0.85);
+    --accent-teal: #00897b;
+    --accent-teal-soft: rgba(0, 137, 123, 0.12);
+    --accent-coral: #dc2626;
+    --accent-coral-soft: rgba(220, 38, 38, 0.12);
     --glass-border: rgba(0, 0, 0, 0.08);
     --glass-bg: rgba(255, 255, 255, 0.72);
   }
@@ -113,7 +113,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #2D3436 0%, #00b894 100%);
+    background: linear-gradient(135deg, #2D3436 0%, #00897b 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -121,26 +121,26 @@
 
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200;
-    background: #00b894;
+    background: #00897b;
     color: #ffffff;
   }
 
   .btn-primary:hover {
-    background: #00a383;
+    background: #00796b;
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(0, 184, 148, 0.25);
+    box-shadow: 0 8px 30px rgba(0, 137, 123, 0.25);
   }
 
   .btn-coral {
-    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-200;
-    background: #e73c47;
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-bold transition-all duration-200;
+    background: #dc2626;
     color: #ffffff;
   }
 
   .btn-coral:hover {
-    background: #d32f2f;
+    background: #b91c1c;
     transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(231, 60, 71, 0.25);
+    box-shadow: 0 8px 30px rgba(220, 38, 38, 0.25);
   }
 
   .pill-input {
@@ -155,8 +155,8 @@
   }
 
   .pill-input:focus {
-    border-color: #00b894;
-    box-shadow: 0 0 0 3px rgba(0, 184, 148, 0.12);
+    border-color: #00897b;
+    box-shadow: 0 0 0 3px rgba(0, 137, 123, 0.12);
   }
 
   .nav-glass {
@@ -223,7 +223,7 @@
     border-radius: inherit;
     background: radial-gradient(
       700px circle at var(--mouse-x) var(--mouse-y),
-      rgba(0, 184, 148, 0.10),
+      rgba(0, 137, 123, 0.10),
       transparent 55%
     );
     opacity: var(--grid-spotlight-opacity);
@@ -254,8 +254,8 @@
     padding: 1.5px;
     background: radial-gradient(
       350px circle at var(--spotlight-x) var(--spotlight-y),
-      rgba(0, 184, 148, 0.55),
-      rgba(0, 184, 148, 0.18) 40%,
+      rgba(0, 137, 123, 0.55),
+      rgba(0, 137, 123, 0.18) 40%,
       transparent 70%
     );
     -webkit-mask:
@@ -276,7 +276,7 @@
     border-radius: inherit;
     background: radial-gradient(
       350px circle at var(--spotlight-x) var(--spotlight-y),
-      rgba(0, 184, 148, 0.08),
+      rgba(0, 137, 123, 0.08),
       transparent 55%
     );
     opacity: var(--spotlight-opacity);
@@ -286,8 +286,8 @@
   }
 
   .bento-card:hover {
-    box-shadow: 0 0 45px rgba(0, 184, 148, 0.12), inset 0 0 20px rgba(0, 184, 148, 0.03);
-    border-color: rgba(0, 184, 148, 0.20);
+    box-shadow: 0 0 45px rgba(0, 137, 123, 0.12), inset 0 0 20px rgba(0, 137, 123, 0.03);
+    border-color: rgba(0, 137, 123, 0.20);
     transform: translateY(-4px);
   }
 
@@ -325,10 +325,10 @@
 
   .stat-card.bento-card:hover {
     box-shadow:
-      0 0 0 1px rgba(0, 184, 148, 0.25),
-      0 0 32px rgba(0, 184, 148, 0.10),
-      inset 0 0 24px rgba(0, 184, 148, 0.03);
-    border-color: rgba(0, 184, 148, 0.25);
+      0 0 0 1px rgba(0, 137, 123, 0.25),
+      0 0 32px rgba(0, 137, 123, 0.10),
+      inset 0 0 24px rgba(0, 137, 123, 0.03);
+    border-color: rgba(0, 137, 123, 0.25);
     transform: translateY(-3px);
   }
 

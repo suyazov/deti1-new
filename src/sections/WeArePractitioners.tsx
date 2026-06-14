@@ -35,7 +35,7 @@ export function WeArePractitioners() {
           <h2 className="text-[clamp(26px,5vw,52px)] xl:text-[clamp(28px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mx-auto">
             Мы не теоретики. Мы работаем в этом бизнесе каждый день
           </h2>
-          <p className="mt-3 text-lg md:text-xl font-semibold text-[#00b894]">с 2016 года</p>
+          <p className="mt-3 text-lg md:text-xl font-semibold text-[#00796b]">с 2016 года</p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 xl:gap-6 items-center">
@@ -54,7 +54,7 @@ export function WeArePractitioners() {
                 </div>
               ))}
             </div>
-            <p className="mt-4 text-[#666666] text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 text-[#636e72] text-sm sm:text-base leading-relaxed">
               Во франшизе — только то, что работает вживую. Никакой теории ради теории.
               Только проверенные решения, которые приносят результат.
             </p>
@@ -62,17 +62,17 @@ export function WeArePractitioners() {
 
           <div className="blur-reveal" style={{ transitionDelay: '0.2s' }}>
             <div className="bg-[#FDFBF7] rounded-2xl md:rounded-3xl p-6 md:p-8 text-[#2D3436] relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-40 h-40 bg-[#00b894]/10 rounded-full blur-2xl pointer-events-none" />
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#e73c47]/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-0 right-0 w-40 h-40 bg-[#00796b]/10 rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#dc2626]/10 rounded-full blur-2xl pointer-events-none" />
 
               <div className="relative z-10">
-                <div className="w-12 h-12 rounded-xl bg-[#00b894]/15 flex items-center justify-center mb-5">
-                  <CheckCircle className="w-6 h-6 text-[#00b894]" />
+                <div className="w-12 h-12 rounded-xl bg-[#00796b]/15 flex items-center justify-center mb-5">
+                  <CheckCircle className="w-6 h-6 text-[#00796b]" />
                 </div>
                 <blockquote className="text-xl sm:text-2xl xl:text-xl font-medium leading-relaxed mb-4">
                   «Франшиза основана на опыте, а не на предположениях»
                 </blockquote>
-                <p className="text-[#2D3436]/60 text-sm leading-relaxed">
+                <p className="text-[#636e72] text-sm leading-relaxed">
                   Каждый процесс, каждый документ и каждая цифра в нашей модели проверены на работающих садах.
                   Мы не придумываем — мы берём то, что уже приносит результат, и передаём вам.
                 </p>

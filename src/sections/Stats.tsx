@@ -69,7 +69,7 @@ export function Stats() {
                 </div>
                 <h3 className="text-base font-semibold text-[#2D3436]">{s.title}</h3>
               </div>
-              <p className="text-sm xl:text-[13px] text-[#2D3436]/60 leading-relaxed flex-grow">{s.desc}</p>
+              <p className="text-sm xl:text-[13px] text-[#636e72] leading-relaxed flex-grow">{s.desc}</p>
               {s.link && (
                 <a
                   href={s.link}

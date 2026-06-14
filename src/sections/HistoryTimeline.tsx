@@ -22,11 +22,11 @@ const awards = [
 export function HistoryTimeline() {
   return (
     <section className="section-dark py-12 md:py-16 xl:py-10 relative overflow-hidden">
-      <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#e73c47]/10 -right-40 md:-right-60 top-1/2" />
+      <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#dc2626]/10 -right-40 md:-right-60 top-1/2" />
 
       <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
         <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-6" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-[#00b894] border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
+          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-[#00796b] border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
             ИСТОРИЯ И ПРИЗНАНИЕ
           </span>
           <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto">
@@ -43,9 +43,9 @@ export function HistoryTimeline() {
               <div className="space-y-4">
                 {timeline.map((t, i) => (
                   <div key={i} className="relative flex items-center gap-4">
-                    <div className="absolute left-[-13px] w-3.5 h-3.5 rounded-full bg-[#00b894] border-2 border-[#0a1f1f]" />
-                    <span className="text-sm font-bold text-[#00b894] w-12 flex-shrink-0">{t.year}</span>
-                    <span className="text-sm text-[#2D3436]/70">{t.event}</span>
+                    <div className="absolute left-[-13px] w-3.5 h-3.5 rounded-full bg-[#00796b] border-2 border-[#0a1f1f]" />
+                    <span className="text-sm font-bold text-[#00796b] w-12 flex-shrink-0">{t.year}</span>
+                    <span className="text-sm text-[#636e72]">{t.event}</span>
                   </div>
                 ))}
               </div>
@@ -61,13 +61,13 @@ export function HistoryTimeline() {
                   key={i}
                   className="flex items-start gap-3 glass-card rounded-xl p-3 xl:p-2.5"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-[#00b894]/15 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-4 h-4 text-[#00b894]" />
+                  <div className="w-8 h-8 rounded-lg bg-[#00796b]/15 flex items-center justify-center flex-shrink-0">
+                    <Award className="w-4 h-4 text-[#00796b]" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-[#2D3436] leading-tight">{a.title}</p>
                     {a.year !== '—' && (
-                      <p className="text-xs text-[#2D3436]/50 mt-0.5">{a.year}</p>
+                      <p className="text-xs text-[#636e72] mt-0.5">{a.year}</p>
                     )}
                   </div>
                 </div>
@@ -77,11 +77,11 @@ export function HistoryTimeline() {
               href={TM_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 text-xs text-[#2D3436]/80 hover:bg-[#00b894]/10 hover:border-[#00b894]/30 transition-colors"
+              className="mt-4 inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 text-xs text-[#2D3436]/80 hover:bg-[#00796b]/10 hover:border-[#00796b]/30 transition-colors"
             >
-              <FileBadge className="w-3 h-3 text-[#00b894]" />
+              <FileBadge className="w-3 h-3 text-[#00796b]" />
               Торговая марка № 1019709
-              <ExternalLink className="w-3 h-3 text-[#00b894]" />
+              <ExternalLink className="w-3 h-3 text-[#00796b]" />
             </a>
           </div>
         </div>

@@ -44,12 +44,12 @@ module.exports = {
           card: "#ffffff",
         },
         teal: {
-          DEFAULT: "#00b894",
-          soft: "rgba(0, 184, 148, 0.12)",
+          DEFAULT: "#00897b",
+          soft: "rgba(0, 137, 123, 0.12)",
         },
         coral: {
-          DEFAULT: "#e73c47",
-          soft: "rgba(231, 60, 71, 0.12)",
+          DEFAULT: "#dc2626",
+          soft: "rgba(220, 38, 38, 0.12)",
         },
         mint: "#FDFBF7",
       },

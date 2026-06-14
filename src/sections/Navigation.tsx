@@ -80,7 +80,7 @@ export function Navigation() {
                 href={contacts.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-medium text-[#2D3436]/70 hover:text-[#2D3436] transition-colors"
+                className="text-sm font-medium text-[#636e72] hover:text-[#2D3436] transition-colors"
               >
                 {contacts.phone}
               </a>
@@ -184,7 +184,7 @@ export function Navigation() {
                   <span className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#2D3436]/90 group-hover:text-[#2D3436] transition-colors">
                     {link.label}
                   </span>
-                  <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-[#2D3436]/30 group-hover:text-[#00b894] group-hover:translate-x-1 transition-all" />
+                  <ArrowRight className="w-6 h-6 lg:w-8 lg:h-8 text-[#2D3436]/30 group-hover:text-[#00796b] group-hover:translate-x-1 transition-all" />
                 </Link>
               ))}
             </nav>
@@ -198,7 +198,7 @@ export function Navigation() {
                   className="flex items-center gap-3 text-[#2D3436]/90 hover:text-[#2D3436] px-2 py-2 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#00b894]" />
+                    <Phone className="w-5 h-5 text-[#00796b]" />
                   </div>
                   <span className="text-lg font-medium">{contacts.phone}</span>
                 </a>
@@ -209,7 +209,7 @@ export function Navigation() {
                   className="flex items-center gap-3 text-[#2D3436]/90 hover:text-[#2D3436] px-2 py-2 transition-colors"
                 >
                   <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
-                    <MessageCircle className="w-5 h-5 text-[#00b894]" />
+                    <MessageCircle className="w-5 h-5 text-[#00796b]" />
                   </div>
                   <span className="text-lg font-medium">WhatsApp</span>
                 </a>
@@ -221,7 +221,7 @@ export function Navigation() {
                 >
                   <div className="w-10 h-10 rounded-full bg-black/5 flex items-center justify-center">
                     <svg
-                      className="w-5 h-5 text-[#00b894]"
+                      className="w-5 h-5 text-[#00796b]"
                       viewBox="0 0 24 24"
                       fill="currentColor"
                     >
@@ -234,7 +234,7 @@ export function Navigation() {
 
               {/* CTA */}
               <div className="flex flex-col justify-end">
-                <p className="text-[#2D3436]/60 mb-4 px-2">
+                <p className="text-[#636e72] mb-4 px-2">
                   Получите презентацию франшизы и финансовую модель
                 </p>
                 <Link
