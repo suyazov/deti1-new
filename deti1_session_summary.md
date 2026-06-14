@@ -271,3 +271,36 @@
 - Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
 - Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_003450`.
 - Коммит и push: `3e155a1 redesign FounderWords section: cleaner two-column layout, better spacing, visible social links`.
+
+## 2026-06-15 — Блок «Всё, что нужно для уверенного старта» по презентации
+
+### Проблема
+В блоке `FloatingCards` было всего 6 коротких карточек с непонятными формулировками («Клиенты сразу», «Финмодель»). Создавалось ощущение, что франшиза даёт мало.
+
+### Решение
+- Извлечён текст из PDF-презентации `/root/deti1-assets/franchise-presentation.pdf`.
+- `src/sections/FloatingCards.tsx` переработан:
+  - 9 содержательных карточек вместо 6;
+  - карточки на десктопе показываются в 3 колонки;
+  - тексты взяты из раздела «ФРАНШИЗА: ЧТО ВЫ ПОЛУЧИТЕ»:
+    - Готовый бренд и стиль
+    - Документы и юрподдержка
+    - Финансовая модель (точка безубыточности, варианты роста)
+    - Клиенты с первого месяца (лидогенерация)
+    - Обучение и методист
+    - Смета и поставщики
+    - Дизайнер в команде
+    - Поддержка команды
+    - Личное сопровождение Анны
+  - подзаголовок дополнен личным сопровождением.
+- `AGENTS.md` обновлён.
+
+### Проверка
+- Скриншот: `/tmp/floating-after.png`.
+- Lighthouse Accessibility: **1.0**, ошибок контраста — **0**.
+
+### Деплой
+- Собран production-бандл (`npm run build`).
+- Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
+- Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_004252`.
+- Коммит и push: `ff8ca1c refactor FloatingCards: replace 6 vague cards with 9 detailed features from franchise presentation`.
