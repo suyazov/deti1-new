@@ -186,7 +186,37 @@
 ## Сводка сессии
 Полная версия с развёрнутым текстом всех мини-пакетов из docx лежит в `/tmp/deti1_session_summary.md` и в `deti1_session_summary.md` рядом с проектом.
 
+## Технический рефакторинг по аудиту (2026-06-15)
+
+### Выполнено
+- **Telegram token вынесен из PHP** в `/var/www/deti1-config/config.php` (вне document root).
+- **Rate limit** на `/api/send.php`: не более 3 запросов с одного IP за 60 секунд (PHP + nginx `limit_req`).
+- **CORS** убран (`Access-Control-Allow-Origin: *` удалён).
+- **Валидация телефона**, honeypot и логирование ошибок в `/var/log/deti1/send-errors.log`.
+- **`/v1/` закрыт** в nginx (`return 404`) и удалён из `/var/www/deti1.ru/` (архив в `/var/www/deti1-archive/`).
+- **Главная страница предрендерена**: H1, описание, преимущества, FAQ, контакты и расширенная schema.org в `index.html`.
+- **Schema.org расширен**: `EducationalOrganization`, `founder`, `address`, `contactPoint`, два `Offer` (франшиза 650 000 ₽ и базовый пакет 300 000 ₽), `FAQPage`.
+- **`robots.txt`**: убран `Disallow: /assets/`, добавлен `Disallow: /v1/`.
+- **`sitemap.xml`**: добавлены `<lastmod>`.
+- **Dev-атрибуты `code-path`** убраны из production build (условный плагин в `vite.config.ts`).
+- **Дубли ассетов** удалены (`public/photos/new/`).
+- **Старые бэкапы** очищены; секреты в оставшихся затерты.
+- Nginx перезагружен, конфигурация валидна.
+
+### Требуется действие владельца
+- **Перевыпустить Telegram bot token в @BotFather** и записать новый в `/var/www/deti1-config/config.php`:
+  ```php
+  'bot_token' => 'ВАШ_НОВЫЙ_ТОКЕН',
+  ```
+  Старый токен, который был в `send.php`, считать скомпрометированным.
+
+### Рекомендации после внедрения
+- Проверить отправку формы на проде после вставки нового токена.
+- Рассмотреть замену файлового rate limit на Redis/memcached при росте нагрузки.
+- Подготовить 301-редиректы для старых WordPress URL, если они ещё получают трафик (см. логи 404).
+
 ## Деплой
 - Собрать: `npm run build`
 - Результат из `dist/` копировать в `/var/www/deti1.ru/`
+- Сохранить `consent.html`, `privacy-policy.html`, `api/`, `/var/www/deti1-config/`.
 - Production: https://deti1.ru

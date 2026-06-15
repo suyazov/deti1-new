@@ -432,3 +432,40 @@
 - `src/sections/CTA.tsx`
 - `src/sections/PhotoGallery.tsx` (новый)
 - `public/photos/*.jpeg` (7 новых)
+
+---
+
+## Технический рефакторинг по аудиту (2026-06-15)
+
+### Безопасность
+- Telegram bot token вынесен из `/var/www/deti1.ru/api/send.php` и `/var/www/deti1.ru/v1/api/send.php` во внешний конфиг `/var/www/deti1-config/config.php` (вне document root).
+- Старый захардкоженный токен заменён на плейсхолдер; **требуется перевыпуск токена в BotFather и запись в `/var/www/deti1-config/config.php`**.
+- В `send.php` добавлен rate limit: не более 3 запросов с одного IP за 60 секунд.
+- Убран `Access-Control-Allow-Origin: *`; форма работает с того же домена.
+- Добавлена валидация телефона и логирование ошибок в `/var/log/deti1/send-errors.log`.
+- Старые бэкапы очищены: оставлены 3 последних `.backup.*` и 3 последних `.bak.*`; секреты в них затерты (`REDACTED`).
+
+### Инфраструктура
+- `/v1/` закрыт в nginx (`return 404`) и удалён из `/var/www/deti1.ru/` (архив сохранён в `/var/www/deti1-archive/v1-backup-*.tar.gz`).
+- В nginx добавлен rate limit zone `sendform` для `/api/send.php`.
+- Кеширование `robots.txt` и `sitemap.xml` изменено на 1 час (`public, must-revalidate`).
+- Nginx перезагружен, конфигурация валидна.
+
+### Сборка и SEO/GEO
+- Из `vite.config.ts` убран плагин `kimi-plugin-inspect-react` для production-сборки; dev-атрибуты `code-path` больше не попадают в прод.
+- JS-бандл уменьшился до ~415 KB (был ~433 KB).
+- `index.html` предрендерен: добавлены H1, описание, списки преимуществ, FAQ, контакты, schema.org — всё видно без JS.
+- `robots.txt`: убран `Disallow: /assets/`, добавлен `Disallow: /v1/`.
+- `sitemap.xml`: добавлены `<lastmod>`.
+- Schema.org расширен: `EducationalOrganization`, `founder`, `address`, `contactPoint`, два `Offer` (франшиза 650 000 ₽, базовый пакет 300 000 ₽), `FAQPage`.
+
+### Очистка
+- Удалена дублирующая папка `public/photos/new/`.
+- Удалены старые бэкапы, освобождено дисковое пространство.
+
+### Проверки
+- `npm run build` — успешно.
+- Lighthouse Accessibility — **1.0**.
+- `nginx -t` — успешно.
+- `/v1/` — 404.
+- `/api/send.php` без POST — 405.
