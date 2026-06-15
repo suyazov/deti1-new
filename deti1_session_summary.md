@@ -469,3 +469,26 @@
 - `nginx -t` — успешно.
 - `/v1/` — 404.
 - `/api/send.php` без POST — 405.
+
+---
+
+## Cleanup (2026-06-15)
+
+### Удалено
+- Старые скриншоты в `/root/` (`deti1-fullpage*.png`, `deti1-audit*.png`, `deti1-screenshot*.png`, `deti_*.png`, `mobile-*.png`, `stats-preview.png`).
+- Папка `/root/deti1-screens/`.
+- Дублирующий проект `/root/deti1-new/`.
+- Папка `/root/deti1-assets/` (логотипы и PDF презентации; рабочие ассеты остаются в проекте).
+- Устаревшие файлы `/root/deti.pdf`, `/root/deti_dom.html`.
+- Пустые/мусорные файлы в `/root/` (`, \"`, `)`, `with open...`, `print(Integrity`).
+- Временные скриншоты `/tmp/deti1-screens/`.
+- Build-папка `/tmp/deti1-upload/app/dist/`.
+- Устаревшие файлы проекта: `info.md`, `prerender.js`, `DESIGN_AUDIT.md`.
+- Старые бэкапы `/var/www/deti1.ru.bak.*` и `/var/www/deti1.ru.backup.*`; оставлено по одному последнему.
+
+### Оставлено
+- Рабочий проект `/tmp/deti1-upload/app/`.
+- Конфиг `/var/www/deti1-config/`.
+- Один последний бэкап `/var/www/deti1.ru.bak.20260615_151333`.
+- Один последний backup `/var/www/deti1.ru.backup.20260613_020855`.
+- Архив старой версии `/var/www/deti1-archive/v1-backup-*.tar.gz`.
