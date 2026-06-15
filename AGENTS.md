@@ -118,10 +118,15 @@
 - Скриншоты сохранены в `/tmp/deti1-screens/desktop.png` и `/tmp/deti1-screens/mobile.png` (Puppeteer + системный Chromium, full-page после reveal-прокрутки).
 - Lighthouse (preview `http://127.0.0.1:4173/`):
   - Accessibility: **1.0**
-  - Performance: **0.79** (после мелких правок **0.82**)
+  - Performance: **0.79–0.82**
   - Best Practices: **0.79**
   - SEO: **1.0**
   - Контрастных ошибок: **0**
+- Анимации и динамика (2026-06-15):
+  - Добавлен `useParallax.ts`: мягкий параллакс фоновых `.glow-orb` при скролле (`requestAnimationFrame`, transform-only, пассивный listener).
+  - Добавлен `AnimatedNumber.tsx`: плавный count-up цифр при появлении во viewport (ease-out, 1.5 s).
+  - Подключены в `Hero` (прибыль 420 000 ₽, 2000+ воспитанников) и `Stats` (год 2016, 4,5+ года).
+  - Эффекты мягкие, не мерцают и не дёргают глаз.
 - Мелкие доработки (2026-06-15):
   - `CompactInfo/pricing`: убрана скидка 200 000 ₽ и зачёркнутая цена 850 000 ₽; кнопки тарифов выровнены по высоте (`h-full flex flex-col` + `mt-auto`).
   - `HistoryTimeline`: левая колонка «Путь развития» растянута (`flex-1 justify-between`) — убран лишний воздух.

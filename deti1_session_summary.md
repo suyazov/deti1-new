@@ -366,3 +366,11 @@
 - `HistoryTimeline`: левая колонка «Путь развития» растянута по высоте (`flex-1 flex flex-col justify-between`) — убран лишний воздух.
 - `Footer`: улучшено маркетинговое описание компании; подпись «Канал» заменена на «Telegram-канал».
 - Пересобрано, проверено Lighthouse (Accessibility 1.0, Performance 0.82), задеплоено.
+
+
+## Анимации и динамика (2026-06-15)
+- Добавлен `src/hooks/useParallax.ts` — мягкий параллакс фоновых `.glow-orb` при скролле (transform-only, `requestAnimationFrame`, пассивный listener).
+- Добавлен `src/components/ui/AnimatedNumber.tsx` — плавный count-up цифр при появлении во viewport (ease-out quart, 1.5 s).
+- Подключены в `Hero` (420 000 ₽, 2000+) и `Stats` (2016, 4,5+).
+- Эффекты выбраны мягкие: нет резких мельканий, дёрганий или перегруза.
+- Пересобрано, проверено Lighthouse (Accessibility 1.0), задеплоено.
