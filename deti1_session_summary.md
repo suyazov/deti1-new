@@ -492,3 +492,12 @@
 - Один последний бэкап `/var/www/deti1.ru.bak.20260615_151333`.
 - Один последний backup `/var/www/deti1.ru.backup.20260613_020855`.
 - Архив старой версии `/var/www/deti1-archive/v1-backup-*.tar.gz`.
+
+---
+
+## Восстановление /v1/ (2026-06-15)
+
+- `/v1/` восстановлен из архива `/var/www/deti1-archive/v1-backup-20260615_150257.tar.gz`.
+- В nginx убран `return 404` для `/v1/`; старый `location /v1/` с `try_files` восстановлен.
+- Nginx перезагружен, `/v1/` отдаёт `200 OK`.
+- В `robots.txt` убран `Disallow: /v1/`.

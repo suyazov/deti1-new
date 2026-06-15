@@ -193,7 +193,7 @@
 - **Rate limit** на `/api/send.php`: не более 3 запросов с одного IP за 60 секунд (PHP + nginx `limit_req`).
 - **CORS** убран (`Access-Control-Allow-Origin: *` удалён).
 - **Валидация телефона**, honeypot и логирование ошибок в `/var/log/deti1/send-errors.log`.
-- **`/v1/` закрыт** в nginx (`return 404`) и удалён из `/var/www/deti1.ru/` (архив в `/var/www/deti1-archive/`).
+- **`/v1/` временно закрывался** в nginx (`return 404`) и удалялся из `/var/www/deti1.ru/`; по запросу владельца восстановлен из архива `/var/www/deti1-archive/` и снова доступен.
 - **Главная страница предрендерена**: H1, описание, преимущества, FAQ, контакты и расширенная schema.org в `index.html`.
 - **Schema.org расширен**: `EducationalOrganization`, `founder`, `address`, `contactPoint`, два `Offer` (франшиза 650 000 ₽ и базовый пакет 300 000 ₽), `FAQPage`.
 - **`robots.txt`**: убран `Disallow: /assets/`, добавлен `Disallow: /v1/`.
