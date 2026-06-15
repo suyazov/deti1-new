@@ -330,3 +330,31 @@
 - Скопировано в `/var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
 - Backup предыдущей версии: `/var/www/deti1.ru.bak.20260615_005419`.
 - Коммит и push: `217c73b add WhyParentsChoose section with 7 cards from franchise presentation`.
+
+
+## Системный редизайн (Вариант Б) — 2026-06-15
+
+### Что сделано
+- Внедрена единая дизайн-система:
+  - `src/components/ui/UiCard.tsx`
+  - `src/components/ui/UiButton.tsx`
+  - `src/components/ui/UiIconBox.tsx`
+  - `src/components/ui/SectionHeader.tsx`
+  - Токены в `src/index.css` и `tailwind.config.js`.
+- Рефакторинг секций под новые компоненты:
+  - `Hero`, `FloatingCards`, `WhyParentsChoose`, `CompactInfo`, `HowWeDoIt`, `Stats`, `WeArePractitioners`, `FounderWords`, `HistoryTimeline`, `TeamDepartments`, `CTA`, `Footer`, `Navigation`, `ProfitCalculator`.
+- Исправлен `useScrollReveal.ts`: заменён `IntersectionObserver` на `scroll`/`resize` listener с `getBoundingClientRect`.
+- Исправлены контрастные ошибки (badge, tabs) — Lighthouse Accessibility 1.0, контрастных ошибок 0.
+- Скриншоты: `/tmp/deti1-screens/desktop.png`, `/tmp/deti1-screens/mobile.png`.
+
+### Lighthouse (preview)
+- Performance: 0.79
+- Accessibility: 1.0
+- Best Practices: 0.79
+- SEO: 1.0
+- Контрастных ошибок: 0
+
+### Деплой
+- Backup: `/var/www/deti1.ru.bak.20260615_113458`
+- `rsync -av --delete dist/ /var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
+- Production: https://deti1.ru

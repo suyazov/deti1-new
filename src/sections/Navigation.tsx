@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router';
 import { Menu, X, ArrowRight, Phone, MessageCircle } from 'lucide-react';
+import { UiButton as Button } from '@/components/ui/UiButton';
 import { useScrollHeader } from '@/hooks/useScrollHeader';
 
 const navLinks = [
   { href: '#about', label: 'О франшизе' },
-  { href: '#advantages', label: 'Всё о франшизе' },
+  { href: '#franchise', label: 'Тарифы' },
   { href: '#contact', label: 'Контакты' },
 ];
 
@@ -84,13 +85,11 @@ export function Navigation() {
               >
                 {contacts.phone}
               </a>
-              <Link
-                to="/#contact"
-                onClick={(e) => handleClick(e, '#contact')}
-                className="btn-coral px-5 py-2 text-xs"
-              >
-                Получить КП <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
+              <Button asChild size="sm">
+                <Link to="/#contact" onClick={(e) => handleClick(e, '#contact')}>
+                  Получить КП <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+              </Button>
               <button
                 onClick={() => setMobileOpen(true)}
                 className="flex items-center gap-2 pl-4 pr-5 py-2 rounded-full border border-black/10 text-[#2D3436] hover:bg-black/5 transition-colors"
@@ -237,14 +236,12 @@ export function Navigation() {
                 <p className="text-[#636e72] mb-4 px-2">
                   Получите презентацию франшизы и финансовую модель
                 </p>
-                <Link
-                  to="/#contact"
-                  onClick={(e) => handleClick(e, '#contact')}
-                  className="btn-coral w-full text-center py-4 text-base"
-                >
-                  Получить презентацию
-                  <ArrowRight className="w-5 h-5" />
-                </Link>
+                <Button asChild size="lg" className="w-full">
+                  <Link to="/#contact" onClick={(e) => handleClick(e, '#contact')}>
+                    Получить презентацию
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                </Button>
               </div>
             </div>
           </div>

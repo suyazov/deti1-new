@@ -1,5 +1,8 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Calculator, Users, Banknote, Building2, TrendingUp, Minus, Equal } from 'lucide-react';
+import { UiCard as Card } from './ui/UiCard';
+import { UiIconBox as IconBox } from './ui/UiIconBox';
+import { SectionHeader } from './ui/SectionHeader';
 
 function formatMoney(value: number) {
   return new Intl.NumberFormat('ru-RU').format(Math.round(value));
@@ -120,24 +123,19 @@ export function ProfitCalculator() {
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-5">
         <div className="text-center mb-5 md:mb-6 xl:mb-4">
-          <span className="inline-block text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,137,123,0.1)] text-[#00897b] border border-[rgba(0,137,123,0.15)] px-4 py-1.5 rounded-full mb-4">
-            КАЛЬКУЛЯТОР
-          </span>
-          <h2 className="text-[clamp(26px,3.5vw,48px)] xl:text-[clamp(24px,3vw,40px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto mb-3">
-            Оцените операционную прибыль своего сада
-          </h2>
-          <p className="text-[#636e72] max-w-xl mx-auto text-sm xl:text-xs">
-            Подвигайте ползунки — это упрощённая оценка. Полный расчёт с точками безубыточности и сценариями — в пакете франшизы.
-          </p>
+          <SectionHeader
+            badge="Калькулятор"
+            title="Оцените операционную прибыль своего сада"
+            description="Подвигайте ползунки — это упрощённая оценка. Полный расчёт с точками безубыточности и сценариями — в пакете франшизы."
+            align="center"
+          />
         </div>
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8">
           {/* Inputs */}
-          <div className="glass-card rounded-3xl p-5 md:p-6">
+          <Card variant="default" padding="md" className="border border-black/5 shadow-card">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-9 h-9 rounded-xl bg-[#00897b]/15 flex items-center justify-center">
-                <Calculator className="w-4.5 h-4.5 text-[#00897b]" />
-              </div>
+              <IconBox icon={Calculator} variant="teal" size="sm" />
               <h3 className="text-base font-semibold text-[#2D3436]">Параметры</h3>
             </div>
 
@@ -173,15 +171,13 @@ export function ProfitCalculator() {
                 onChange={setRent}
               />
             </div>
-          </div>
+          </Card>
 
           {/* Result */}
           <div className="flex flex-col gap-4">
-            <div className="glass-card rounded-3xl p-5 md:p-6 flex-1">
+            <Card variant="default" padding="md" className="flex-1 border border-black/5 shadow-card">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-xl bg-[#dc2626]/15 flex items-center justify-center">
-                  <TrendingUp className="w-4.5 h-4.5 text-[#dc2626]" />
-                </div>
+                <IconBox icon={TrendingUp} variant="coral" size="sm" />
                 <h3 className="text-base font-semibold text-[#2D3436]">Результат в месяц</h3>
               </div>
 
@@ -209,16 +205,16 @@ export function ProfitCalculator() {
                   Расчёт приблизительный: включает персонал, питание, эквайринг, аренду, коммунальные услуги и базовый маркетинг. Не учитывает амортизацию, налоги на прибыль/патент и капитальные затраты. Точные цифры зависят от города, помещения и выбранного пакета.
                 </p>
               </div>
-            </div>
+            </Card>
 
             {/* Mini formula visualization */}
-            <div className="glass-card rounded-2xl p-3 flex items-center justify-center gap-2 text-[#636e72] text-xs flex-wrap">
+            <Card variant="default" padding="sm" className="flex items-center justify-center gap-2 text-[#636e72] text-xs flex-wrap border border-black/5 shadow-card">
               <span className="bg-black/5 px-2.5 py-1 rounded-lg">Выручка</span>
               <Minus className="w-3.5 h-3.5" />
               <span className="bg-black/5 px-2.5 py-1 rounded-lg">Расходы</span>
               <Equal className="w-3.5 h-3.5" />
               <span className="bg-[#00897b]/10 text-[#005a4f] px-2.5 py-1 rounded-lg font-medium">Операционная прибыль</span>
-            </div>
+            </Card>
           </div>
         </div>
       </div>

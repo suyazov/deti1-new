@@ -5,7 +5,7 @@
 Рабочая папка проекта: `/tmp/deti1-upload/app` (React + Vite + Tailwind).
 
 ## Текущая задача
-Светлый пастельный редизайн + актуализация контента по презентации и docx.
+Системный редизайн (Вариант Б) завершён: внедрена единая дизайн-система, рефакторинг секций под UiCard/UiButton/UiIconBox/SectionHeader, исправлены reveal-анимации, обновлены скриншоты и задеплоено.
 
 ## План работ
 1. Обновить глобальные стили на светлую пастельную палитру.
@@ -102,11 +102,45 @@
 - ✅ Задеплоено на https://deti1.ru.
 - ⬜ Детальная вкладка «Что входит» с раскрывающимися списками документов — требует дальнейшей проработки.
 
+## Системный редизайн (Вариант Б) — 2026-06-15
+- Созданы единые компоненты дизайн-системы в `src/components/ui/`:
+  - `UiCard.tsx` — универсальная карточка (`default` / `outlined` / `filled` / `hover`, настраиваемый padding).
+  - `UiButton.tsx` — кнопка/ссылка (`primary` / `secondary` / `ghost`, размеры `sm`/`md`/`lg`, `asChild`).
+  - `UiIconBox.tsx` — иконка в цветном круге/квадрате (`teal` / `coral` / `pastel`, размеры).
+  - `SectionHeader.tsx` — единый заголовок секции (`badge`, `title`, `description`, `align`).
+- В `index.css` и `tailwind.config.js` зафиксированы токены: фон `#FDFBF7`, текст `#2D3436`, акценты `#00897b` / `#dc2626`, скругления, тени, анимации.
+- Рефакторинг секций под новые компоненты:
+  - `Hero`, `FloatingCards`, `WhyParentsChoose`, `CompactInfo`, `HowWeDoIt`, `Stats`, `WeArePractitioners`, `FounderWords`, `HistoryTimeline`, `TeamDepartments`, `CTA`, `Footer`, `Navigation`, `ProfitCalculator`.
+- Исправлен `useScrollReveal.ts`: заменён нестабильный `IntersectionObserver` на `scroll`/`resize` listener с `getBoundingClientRect`, чтобы reveal-анимации гарантированно срабатывали при прокрутке.
+- Исправлены контрастные ошибки:
+  - `.badge`: цвет текста изменён с `#00897b` на `#005a4f`.
+  - Вкладки `CompactInfo`: неактивный таб `#2D3436`/70 заменён на `#4a5252`.
+- Скриншоты сохранены в `/tmp/deti1-screens/desktop.png` и `/tmp/deti1-screens/mobile.png` (Puppeteer + системный Chromium, full-page после reveal-прокрутки).
+- Lighthouse (preview `http://127.0.0.1:4173/`):
+  - Accessibility: **1.0**
+  - Performance: **0.79**
+  - Best Practices: **0.79**
+  - SEO: **1.0**
+  - Контрастных ошибок: **0**
+- Деплой: backup `/var/www/deti1.ru.bak.20260615_113458`, `rsync` в `/var/www/deti1.ru/`, production https://deti1.ru доступен.
+
 ## Рекомендации для нового чата
 - Начинать с краткого prompt: «Светлый редизайн deti1.ru по презентации и docx».
 - Передавать сразу: эту выжимку, docx с тарифами, ключевые фото (Hero, FounderWords), ссылку на проект `/tmp/deti1-upload/app`.
 - Не загружать видео `.mov` — они занимают много контекста.
 - Делать сохранения/коммиты после каждого блока.
+
+## Аудит UX/дизайн (2026-06-15)
+Проведён аудит консистентности. Подробный отчёт в `/tmp/deti1-upload/app/DESIGN_AUDIT.md`.
+
+Краткие выводы:
+- Нужна единая система токенов (цвета, типографика, тени, скругления, отступы).
+- Нужен единый компонент `Card` вместо `glass-card` / `light-card` / `bento-card` / inline-стилей.
+- Есть дублирование контента («5 шагов» и «4 шага», «Преимущества» и «Почему родители»).
+- Hero перегружен на mobile.
+- Навигация имеет неочевидные пункты («О франшизе» vs «Всё о франшизе»).
+
+Приоритеты исправления см. в `DESIGN_AUDIT.md`.
 
 ## Сводка сессии
 Полная версия с развёрнутым текстом всех мини-пакетов из docx лежит в `/tmp/deti1_session_summary.md` и в `deti1_session_summary.md` рядом с проектом.

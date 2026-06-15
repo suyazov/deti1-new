@@ -2,20 +2,26 @@ import { useEffect } from 'react';
 
 export function useScrollReveal() {
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
-    );
+    const selectors = '.scroll-reveal, .blur-reveal, .text-reveal-line';
+    const revealElements = () => {
+      const elements = document.querySelectorAll(selectors);
+      const viewportHeight = window.innerHeight;
+      elements.forEach((el) => {
+        if (el.classList.contains('revealed')) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < viewportHeight * 0.92 && rect.bottom > 0) {
+          el.classList.add('revealed');
+        }
+      });
+    };
 
-    const elements = document.querySelectorAll('.scroll-reveal, .blur-reveal, .text-reveal-line');
-    elements.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    revealElements();
+    window.addEventListener('scroll', revealElements, { passive: true });
+    window.addEventListener('resize', revealElements, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', revealElements);
+      window.removeEventListener('resize', revealElements);
+    };
   }, []);
 }

@@ -1,4 +1,7 @@
 import { Award, FileBadge, ExternalLink } from 'lucide-react';
+import { UiCard as Card } from '@/components/ui/UiCard';
+import { UiButton as Button } from '@/components/ui/UiButton';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const TM_LINK = 'https://www1.fips.ru/fips_servl/fips_servlet?DB=RUTM&DocNumber=1019709';
 
@@ -21,48 +24,39 @@ const awards = [
 
 export function HistoryTimeline() {
   return (
-    <section className="section-dark py-12 md:py-16 xl:py-10 relative overflow-hidden">
+    <section className="section-base section-light section-padding">
       <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#dc2626]/10 -right-40 md:-right-60 top-1/2" />
 
-      <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
-        <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-6" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-black/5 text-[#00796b] border border-black/10 px-3 sm:px-4 py-1.5 rounded-full mb-3 sm:mb-4">
-            ИСТОРИЯ И ПРИЗНАНИЕ
-          </span>
-          <h2 className="text-[clamp(24px,5vw,52px)] xl:text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.1] tracking-tight text-[#2D3436] max-w-3xl mx-auto">
-            Десятилетие опыта и федеральные награды
-          </h2>
-        </div>
+      <div className="relative z-10 container-content max-w-[1180px]">
+        <SectionHeader
+          badge="История и признание"
+          title="Десятилетие опыта и федеральные награды"
+        />
 
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 xl:gap-6">
-          {/* Timeline */}
-          <div className="blur-reveal glass-card rounded-2xl p-5 md:p-6 xl:p-5" style={{ transitionDelay: '0.1s' }}>
-            <h3 className="text-lg font-semibold text-[#2D3436] mb-4 xl:mb-3">Путь развития</h3>
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
+          <Card padding="md" className="blur-reveal" style={{ transitionDelay: '0.1s' } as React.CSSProperties}>
+            <h3 className="text-lg font-semibold text-[#2D3436] mb-4">Путь развития</h3>
             <div className="relative pl-5">
               <div className="absolute left-[7px] top-2 bottom-2 w-px bg-black/5" />
               <div className="space-y-4">
                 {timeline.map((t, i) => (
                   <div key={i} className="relative flex items-center gap-4">
-                    <div className="absolute left-[-13px] w-3.5 h-3.5 rounded-full bg-[#00796b] border-2 border-[#0a1f1f]" />
-                    <span className="text-sm font-bold text-[#00796b] w-12 flex-shrink-0">{t.year}</span>
+                    <div className="absolute left-[-13px] w-3.5 h-3.5 rounded-full bg-[#00897b] border-2 border-[#FDFBF7]" />
+                    <span className="text-sm font-bold text-[#00897b] w-12 flex-shrink-0">{t.year}</span>
                     <span className="text-sm text-[#636e72]">{t.event}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </Card>
 
-          {/* Awards */}
-          <div className="blur-reveal glass-card rounded-2xl p-5 md:p-6 xl:p-5" style={{ transitionDelay: '0.2s' }}>
-            <h3 className="text-lg font-semibold text-[#2D3436] mb-4 xl:mb-3">Награды и статусы</h3>
+          <Card padding="md" className="blur-reveal" style={{ transitionDelay: '0.2s' } as React.CSSProperties}>
+            <h3 className="text-lg font-semibold text-[#2D3436] mb-4">Награды и статусы</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {awards.map((a, i) => (
-                <div
-                  key={i}
-                  className="flex items-start gap-3 glass-card rounded-xl p-3 xl:p-2.5"
-                >
-                  <div className="w-8 h-8 rounded-lg bg-[#00796b]/15 flex items-center justify-center flex-shrink-0">
-                    <Award className="w-4 h-4 text-[#00796b]" />
+                <Card key={i} variant="outlined" padding="sm" className="flex items-start gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-[#00897b]/15 flex items-center justify-center flex-shrink-0">
+                    <Award className="w-4 h-4 text-[#00897b]" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-[#2D3436] leading-tight">{a.title}</p>
@@ -70,20 +64,17 @@ export function HistoryTimeline() {
                       <p className="text-xs text-[#636e72] mt-0.5">{a.year}</p>
                     )}
                   </div>
-                </div>
+                </Card>
               ))}
             </div>
-            <a
-              href={TM_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 text-xs text-[#2D3436]/80 hover:bg-[#00796b]/10 hover:border-[#00796b]/30 transition-colors"
-            >
-              <FileBadge className="w-3 h-3 text-[#00796b]" />
-              Торговая марка № 1019709
-              <ExternalLink className="w-3 h-3 text-[#00796b]" />
-            </a>
-          </div>
+            <Button asChild variant="ghost" size="sm" className="mt-4">
+              <a href={TM_LINK} target="_blank" rel="noopener noreferrer">
+                <FileBadge className="w-4 h-4" />
+                Торговая марка № 1019709
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </Button>
+          </Card>
         </div>
       </div>
     </section>

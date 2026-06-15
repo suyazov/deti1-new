@@ -7,23 +7,13 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import {
-  Video, ShieldCheck, FileBadge, Stethoscope, UtensilsCrossed, GraduationCap,
   Cloud, Briefcase, TrendingUp, Building2, UserCog, HeartHandshake,
-  Languages, ClipboardCheck, Heart,
   Check, Sparkles, ArrowRight,
 } from 'lucide-react';
-
-const advantages = [
-  { icon: Video, title: 'Онлайн-видеонаблюдение', desc: 'Родители всегда могут увидеть, как чувствует себя ребёнок и чем он занимается' },
-  { icon: ShieldCheck, title: 'Безопасная среда', desc: 'Безопасная среда и строгое соблюдение всех норм СанПиН' },
-  { icon: FileBadge, title: 'Лицензия', desc: 'Работаем по лицензии: можно оплачивать материнским капиталом' },
-  { icon: Stethoscope, title: 'Медицинский уход', desc: 'В каждом саду — медицинский работник' },
-  { icon: UtensilsCrossed, title: 'Полноценное питание', desc: 'Полноценное питание, чёткий режим дня и тёплая атмосфера' },
-  { icon: GraduationCap, title: 'Готовность к школе', desc: 'Программа развития: после сада ребёнок на 100% готов к школе — без дополнительных кружков и репетиторов' },
-  { icon: Languages, title: 'Билингвальное образование', desc: 'Утро на русском, день на английском. 87% малышей начинают строить фразы уже в первый год' },
-  { icon: ClipboardCheck, title: 'Единый стандарт качества', desc: 'Конспекты и планы занятий обеспечивают одинаковый уровень в каждом филиале' },
-  { icon: Heart, title: 'Забота о каждой семье', desc: 'Фото и видео в приложении, внимание к запросам родителей и забота о каждом ребёнке' },
-];
+import { UiCard as Card } from '@/components/ui/UiCard';
+import { UiButton as Button } from '@/components/ui/UiButton';
+import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const features = [
   'Готовый бренд и стиль',
@@ -93,96 +83,75 @@ const faqs = [
 ];
 
 export function CompactInfo() {
-  const [activeTab, setActiveTab] = useState('advantages');
+  const [activeTab, setActiveTab] = useState('features');
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const tabs = [
+    { value: 'features', label: 'Что входит' },
+    { value: 'audience', label: 'Для кого' },
+    { value: 'pricing', label: 'Стоимость' },
+    { value: 'faq', label: 'FAQ' },
+  ];
+
   return (
-    <section id="advantages" className="section-light py-12 md:py-16 xl:py-10 relative overflow-hidden">
+    <section id="franchise" className="section-base section-light section-padding">
       <div className="glow-orb w-[500px] h-[500px] bg-[#00796b]/10 -right-60 top-0" />
 
-      <div className="relative z-10 max-w-[1240px] mx-auto px-5">
-        <div className="blur-reveal text-center mb-6 md:mb-8 xl:mb-5" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,201,167,0.1)] text-[#00796b] border border-[rgba(0,201,167,0.15)] px-4 py-1.5 rounded-full mb-4">
-            ВСЁ О ФРАНШИЗЕ
-          </span>
-          <h2 className="text-[clamp(28px,3.8vw,52px)] xl:text-[clamp(26px,3.2vw,44px)] font-bold leading-[1.1] tracking-tight text-[#1a1a1a] max-w-3xl mx-auto">
-            Всё необходимое в одном месте
-          </h2>
-        </div>
+      <div className="relative z-10 container-content">
+        <SectionHeader
+          badge="Всё о франшизе"
+          title="Всё необходимое в одном месте"
+        />
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="w-full max-w-2xl mx-auto mb-6 md:mb-8 flex overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden p-1 bg-[#FDFBF7]/5 rounded-full">
-            {[
-              { value: 'advantages', label: 'Преимущества' },
-              { value: 'features', label: 'Что входит' },
-              { value: 'audience', label: 'Для кого' },
-              { value: 'pricing', label: 'Стоимость' },
-              { value: 'faq', label: 'FAQ' },
-            ].map((t) => (
+          <TabsList className="w-full max-w-2xl mx-auto mb-6 md:mb-8 flex overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden p-1 bg-black/5 rounded-full">
+            {tabs.map((t) => (
               <TabsTrigger
                 key={t.value}
                 value={t.value}
-                className="flex-shrink-0 rounded-full text-xs md:text-sm text-[#1a1a1a]/70 hover:text-[#1a1a1a] data-[state=active]:bg-[#FDFBF7] data-[state=active]:text-[#2D3436] py-2 px-3 sm:px-4 transition-colors"
+                className="flex-shrink-0 rounded-full text-xs md:text-sm text-[#4a5252] hover:text-[#2D3436] data-[state=active]:bg-white data-[state=active]:text-[#2D3436] data-[state=active]:shadow-sm py-2 px-3 sm:px-4 transition-colors"
               >
                 {t.label}
               </TabsTrigger>
             ))}
           </TabsList>
 
-          <TabsContent value="advantages" className="mt-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
-              {advantages.map((a, i) => (
-                <div key={i} className="light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-[rgba(0,201,167,0.1)] flex items-center justify-center mb-4">
-                    <a.icon className="w-5 h-5 text-[#00796b]" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1a1a1a] mb-1">{a.title}</h3>
-                  <p className="text-[#636e72] text-sm leading-relaxed">{a.desc}</p>
-                </div>
-              ))}
-            </div>
-          </TabsContent>
-
           <TabsContent value="features" className="mt-0">
-            <div className="glass-card rounded-3xl p-6 md:p-10 bg-[#FDFBF7]">
+            <Card padding="lg">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
                 {features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 rounded-xl bg-black/5 border border-black/10">
-                    <div className="w-8 h-8 rounded-lg bg-[#00796b]/15 flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-[#00796b]" />
-                    </div>
-                    <span className="text-[#2D3436]/90 text-sm font-medium">{f}</span>
+                  <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-black/5 border border-black/5">
+                    <IconBox icon={Check} size="sm" variant="teal" />
+                    <span className="text-[#2D3436] text-sm font-medium">{f}</span>
                   </div>
                 ))}
               </div>
-            </div>
+            </Card>
           </TabsContent>
 
           <TabsContent value="audience" className="mt-0">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
               {audiences.map((a, i) => (
-                <div key={i} className="light-card rounded-2xl p-5 hover:-translate-y-1 hover:shadow-card-hover transition-all duration-300">
-                  <div className="w-11 h-11 rounded-xl bg-[rgba(0,201,167,0.1)] flex items-center justify-center mb-4">
-                    <a.icon className="w-5 h-5 text-[#00796b]" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-[#1a1a1a] mb-1">{a.title}</h3>
+                <Card key={i} variant="hover" padding="md">
+                  <IconBox icon={a.icon} size="lg" variant="teal" className="mb-4" />
+                  <h3 className="text-lg font-semibold text-[#2D3436] mb-1">{a.title}</h3>
                   <p className="text-[#636e72] text-sm leading-relaxed">{a.desc}</p>
-                </div>
+                </Card>
               ))}
             </div>
           </TabsContent>
 
           <TabsContent value="pricing" className="mt-0">
             <div className="grid md:grid-cols-2 gap-5 max-w-[1000px] mx-auto stagger-children">
-              <div className="glass-card rounded-[28px] p-6 md:p-8 relative overflow-hidden bg-white border-[#00796b]/20">
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00796b] to-[#00796b]/50" />
+              <Card padding="lg" className="relative overflow-hidden border-[#00897b]/20">
+                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00897b] to-[#00897b]/50" />
                 <div className="flex items-center justify-between mb-5">
                   <h3 className="text-xl font-bold text-[#2D3436]">Франшиза «Под ключ»</h3>
-                  <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase text-[#00796b] bg-[#00796b]/15 border border-[#00796b]/20 px-2.5 py-1 rounded-full">
+                  <span className="inline-flex items-center gap-1 text-xs font-semibold uppercase text-[#00897b] bg-[#00897b]/15 border border-[#00897b]/20 px-2.5 py-1 rounded-full">
                     <Sparkles className="w-3 h-3" /> Рекомендуем
                   </span>
                 </div>
@@ -192,22 +161,24 @@ export function CompactInfo() {
                     <span className="text-base text-[#636e72] line-through">850 000 ₽</span>
                   </div>
                   <p className="text-[#636e72] text-sm mt-1">Паушальный взнос + 40 000 ₽/мес роялти</p>
-                  <p className="text-sm text-[#dc2626] font-medium mt-1">Скидка 200 000 ₽ для первых партнёров</p>
+                  <p className="text-sm text-coral font-medium mt-1">Скидка 200 000 ₽ для первых партнёров</p>
                 </div>
                 <ul className="space-y-2 mb-6">
                   {franchiseFeatures.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]/90">
-                      <Check className="w-4 h-4 text-[#00796b] flex-shrink-0 mt-0.5" />
+                    <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]">
+                      <Check className="w-4 h-4 text-[#00897b] flex-shrink-0 mt-0.5" />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" onClick={(e) => handleClick(e, '#contact')} className="btn-coral w-full py-3 text-sm">
-                  Получить КП <ArrowRight className="w-4 h-4" />
-                </a>
-              </div>
+                <Button asChild className="w-full">
+                  <a href="#contact" onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}>
+                    Получить КП <ArrowRight className="w-4 h-4" />
+                  </a>
+                </Button>
+              </Card>
 
-              <div className="glass-card rounded-[28px] p-6 md:p-8 bg-white">
+              <Card padding="lg">
                 <h3 className="text-xl font-bold text-[#2D3436] mb-5">Базовый пакет</h3>
                 <div className="mb-5">
                   <span className="text-4xl font-bold text-[#2D3436]">300 000 ₽</span>
@@ -215,32 +186,36 @@ export function CompactInfo() {
                 </div>
                 <ul className="space-y-2 mb-6">
                   {docsFeatures.map((f, i) => (
-                    <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]/90">
+                    <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]">
                       <Check className="w-4 h-4 text-[#636e72] flex-shrink-0 mt-0.5" />
                       {f}
                     </li>
                   ))}
                 </ul>
-                <a href="#contact" onClick={(e) => handleClick(e, '#contact')} className="inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-[#2D3436] border border-black/10 hover:bg-black/5 transition-all duration-200">
-                  Получить детали
-                </a>
-              </div>
+                <Button asChild variant="secondary" className="w-full">
+                  <a href="#contact" onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}>
+                    Получить детали
+                  </a>
+                </Button>
+              </Card>
             </div>
           </TabsContent>
 
           <TabsContent value="faq" className="mt-0">
             <div className="max-w-[900px] mx-auto">
-              <Accordion type="single" collapsible className="w-full glass-card rounded-3xl p-2 md:p-4 bg-[#FDFBF7]">
-                {faqs.map((faq, i) => (
-                  <AccordionItem key={i} value={`item-${i}`} className="border-black/10 px-4 md:px-6">
-                    <AccordionTrigger className="text-left text-base font-medium text-[#2D3436] hover:text-[#00796b] hover:no-underline py-4">
-                      {faq.q}
-                    </AccordionTrigger>
-                    <AccordionContent className="text-[#636e72] leading-relaxed pb-4">
-                      {faq.a}
-                    </AccordionContent>
-                  </AccordionItem>
-                ))}
+              <Accordion type="single" collapsible className="w-full">
+                <Card padding="sm">
+                  {faqs.map((faq, i) => (
+                    <AccordionItem key={i} value={`item-${i}`} className="border-black/10 px-4 md:px-6">
+                      <AccordionTrigger className="text-left text-base font-medium text-[#2D3436] hover:text-[#00897b] hover:no-underline py-4">
+                        {faq.q}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-[#636e72] leading-relaxed pb-4">
+                        {faq.a}
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Card>
               </Accordion>
             </div>
           </TabsContent>

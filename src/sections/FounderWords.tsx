@@ -1,21 +1,19 @@
 import { Send, Globe } from 'lucide-react';
+import { UiCard as Card } from '@/components/ui/UiCard';
+import { UiButton as Button } from '@/components/ui/UiButton';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 export function FounderWords() {
   return (
-    <section id="founder" className="section-light py-14 md:py-20 xl:py-16 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5">
-        <div className="text-center mb-8 md:mb-12 blur-reveal" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,137,123,0.1)] text-[#00897b] border border-[rgba(0,137,123,0.15)] px-4 py-1.5 rounded-full mb-4">
-            СЛОВО ОСНОВАТЕЛЯ
-          </span>
-          <h2 className="text-[clamp(26px,4vw,44px)] xl:text-[clamp(28px,3.5vw,40px)] font-bold leading-[1.1] tracking-tight text-[#2D3436]">
-            С искренностью и заботой
-          </h2>
-        </div>
+    <section id="founder" className="section-base section-light section-padding">
+      <div className="container-content">
+        <SectionHeader
+          badge="Слово основателя"
+          title="С искренностью и заботой"
+        />
 
-        <div className="blur-reveal bg-white rounded-[32px] md:rounded-[40px] p-5 sm:p-8 md:p-10 lg:p-12 shadow-[0_4px_30px_rgba(0,0,0,0.04)] border border-black/5" style={{ transitionDelay: '0.1s' }}>
+        <Card padding="lg" className="blur-reveal">
           <div className="grid md:grid-cols-[280px,1fr] lg:grid-cols-[320px,1fr] gap-8 lg:gap-14 items-start">
-            {/* Photo column */}
             <div className="flex flex-col items-center md:items-start text-center md:text-left">
               <div className="relative w-full max-w-[280px] lg:max-w-[320px]">
                 <div className="absolute inset-2 bg-gradient-to-br from-[#00897b]/15 to-[#dc2626]/10 rounded-[24px] blur-2xl" />
@@ -35,34 +33,25 @@ export function FounderWords() {
               </div>
 
               <div className="flex flex-wrap justify-center md:justify-start gap-2 mt-4">
-                <a
-                  href="https://t.me/suyazovaa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#00897b]/10 hover:bg-[#00897b]/15 text-[#00796b] rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                >
-                  <Send className="w-4 h-4" />
-                  Telegram-канал
-                </a>
-                <a
-                  href="https://max.ru/join/ztz-wH7eN8noF7sbsNFmW9qSG_lJuh2i0rYbAVlksKg"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-[#00897b]/10 hover:bg-[#00897b]/15 text-[#00796b] rounded-full px-4 py-2 text-sm font-medium transition-colors"
-                >
-                  <Globe className="w-4 h-4" />
-                  MAX
-                </a>
+                <Button asChild variant="ghost" size="sm">
+                  <a href="https://t.me/suyazovaa" target="_blank" rel="noopener noreferrer">
+                    <Send className="w-4 h-4" /> Telegram-канал
+                  </a>
+                </Button>
+                <Button asChild variant="ghost" size="sm">
+                  <a href="https://max.ru/join/ztz-wH7eN8noF7sbsNFmW9qSG_lJuh2i0rYbAVlksKg" target="_blank" rel="noopener noreferrer">
+                    <Globe className="w-4 h-4" /> MAX
+                  </a>
+                </Button>
               </div>
             </div>
 
-            {/* Text column */}
             <div className="flex flex-col justify-center">
               <p className="text-xl sm:text-2xl font-medium text-[#2D3436] leading-snug mb-6">
                 Моя цель — помочь девушкам открыть детский сад правильно, спокойно и без финансовых потерь.
               </p>
 
-              <div className="space-y-4 text-[#636e72] text-sm md:text-base leading-relaxed mb-8">
+              <div className="space-y-4 text-body text-sm md:text-base leading-relaxed mb-8">
                 <p>
                   В наших садах — уважение к детям, внимание к запросам родителей и забота о каждом сотруднике.
                   Мы создаём пространство, где комфортно всем: детям, родителям, команде и партнёрам.
@@ -85,7 +74,7 @@ export function FounderWords() {
               </p>
             </div>
           </div>
-        </div>
+        </Card>
       </div>
     </section>
   );

@@ -4,6 +4,20 @@ module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontSize: {
+        "display-1": ["clamp(2rem, 5vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "display-2": ["clamp(1.625rem, 4vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.01em", fontWeight: "700" }],
+        "display-3": ["clamp(1.25rem, 2.5vw, 1.5rem)", { lineHeight: "1.25", fontWeight: "600" }],
+        "body-lg": ["1.125rem", { lineHeight: "1.6" }],
+        "body-base": ["1rem", { lineHeight: "1.6" }],
+        "body-sm": ["0.875rem", { lineHeight: "1.5" }],
+        "caption": ["0.75rem", { lineHeight: "1.4" }],
+      },
+      spacing: {
+        "section": "5rem",
+        "section-md": "4rem",
+        "section-sm": "3rem",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

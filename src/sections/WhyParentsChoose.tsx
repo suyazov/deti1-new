@@ -1,4 +1,7 @@
 import { Camera, ShieldCheck, BadgeCheck, Stethoscope, Utensils, PartyPopper, GraduationCap } from 'lucide-react';
+import { UiCard as Card } from '@/components/ui/UiCard';
+import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
+import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const reasons = [
   {
@@ -40,32 +43,21 @@ const reasons = [
 
 export function WhyParentsChoose() {
   return (
-    <section id="parents" className="section-light py-14 md:py-20 xl:py-16 overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-5">
-        <div className="text-center mb-8 md:mb-12 blur-reveal" style={{ transitionDelay: '0.05s' }}>
-          <span className="inline-block text-[11px] sm:text-xs font-semibold tracking-[0.12em] uppercase bg-[rgba(0,137,123,0.1)] text-[#00897b] border border-[rgba(0,137,123,0.15)] px-4 py-1.5 rounded-full mb-4">
-            ДЛЯ РОДИТЕЛЕЙ
-          </span>
-          <h2 className="text-[clamp(26px,4vw,44px)] xl:text-[clamp(28px,3.5vw,40px)] font-bold leading-[1.1] tracking-tight text-[#2D3436]">
-            Почему родители нас выбирают
-          </h2>
-          <p className="mt-3 text-sm md:text-base text-[#636e72] max-w-2xl mx-auto">
-            В садах «Дети в приоритете» родители платят не просто за уход, а за уверенность, качество и развитие
-          </p>
-        </div>
+    <section id="parents" className="section-base section-light section-padding">
+      <div className="container-content">
+        <SectionHeader
+          badge="Для родителей"
+          title="Почему родители нас выбирают"
+          description="В садах «Дети в приоритете» родители платят не просто за уход, а за уверенность, качество и развитие"
+        />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5 stagger-children">
           {reasons.map((r, i) => (
-            <div
-              key={i}
-              className="scroll-reveal bg-white rounded-2xl md:rounded-3xl p-5 md:p-6 border border-black/5 hover:shadow-md transition-all duration-300 hover:-translate-y-1"
-            >
-              <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-[#00897b]/10 flex items-center justify-center mb-3">
-                <r.icon className="w-5 h-5 md:w-6 md:h-6 text-[#00897b]" />
-              </div>
-              <h3 className="text-sm md:text-base font-semibold text-[#2D3436] mb-1.5">{r.title}</h3>
-              <p className="text-xs md:text-sm text-[#636e72] leading-relaxed">{r.desc}</p>
-            </div>
+            <Card key={i} variant="hover" padding="md">
+              <IconBox icon={r.icon} size="lg" variant="teal" className="mb-3" />
+              <h3 className="text-base font-semibold text-[#2D3436] mb-1.5">{r.title}</h3>
+              <p className="text-sm text-[#636e72] leading-relaxed">{r.desc}</p>
+            </Card>
           ))}
         </div>
       </div>

@@ -2,7 +2,7 @@ import { Hero } from '@/sections/Hero';
 import { FloatingCards } from '@/sections/FloatingCards';
 import { WhyParentsChoose } from '@/sections/WhyParentsChoose';
 import { HowWeDoIt } from '@/sections/HowWeDoIt';
-import { StepsSlider } from '@/sections/StepsSlider';
+
 import { ProfitCalculator } from '@/components/ProfitCalculator';
 import { Stats } from '@/sections/Stats';
 import { FounderWords } from '@/sections/FounderWords';
@@ -26,7 +26,6 @@ export default function Home() {
 
       {/* Как это работает */}
       <HowWeDoIt />
-      <StepsSlider />
       <ProfitCalculator />
 
       {/* О нас: компания, основатель, история, команда */}
