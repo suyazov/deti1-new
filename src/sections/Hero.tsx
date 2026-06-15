@@ -5,12 +5,17 @@ import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
 
 const decorations = [
-  { Icon: Star, color: 'text-yellow-400', bg: 'bg-yellow-400/20', top: '10%', left: '5%', size: 'w-8 h-8', delay: '0s' },
-  { Icon: Heart, color: 'text-pink-400', bg: 'bg-pink-400/20', top: '20%', right: '8%', size: 'w-6 h-6', delay: '0.5s' },
-  { Icon: Smile, color: 'text-sky-400', bg: 'bg-sky-400/20', bottom: '15%', left: '8%', size: 'w-7 h-7', delay: '1s' },
-  { Icon: Music, color: 'text-purple-400', bg: 'bg-purple-400/20', top: '60%', right: '5%', size: 'w-6 h-6', delay: '1.5s' },
-  { Icon: Palette, color: 'text-orange-400', bg: 'bg-orange-400/20', bottom: '25%', right: '12%', size: 'w-7 h-7', delay: '2s' },
-  { Icon: Gamepad2, color: 'text-green-400', bg: 'bg-green-400/20', top: '45%', left: '3%', size: 'w-6 h-6', delay: '2.5s' },
+  { Icon: Star, color: 'text-yellow-400', bg: 'bg-yellow-400/25', top: '10%', left: '5%', size: 'w-9 h-9', delay: '0s' },
+  { Icon: Heart, color: 'text-pink-400', bg: 'bg-pink-400/25', top: '18%', right: '10%', size: 'w-7 h-7', delay: '0.5s' },
+  { Icon: Smile, color: 'text-sky-400', bg: 'bg-sky-400/25', bottom: '12%', left: '6%', size: 'w-8 h-8', delay: '1s' },
+  { Icon: Music, color: 'text-purple-400', bg: 'bg-purple-400/25', top: '58%', right: '4%', size: 'w-7 h-7', delay: '1.5s' },
+  { Icon: Palette, color: 'text-orange-400', bg: 'bg-orange-400/25', bottom: '22%', right: '14%', size: 'w-8 h-8', delay: '2s' },
+  { Icon: Gamepad2, color: 'text-green-400', bg: 'bg-green-400/25', top: '42%', left: '2%', size: 'w-7 h-7', delay: '2.5s' },
+];
+
+const miniPhotos = [
+  { src: '/photos/kids-sofa-smile.jpeg', alt: 'Дети на диване в детском саду' },
+  { src: '/photos/class-storytime.jpeg', alt: 'Воспитатель читает детям книгу' },
 ];
 
 const benefits = [
@@ -27,8 +32,10 @@ export function Hero() {
 
   return (
     <section className="relative min-h-[auto] hero-gradient flex items-center overflow-hidden pt-20 lg:pt-24 pb-10 lg:pb-16">
-      <div className="glow-orb w-[280px] h-[280px] md:w-[400px] md:h-[400px] bg-sky-300/20 -top-10 -right-10 animate-pulse-glow" />
-      <div className="glow-orb w-[240px] h-[240px] md:w-[360px] md:h-[360px] bg-pink-300/15 -bottom-10 -left-10" />
+      <div className="glow-orb w-[280px] h-[280px] md:w-[420px] md:h-[420px] bg-sky-300/25 -top-10 -right-10 animate-pulse-glow" />
+      <div className="glow-orb w-[240px] h-[240px] md:w-[380px] md:h-[380px] bg-pink-300/20 -bottom-10 -left-10" />
+      <div className="glow-orb w-[200px] h-[200px] md:w-[320px] md:h-[320px] bg-yellow-300/20 top-1/3 left-1/4" />
+      <div className="glow-orb w-[160px] h-[160px] md:w-[260px] md:h-[260px] bg-purple-300/15 bottom-1/4 right-1/3" />
 
       {decorations.map((d, i) => (
         <div
@@ -106,34 +113,53 @@ export function Hero() {
             style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
           >
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 to-pink-400/10 rounded-3xl blur-2xl" />
-              <Card className="relative p-2 sm:p-3" variant="default">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-pink-400/10 to-yellow-400/10 rounded-[2rem] blur-2xl" />
+              <Card className="relative p-2 sm:p-3 rounded-[2rem]" variant="default">
                 <img
-                  src="/photos/kids-shelf.jpeg"
+                  src="/photos/kids-floor-star.jpeg"
                   alt="Дети в детском саду «Дети в приоритете»"
                   width="700"
                   height="875"
                   loading="eager"
-                  className="w-full h-auto rounded-2xl object-cover aspect-[4/5]"
+                  className="w-full h-auto rounded-[1.5rem] object-cover aspect-[4/5]"
                 />
               </Card>
 
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-24 sm:w-32 rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block">
+              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 sm:w-36 rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
                 <img
-                  src="/photos/kids-sofa.jpeg"
-                  alt="Экскурсия для детей"
+                  src={miniPhotos[0].src}
+                  alt={miniPhotos[0].alt}
                   width="200"
                   height="250"
                   loading="lazy"
-                  className="w-full h-auto object-cover"
+                  className="w-full h-auto object-cover aspect-[4/5]"
                 />
               </div>
 
-              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
+              <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-24 sm:w-28 rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block rotate-[4deg] hover:rotate-0 transition-transform duration-500">
+                <img
+                  src={miniPhotos[1].src}
+                  alt={miniPhotos[1].alt}
+                  width="180"
+                  height="225"
+                  loading="lazy"
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                />
+              </div>
+
+              <div className="absolute top-4 -right-3 sm:top-8 sm:-right-4 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
                 <IconBox icon={Smile} size="sm" variant="pastel" />
                 <div>
                   <p className="text-xs sm:text-sm font-bold text-[#2D3436]"><AnimatedNumber value={2000} suffix="+" /></p>
                   <p className="text-[10px] sm:text-xs text-[#636e72]">воспитанников</p>
+                </div>
+              </div>
+
+              <div className="absolute -bottom-3 right-4 sm:-bottom-4 sm:right-8 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
+                <IconBox icon={Star} size="sm" variant="pastel" />
+                <div>
+                  <p className="text-xs sm:text-sm font-bold text-[#2D3436]">с 2016</p>
+                  <p className="text-[10px] sm:text-xs text-[#636e72]">года работаем</p>
                 </div>
               </div>
             </div>

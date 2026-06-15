@@ -15,18 +15,52 @@ import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
-const features = [
-  'Готовый бренд и стиль',
-  'Весь комплект документов',
-  'Финансовая модель',
-  'Клиенты с первого месяца',
-  'Обучение всей команды',
-  'Смета запуска "под ключ"',
-  'Методист в вашей команде',
-  'Юридическая поддержка',
-  'Дизайнер в команде',
-  'Поддержка и развитие',
-  'Личное сопровождение Анны',
+const featureGroups = [
+  {
+    title: 'Бренд и маркетинг',
+    items: [
+      'Готовый бренд, логотип и фирменный стиль',
+      'Шаблоны для соцсетей, полиграфии и вывесок',
+      'Настройка рекламы и первые заявки до открытия',
+      'CRM, скрипты продаж и воронка клиента',
+    ],
+  },
+  {
+    title: 'Документы и лицензия',
+    items: [
+      'Полный комплект документов по кадрам, питанию и охране труда',
+      'Образовательные программы и договоры с родителями',
+      'Помощь в получении образовательной лицензии',
+      'Юридическая поддержка и сопровождение проверок',
+    ],
+  },
+  {
+    title: 'Запуск и помещение',
+    items: [
+      'Помощь в подборе и аудите помещения по СанПиН',
+      'Детальная смета запуска «под ключ»',
+      'Проверенные поставщики мебели, игрушек и расходников',
+      'Дизайнер интерьера и оформления в едином стиле',
+    ],
+  },
+  {
+    title: 'Команда и обучение',
+    items: [
+      'Обучение администраторов, воспитателей и поваров',
+      'Готовые планы занятий от штатного методиста',
+      'Инструкции по адаптации детей и работе с родителями',
+      'Личное сопровождение Анны на всех этапах',
+    ],
+  },
+  {
+    title: 'Финансы и развитие',
+    items: [
+      'Финансовая модель с прогнозом выручки и прибыли',
+      'Точка безубыточности и варианты масштабирования',
+      'Управленческая отчётность и контроль расходов',
+      'Регулярные аудиты и поддержка филиала',
+    ],
+  },
 ];
 
 const audiences = [
@@ -121,16 +155,26 @@ export function CompactInfo() {
           </TabsList>
 
           <TabsContent value="features" className="mt-0">
-            <Card padding="lg">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
-                {features.map((f, i) => (
-                  <div key={i} className="flex items-center gap-3 p-4 rounded-2xl bg-black/5 border border-black/5">
-                    <IconBox icon={Check} size="sm" variant="teal" />
-                    <span className="text-[#2D3436] text-sm font-medium">{f}</span>
-                  </div>
-                ))}
-              </div>
-            </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
+              {featureGroups.map((group, i) => (
+                <Card key={i} padding="md" className="h-full flex flex-col">
+                  <h3 className="text-base font-bold text-[#2D3436] mb-3 flex items-center gap-2">
+                    <span className="inline-flex items-center justify-center w-7 h-7 rounded-lg bg-[#00897b]/15 text-[#005a4f]">
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                    {group.title}
+                  </h3>
+                  <ul className="space-y-2 flex-1">
+                    {group.items.map((item, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-[#2D3436]">
+                        <Check className="w-4 h-4 text-[#00897b] flex-shrink-0 mt-0.5" />
+                        <span className="text-[#636e72] leading-snug">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </div>
           </TabsContent>
 
           <TabsContent value="audience" className="mt-0">

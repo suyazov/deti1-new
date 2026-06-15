@@ -61,9 +61,10 @@
 
 @layer components {
   .hero-gradient {
-    background: radial-gradient(ellipse at 15% 20%, rgba(125, 211, 252, 0.28) 0%, transparent 45%),
-                radial-gradient(ellipse at 85% 80%, rgba(251, 207, 232, 0.22) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 50%, rgba(253, 230, 138, 0.16) 0%, transparent 50%),
+    background: radial-gradient(ellipse at 15% 20%, rgba(125, 211, 252, 0.32) 0%, transparent 45%),
+                radial-gradient(ellipse at 85% 80%, rgba(251, 207, 232, 0.28) 0%, transparent 45%),
+                radial-gradient(ellipse at 50% 40%, rgba(253, 230, 138, 0.22) 0%, transparent 50%),
+                radial-gradient(ellipse at 30% 80%, rgba(167, 243, 208, 0.18) 0%, transparent 45%),
                 linear-gradient(180deg, #ffffff 0%, #FDFBF7 100%);
   }
 

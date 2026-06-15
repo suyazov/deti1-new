@@ -132,7 +132,16 @@ export function CTA() {
           </Card>
 
           <Card padding="lg" className="blur-reveal relative overflow-hidden" style={{ transitionDelay: '0.2s' } as React.CSSProperties}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-[4rem] overflow-hidden hidden lg:block">
+              <img
+                src="/photos/kids-park-friends.jpeg"
+                alt="Дети на прогулке"
+                loading="lazy"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            <div className="flex items-center gap-3 mb-6 lg:pr-28">
               <IconBox icon={MessageCircle} size="lg" variant="coral" />
               <div>
                 <h3 className="text-xl font-bold text-[#2D3436]">Написать в мессенджер</h3>

@@ -394,3 +394,41 @@
 - Развернуть блок «Что вы получите» текстами из презентации.
 - Добавить больше реальных фото из садов.
 - Ориентиры: tochka-rostafranch.ru, fr.baby-club.ru.
+
+---
+
+## Обновление 2026-06-15 — детский дизайн, фото и развёрнутые тексты
+
+### Что сделано
+- Добавлены 7 новых фото детей из садов в `public/photos/` (оптимизированы до 1600px, quality 85):
+  - `kids-floor-star.jpeg`
+  - `kids-library-chairs.jpeg`
+  - `kids-sofa-smile.jpeg`
+  - `kids-park-friends.jpeg`
+  - `class-storytime.jpeg`
+  - `kids-classroom-floor.jpeg`
+  - `kids-library-niche.jpeg`
+- Создана новая секция `src/sections/PhotoGallery.tsx` — фото-сетка "Так выглядит счастливое детство" с hover-эффектами и яркими наклейками.
+- Обновлён `Hero.tsx`: новые фото, две наклонных мини-фото, дополнительный бейдж "с 2016 года", усиленные пастельные glow-orb'ы.
+- Обновлён `FloatingCards.tsx` ("Что вы получите"): развёрнутые описания, цветные иконки в пастельных квадратах, градиентные полоски, бейдж "Живые эмоции".
+- Обновлён `CompactInfo.tsx`: вкладка "Что входит" переработана в 5 карточек-категорий с детальными пунктами.
+- Обновлён `WhyParentsChoose.tsx`: цветные иконки, крупное фото детей на занятии.
+- Обновлён `CTA.tsx`: фото детей в правой карточке.
+- Усилен детский характер дизайна: плавающие цветные точки, воздушные glow-orb'ы, яркие пастельные акценты в Hero.
+- Исправлен контраст номеров категорий в `CompactInfo` (`text-[#005a4f]` на `bg-[#00897b]/15`).
+
+### Результаты проверки
+- Сборка: успешно (`npm run build`).
+- Lighthouse Accessibility: **1.0**.
+- Контрастных ошибок: **0**.
+
+### Файлы изменены
+- `src/index.css`
+- `src/pages/Home.tsx`
+- `src/sections/Hero.tsx`
+- `src/sections/FloatingCards.tsx`
+- `src/sections/WhyParentsChoose.tsx`
+- `src/sections/CompactInfo.tsx`
+- `src/sections/CTA.tsx`
+- `src/sections/PhotoGallery.tsx` (новый)
+- `public/photos/*.jpeg` (7 новых)
