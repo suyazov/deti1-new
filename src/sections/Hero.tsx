@@ -2,6 +2,7 @@ import { ArrowRight, Star, Heart, Smile, Music, Palette, Gamepad2 } from 'lucide
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
+import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
 
 const decorations = [
   { Icon: Star, color: 'text-yellow-400', bg: 'bg-yellow-400/20', top: '10%', left: '5%', size: 'w-8 h-8', delay: '0s' },
@@ -62,7 +63,7 @@ export function Hero() {
               <span className="block text-reveal-line" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.2s' }}>детский сад</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.3s' }}>
-                <span className="text-gradient">с прибылью</span> от 420 000 ₽
+                <span className="text-gradient">с прибылью</span> от <AnimatedNumber value={420000} suffix=" ₽" />
               </span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.4s' }}>в месяц</span>
             </h1>
@@ -131,7 +132,7 @@ export function Hero() {
               <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
                 <IconBox icon={Smile} size="sm" variant="pastel" />
                 <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#2D3436]">2000+</p>
+                  <p className="text-xs sm:text-sm font-bold text-[#2D3436]"><AnimatedNumber value={2000} suffix="+" /></p>
                   <p className="text-[10px] sm:text-xs text-[#636e72]">воспитанников</p>
                 </div>
               </div>

@@ -1,13 +1,14 @@
 import { Calendar, FileBadge, ExternalLink, ShieldCheck, Users, UserCheck } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
 
 const TM_LINK = 'https://www1.fips.ru/fips_servl/fips_servlet?DB=RUTM&DocNumber=1019709';
 
 const stats = [
   {
     icon: Calendar,
-    title: 'С 2016 года',
+    title: <>С <AnimatedNumber value={2016} groupDigits={false} /> года</>,
     desc: 'Развиваем модель детского сада и передаём наработки партнёрам.',
     color: 'text-sky-500',
     bg: 'bg-sky-100',
@@ -29,7 +30,7 @@ const stats = [
   },
   {
     icon: Users,
-    title: '4,5+ года',
+    title: <><AnimatedNumber value={4.5} suffix="+" /> года</>,
     desc: 'Средний срок обучения ребёнка в саду',
     color: 'text-pink-500',
     bg: 'bg-pink-100',

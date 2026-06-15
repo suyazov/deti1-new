@@ -12,9 +12,11 @@ import { TeamDepartments } from '@/sections/TeamDepartments';
 import { CTA } from '@/sections/CTA';
 import { CompactInfo } from '@/sections/CompactInfo';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useParallax } from '@/hooks/useParallax';
 
 export default function Home() {
   useScrollReveal();
+  useParallax();
 
   return (
     <>
