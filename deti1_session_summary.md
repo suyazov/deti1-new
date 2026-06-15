@@ -501,3 +501,30 @@
 - В nginx убран `return 404` для `/v1/`; старый `location /v1/` с `try_files` восстановлен.
 - Nginx перезагружен, `/v1/` отдаёт `200 OK`.
 - В `robots.txt` убран `Disallow: /v1/`.
+
+---
+
+## SEO/GEO-рефакторинг по аудиту (2026-06-15)
+
+### Выполнено
+- Добавлен `/llms.txt` — карта сайта для AI-краулеров.
+- Добавлены статические SEO-страницы:
+  - `/franchise` — описание франшизы и пакетов
+  - `/faq` — FAQ с schema.org FAQPage
+  - `/about-founder` — страница основателя Анны Суязовой
+  - `/license` — лицензия, товарный знак, юридическая база
+  - `/documents` — документы, которые получает партнёр
+  - `/contacts` — контакты и реквизиты с schema.org ContactPage
+- `sitemap.xml` расширен: добавлены новые страницы с `<lastmod>` и приоритетами.
+- Главная `index.html` уже предрендерена (H1, секции, FAQ, контакты, schema.org).
+- `robots.txt` исправлен: убран `Disallow: /assets/`.
+- В nginx добавлен:
+  - `Content-Security-Policy`
+  - `X-Robots-Tag: noindex, nofollow, noarchive` для `/v1/`
+  - короткое кеширование для `robots.txt`, `sitemap.xml`, `llms.txt`, `tariffs.txt`
+  - location'ы для новых SEO-страниц
+- Nginx перезагружен, все страницы отдают 200 OK.
+
+### Результаты проверки
+- `/franchise`, `/faq`, `/about-founder`, `/license`, `/documents`, `/contacts`, `/llms.txt`, `/robots.txt`, `/sitemap.xml` — 200 OK.
+- CSP, X-Robots-Tag для `/v1/`, Cache-Control для SEO-файлов — на месте.

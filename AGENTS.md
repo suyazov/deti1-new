@@ -210,7 +210,16 @@
   ```
   Старый токен, который был в `send.php`, считать скомпрометированным.
 
-### Cleanup (2026-06-15)
+### SEO/GEO-рефакторинг (2026-06-15)
+- Добавлен `/llms.txt`.
+- Добавлены статические SEO-страницы: `/franchise`, `/faq`, `/about-founder`, `/license`, `/documents`, `/contacts`.
+- `sitemap.xml` расширен новыми URL.
+- Главная `index.html` предрендерена: H1, секции, FAQ, контакты, расширенная schema.org.
+- `robots.txt` исправлен: убран `Disallow: /assets/`.
+- В nginx добавлен `Content-Security-Policy`, `X-Robots-Tag: noindex` для `/v1/`, короткое кеширование SEO-файлов.
+- Все новые страницы отдают 200 OK.
+
+## Cleanup (2026-06-15)
 - Удалены старые скриншоты и временные файлы из `/root/` и `/tmp/deti1-screens/`.
 - Удалён дублирующий проект `/root/deti1-new/` и устаревшие PDF/HTML из `/root/`.
 - Удалены устаревшие файлы проекта: `info.md`, `prerender.js`, `DESIGN_AUDIT.md`.
