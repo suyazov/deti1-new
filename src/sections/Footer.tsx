@@ -31,7 +31,7 @@ export function Footer() {
               <span className="text-[#2D3436] font-semibold">Дети в приоритете</span>
             </div>
             <p className="text-sm text-[#636e72] leading-relaxed">
-              Готовая система запуска детского сада. С 2016 года, образовательная лицензия и сопровождение на всех этапах.
+              Готовая система запуска и развития частного детского сада. С 2016 года помогаем открывать сады, которые приносят пользу семьям и стабильный доход владельцам.
             </p>
             <div className="mt-4 text-xs text-[#636e72] space-y-1">
               <p>ИП Суязова Анна Игоревна</p>
@@ -127,7 +127,7 @@ export function Footer() {
                 className="flex flex-col items-center justify-center gap-2 aspect-square rounded-xl border border-black/10 hover:border-[#00897b]/50 hover:bg-black/5 transition-all"
               >
                 <Send className="w-6 h-6 text-[#00897b]" />
-                <span className="text-xs text-[#636e72]">Канал</span>
+                <span className="text-xs text-[#636e72]">Telegram-канал</span>
               </a>
               <a
                 href="https://max.ru/join/ztz-wH7eN8noF7sbsNFmW9qSG_lJuh2i0rYbAVlksKg"

@@ -147,7 +147,7 @@ export function CompactInfo() {
 
           <TabsContent value="pricing" className="mt-0">
             <div className="grid md:grid-cols-2 gap-5 max-w-[1000px] mx-auto stagger-children">
-              <Card padding="lg" className="relative overflow-hidden border-[#00897b]/20">
+              <Card padding="lg" className="relative overflow-hidden border-[#00897b]/20 h-full flex flex-col">
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#00897b] to-[#00897b]/50" />
                 <div className="flex items-center justify-between mb-5">
                   <h3 className="text-xl font-bold text-[#2D3436]">Франшиза «Под ключ»</h3>
@@ -158,12 +158,10 @@ export function CompactInfo() {
                 <div className="mb-5">
                   <div className="flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-[#2D3436]">650 000 ₽</span>
-                    <span className="text-base text-[#636e72] line-through">850 000 ₽</span>
                   </div>
                   <p className="text-[#636e72] text-sm mt-1">Паушальный взнос + 40 000 ₽/мес роялти</p>
-                  <p className="text-sm text-coral font-medium mt-1">Скидка 200 000 ₽ для первых партнёров</p>
                 </div>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-1">
                   {franchiseFeatures.map((f, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]">
                       <Check className="w-4 h-4 text-[#00897b] flex-shrink-0 mt-0.5" />
@@ -171,20 +169,20 @@ export function CompactInfo() {
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="w-full">
+                <Button asChild className="w-full mt-auto">
                   <a href="#contact" onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}>
                     Получить КП <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
               </Card>
 
-              <Card padding="lg">
+              <Card padding="lg" className="h-full flex flex-col">
                 <h3 className="text-xl font-bold text-[#2D3436] mb-5">Базовый пакет</h3>
                 <div className="mb-5">
                   <span className="text-4xl font-bold text-[#2D3436]">300 000 ₽</span>
                   <p className="text-[#636e72] text-sm mt-1">Единоразово, без роялти</p>
                 </div>
-                <ul className="space-y-2 mb-6">
+                <ul className="space-y-2 mb-6 flex-1">
                   {docsFeatures.map((f, i) => (
                     <li key={i} className="flex items-start gap-2 text-sm text-[#2D3436]">
                       <Check className="w-4 h-4 text-[#636e72] flex-shrink-0 mt-0.5" />
@@ -192,7 +190,7 @@ export function CompactInfo() {
                     </li>
                   ))}
                 </ul>
-                <Button asChild variant="secondary" className="w-full">
+                <Button asChild variant="secondary" className="w-full mt-auto">
                   <a href="#contact" onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}>
                     Получить детали
                   </a>

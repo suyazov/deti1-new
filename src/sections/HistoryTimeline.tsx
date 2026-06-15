@@ -34,11 +34,11 @@ export function HistoryTimeline() {
         />
 
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8">
-          <Card padding="md" className="blur-reveal" style={{ transitionDelay: '0.1s' } as React.CSSProperties}>
+          <Card padding="md" className="blur-reveal flex flex-col" style={{ transitionDelay: '0.1s' } as React.CSSProperties}>
             <h3 className="text-lg font-semibold text-[#2D3436] mb-4">Путь развития</h3>
-            <div className="relative pl-5">
+            <div className="relative pl-5 flex-1 flex flex-col">
               <div className="absolute left-[7px] top-2 bottom-2 w-px bg-black/5" />
-              <div className="space-y-4">
+              <div className="flex-1 flex flex-col justify-between">
                 {timeline.map((t, i) => (
                   <div key={i} className="relative flex items-center gap-4">
                     <div className="absolute left-[-13px] w-3.5 h-3.5 rounded-full bg-[#00897b] border-2 border-[#FDFBF7]" />
