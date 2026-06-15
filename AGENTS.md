@@ -118,11 +118,15 @@
 - Скриншоты сохранены в `/tmp/deti1-screens/desktop.png` и `/tmp/deti1-screens/mobile.png` (Puppeteer + системный Chromium, full-page после reveal-прокрутки).
 - Lighthouse (preview `http://127.0.0.1:4173/`):
   - Accessibility: **1.0**
-  - Performance: **0.79**
+  - Performance: **0.79** (после мелких правок **0.82**)
   - Best Practices: **0.79**
   - SEO: **1.0**
   - Контрастных ошибок: **0**
-- Деплой: backup `/var/www/deti1.ru.bak.20260615_113458`, `rsync` в `/var/www/deti1.ru/`, production https://deti1.ru доступен.
+- Мелкие доработки (2026-06-15):
+  - `CompactInfo/pricing`: убрана скидка 200 000 ₽ и зачёркнутая цена 850 000 ₽; кнопки тарифов выровнены по высоте (`h-full flex flex-col` + `mt-auto`).
+  - `HistoryTimeline`: левая колонка «Путь развития» растянута (`flex-1 justify-between`) — убран лишний воздух.
+  - `Footer`: улучшено описание компании; подпись «Канал» заменена на «Telegram-канал».
+- Деплой: backup `/var/www/deti1.ru.bak.20260615_113458` и `/var/www/deti1.ru.bak.20260615_121227`, `rsync` в `/var/www/deti1.ru/`, production https://deti1.ru доступен.
 
 ## Рекомендации для нового чата
 - Начинать с краткого prompt: «Светлый редизайн deti1.ru по презентации и docx».

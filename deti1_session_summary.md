@@ -358,3 +358,11 @@
 - Backup: `/var/www/deti1.ru.bak.20260615_113458`
 - `rsync -av --delete dist/ /var/www/deti1.ru/` с сохранением `consent.html`, `privacy-policy.html`, `api/`, `v1/`.
 - Production: https://deti1.ru
+
+
+## Мелкие доработки (2026-06-15)
+- `CompactInfo/pricing`: убрана строка «Скидка 200 000 ₽ для первых партнёров» и зачёркнутая цена 850 000 ₽.
+- Кнопки в двух тарифах выровнены по высоте (`h-full flex flex-col` + `flex-1` для списка + `mt-auto` для кнопки).
+- `HistoryTimeline`: левая колонка «Путь развития» растянута по высоте (`flex-1 flex flex-col justify-between`) — убран лишний воздух.
+- `Footer`: улучшено маркетинговое описание компании; подпись «Канал» заменена на «Telegram-канал».
+- Пересобрано, проверено Lighthouse (Accessibility 1.0, Performance 0.82), задеплоено.
