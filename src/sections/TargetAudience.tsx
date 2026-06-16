@@ -1,5 +1,6 @@
 import { Cloud, Briefcase, TrendingUp, UserCog, Building2, HeartHandshake } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleCloud, DoodleScribble, DoodleStar, DoodleSmile, DoodleDots } from '@/components/Doodles';
 
 const audiences = [
   {
@@ -21,7 +22,7 @@ const audiences = [
     iconBg: 'bg-amber-100',
     iconColor: 'text-amber-700',
     titleColor: 'text-[#2D3436]',
-    descColor: 'text-[#2D3436]/80',
+    descColor: 'text-[#2D3436]',
     decoration: 'bg-amber-400/30',
   },
   {
@@ -72,9 +73,17 @@ const audiences = [
 
 export function TargetAudience() {
   return (
-    <section className="section-base section-light section-padding overflow-hidden">
+    <section className="section-base section-light section-padding overflow-hidden relative">
       <div className="glow-orb w-[500px] h-[500px] bg-violet-400/10 -left-60 top-0" />
       <div className="glow-orb w-[400px] h-[400px] bg-amber-400/10 -right-40 bottom-0" />
+
+      {/* playful doodles on background */}
+      <DoodleCloud className="absolute top-16 left-[5%] text-violet-300 rotate-[-12deg] opacity-60 hidden lg:block" />
+      <DoodleStar className="absolute top-24 right-[8%] text-amber-300 rotate-[15deg] opacity-70 hidden lg:block" />
+      <DoodleSmile className="absolute bottom-20 left-[8%] text-emerald-300 rotate-[8deg] opacity-60 hidden lg:block" />
+      <DoodleScribble className="absolute bottom-16 right-[5%] text-pink-300 rotate-[-6deg] opacity-50 hidden lg:block" />
+      <DoodleDots className="absolute top-1/2 left-[2%] text-sky-300 opacity-40 hidden xl:block" />
+      <DoodleDots className="absolute top-1/3 right-[3%] text-orange-300 opacity-40 hidden xl:block" />
 
       <div className="relative z-10 container-content">
         <SectionHeader
