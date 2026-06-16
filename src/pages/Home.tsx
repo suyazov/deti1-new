@@ -2,6 +2,7 @@ import { Hero } from '@/sections/Hero';
 import { FloatingCards } from '@/sections/FloatingCards';
 import { WhyParentsChoose } from '@/sections/WhyParentsChoose';
 import { TrustBlock } from '@/sections/TrustBlock';
+import { TargetAudience } from '@/sections/TargetAudience';
 import { HowWeDoIt } from '@/sections/HowWeDoIt';
 
 import { ProfitCalculator } from '@/components/ProfitCalculator';
@@ -26,6 +27,7 @@ export default function Home() {
       <FloatingCards />
       <WhyParentsChoose />
       <TrustBlock />
+      <TargetAudience />
       <CompactInfo />
 
       {/* Как это работает */}

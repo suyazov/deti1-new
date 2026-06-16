@@ -7,12 +7,10 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import {
-  Cloud, Briefcase, TrendingUp, Building2, UserCog, HeartHandshake,
   Check, Sparkles, ArrowRight, ChevronDown,
 } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiButton as Button } from '@/components/ui/UiButton';
-import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 const featureGroups = [
@@ -61,15 +59,6 @@ const featureGroups = [
       'Регулярные аудиты и поддержка филиала',
     ],
   },
-];
-
-const audiences = [
-  { icon: Cloud, title: 'Мечтатели', desc: 'Мечтаете открыть детский сад, но боитесь бюрократии и ответственности' },
-  { icon: Briefcase, title: 'Профессионалы', desc: 'Уже работаете с детьми, но хотите выстроить понятную и стабильную систему' },
-  { icon: TrendingUp, title: 'Инвесторы', desc: 'Инвестируете в устойчивый и социально значимый бизнес' },
-  { icon: UserCog, title: 'Топ-менеджеры', desc: 'Устали от наёмной работы — хотите дело, которое приносит радость и доход' },
-  { icon: Building2, title: 'Собственники центров', desc: 'У вас есть детский центр, и вы хотите масштабироваться в полноценный сад' },
-  { icon: HeartHandshake, title: 'Родители-предприниматели', desc: 'Бизнес, который приносит радость и доход' },
 ];
 
 const plans = [
@@ -264,7 +253,6 @@ export function CompactInfo() {
 
   const tabs = [
     { value: 'features', label: 'Что входит' },
-    { value: 'audience', label: 'Для кого' },
     { value: 'pricing', label: 'Стоимость' },
     { value: 'faq', label: 'FAQ' },
   ];
@@ -310,18 +298,6 @@ export function CompactInfo() {
                       </li>
                     ))}
                   </ul>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
-
-          <TabsContent value="audience" className="mt-0">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 stagger-children">
-              {audiences.map((a, i) => (
-                <Card key={i} variant="hover" padding="md">
-                  <IconBox icon={a.icon} size="lg" variant="teal" className="mb-4" />
-                  <h3 className="text-lg font-semibold text-[#2D3436] mb-1">{a.title}</h3>
-                  <p className="text-[#636e72] text-sm leading-relaxed">{a.desc}</p>
                 </Card>
               ))}
             </div>
