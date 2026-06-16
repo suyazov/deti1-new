@@ -8,10 +8,10 @@ import { SectionHeader } from '@/components/ui/SectionHeader';
 const departments = [
   { icon: Megaphone, title: 'Маркетинг', desc: 'Реклама, лидогенерация, лендинги' },
   { icon: Users, title: 'HR и обучение', desc: 'Поиск, проверка и обучение персонала' },
-  { icon: BookOpen, title: 'Методисты и академия', desc: 'Программы, конспекты, тренинги педагогов' },
+  { icon: BookOpen, title: 'Методист и куратор', desc: 'Программы, конспекты и обучение педагогов' },
   { icon: TrendingUp, title: 'Финансовый отдел', desc: 'Финмодели и оптимизация расходов' },
   { icon: ShieldCheck, title: 'Юридический отдел', desc: 'Проверка аренды, договоров, лицензий' },
-  { icon: BadgeCheck, title: 'Качество и кураторы', desc: 'Личный куратор и 42 пункта чек-листа' },
+  { icon: BadgeCheck, title: 'Контроль качества', desc: '42 пункта чек-листа и личный куратор' },
   { icon: Monitor, title: 'IT и технологии', desc: 'CRM, дашборды, база знаний' },
   { icon: BarChart3, title: 'Аналитика и процессы', desc: 'Сравнение показателей по сети' },
 ];
