@@ -1,12 +1,16 @@
 # Проект: deti1.ru
 
 ## Последнее изменение
-**2026-06-16** — Дудлы сделаны крупнее и разнообразнее, визуальные разрывы между секциями убраны:
+**2026-06-16** — Дудлы сделаны крупнее и разнообразнее, визуальные разрывы убраны, плюс оптимизация производительности:
 - В `Doodles.tsx` добавлены новые формы: молния, стрелка, волна, корона, нота, бесконечность, четырёхлучевая звезда.
-- Дудлы увеличены и разнесены по всем секциям: Hero, FloatingCards, WhyParentsChoose, TrustBlock, TargetAudience, CompactInfo, HowWeDoIt, ProfitCalculator, Stats, WeArePractitioners, FounderWords, HistoryTimeline, TeamDepartments, CTA.
-- Уменьшены вертикальные отступы секций (`.section-padding`) и нижний padding Hero для плавных переходов.
-- Accessibility: Lighthouse 1.0, 0 ошибок контраста.
-- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260616_220801`.
+- Дудлы увеличены и разнесены по всем секциям.
+- Уменьшены вертикальные отступы секций (`.section-padding`) и нижний padding Hero.
+- Hero-изображение конвертировано в WebP с `srcset` (700w/1050w), добавлен `preload`.
+- Анимации в Hero переведены на CSS keyframes (`hero-animate`) без зависимости от JS.
+- `AnimatedNumber` в H1 заменён на статичный текст — убран layout shift (CLS стал 0).
+- В nginx добавлены `webp|avif` в кэшируемые статические расширения.
+- Lighthouse production: Performance 0.87, Accessibility 1.0, Best-practices 0.75, SEO 1.0; LCP 2.6s, CLS 0.
+- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260616_230113`.
 
 ## Задачи (todos)
 - [in_progress] Обновить глобальные стили на светлую пастельную палитру
