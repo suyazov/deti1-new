@@ -1,6 +1,6 @@
 import { Cloud, Briefcase, TrendingUp, UserCog, Building2, HeartHandshake } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleCloud, DoodleScribble, DoodleStar, DoodleSmile, DoodleDots } from '@/components/Doodles';
+import { DoodleCloud, DoodleScribble, DoodleStar, DoodleSmile, DoodleDots, DoodleHeart, DoodleFlower, DoodleLightning, DoodleArrow } from '@/components/Doodles';
 
 const audiences = [
   {
@@ -78,12 +78,16 @@ export function TargetAudience() {
       <div className="glow-orb w-[400px] h-[400px] bg-amber-400/10 -right-40 bottom-0" />
 
       {/* playful doodles on background */}
-      <DoodleCloud className="absolute top-16 left-[5%] text-violet-300 rotate-[-12deg] opacity-60 hidden lg:block" />
-      <DoodleStar className="absolute top-24 right-[8%] text-amber-300 rotate-[15deg] opacity-70 hidden lg:block" />
-      <DoodleSmile className="absolute bottom-20 left-[8%] text-emerald-300 rotate-[8deg] opacity-60 hidden lg:block" />
-      <DoodleScribble className="absolute bottom-16 right-[5%] text-pink-300 rotate-[-6deg] opacity-50 hidden lg:block" />
-      <DoodleDots className="absolute top-1/2 left-[2%] text-sky-300 opacity-40 hidden xl:block" />
-      <DoodleDots className="absolute top-1/3 right-[3%] text-orange-300 opacity-40 hidden xl:block" />
+      <DoodleCloud className="absolute top-8 left-[3%] text-violet-300 rotate-[-12deg] opacity-70 hidden lg:block w-40 h-40" />
+      <DoodleStar className="absolute top-12 right-[5%] text-amber-300 rotate-[15deg] opacity-80 hidden lg:block w-32 h-32" />
+      <DoodleSmile className="absolute bottom-12 left-[5%] text-emerald-300 rotate-[8deg] opacity-70 hidden lg:block w-32 h-32" />
+      <DoodleScribble className="absolute bottom-10 right-[3%] text-pink-300 rotate-[-6deg] opacity-60 hidden lg:block w-36 h-36" />
+      <DoodleDots className="absolute top-1/2 left-[1%] text-sky-300 opacity-50 hidden xl:block w-20 h-20" />
+      <DoodleDots className="absolute top-1/3 right-[2%] text-orange-300 opacity-50 hidden xl:block w-20 h-20" />
+      <DoodleHeart className="absolute bottom-1/3 left-[2%] text-rose-300 opacity-50 hidden xl:block w-28 h-28" />
+      <DoodleFlower className="absolute top-1/4 right-[2%] text-violet-300 opacity-50 hidden xl:block w-28 h-28" />
+      <DoodleLightning className="absolute bottom-1/4 right-[5%] text-yellow-300 opacity-40 hidden xl:block w-24 h-32" />
+      <DoodleArrow className="absolute top-1/3 left-[4%] text-sky-300 opacity-40 hidden xl:block w-32 h-20" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

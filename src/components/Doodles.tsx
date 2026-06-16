@@ -144,3 +144,240 @@ export function DoodleDots({ className }: DoodleProps) {
     </svg>
   );
 }
+
+export function DoodleHeart({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-20 h-20', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M50 85C50 85 15 60 15 35c0-13.8 11.2-25 25-25 7.5 0 14.2 3.3 18.8 8.5C63.3 13.3 70 10 77.5 10 91.3 10 100 21.2 100 35c0 25-35 50-35 50s-7.5-5-15-5"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleZigzag({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 120 40"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-28 h-10', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M5 30l20-20 20 20 20-20 20 20 20-20"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleSpiral({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-24 h-24', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M50 50c0-15 10-25 25-25s25 15 25 30-15 30-35 30-40-20-40-45 25-45 50-45"
+        stroke="currentColor"
+        strokeWidth="4"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleConfetti({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-20 h-20', className)}
+      aria-hidden="true"
+    >
+      <circle cx="15" cy="25" r="5" />
+      <rect x="40" y="15" width="8" height="8" rx="2" />
+      <circle cx="75" cy="30" r="6" />
+      <rect x="20" y="55" width="6" height="6" rx="2" />
+      <circle cx="55" cy="65" r="5" />
+      <rect x="80" y="70" width="8" height="8" rx="2" />
+      <circle cx="35" cy="85" r="4" />
+    </svg>
+  );
+}
+
+export function DoodleFlower({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-20 h-20', className)}
+      aria-hidden="true"
+    >
+      <circle cx="50" cy="35" r="10" fill="currentColor" />
+      <circle cx="65" cy="50" r="10" fill="currentColor" />
+      <circle cx="50" cy="65" r="10" fill="currentColor" />
+      <circle cx="35" cy="50" r="10" fill="currentColor" />
+      <circle cx="50" cy="50" r="8" fill="white" />
+      <path d="M50 73v20" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function DoodleLightning({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-20 h-28', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M55 2L15 72h35L35 138l55-75H55L85 2H55z"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleArrow({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 120 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-28 h-20', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M5 55c25-20 55-25 85-15M75 20l25 20-25 20"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleWave({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 120 60"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-28 h-14', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M5 30c15-25 30 0 45-15s30 0 45-15c10-8 20 10 20 30"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleCrown({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 80"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-20 h-16', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M10 60l10-40 15 20 20-30 15 30 15-20 10 40H10z"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="20" cy="20" r="4" fill="currentColor" />
+      <circle cx="50" cy="12" r="4" fill="currentColor" />
+      <circle cx="80" cy="20" r="4" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function DoodleMusic({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 120"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-16 h-20', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M35 95V35l45-10v50"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <circle cx="28" cy="95" r="12" stroke="currentColor" strokeWidth="5" />
+      <circle cx="73" cy="75" r="12" stroke="currentColor" strokeWidth="5" />
+    </svg>
+  );
+}
+
+export function DoodleInfinity({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 120 70"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-28 h-16', className)}
+      aria-hidden="true"
+    >
+      <path
+        d="M30 35c-15 0-25-10-25-20S15 5 30 5c15 0 30 20 30 30 0 10 15 30 30 30 15 0 25-10 25-20S105 25 90 25c-15 0-30 20-30 30 0 10-15 30-30 30"
+        stroke="currentColor"
+        strokeWidth="5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function DoodleSparkle({ className }: DoodleProps) {
+  return (
+    <svg
+      viewBox="0 0 100 100"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn('w-16 h-16', className)}
+      aria-hidden="true"
+    >
+      <path d="M50 0c2 20 30 48 50 50-20 2-48 30-50 50-2-20-30-48-50-50 20-2 48-30 50-50z" />
+    </svg>
+  );
+}

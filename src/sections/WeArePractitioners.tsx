@@ -1,4 +1,5 @@
 import { Lightbulb, Users, Wrench, CheckCircle } from 'lucide-react';
+import { DoodleStar, DoodleCloud, DoodleZigzag, DoodleLightning, DoodleHeart, DoodleCrown } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -26,9 +27,13 @@ const insights = [
 
 export function WeArePractitioners() {
   return (
-    <section className="section-base section-light section-padding">
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
+    <section className="section-base section-light section-padding relative">
+      <DoodleStar className="absolute top-10 right-[4%] text-amber-300/50 rotate-[12deg] hidden lg:block w-32 h-32" />
+      <DoodleCloud className="absolute bottom-10 left-[3%] text-sky-300/40 rotate-[-8deg] hidden lg:block w-36 h-36" />
+      <DoodleZigzag className="absolute top-1/3 left-[2%] text-pink-300/30 rotate-[6deg] hidden xl:block w-32 h-12" />
+      <DoodleLightning className="absolute top-1/4 left-[5%] text-yellow-300/40 rotate-[10deg] hidden xl:block w-24 h-32" />
+      <DoodleHeart className="absolute bottom-1/3 right-[3%] text-rose-300/40 hidden xl:block w-28 h-28" />
+      <DoodleCrown className="absolute top-1/2 right-[2%] text-violet-300/30 hidden xl:block w-24 h-20" />
 
       <div className="relative z-10 container-content max-w-[1100px]">
         <SectionHeader

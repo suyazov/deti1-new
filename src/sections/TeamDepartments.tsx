@@ -4,7 +4,7 @@ import {
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleCloud, DoodleDots } from '@/components/Doodles';
+import { DoodleCloud, DoodleDots, DoodleHeart, DoodleZigzag, DoodleSpiral, DoodleSmile, DoodleArrow } from '@/components/Doodles';
 
 const departments = [
   { icon: Megaphone, title: 'Маркетинг', desc: 'Реклама, лидогенерация, лендинги' },
@@ -20,10 +20,13 @@ const departments = [
 export function TeamDepartments() {
   return (
     <section className="section-base section-light section-padding relative">
-      <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#dc2626]/10 -right-40 md:-right-60 top-1/2" />
-
-      <DoodleCloud className="absolute top-16 left-[4%] text-sky-300/50 rotate-[-6deg] hidden lg:block" />
-      <DoodleDots className="absolute bottom-16 right-[5%] text-orange-300/40 hidden lg:block" />
+      <DoodleCloud className="absolute top-8 left-[3%] text-sky-300/50 rotate-[-6deg] hidden lg:block w-40 h-40" />
+      <DoodleDots className="absolute top-1/4 right-[3%] text-orange-300/40 hidden lg:block w-20 h-20" />
+      <DoodleHeart className="absolute bottom-10 right-[5%] text-rose-300/40 hidden lg:block w-32 h-32" />
+      <DoodleZigzag className="absolute bottom-12 left-[4%] text-violet-300/40 rotate-[4deg] hidden lg:block w-32 h-12" />
+      <DoodleSpiral className="absolute top-1/3 right-[2%] text-emerald-300/30 rotate-[12deg] hidden xl:block w-28 h-28" />
+      <DoodleSmile className="absolute bottom-1/3 left-[2%] text-amber-300/30 hidden xl:block w-24 h-24" />
+      <DoodleArrow className="absolute top-1/2 right-[5%] text-pink-300/30 rotate-[-6deg] hidden xl:block w-28 h-16" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

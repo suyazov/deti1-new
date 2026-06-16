@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleScribble, DoodleSmile } from '@/components/Doodles';
+import { DoodleScribble, DoodleSmile, DoodleStar, DoodleDots, DoodleArrow, DoodleWave, DoodleHeart } from '@/components/Doodles';
 
 const features = [
   {
@@ -93,11 +93,13 @@ export function FloatingCards() {
     <section className="section-base section-light section-padding overflow-hidden">
       <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/2 left-1/4 w-3 h-3 rounded-full bg-yellow-300 animate-float pointer-events-none" style={{ animationDelay: '0s' }} />
-      <div className="absolute top-1/4 right-1/4 w-2.5 h-2.5 rounded-full bg-sky-300 animate-float pointer-events-none" style={{ animationDelay: '1s' }} />
-      <div className="absolute bottom-1/4 right-10 w-2 h-2 rounded-full bg-pink-300 animate-float pointer-events-none" style={{ animationDelay: '2s' }} />
-      <DoodleScribble className="absolute top-16 left-[3%] text-sky-300/40 rotate-[-10deg] hidden lg:block" />
-      <DoodleSmile className="absolute bottom-16 right-[4%] text-pink-300/50 rotate-[6deg] hidden lg:block" />
+      <DoodleScribble className="absolute top-10 left-[2%] text-sky-300/40 rotate-[-10deg] hidden lg:block w-32 h-32" />
+      <DoodleSmile className="absolute bottom-10 right-[3%] text-pink-300/50 rotate-[6deg] hidden lg:block w-28 h-28" />
+      <DoodleStar className="absolute top-1/3 right-[2%] text-amber-300/40 rotate-[15deg] hidden xl:block w-28 h-28" />
+      <DoodleDots className="absolute bottom-1/4 left-[4%] text-emerald-300/30 hidden xl:block w-20 h-20" />
+      <DoodleArrow className="absolute top-1/4 left-[3%] text-violet-300/30 rotate-[4deg] hidden xl:block w-32 h-20" />
+      <DoodleWave className="absolute bottom-1/3 right-[4%] text-sky-300/30 rotate-[-8deg] hidden xl:block w-28 h-12" />
+      <DoodleHeart className="absolute top-1/2 right-[5%] text-rose-300/30 hidden xl:block w-24 h-24" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

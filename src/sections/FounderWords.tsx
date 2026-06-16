@@ -1,12 +1,19 @@
 import { Send, Globe } from 'lucide-react';
+import { DoodleHeart, DoodleFlower, DoodleMusic, DoodleWave, DoodleStar } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 
 export function FounderWords() {
   return (
-    <section id="founder" className="section-base section-light section-padding">
-      <div className="container-content">
+    <section id="founder" className="section-base section-light section-padding relative">
+      <DoodleHeart className="absolute top-10 right-[4%] text-rose-300/50 rotate-[6deg] hidden lg:block w-32 h-32" />
+      <DoodleFlower className="absolute bottom-10 left-[3%] text-violet-300/40 rotate-[-10deg] hidden lg:block w-32 h-32" />
+      <DoodleMusic className="absolute top-1/3 left-[2%] text-sky-300/40 hidden xl:block w-20 h-24" />
+      <DoodleWave className="absolute bottom-1/4 right-[3%] text-amber-300/30 rotate-[-8deg] hidden xl:block w-28 h-14" />
+      <DoodleStar className="absolute top-1/2 right-[2%] text-emerald-300/30 rotate-[15deg] hidden xl:block w-24 h-24" />
+
+      <div className="relative z-10 container-content">
         <SectionHeader
           badge="Слово основателя"
           title="С искренностью и заботой"

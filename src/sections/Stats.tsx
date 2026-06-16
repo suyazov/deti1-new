@@ -1,4 +1,5 @@
 import { Calendar, FileBadge, ExternalLink, ShieldCheck, Users, UserCheck } from 'lucide-react';
+import { DoodleZigzag, DoodleDots, DoodleArrow, DoodleMusic, DoodleWave } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
@@ -46,8 +47,12 @@ const stats = [
 
 export function Stats() {
   return (
-    <section id="about" className="section-base section-light section-padding">
-      <div className="glow-orb w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-sky-400/10 -left-40 md:-left-60 top-1/2" />
+    <section id="about" className="section-base section-light section-padding relative">
+      <DoodleZigzag className="absolute top-8 left-[3%] text-sky-300/40 rotate-[-6deg] hidden lg:block w-36 h-14" />
+      <DoodleDots className="absolute bottom-8 right-[4%] text-amber-300/40 hidden lg:block w-20 h-20" />
+      <DoodleArrow className="absolute top-1/3 right-[2%] text-emerald-300/30 rotate-[-4deg] hidden xl:block w-32 h-20" />
+      <DoodleMusic className="absolute bottom-1/3 left-[2%] text-rose-300/30 hidden xl:block w-20 h-24" />
+      <DoodleWave className="absolute top-1/2 left-[4%] text-violet-300/30 rotate-[6deg] hidden xl:block w-28 h-14" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

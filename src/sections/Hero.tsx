@@ -1,5 +1,5 @@
 import { ArrowRight, Star, Heart, Smile, Music, Palette, Gamepad2 } from 'lucide-react';
-import { DoodleCloud, DoodleStar } from '@/components/Doodles';
+import { DoodleCloud, DoodleStar, DoodleSmile, DoodleHeart, DoodleMusic } from '@/components/Doodles';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
@@ -27,7 +27,7 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-[auto] hero-gradient flex items-center overflow-hidden pt-20 lg:pt-24 pb-10 lg:pb-16">
+    <section className="relative min-h-[auto] hero-gradient flex items-center overflow-hidden pt-20 lg:pt-24 pb-8 lg:pb-12">
       <div className="glow-orb w-[280px] h-[280px] md:w-[420px] md:h-[420px] bg-sky-300/25 -top-10 -right-10 animate-pulse-glow" />
       <div className="glow-orb w-[240px] h-[240px] md:w-[380px] md:h-[380px] bg-pink-300/20 -bottom-10 -left-10" />
       <div className="glow-orb w-[200px] h-[200px] md:w-[320px] md:h-[320px] bg-yellow-300/20 top-1/3 left-1/4" />
@@ -43,8 +43,11 @@ export function Hero() {
         </div>
       ))}
 
-      <DoodleCloud className="absolute bottom-20 left-[4%] text-sky-300/60 rotate-[-8deg] hidden lg:block" />
-      <DoodleStar className="absolute top-32 right-[6%] text-amber-300/60 rotate-[12deg] hidden lg:block" />
+      <DoodleCloud className="absolute bottom-16 left-[3%] text-sky-300/60 rotate-[-8deg] hidden lg:block w-36 h-36" />
+      <DoodleStar className="absolute top-28 right-[5%] text-amber-300/60 rotate-[12deg] hidden lg:block w-32 h-32" />
+      <DoodleSmile className="absolute top-1/3 left-[2%] text-pink-300/50 rotate-[8deg] hidden xl:block w-28 h-28" />
+      <DoodleHeart className="absolute bottom-1/3 right-[3%] text-rose-300/40 hidden xl:block w-28 h-28" />
+      <DoodleMusic className="absolute top-1/2 right-[2%] text-violet-300/30 hidden xl:block w-20 h-24" />
 
       <div
         className="absolute inset-0 opacity-[0.03]"

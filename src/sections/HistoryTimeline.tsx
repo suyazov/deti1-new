@@ -1,4 +1,5 @@
 import { Award, FileBadge, ExternalLink } from 'lucide-react';
+import { DoodleSpiral, DoodleDots, DoodleFlower, DoodleStar, DoodleZigzag } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -24,8 +25,12 @@ const awards = [
 
 export function HistoryTimeline() {
   return (
-    <section className="section-base section-light section-padding">
-      <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#dc2626]/10 -right-40 md:-right-60 top-1/2" />
+    <section className="section-base section-light section-padding relative">
+      <DoodleSpiral className="absolute top-12 right-[4%] text-rose-300/40 rotate-[12deg] hidden lg:block w-36 h-36" />
+      <DoodleDots className="absolute bottom-10 left-[3%] text-amber-300/40 hidden lg:block w-20 h-20" />
+      <DoodleFlower className="absolute top-1/3 left-[2%] text-violet-300/40 rotate-[-8deg] hidden xl:block w-28 h-28" />
+      <DoodleStar className="absolute bottom-1/4 right-[3%] text-emerald-300/30 rotate-[10deg] hidden xl:block w-28 h-28" />
+      <DoodleZigzag className="absolute top-1/2 right-[2%] text-sky-300/30 rotate-[6deg] hidden xl:block w-28 h-10" />
 
       <div className="relative z-10 container-content max-w-[1180px]">
         <SectionHeader

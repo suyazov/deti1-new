@@ -109,7 +109,7 @@
   }
 
   .section-padding {
-    @apply py-8 md:py-12 lg:py-14;
+    @apply py-6 md:py-10 lg:py-12;
   }
 
   .section-padding-sm {

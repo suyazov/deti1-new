@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import { Calculator, Users, Banknote, Building2, TrendingUp, Minus, Equal } from 'lucide-react';
+import { DoodleConfetti, DoodleSpiral, DoodleStar, DoodleMusic, DoodleArrow } from '@/components/Doodles';
 import { UiCard as Card } from './ui/UiCard';
 import { UiIconBox as IconBox } from './ui/UiIconBox';
 import { SectionHeader } from './ui/SectionHeader';
@@ -117,9 +118,12 @@ export function ProfitCalculator() {
   }, [children, avgCheck, rent]);
 
   return (
-    <section id="calculator" className="section-light py-10 md:py-14 xl:py-8 relative overflow-hidden">
-      <div className="glow-orb w-[400px] h-[400px] bg-[#00897b]/10 -left-40 top-0" />
-      <div className="glow-orb w-[300px] h-[300px] bg-[#dc2626]/5 -right-40 bottom-0" />
+    <section id="calculator" className="section-base section-light section-padding relative overflow-hidden">
+      <DoodleConfetti className="absolute top-10 right-[4%] text-amber-300/50 rotate-[10deg] hidden lg:block w-28 h-28" />
+      <DoodleSpiral className="absolute bottom-10 left-[3%] text-emerald-300/40 rotate-[-15deg] hidden lg:block w-32 h-32" />
+      <DoodleStar className="absolute top-1/3 left-[2%] text-violet-300/40 rotate-[12deg] hidden xl:block w-28 h-28" />
+      <DoodleMusic className="absolute bottom-1/4 right-[2%] text-rose-300/40 hidden xl:block w-20 h-24" />
+      <DoodleArrow className="absolute top-1/2 right-[5%] text-sky-300/30 rotate-[6deg] hidden xl:block w-28 h-16" />
 
       <div className="relative z-10 max-w-[1240px] mx-auto px-4 sm:px-5">
         <div className="text-center mb-5 md:mb-6 xl:mb-4">

@@ -9,6 +9,7 @@ import {
 import {
   Check, Sparkles, ArrowRight, ChevronDown,
 } from 'lucide-react';
+import { DoodleFlower, DoodleSpiral, DoodleHeart, DoodleStar } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -258,8 +259,11 @@ export function CompactInfo() {
   ];
 
   return (
-    <section id="franchise" className="section-base section-light section-padding">
-      <div className="glow-orb w-[500px] h-[500px] bg-[#00796b]/10 -right-60 top-0" />
+    <section id="franchise" className="section-base section-light section-padding relative">
+      <DoodleFlower className="absolute top-14 right-[4%] text-emerald-300/50 rotate-[8deg] hidden lg:block w-32 h-32" />
+      <DoodleSpiral className="absolute bottom-14 left-[3%] text-violet-300/40 rotate-[-10deg] hidden lg:block w-36 h-36" />
+      <DoodleHeart className="absolute top-1/3 left-[2%] text-rose-300/40 hidden xl:block w-28 h-28" />
+      <DoodleStar className="absolute bottom-1/3 right-[2%] text-amber-300/50 rotate-[15deg] hidden xl:block w-28 h-28" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

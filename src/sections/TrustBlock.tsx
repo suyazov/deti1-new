@@ -1,6 +1,7 @@
 import { Calendar, ShieldCheck, FileBadge, Award, TrendingUp, CheckCircle } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleFlower, DoodleSpiral, DoodleSmile, DoodleZigzag } from '@/components/Doodles';
 
 const trustPoints = [
   {
@@ -56,8 +57,10 @@ const trustPoints = [
 export function TrustBlock() {
   return (
     <section className="section-base section-light section-padding overflow-hidden">
-      <div className="absolute top-20 right-10 w-3 h-3 rounded-full bg-yellow-300 animate-float pointer-events-none" style={{ animationDelay: '0.3s' }} />
-      <div className="absolute bottom-20 left-10 w-2.5 h-2.5 rounded-full bg-pink-300 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }} />
+      <DoodleFlower className="absolute top-14 right-[4%] text-violet-300/50 rotate-[10deg] hidden lg:block w-32 h-32" />
+      <DoodleSpiral className="absolute bottom-14 left-[3%] text-emerald-300/40 rotate-[-12deg] hidden lg:block w-32 h-32" />
+      <DoodleSmile className="absolute top-1/3 left-[2%] text-amber-300/50 rotate-[8deg] hidden xl:block w-28 h-28" />
+      <DoodleZigzag className="absolute bottom-1/4 right-[3%] text-pink-300/40 rotate-[-6deg] hidden xl:block w-32 h-12" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

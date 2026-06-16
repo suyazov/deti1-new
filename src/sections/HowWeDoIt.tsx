@@ -1,6 +1,6 @@
 import { Building2, Paintbrush, Megaphone, Users, PartyPopper } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleStar, DoodleSmile } from '@/components/Doodles';
+import { DoodleStar, DoodleSmile, DoodleHeart, DoodleZigzag, DoodleLightning, DoodleMusic, DoodleCloud } from '@/components/Doodles';
 
 const launchSteps = [
   {
@@ -53,10 +53,13 @@ const launchSteps = [
 export function HowWeDoIt() {
   return (
     <section className="section-base section-light section-padding overflow-hidden relative">
-      <div className="glow-orb w-[400px] h-[400px] bg-pink-400/10 right-0 top-1/2" />
-
-      <DoodleStar className="absolute top-20 left-[4%] text-amber-300/50 rotate-[10deg] hidden lg:block" />
-      <DoodleSmile className="absolute bottom-20 right-[5%] text-pink-300/50 rotate-[-8deg] hidden lg:block" />
+      <DoodleStar className="absolute top-16 left-[3%] text-amber-300/60 rotate-[10deg] hidden lg:block w-36 h-36" />
+      <DoodleSmile className="absolute bottom-16 right-[4%] text-pink-300/60 rotate-[-8deg] hidden lg:block w-32 h-32" />
+      <DoodleHeart className="absolute top-1/2 right-[2%] text-rose-300/40 hidden xl:block w-28 h-28" />
+      <DoodleZigzag className="absolute bottom-20 left-[2%] text-sky-300/40 rotate-[8deg] hidden xl:block w-32 h-12" />
+      <DoodleLightning className="absolute top-1/4 right-[3%] text-yellow-300/40 rotate-[12deg] hidden xl:block w-24 h-32" />
+      <DoodleMusic className="absolute bottom-1/3 left-[3%] text-violet-300/40 hidden xl:block w-20 h-24" />
+      <DoodleCloud className="absolute top-1/3 left-[5%] text-emerald-300/30 rotate-[-6deg] hidden xl:block w-28 h-28" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

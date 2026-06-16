@@ -1,6 +1,7 @@
 import { Camera, ShieldCheck, BadgeCheck, Stethoscope, Utensils, PartyPopper, GraduationCap } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleStar, DoodleHeart, DoodleCloud, DoodleLightning } from '@/components/Doodles';
 
 const reasons = [
   {
@@ -64,8 +65,10 @@ const reasons = [
 export function WhyParentsChoose() {
   return (
     <section id="parents" className="section-base section-light section-padding overflow-hidden">
-      <div className="absolute top-20 right-10 w-3 h-3 rounded-full bg-yellow-300 animate-float pointer-events-none" style={{ animationDelay: '0.3s' }} />
-      <div className="absolute bottom-20 left-10 w-2.5 h-2.5 rounded-full bg-pink-300 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }} />
+      <DoodleStar className="absolute top-16 right-[4%] text-amber-300/60 rotate-[12deg] hidden lg:block w-32 h-32" />
+      <DoodleHeart className="absolute bottom-16 left-[3%] text-rose-300/50 rotate-[-8deg] hidden lg:block w-28 h-28" />
+      <DoodleCloud className="absolute top-1/3 left-[2%] text-sky-300/40 rotate-[6deg] hidden xl:block w-36 h-36" />
+      <DoodleLightning className="absolute bottom-1/4 right-[2%] text-yellow-300/50 rotate-[10deg] hidden xl:block w-28 h-36" />
 
       <div className="relative z-10 container-content">
         <SectionHeader
