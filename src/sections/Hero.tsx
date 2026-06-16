@@ -3,7 +3,6 @@ import { DoodleCloud, DoodleStar, DoodleSmile, DoodleHeart, DoodleMusic } from '
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
-import { AnimatedNumber } from '@/components/ui/AnimatedNumber';
 
 const decorations = [
   { Icon: Star, color: 'text-yellow-400', bg: 'bg-yellow-400/25', top: '10%', left: '5%', size: 'w-9 h-9', delay: '0s' },
@@ -73,16 +72,13 @@ export function Hero() {
               <span className="block hero-animate" style={{ animationDelay: '0.2s' }}>детский сад</span>
               <span className="block hero-animate" style={{ animationDelay: '0.3s' }}>
                 <span className="text-gradient">с прибылью</span>{' '}
-                <span className="whitespace-nowrap">
-                  от <AnimatedNumber value={420000} suffix=" ₽" />
-                </span>
+                <span className="whitespace-nowrap">от 420 000 ₽</span>
               </span>
               <span className="block hero-animate" style={{ animationDelay: '0.4s' }}>в месяц</span>
             </h1>
 
             <div
-              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[600px] hero-animate space-y-3"
-              style={{ animationDelay: '0.5s' }}
+              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[600px] space-y-3"
             >
               <p>
                 Откройте частный детский сад по готовой модели: CRM, маркетинг, документы и сопровождение включены. Путь от идеи до первых доходов — за 2–3 месяца.
@@ -92,7 +88,7 @@ export function Hero() {
               </p>
             </div>
 
-            <ul className="space-y-2 mb-6 hero-animate" style={{ animationDelay: '0.6s' }}>
+            <ul className="space-y-2 mb-6">
               {benefits.map((item, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-[#636e72]">
                   <IconBox icon={Star} size="sm" variant="pastel" />
