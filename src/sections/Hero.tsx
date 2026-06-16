@@ -61,28 +61,28 @@ export function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-10">
           <div className="flex-1 min-w-0 w-full">
             <div
-              className="inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}
+              className="inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 hero-animate"
+              style={{ animationDelay: '0.2s' }}
             >
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
               <span className="text-[11px] sm:text-xs font-medium text-[#2D3436]/90 tracking-wide">Франшиза частного детского сада</span>
             </div>
 
             <h1 className="text-[clamp(30px,7vw,52px)] sm:text-[clamp(34px,6vw,56px)] lg:text-[clamp(40px,4.5vw,54px)] font-bold leading-[1.08] lg:leading-[1.05] tracking-tight text-[#2D3436] mb-4 sm:mb-6 break-words">
-              <span className="block text-reveal-line" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
-              <span className="block text-reveal-line" style={{ animationDelay: '0.2s' }}>детский сад</span>
-              <span className="block text-reveal-line" style={{ animationDelay: '0.3s' }}>
+              <span className="block hero-animate" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
+              <span className="block hero-animate" style={{ animationDelay: '0.2s' }}>детский сад</span>
+              <span className="block hero-animate" style={{ animationDelay: '0.3s' }}>
                 <span className="text-gradient">с прибылью</span>{' '}
                 <span className="whitespace-nowrap">
                   от <AnimatedNumber value={420000} suffix=" ₽" />
                 </span>
               </span>
-              <span className="block text-reveal-line" style={{ animationDelay: '0.4s' }}>в месяц</span>
+              <span className="block hero-animate" style={{ animationDelay: '0.4s' }}>в месяц</span>
             </h1>
 
             <div
-              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[600px] opacity-0 animate-blur-reveal space-y-3"
-              style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
+              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[600px] hero-animate space-y-3"
+              style={{ animationDelay: '0.5s' }}
             >
               <p>
                 Откройте частный детский сад по готовой модели: CRM, маркетинг, документы и сопровождение включены. Путь от идеи до первых доходов — за 2–3 месяца.
@@ -92,7 +92,7 @@ export function Hero() {
               </p>
             </div>
 
-            <ul className="space-y-2 mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
+            <ul className="space-y-2 mb-6 hero-animate" style={{ animationDelay: '0.6s' }}>
               {benefits.map((item, i) => (
                 <li key={i} className="flex items-center gap-2 text-sm sm:text-base text-[#636e72]">
                   <IconBox icon={Star} size="sm" variant="pastel" />
@@ -102,8 +102,8 @@ export function Hero() {
             </ul>
 
             <div
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-in-up"
-              style={{ animationDelay: '0.75s', animationFillMode: 'forwards' }}
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 hero-animate"
+              style={{ animationDelay: '0.75s' }}
             >
               <Button asChild size="md" className="w-full sm:w-auto">
                 <a href="#contact" onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}>
@@ -119,8 +119,8 @@ export function Hero() {
           </div>
 
           <div
-            className="flex-1 w-full max-w-[600px] lg:max-w-[520px] min-w-0 opacity-0 animate-slide-in-right"
-            style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
+            className="flex-1 w-full max-w-[600px] lg:max-w-[520px] min-w-0 hero-animate"
+            style={{ animationDelay: '0.4s' }}
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-pink-400/10 to-yellow-400/10 rounded-[2rem] blur-2xl" />
