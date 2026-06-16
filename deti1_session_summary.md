@@ -1,11 +1,12 @@
 # Проект: deti1.ru
 
 ## Последнее изменение
-**2026-06-16** — Дудлы разнесены по сайту, переходы между секциями сделаны плавнее:
-- Компонент `Doodles.tsx` использован в Hero, FloatingCards, HowWeDoIt, TeamDepartments, CTA и TargetAudience.
-- Уменьшены вертикальные отступы секций (`.section-padding`), чтобы убрать разрывы между экранами.
+**2026-06-16** — Дудлы сделаны крупнее и разнообразнее, визуальные разрывы между секциями убраны:
+- В `Doodles.tsx` добавлены новые формы: молния, стрелка, волна, корона, нота, бесконечность, четырёхлучевая звезда.
+- Дудлы увеличены и разнесены по всем секциям: Hero, FloatingCards, WhyParentsChoose, TrustBlock, TargetAudience, CompactInfo, HowWeDoIt, ProfitCalculator, Stats, WeArePractitioners, FounderWords, HistoryTimeline, TeamDepartments, CTA.
+- Уменьшены вертикальные отступы секций (`.section-padding`) и нижний padding Hero для плавных переходов.
 - Accessibility: Lighthouse 1.0, 0 ошибок контраста.
-- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260616_133453`.
+- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260616_220801`.
 
 ## Задачи (todos)
 - [in_progress] Обновить глобальные стили на светлую пастельную палитру
