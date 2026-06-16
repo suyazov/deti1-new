@@ -4,6 +4,7 @@ import {
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleCloud, DoodleDots } from '@/components/Doodles';
 
 const departments = [
   { icon: Megaphone, title: 'Маркетинг', desc: 'Реклама, лидогенерация, лендинги' },
@@ -18,8 +19,11 @@ const departments = [
 
 export function TeamDepartments() {
   return (
-    <section className="section-base section-light section-padding">
+    <section className="section-base section-light section-padding relative">
       <div className="glow-orb w-[400px] h-[400px] md:w-[600px] md:h-[600px] bg-[#dc2626]/10 -right-40 md:-right-60 top-1/2" />
+
+      <DoodleCloud className="absolute top-16 left-[4%] text-sky-300/50 rotate-[-6deg] hidden lg:block" />
+      <DoodleDots className="absolute bottom-16 right-[5%] text-orange-300/40 hidden lg:block" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

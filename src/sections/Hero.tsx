@@ -1,4 +1,5 @@
 import { ArrowRight, Star, Heart, Smile, Music, Palette, Gamepad2 } from 'lucide-react';
+import { DoodleCloud, DoodleStar } from '@/components/Doodles';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiIconBox as IconBox } from '@/components/ui/UiIconBox';
@@ -41,6 +42,9 @@ export function Hero() {
           <d.Icon className={`w-1/2 h-1/2 ${d.color}`} />
         </div>
       ))}
+
+      <DoodleCloud className="absolute bottom-20 left-[4%] text-sky-300/60 rotate-[-8deg] hidden lg:block" />
+      <DoodleStar className="absolute top-32 right-[6%] text-amber-300/60 rotate-[12deg] hidden lg:block" />
 
       <div
         className="absolute inset-0 opacity-[0.03]"

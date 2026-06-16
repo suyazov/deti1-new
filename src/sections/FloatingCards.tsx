@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleScribble, DoodleSmile } from '@/components/Doodles';
 
 const features = [
   {
@@ -95,6 +96,8 @@ export function FloatingCards() {
       <div className="absolute top-1/2 left-1/4 w-3 h-3 rounded-full bg-yellow-300 animate-float pointer-events-none" style={{ animationDelay: '0s' }} />
       <div className="absolute top-1/4 right-1/4 w-2.5 h-2.5 rounded-full bg-sky-300 animate-float pointer-events-none" style={{ animationDelay: '1s' }} />
       <div className="absolute bottom-1/4 right-10 w-2 h-2 rounded-full bg-pink-300 animate-float pointer-events-none" style={{ animationDelay: '2s' }} />
+      <DoodleScribble className="absolute top-16 left-[3%] text-sky-300/40 rotate-[-10deg] hidden lg:block" />
+      <DoodleSmile className="absolute bottom-16 right-[4%] text-pink-300/50 rotate-[6deg] hidden lg:block" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

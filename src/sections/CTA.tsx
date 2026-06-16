@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { InputMask } from '@react-input/mask';
 import { Send, MessageCircle, ArrowRight, Phone, Mail, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
+import { DoodleScribble, DoodleBlob } from '@/components/Doodles';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { SectionHeader } from '@/components/ui/SectionHeader';
@@ -43,9 +44,12 @@ export function CTA() {
   };
 
   return (
-    <section id="contact" className="section-base section-light section-padding">
+    <section id="contact" className="section-base section-light section-padding relative">
       <div className="glow-orb w-[700px] h-[700px] bg-[#00897b]/15 -right-60 bottom-0 animate-pulse-glow" />
       <div className="glow-orb w-[500px] h-[500px] bg-[#dc2626]/10 -left-40 top-0" />
+
+      <DoodleScribble className="absolute top-20 right-[5%] text-teal-300/40 rotate-[8deg] hidden lg:block" />
+      <DoodleBlob className="absolute bottom-10 left-[3%] text-pink-300/30 hidden lg:block" />
 
       <div className="relative z-10 container-content">
         <SectionHeader

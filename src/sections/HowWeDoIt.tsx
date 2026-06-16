@@ -1,5 +1,6 @@
 import { Building2, Paintbrush, Megaphone, Users, PartyPopper } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
+import { DoodleStar, DoodleSmile } from '@/components/Doodles';
 
 const launchSteps = [
   {
@@ -51,8 +52,11 @@ const launchSteps = [
 
 export function HowWeDoIt() {
   return (
-    <section className="section-base section-light section-padding overflow-hidden">
+    <section className="section-base section-light section-padding overflow-hidden relative">
       <div className="glow-orb w-[400px] h-[400px] bg-pink-400/10 right-0 top-1/2" />
+
+      <DoodleStar className="absolute top-20 left-[4%] text-amber-300/50 rotate-[10deg] hidden lg:block" />
+      <DoodleSmile className="absolute bottom-20 right-[5%] text-pink-300/50 rotate-[-8deg] hidden lg:block" />
 
       <div className="relative z-10 container-content">
         <SectionHeader
