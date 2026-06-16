@@ -13,15 +13,10 @@ const decorations = [
   { Icon: Gamepad2, color: 'text-green-400', bg: 'bg-green-400/25', top: '42%', left: '2%', size: 'w-7 h-7', delay: '2.5s' },
 ];
 
-const miniPhotos = [
-  { src: '/photos/kids-sofa-smile.jpeg', alt: 'Дети на диване в детском саду' },
-  { src: '/photos/class-storytime.jpeg', alt: 'Воспитатель читает детям книгу' },
-];
-
 const benefits = [
-  'Готовая методика и образовательные программы',
-  'Помощь с лицензией, помещением и персоналом',
-  'Маркетинг и первые клиенты до запуска',
+  'Готовая модель: CRM, маркетинг, документы и сопровождение',
+  'Путь от идеи до первых доходов — за 2–3 месяца',
+  'Поддержка основателя сети Анны Суязовой на всех этапах',
 ];
 
 export function Hero() {
@@ -70,17 +65,25 @@ export function Hero() {
               <span className="block text-reveal-line" style={{ animationDelay: '0.1s' }}>Откройте свой</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.2s' }}>детский сад</span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.3s' }}>
-                <span className="text-gradient">с прибылью</span> от <AnimatedNumber value={420000} suffix=" ₽" />
+                <span className="text-gradient">с прибылью</span>{' '}
+                <span className="whitespace-nowrap">
+                  от <AnimatedNumber value={420000} suffix=" ₽" />
+                </span>
               </span>
               <span className="block text-reveal-line" style={{ animationDelay: '0.4s' }}>в месяц</span>
             </h1>
 
-            <p
-              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[560px] opacity-0 animate-blur-reveal"
+            <div
+              className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-5 sm:mb-6 max-w-[600px] opacity-0 animate-blur-reveal space-y-3"
               style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}
             >
-              Готовая система запуска частного детского сада. С 2016 года, действующие сады, образовательная лицензия и первые заявки ещё до открытия.
-            </p>
+              <p>
+                Откройте частный детский сад по готовой модели: CRM, маркетинг, документы и сопровождение включены. Путь от идеи до первых доходов — за 2–3 месяца.
+              </p>
+              <p>
+                С 2016 года запускаем действующие сады по образовательной лицензии. За это время получили награды и сопроводили сотни партнёров. С вами — Анна Суязова, основатель сети и предприниматель с 10-летним опытом.
+              </p>
+            </div>
 
             <ul className="space-y-2 mb-6 opacity-0 animate-fade-in-up" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
               {benefits.map((item, i) => (
@@ -124,36 +127,6 @@ export function Hero() {
                   className="w-full h-auto rounded-[1.5rem] object-cover aspect-[4/5]"
                 />
               </Card>
-
-              <div className="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 w-28 sm:w-36 rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
-                <img
-                  src={miniPhotos[0].src}
-                  alt={miniPhotos[0].alt}
-                  width="200"
-                  height="250"
-                  loading="lazy"
-                  className="w-full h-auto object-cover aspect-[4/5]"
-                />
-              </div>
-
-              <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 w-24 sm:w-28 rounded-2xl border-4 border-[#FDFBF7] overflow-hidden shadow-2xl hidden sm:block rotate-[4deg] hover:rotate-0 transition-transform duration-500">
-                <img
-                  src={miniPhotos[1].src}
-                  alt={miniPhotos[1].alt}
-                  width="180"
-                  height="225"
-                  loading="lazy"
-                  className="w-full h-auto object-cover aspect-[4/5]"
-                />
-              </div>
-
-              <div className="absolute top-4 -right-3 sm:top-8 sm:-right-4 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
-                <IconBox icon={Smile} size="sm" variant="pastel" />
-                <div>
-                  <p className="text-xs sm:text-sm font-bold text-[#2D3436]"><AnimatedNumber value={2000} suffix="+" /></p>
-                  <p className="text-[10px] sm:text-xs text-[#636e72]">воспитанников</p>
-                </div>
-              </div>
 
               <div className="absolute -bottom-3 right-4 sm:-bottom-4 sm:right-8 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
                 <IconBox icon={Star} size="sm" variant="pastel" />

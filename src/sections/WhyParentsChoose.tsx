@@ -71,7 +71,7 @@ export function WhyParentsChoose() {
         <SectionHeader
           badge="Для родителей"
           title="Почему родители нас выбирают"
-          description="В садах «Дети в приоритете» родители платят не просто за уход, а за уверенность, качество и развитие"
+          description="В садах «Дети в приоритете» родители платят не просто за уход, а за спокойствие, качественное образование и безопасность"
         />
 
         <div className="grid lg:grid-cols-3 gap-4 md:gap-5 items-stretch">

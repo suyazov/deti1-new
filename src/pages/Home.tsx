@@ -1,7 +1,7 @@
 import { Hero } from '@/sections/Hero';
 import { FloatingCards } from '@/sections/FloatingCards';
 import { WhyParentsChoose } from '@/sections/WhyParentsChoose';
-import { PhotoGallery } from '@/sections/PhotoGallery';
+import { TrustBlock } from '@/sections/TrustBlock';
 import { HowWeDoIt } from '@/sections/HowWeDoIt';
 
 import { ProfitCalculator } from '@/components/ProfitCalculator';
@@ -25,7 +25,7 @@ export default function Home() {
       <Hero />
       <FloatingCards />
       <WhyParentsChoose />
-      <PhotoGallery />
+      <TrustBlock />
       <CompactInfo />
 
       {/* Как это работает */}

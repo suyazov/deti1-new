@@ -52,7 +52,7 @@ export function Navigation() {
             scrolled ? 'nav-glass shadow-lg' : 'bg-transparent'
           }`}
         >
-          <div className="flex items-center justify-between h-14 sm:h-16 px-4 sm:px-5">
+          <div className="flex items-center justify-between h-16 sm:h-[72px] px-4 sm:px-5">
             <Link
               to="/"
               onClick={(e) => {
@@ -61,16 +61,16 @@ export function Navigation() {
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
               }}
-              className="flex items-center gap-2.5"
+              className="flex items-center gap-3"
             >
               <img
                 src="/logo.svg"
                 alt="Дети в приоритете"
-                width="56"
-                height="56"
-                className="h-12 sm:h-12 md:h-14 w-auto"
+                width="72"
+                height="72"
+                className="h-14 sm:h-16 md:h-[72px] w-auto"
               />
-              <span className="text-sm font-semibold text-[#2D3436] hidden sm:block">
+              <span className="text-base md:text-lg font-bold text-[#2D3436] hidden sm:block tracking-wide">
                 Дети в приоритете
               </span>
             </Link>
@@ -148,16 +148,16 @@ export function Navigation() {
                     setMobileOpen(false);
                   }
                 }}
-                className="flex items-center gap-2.5"
+                className="flex items-center gap-3"
               >
                 <img
                   src="/logo.svg"
                   alt="Дети в приоритете"
-                  width="56"
-                  height="56"
-                  className="h-14 w-auto"
+                  width="72"
+                  height="72"
+                  className="h-16 w-auto"
                 />
-                <span className="text-base font-semibold text-[#2D3436]">
+                <span className="text-lg font-bold text-[#2D3436] tracking-wide">
                   Дети в приоритете
                 </span>
               </Link>
