@@ -125,14 +125,25 @@ export function Hero() {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-pink-400/10 to-yellow-400/10 rounded-[2rem] blur-2xl" />
               <Card className="relative p-2 sm:p-3 rounded-[2rem]" variant="default">
-                <img
-                  src="/photos/kids-floor-star.jpeg"
-                  alt="Дети в детском саду «Дети в приоритете»"
-                  width="700"
-                  height="875"
-                  loading="eager"
-                  className="w-full h-auto rounded-[1.5rem] object-cover aspect-[4/5]"
-                />
+                <picture>
+                  <source
+                    srcSet="/photos/kids-floor-star-700.webp 700w, /photos/kids-floor-star-1050.webp 1050w"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 600px, 520px"
+                    type="image/webp"
+                  />
+                  <source
+                    srcSet="/photos/kids-floor-star.jpeg"
+                    type="image/jpeg"
+                  />
+                  <img
+                    src="/photos/kids-floor-star.jpeg"
+                    alt="Дети в детском саду «Дети в приоритете»"
+                    width="700"
+                    height="875"
+                    loading="eager"
+                    className="w-full h-auto rounded-[1.5rem] object-cover aspect-[4/5]"
+                  />
+                </picture>
               </Card>
 
               <div className="absolute -bottom-3 right-4 sm:-bottom-4 sm:right-8 glass-card rounded-2xl px-3 py-2 sm:px-4 sm:py-3 flex items-center gap-2 shadow-xl">
