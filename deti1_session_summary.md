@@ -734,3 +734,37 @@
 - `rsync -av --delete --exclude='api' --exclude='v1' --exclude='consent.html' --exclude='privacy-policy.html' dist/ /var/www/deti1.ru/`.
 - Production: https://deti1.ru
 - Коммит: `02e1b55`
+
+
+---
+
+## Cleanup — 2026-06-17
+
+### Что удалено / перемещено
+- **Неиспользуемые фото** (~30 файлов в `public/photos/`): старые нумерованные фото `1-1.jpg` … `14.jpg`, `img_3759.jpg`, `img_3765.jpg`, `IMG_3841-scaled.jpg`, `interior-1.JPG`, `interior-2.JPG`, `kids-circle.jpeg`, `kids-library-chairs.jpeg`, `kids-library-niche.jpeg`, `kids-outdoor.jpeg`, `kids-shelf.jpeg`, `kids-sofa.jpeg`, `kids-sofa-smile.jpeg`, `class-reading.jpeg`, `class-storytime.jpeg`, `kids-floor-star.webp`.
+- **Дубли фото основателя**: `public/anna-fireplace.jpg/webp`, `public/anna-red-dress.jpg/webp`, `public/anna-white-laptop.webp`.
+- **Неиспользуемые ассеты**: `testimonial-screenshot.jpg/webp`, `logo-light.svg`, `icons/max-logo.svg`.
+- **Исходный docx** перемещён из `public/` в корень проекта.
+- **Устаревший обработчик формы** `public/api/send.php` — содержал захардкоженный токен.
+- **Неиспользуемые компоненты**: ~40 файлов `src/components/ui/`, старый дубль `src/components/SectionHeader.tsx`, `src/sections/TextReveal.tsx`.
+- **С диска**: `.venv/` (143 MB), `dist/`.
+- **Зависимости** из `package.json`: `@hookform/resolvers`, `react-hook-form`, `date-fns`, `zod`, `tw-animate-css`, `next-themes`; убран скрипт `build:prerender`.
+
+### Результат
+- `public/`: 9.5 MB → 2.1 MB.
+- Проект на диске: 641 MB → 481 MB.
+- Сборка: успешно.
+- Lighthouse production:
+  - Performance: **0.99**
+  - Accessibility: **1.0**
+  - Best Practices: **0.74**
+  - SEO: **1.0**
+  - LCP: **0.9 s**
+  - CLS: **0**
+  - TBT: **30 ms**
+
+### Деплой
+- Backup: `/var/www/deti1.ru.bak.20260617_094114`.
+- `rsync -av --delete --exclude='api' --exclude='v1' --exclude='consent.html' --exclude='privacy-policy.html' dist/ /var/www/deti1.ru/`.
+- Production: https://deti1.ru
+- Коммит + push: `16481f7`

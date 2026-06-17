@@ -309,6 +309,23 @@ SEO/GEO-оптимизация по методологии `seo-geo-claude-skill
 - Деплой: `rsync` в `/var/www/deti1.ru/` с исключением `api/`, `v1/`, `consent.html`, `privacy-policy.html`.
 - Production: https://deti1.ru
 
+## Cleanup (2026-06-17)
+
+### Что удалено / перемещено
+- **Неиспользуемые фото** (~30 файлов): `public/photos/1-1.jpg` … `14.jpg`, `img_3759.jpg`, `img_3765.jpg`, `IMG_3841-scaled.jpg`, `interior-1.JPG`, `interior-2.JPG`, `kids-circle.jpeg`, `kids-library-chairs.jpeg`, `kids-library-niche.jpeg`, `kids-outdoor.jpeg`, `kids-shelf.jpeg`, `kids-sofa.jpeg`, `kids-sofa-smile.jpeg`, `class-reading.jpeg`, `class-storytime.jpeg`, `kids-floor-star.webp`.
+- **Дубли фото основателя**: `anna-fireplace.jpg/webp`, `anna-red-dress.jpg/webp`, `anna-white-laptop.webp`.
+- **Неиспользуемые ассеты**: `testimonial-screenshot.jpg/webp`, `logo-light.svg`, `icons/max-logo.svg`.
+- **Исходный docx** перемещён из `public/` в корень проекта.
+- **Устаревший обработчик формы** `public/api/send.php` (содержал захардкоженный токен).
+- **Неиспользуемые компоненты**: ~40 файлов `src/components/ui/` (shadcn компоненты, которые не импортировались), старый дубль `src/components/SectionHeader.tsx`, `src/sections/TextReveal.tsx`.
+- **С диска**: `.venv/` (143 MB), `dist/` (пересобирается).
+- **Зависимости** из `package.json`: `@hookform/resolvers`, `react-hook-form`, `date-fns`, `zod`, `tw-animate-css`, `next-themes`; убран мёртвый скрипт `build:prerender`.
+
+### Результат
+- Размер `public/` с 9.5 MB → 2.1 MB.
+- Проект с диска с 641 MB → 481 MB (без `.venv` и `dist`).
+- Сборка успешна, production https://deti1.ru работает.
+
 ## SEO/GEO-оптимизация (2026-06-17)
 
 ### Что сделано
