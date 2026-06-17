@@ -768,3 +768,12 @@
 - `rsync -av --delete --exclude='api' --exclude='v1' --exclude='consent.html' --exclude='privacy-policy.html' dist/ /var/www/deti1.ru/`.
 - Production: https://deti1.ru
 - Коммит + push: `16481f7`
+
+
+### Очистка production-бэкапов
+- Удалено 17 промежуточных бэкапов `/var/www/deti1.ru.bak.2026061*` — освобождено ~200 MB.
+- Оставлено 3 бэкапа:
+  - `/var/www/deti1.ru.backup.20260613_020855` — самый ранний.
+  - `/var/www/deti1.ru.bak.20260617_083254` — перед SEO/GEO-оптимизацией.
+  - `/var/www/deti1.ru.bak.20260617_094114` — перед финальным cleanup.
+- В оставшихся бэкапах старый Telegram-токен в `send.php` заменён на `REDACTED`.
