@@ -17,14 +17,14 @@
     <meta property="og:url" content="https://deti1.ru/" />
     <meta property="og:title" content="Франшиза детского сада «Дети в приоритете»" />
     <meta property="og:description" content="Образовательная лицензия, торговая марка, сопровождение с 2016 года. Прибыль от 420 000 ₽ в месяц." />
-    <meta property="og:image" content="https://deti1.ru/logo.png" />
+    <meta property="og:image" content="https://deti1.ru/photos/kids-floor-star-1050.webp" />
     <meta property="og:locale" content="ru_RU" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Франшиза детского сада «Дети в приоритете»" />
     <meta name="twitter:description" content="Образовательная лицензия, торговая марка, сопровождение с 2016 года. Прибыль от 420 000 ₽ в месяц." />
-    <meta name="twitter:image" content="https://deti1.ru/logo.png" />
+    <meta name="twitter:image" content="https://deti1.ru/photos/kids-floor-star-1050.webp" />
 
     <meta name="yandex-verification" content="b6967be1b733e201" />
 
@@ -35,10 +35,24 @@
       "@graph": [
         {
           "@type": "WebSite",
+          "@id": "https://deti1.ru/#website",
           "url": "https://deti1.ru/",
           "name": "Франшиза детского сада «Дети в приоритете»",
           "description": "Франшиза частного детского сада «Дети в приоритете». Образовательная лицензия, торговая марка, сопровождение с 2016 года.",
-          "inLanguage": "ru-RU"
+          "inLanguage": "ru-RU",
+          "publisher": { "@id": "https://deti1.ru/#organization" }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://deti1.ru/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Главная",
+              "item": "https://deti1.ru/"
+            }
+          ]
         },
         {
           "@type": "EducationalOrganization",
@@ -47,18 +61,13 @@
           "alternateName": "Франшиза детского сада «Дети в приоритете»",
           "url": "https://deti1.ru/",
           "logo": "https://deti1.ru/logo.png",
-          "image": "https://deti1.ru/photos/kids-floor-star.jpeg",
+          "image": "https://deti1.ru/photos/kids-floor-star-1050.webp",
           "foundingDate": "2016",
           "sameAs": [
             "https://t.me/suyazovaa",
             "https://max.ru/join/ztz-wH7eN8noF7sbsNFmW9qSG_lJuh2i0rYbAVlksKg"
           ],
-          "founder": {
-            "@type": "Person",
-            "name": "Анна Игоревна Суязова",
-            "jobTitle": "Основатель франшизы",
-            "url": "https://deti1.ru/#founder"
-          },
+          "founder": { "@id": "https://deti1.ru/#founder" },
           "address": {
             "@type": "PostalAddress",
             "addressCountry": "RU",
@@ -74,12 +83,23 @@
           }
         },
         {
+          "@type": "Person",
+          "@id": "https://deti1.ru/#founder",
+          "name": "Анна Игоревна Суязова",
+          "jobTitle": "Основатель франшизы",
+          "url": "https://deti1.ru/about-founder",
+          "sameAs": [
+            "https://t.me/suyazovaa",
+            "https://max.ru/join/ztz-wH7eN8noF7sbsNFmW9qSG_lJuh2i0rYbAVlksKg"
+          ]
+        },
+        {
           "@type": "Offer",
           "name": "Франшиза детского сада «Под ключ»",
           "description": "Полное сопровождение открытия частного детского сада: бренд, документы, помещение, обучение, маркетинг и личное сопровождение основателя.",
           "price": "650000",
           "priceCurrency": "RUB",
-          "url": "https://deti1.ru/#franchise",
+          "url": "https://deti1.ru/franchise",
           "availability": "https://schema.org/InStock",
           "offeredBy": { "@id": "https://deti1.ru/#organization" }
         },
@@ -89,7 +109,7 @@
           "description": "Полный комплект документов для самостоятельного запуска детского сада без роялти.",
           "price": "300000",
           "priceCurrency": "RUB",
-          "url": "https://deti1.ru/#franchise",
+          "url": "https://deti1.ru/documents",
           "availability": "https://schema.org/InStock",
           "offeredBy": { "@id": "https://deti1.ru/#organization" }
         },
@@ -172,6 +192,9 @@
             <li>✓ Маркетинг и первые клиенты до запуска</li>
           </ul>
           <a href="#contact" style="display: inline-block; background: #dc2626; color: #fff; padding: 0.875rem 1.5rem; border-radius: 9999px; text-decoration: none; font-weight: 600;">Получить презентацию</a>
+          <figure style="margin: 2rem 0 0 0;">
+            <img src="/photos/kids-floor-star-1050.webp" alt="Дети в детском саду «Дети в приоритете»" width="1050" height="1313" loading="eager" style="max-width: 100%; height: auto; border-radius: 1.5rem; display: block;" />
+          </figure>
         </section>
 
         <section style="padding: 3rem 1.5rem; max-width: 1200px; margin: 0 auto;">
@@ -189,6 +212,9 @@
 
         <section style="padding: 3rem 1.5rem; max-width: 1200px; margin: 0 auto;">
           <h2 style="font-size: 2rem; margin-bottom: 1rem;">Почему родители нас выбирают</h2>
+          <figure style="margin: 0 0 1.5rem 0;">
+            <img src="/photos/kids-classroom-floor.jpeg" alt="Дети на занятии в детском саду «Дети в приоритете»" width="1600" height="1066" loading="lazy" style="max-width: 100%; height: auto; border-radius: 1.5rem; display: block;" />
+          </figure>
           <div style="display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
             <article><h3>Онлайн-видеонаблюдение</h3><p>Родители всегда могут увидеть, как чувствует себя ребёнок.</p></article>
             <article><h3>Безопасная среда</h3><p>Соблюдение СанПиН и продуманная безопасность на каждом шагу.</p></article>
