@@ -1,25 +1,29 @@
 # Проект: deti1.ru
 
 ## Последнее изменение
-**2026-06-16** — Дудлы сделаны крупнее и разнообразнее, визуальные разрывы убраны, плюс оптимизация производительности:
-- В `Doodles.tsx` добавлены новые формы: молния, стрелка, волна, корона, нота, бесконечность, четырёхлучевая звезда.
-- Дудлы увеличены и разнесены по всем секциям.
-- Уменьшены вертикальные отступы секций (`.section-padding`) и нижний padding Hero.
-- Hero-изображение конвертировано в WebP с `srcset` (700w/1050w), добавлен `preload`.
-- Анимации в Hero переведены на CSS keyframes (`hero-animate`) без зависимости от JS.
-- `AnimatedNumber` в H1 заменён на статичный текст — убран layout shift (CLS стал 0).
-- В nginx добавлены `webp|avif` в кэшируемые статические расширения.
-- Lighthouse production: Performance 0.87, Accessibility 1.0, Best-practices 0.75, SEO 1.0; LCP 2.6s, CLS 0.
-- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260616_230113`.
+**2026-06-17** — SEO/GEO-оптимизация по методологии `seo-geo-claude-skills`:
+- Проведён аудит; отчёт в `seo-geo-audit-report.md`.
+- Добавлены schema.org: `BreadcrumbList`, отдельная сущность `Person` для основателя Анны Суязовой.
+- Предрендер `index.html` дополнен изображениями (hero + «Почему родители нас выбирают») для индексации поисковиками.
+- Обновлён `og:image` на WebP hero 1050w.
+- `AnimatedNumber` в H1 заменён на статичный текст — CLS = 0.
+- Hero-анимации переведены на CSS keyframes; WebP `srcset` 700w/1050w с `preload`.
+- В nginx добавлены `webp|avif` в кэш статики.
+- Lighthouse production: Performance **0.89**, Accessibility **1.0**, Best-practices **0.75**, SEO **1.0**; LCP 2.9s, CLS 0.
+- Задеплоено на https://deti1.ru, бэкап `/var/www/deti1.ru.bak.20260617_083254`.
+
+**Предыдущее изменение (2026-06-16)** — Дудлы сделаны крупнее и разнообразнее, визуальные разрывы убраны, оптимизация производительности Hero.
 
 ## Задачи (todos)
-- [in_progress] Обновить глобальные стили на светлую пастельную палитру
-- [pending] Пересобрать Hero с новыми фото и светлым стилем
-- [pending] Расширить FloatingCards деталями из презентации/документа
-- [pending] Обновить CompactInfo: тарифы по docx + детальный блок «Что входит»
-- [pending] Обновить FounderWords с новым фото Анны
-- [pending] Привести Stats, WeArePractitioners, CTA, Footer к светлому стилю
-- [pending] Собрать и задеплоить
+- [x] Обновить глобальные стили на светлую пастельную палитру
+- [x] Пересобрать Hero с новыми фото и светлым стилем
+- [x] Расширить FloatingCards деталями из презентации/документа
+- [x] Обновить CompactInfo: тарифы по docx + детальный блок «Что входит»
+- [x] Обновить FounderWords с новым фото Анны
+- [x] Привести Stats, WeArePractitioners, CTA, Footer к светлому стилю
+- [x] Собрать и задеплоить
+- [x] Провести SEO/GEO-аудит и внедрить быстрые победы (schema, prerender, performance)
+- [ ] Внешнее продвижение: упоминания, ссылки, отзывы (CITE Domain, CORE-EEAT)
 
 ## Тарифы и пакеты документов (актуальные на сайте)
 
@@ -662,3 +666,71 @@
 - Backup: `/var/www/deti1.ru.bak.20260616_113754`.
 - Деплой: `rsync -av --delete --exclude='api' --exclude='v1' --exclude='consent.html' --exclude='privacy-policy.html' dist/ /var/www/deti1.ru/`.
 - Production: https://deti1.ru
+
+
+---
+
+## SEO/GEO-оптимизация — 2026-06-17
+
+### Контекст
+Проведён аудит по методологии `seo-geo-claude-skills`: CORE-EEAT, CITE, technical SEO, on-page, schema, entity, internal linking. Подробный отчёт в `seo-geo-audit-report.md`.
+
+### Выполнено
+- **Schema.org** в `index.html`:
+  - Добавлен `BreadcrumbList`.
+  - Добавлена отдельная сущность `Person` для Анны Суязовой (`@id: https://deti1.ru/#founder`) с `sameAs`.
+  - `EducationalOrganization` ссылается на `founder` через `@id`.
+  - Сохранены: `WebSite`, два `Offer`, `FAQPage`.
+- **Предрендер**:
+  - Добавлены изображения внутрь `<main id="prerender">`: hero-фото и фото «Почему родители нас выбирают».
+  - Google/Яндекс видят контент и картинки без выполнения JS.
+- **Open Graph**:
+  - `og:image` обновлён на `/photos/kids-floor-star-1050.webp`.
+- **Производительность Hero**:
+  - `AnimatedNumber` в H1 заменён на статичный текст — убран layout shift.
+  - Анимации H1 переведены на CSS keyframes (`.hero-animate`).
+  - Hero-изображение: WebP с `srcset` 700w/1050w, fallback JPEG, `preload` в `index.html`.
+  - Уменьшен нижний padding Hero и отступы секций (`.section-padding: py-6 md:py-10 lg:py-12`).
+- **Дудлы и визуальные переходы**:
+  - `Doodles.tsx` расширен: молния, стрелка, волна, корона, нота, бесконечность, четырёхлучевая звезда.
+  - Дудлы увеличены и разнесены по секциям; разрывы между секциями убраны.
+- **nginx**:
+  - Добавлены `webp|avif` в список кэшируемых статических расширений.
+
+### Результаты Lighthouse (production)
+- Performance: **0.89**
+- Accessibility: **1.0**
+- Best Practices: **0.75**
+- SEO: **1.0**
+- CLS: **0**
+- LCP: **2.9 s**
+- TBT: **260 ms**
+
+### Оценки аудита
+- Technical SEO: хороший, блокеров нет.
+- On-page SEO: title/description/H1 ок.
+- Schema: WebSite + EducationalOrganization + Person + BreadcrumbList + FAQPage + Offer × 2.
+- CORE-EEAT weighted: **58/100** (Medium).
+- CITE Domain: **31/100** (Low) — молодой домен, нет внешних ссылок/упоминаний.
+- Internal linking: **35/100**.
+
+### Что требует внешнего продвижения
+- Получить упоминания и обратные ссылки на авторитетных площадках (CITE).
+- Добавить раздел «Отзывы партнёров» с `Review` schema.
+- Создать editorial policy / corrections page.
+- При появлении блога/страниц выстроить topic clusters для внутренней перелинковки.
+
+### Файлы изменены
+- `index.html`
+- `src/sections/Hero.tsx`
+- `src/components/Doodles.tsx`
+- `src/index.css`
+- `seo-geo-audit-report.md`
+- `/etc/nginx/sites-available/deti1.ru.conf`
+
+### Деплой
+- `npm run build` — успешно.
+- Backup: `/var/www/deti1.ru.bak.20260617_083254`.
+- `rsync -av --delete --exclude='api' --exclude='v1' --exclude='consent.html' --exclude='privacy-policy.html' dist/ /var/www/deti1.ru/`.
+- Production: https://deti1.ru
+- Коммит: `02e1b55`
