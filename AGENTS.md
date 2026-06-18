@@ -334,6 +334,20 @@ SEO/GEO-оптимизация по методологии `seo-geo-claude-skill
   - `/var/www/deti1.ru.bak.20260617_094114` — перед финальным cleanup.
 - В оставшихся бэкапах старый Telegram-токен в `*/api/send.php` и `*/v1/api/send.php` заменён на `REDACTED`.
 
+## Большой логотип в Hero (2026-06-18)
+
+### Что сделано
+- В Hero заменён видимый H1 на большой `logo.svg`.
+- Добавлен скрытый H1 «Дети в приоритете» для SEO.
+- Добавлен utility-класс `.sr-only`.
+
+### Результаты
+- Lighthouse production:
+  - Performance: **1.0**
+  - Accessibility: **1.0**
+  - Best Practices: **0.74**
+  - SEO: **1.0**
+
 ## Обновление текста Hero (2026-06-18)
 
 ### Что сделано

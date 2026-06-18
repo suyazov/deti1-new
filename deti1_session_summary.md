@@ -864,3 +864,30 @@
 - Backup: `/var/www/deti1.ru.bak.20260618_172810`
 - Production: https://deti1.ru
 - Коммит + push: `caea076`
+
+
+---
+
+## Большой логотип в Hero — 2026-06-18
+
+### Что сделано
+- В Hero заменён видимый H1 на большой логотип `logo.svg` (высота до 256px на десктопе).
+- Добавлен скрытый H1 «Дети в приоритете» для SEO.
+- Добавлен utility-класс `.sr-only` в `src/index.css`.
+- Обновлён предрендер в `index.html`.
+
+### Файлы изменены
+- `src/sections/Hero.tsx`
+- `src/index.css`
+- `index.html`
+
+### Результаты Lighthouse (production)
+- Performance: **1.0**
+- Accessibility: **1.0**
+- Best Practices: **0.74**
+- SEO: **1.0**
+
+### Деплой
+- Backup: `/var/www/deti1.ru.bak.20260618_173956`
+- Production: https://deti1.ru
+- Коммит + push: `df0d192`
