@@ -90,7 +90,7 @@ const features = [
 
 export function FloatingCards() {
   return (
-    <section className="section-base section-light section-padding overflow-hidden">
+    <section id="franchise" className="section-base section-light section-padding overflow-hidden">
       <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-sky-200/30 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[250px] h-[250px] md:w-[400px] md:h-[400px] bg-pink-200/30 rounded-full blur-3xl pointer-events-none" />
       <DoodleScribble className="absolute top-10 left-[2%] text-sky-300/40 rotate-[-10deg] hidden lg:block w-32 h-32" />

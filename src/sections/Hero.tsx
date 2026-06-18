@@ -1,4 +1,4 @@
-import { ArrowRight, Rocket, FileCheck, HeartHandshake } from 'lucide-react';
+import { ArrowRight, Rocket, FileCheck, HeartHandshake, ChevronDown } from 'lucide-react';
 import {
   DoodleCloud,
   DoodleStar,
@@ -9,6 +9,7 @@ import {
 } from '@/components/Doodles';
 import { UiButton as Button } from '@/components/ui/UiButton';
 import { UiCard as Card } from '@/components/ui/UiCard';
+import { PresentationModal } from '@/components/PresentationModal';
 
 const cards = [
   {
@@ -38,9 +39,14 @@ const cards = [
 ];
 
 export function Hero() {
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleScrollDown = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    document.querySelector('#franchise')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -126,22 +132,29 @@ export function Hero() {
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 hero-animate"
             style={{ animationDelay: '0.75s' }}
           >
-            <Button asChild size="md" className="w-full sm:w-auto">
-              <a
-                href="#contact"
-                onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#contact')}
-              >
+            <PresentationModal>
+              <Button size="md" className="w-full sm:w-auto">
                 Получить презентацию <ArrowRight className="w-4 h-4" />
-              </a>
-            </Button>
+              </Button>
+            </PresentationModal>
             <Button asChild variant="secondary" size="md" className="w-full sm:w-auto">
-              <a
-                href="#about"
-                onClick={(e) => handleClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#about')}
-              >
+              <a href="#franchise" onClick={(e) => handleScroll(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#franchise')}>
                 Узнать подробнее
               </a>
             </Button>
+          </div>
+
+          <div className="mt-10 sm:mt-12 hero-animate" style={{ animationDelay: '1s' }}>
+            <button
+              onClick={handleScrollDown}
+              className="mx-auto flex flex-col items-center gap-2 text-[#636e72] hover:text-[#00897b] transition-colors group"
+              aria-label="Прокрутить вниз"
+            >
+              <span className="text-xs font-medium tracking-wide">Листайте вниз</span>
+              <div className="w-7 h-11 rounded-full border-2 border-current flex items-start justify-center p-1.5">
+                <ChevronDown className="w-4 h-4 animate-bounce group-hover:text-[#00897b]" />
+              </div>
+            </button>
           </div>
         </div>
       </div>
