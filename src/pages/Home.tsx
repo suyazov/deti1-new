@@ -1,4 +1,5 @@
 import { Hero } from '@/sections/Hero';
+import { FranchiseIntro } from '@/sections/FranchiseIntro';
 import { FloatingCards } from '@/sections/FloatingCards';
 import { WhyParentsChoose } from '@/sections/WhyParentsChoose';
 import { TrustBlock } from '@/sections/TrustBlock';
@@ -24,6 +25,7 @@ export default function Home() {
     <>
       {/* Для них: привлечение и выгода */}
       <Hero />
+      <FranchiseIntro />
       <FloatingCards />
       <WhyParentsChoose />
       <TrustBlock />
