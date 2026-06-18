@@ -334,6 +334,23 @@ SEO/GEO-оптимизация по методологии `seo-geo-claude-skill
   - `/var/www/deti1.ru.bak.20260617_094114` — перед финальным cleanup.
 - В оставшихся бэкапах старый Telegram-токен в `*/api/send.php` и `*/v1/api/send.php` заменён на `REDACTED`.
 
+## Модальная форма и scroll-down (2026-06-18)
+
+### Что сделано
+- Создан `src/components/PresentationModal.tsx` — форма в модальном окне с именем, телефоном и honeypot-полем `website`.
+- В Hero кнопка «Получить презентацию» открывает модалку.
+- Кнопка «Узнать подробнее» плавно скроллит к секции `#franchise`.
+- В `FloatingCards.tsx` добавлен `id="franchise"`.
+- В нижнюю часть Hero возвращена анимация мышки «Листайте вниз».
+
+### Результаты
+- Lighthouse production:
+  - Performance: **1.0**
+  - Accessibility: **0.98**
+  - Best Practices: **0.74**
+  - SEO: **1.0**
+- Production: https://deti1.ru
+
 ## Переделка Hero в стиле baby-club (2026-06-18)
 
 ### Что сделано

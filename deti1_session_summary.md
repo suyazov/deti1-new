@@ -810,3 +810,36 @@
 - Backup: `/var/www/deti1.ru.bak.20260618_164343`
 - Production: https://deti1.ru
 - Коммит + push: `afacfb2`
+
+
+---
+
+## Модальная форма и scroll-down подсказка — 2026-06-18
+
+### Что сделано
+- Создан компонент `src/components/PresentationModal.tsx`:
+  - форма с именем и телефоном
+  - honeypot-поле `website` для защиты от спама
+  - отправка на `/api/send.php`
+  - состояния загрузки, успеха, ошибки
+- В `Hero.tsx`:
+  - кнопка «Получить презентацию» открывает модалку
+  - кнопка «Узнать подробнее» плавно скроллит к `#franchise`
+  - добавлена анимация мышки «Листайте вниз»
+- В `FloatingCards.tsx` добавлен `id="franchise"`.
+
+### Файлы изменены
+- `src/components/PresentationModal.tsx` (новый)
+- `src/sections/Hero.tsx`
+- `src/sections/FloatingCards.tsx`
+
+### Результаты Lighthouse (production)
+- Performance: **1.0**
+- Accessibility: **0.98**
+- Best Practices: **0.74**
+- SEO: **1.0**
+
+### Деплой
+- Backup: `/var/www/deti1.ru.bak.20260618_171758`
+- Production: https://deti1.ru
+- Коммит + push: `7e0458d`
