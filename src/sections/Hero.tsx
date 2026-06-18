@@ -1,4 +1,4 @@
-import { ArrowRight, Rocket, FileCheck, HeartHandshake, ChevronDown } from 'lucide-react';
+import { ArrowRight, ChevronDown, Check } from 'lucide-react';
 import {
   DoodleCloud,
   DoodleStar,
@@ -8,35 +8,7 @@ import {
   DoodleSpiral,
 } from '@/components/Doodles';
 import { UiButton as Button } from '@/components/ui/UiButton';
-import { UiCard as Card } from '@/components/ui/UiCard';
 import { PresentationModal } from '@/components/PresentationModal';
-
-const cards = [
-  {
-    icon: Rocket,
-    title: 'Запуск за 2–3 месяца',
-    text: 'От идеи до первых доходов по проверенной схеме.',
-    bg: 'bg-amber-400',
-    iconBg: 'bg-white/25',
-    textColor: 'text-amber-950',
-  },
-  {
-    icon: FileCheck,
-    title: 'Всё готово',
-    text: 'CRM, маркетинг, документы и лицензия — уже в пакете.',
-    bg: 'bg-violet-600',
-    iconBg: 'bg-white/25',
-    textColor: 'text-white',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Сопровождение основателя',
-    text: 'Анна Суязова лично ведёт каждого партнёра.',
-    bg: 'bg-sky-400',
-    iconBg: 'bg-white/25',
-    textColor: 'text-sky-950',
-  },
-];
 
 export function Hero() {
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -71,66 +43,34 @@ export function Hero() {
         }}
       />
 
-      <div className="relative z-10 w-full container-content py-6 md:py-10 lg:py-12">
-        <div className="max-w-4xl mx-auto text-center">
-          <div
-            className="inline-flex items-center gap-2 glass-card rounded-full px-3 py-1.5 sm:px-4 sm:py-2 mb-4 sm:mb-6 hero-animate"
-            style={{ animationDelay: '0.2s' }}
-          >
-            <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-            <span className="text-[11px] sm:text-xs font-medium text-[#2D3436]/90 tracking-wide">
-              Франшиза частного детского сада
-            </span>
-          </div>
-
-          <h1 className="text-[clamp(32px,7vw,56px)] font-bold leading-[1.08] tracking-tight text-[#2D3436] mb-4 sm:mb-6 break-words">
-            <span className="block hero-animate" style={{ animationDelay: '0.1s' }}>
-              Откройте детский сад
-            </span>
-            <span className="block hero-animate" style={{ animationDelay: '0.2s' }}>
-              <span className="text-gradient">с прибылью</span>{' '}
-              <span className="whitespace-nowrap">от 420 000 ₽</span>
-            </span>
-            <span className="block hero-animate" style={{ animationDelay: '0.3s' }}>
-              в месяц
-            </span>
+      <div className="relative z-10 w-full container-content py-8 md:py-12 lg:py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-[clamp(36px,8vw,64px)] font-bold leading-[1.05] tracking-tight text-[#2D3436] mb-5 sm:mb-7 break-words hero-animate">
+            Дети в приоритете
           </h1>
 
           <p
-            className="text-base sm:text-lg text-[#2D3436]/80 leading-relaxed mb-8 sm:mb-10 max-w-2xl mx-auto hero-animate"
-            style={{ animationDelay: '0.4s' }}
+            className="text-xl sm:text-2xl lg:text-[28px] text-[#2D3436] leading-snug mb-6 sm:mb-8 max-w-2xl mx-auto hero-animate"
+            style={{ animationDelay: '0.2s' }}
           >
-            Готовая модель запуска под ключ: документы, CRM, маркетинг и личное сопровождение.
+            Откройте свой детский сад с поддержкой, методикой и прибылью.
           </p>
 
           <div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8 sm:mb-10 hero-animate"
-            style={{ animationDelay: '0.5s' }}
+            className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mb-8 sm:mb-10 hero-animate"
+            style={{ animationDelay: '0.3s' }}
           >
-            {cards.map((card, i) => (
-              <Card
-                key={i}
-                className={`relative overflow-hidden p-5 text-left border-0 shadow-lg ${card.bg}`}
-                variant="default"
-              >
-                <div
-                  className={`relative w-12 h-12 ${card.iconBg} rounded-2xl flex items-center justify-center mb-4`}
-                >
-                  <card.icon className="w-6 h-6 text-white" />
-                </div>
-                <h3 className={`relative text-lg font-bold ${card.textColor} mb-2`}>
-                  {card.title}
-                </h3>
-                <p className={`relative text-sm leading-relaxed ${card.textColor === 'text-white' ? 'text-white/90' : 'text-black/70'}`}>
-                  {card.text}
-                </p>
-              </Card>
-            ))}
+            <span className="w-5 h-5 rounded-full bg-[#00897b]/15 flex items-center justify-center">
+              <Check className="w-3 h-3 text-[#00897b]" />
+            </span>
+            <span className="text-sm sm:text-base font-medium text-[#2D3436]">
+              420 000 ₽ чистой прибыли в месяц при загрузке 72 ребёнка
+            </span>
           </div>
 
           <div
             className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 hero-animate"
-            style={{ animationDelay: '0.75s' }}
+            style={{ animationDelay: '0.5s' }}
           >
             <PresentationModal>
               <Button size="md" className="w-full sm:w-auto">
@@ -144,7 +84,7 @@ export function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 sm:mt-12 hero-animate" style={{ animationDelay: '1s' }}>
+          <div className="mt-10 sm:mt-14 hero-animate" style={{ animationDelay: '0.7s' }}>
             <button
               onClick={handleScrollDown}
               className="mx-auto flex flex-col items-center gap-2 text-[#636e72] hover:text-[#00897b] transition-colors group"
