@@ -45,9 +45,15 @@ export function Hero() {
 
       <div className="relative z-10 w-full container-content py-8 md:py-12 lg:py-16">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-[clamp(36px,8vw,64px)] font-bold leading-[1.05] tracking-tight text-[#2D3436] mb-5 sm:mb-7 break-words hero-animate">
-            Дети в приоритете
-          </h1>
+          <h1 className="sr-only">Дети в приоритете</h1>
+          <div className="mb-5 sm:mb-7 hero-animate flex justify-center" aria-hidden="true">
+            <img
+              src="/logo.svg"
+              alt=""
+              className="h-36 sm:h-48 md:h-56 lg:h-64 w-auto"
+              loading="eager"
+            />
+          </div>
 
           <p
             className="text-xl sm:text-2xl lg:text-[28px] text-[#2D3436] leading-snug mb-6 sm:mb-8 max-w-2xl mx-auto hero-animate"
