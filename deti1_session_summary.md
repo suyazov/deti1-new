@@ -891,3 +891,42 @@
 - Backup: `/var/www/deti1.ru.bak.20260618_173956`
 - Production: https://deti1.ru
 - Коммит + push: `df0d192`
+
+
+---
+
+## Новый экран FranchiseIntro с пушистыми персонажами — 2026-06-18
+
+### Что сделано
+- Создан компонент `src/components/FurryCharacters.tsx` с 5 SVG-персонажами:
+  - оранжевый защитник с щитом и мечом
+  - зелёный аналитик с лупой
+  - голубой супергерой с плащом
+  - жёлтый поддержка с наушниками
+  - розовый методист с книгой
+- Создана секция `src/sections/FranchiseIntro.tsx` между Hero и FloatingCards.
+- Текст секции:
+  - «Откройте частный детский сад по готовой модели:»
+  - CRM, маркетинг, документы и сопровождение включены.
+  - Путь от идеи до первых доходов — за 2–3 месяца.
+  - 90% ошибок, которые допускают новички, можно не совершать.
+  - Франшиза «Дети в приоритете» — это не просто бренд, это путь, который вы пройдёте с поддержкой.
+- Подключена в `src/pages/Home.tsx`.
+- Обновлён предрендер в `index.html`.
+
+### Файлы изменены
+- `src/components/FurryCharacters.tsx` (новый)
+- `src/sections/FranchiseIntro.tsx` (новый)
+- `src/pages/Home.tsx`
+- `index.html`
+
+### Результаты Lighthouse (production)
+- Performance: **1.0**
+- Accessibility: **1.0**
+- Best Practices: **0.74**
+- SEO: **1.0**
+
+### Деплой
+- Backup: `/var/www/deti1.ru.bak.20260618_174741`
+- Production: https://deti1.ru
+- Коммит + push: `da15676`
