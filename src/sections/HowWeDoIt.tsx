@@ -1,140 +1,36 @@
-import { Building2, Paintbrush, Megaphone, Users, PartyPopper } from 'lucide-react';
+import { Building2, ClipboardCheck, Megaphone, Users, Rocket } from 'lucide-react';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleStar, DoodleSmile, DoodleHeart, DoodleZigzag, DoodleLightning, DoodleMusic, DoodleCloud } from '@/components/Doodles';
 
-const launchSteps = [
-  {
-    num: '01',
-    title: 'Помещение',
-    desc: 'Аудит по СанПиН, переговоры с арендодателем, честная смета.',
-    icon: Building2,
-    color: 'bg-sky-500',
-    light: 'bg-sky-50',
-    ring: 'ring-sky-100',
-  },
-  {
-    num: '02',
-    title: 'Ремонт и оснащение',
-    desc: 'Планировка групп, зонирование, мебель и материалы под наши стандарты.',
-    icon: Paintbrush,
-    color: 'bg-pink-500',
-    light: 'bg-pink-50',
-    ring: 'ring-pink-100',
-  },
-  {
-    num: '03',
-    title: 'Маркетинг и продажи',
-    desc: 'Реклама, соцсети и PR до открытия — к запуску уже будут заявки.',
-    icon: Megaphone,
-    color: 'bg-amber-500',
-    light: 'bg-amber-50',
-    ring: 'ring-amber-100',
-  },
-  {
-    num: '04',
-    title: 'Команда',
-    desc: 'Подбор воспитателей и руководителя, их обучение и адаптация.',
-    icon: Users,
-    color: 'bg-emerald-500',
-    light: 'bg-emerald-50',
-    ring: 'ring-emerald-100',
-  },
-  {
-    num: '05',
-    title: 'Открытие',
-    desc: 'Документы, лицензия, торжественный запуск и первые дети в саду.',
-    icon: PartyPopper,
-    color: 'bg-violet-500',
-    light: 'bg-violet-50',
-    ring: 'ring-violet-100',
-  },
+const steps = [
+  { icon: ClipboardCheck, title: 'Сначала считаем и выбираем формат', desc: 'Фиксируем город, исходные условия, бюджет и необходимую глубину поддержки.' },
+  { icon: Building2, title: 'Проверяем помещение и план запуска', desc: 'Разбираем требования к площадке, состав работ, оснащение и последовательность подготовки.' },
+  { icon: Users, title: 'Готовим процессы и команду', desc: 'Определяем роли, материалы, обучение и операционные правила для запуска.' },
+  { icon: Megaphone, title: 'Готовим привлечение родителей', desc: 'Собираем маркетинговый план и путь обработки обращений до открытия.' },
+  { icon: Rocket, title: 'Открываем и сопровождаем', desc: 'Переходим к работе по согласованному плану; объём поддержки после открытия зависит от формата.' },
 ];
 
 export function HowWeDoIt() {
   return (
-    <section className="section-base section-light section-padding overflow-hidden relative">
-      <DoodleStar className="absolute top-16 left-[3%] text-amber-300/60 rotate-[10deg] hidden lg:block w-36 h-36" />
-      <DoodleSmile className="absolute bottom-16 right-[4%] text-pink-300/60 rotate-[-8deg] hidden lg:block w-32 h-32" />
-      <DoodleHeart className="absolute top-1/2 right-[2%] text-rose-300/40 hidden xl:block w-28 h-28" />
-      <DoodleZigzag className="absolute bottom-20 left-[2%] text-sky-300/40 rotate-[8deg] hidden xl:block w-32 h-12" />
-      <DoodleLightning className="absolute top-1/4 right-[3%] text-yellow-300/40 rotate-[12deg] hidden xl:block w-24 h-32" />
-      <DoodleMusic className="absolute bottom-1/3 left-[3%] text-violet-300/40 hidden xl:block w-20 h-24" />
-      <DoodleCloud className="absolute top-1/3 left-[5%] text-emerald-300/30 rotate-[-6deg] hidden xl:block w-28 h-28" />
-
-      <div className="relative z-10 container-content">
+    <section id="process" className="section-base section-light section-padding overflow-hidden">
+      <div className="container-content relative z-10">
         <SectionHeader
-          badge="Этапы запуска"
-          title="От идеи до открытия"
-          description="5 чётких шагов до первых детей в саду"
+          badge="Как проходит работа"
+          title="Путь разбит на понятные этапы"
+          description="Срок каждого этапа зависит от помещения, исходных данных и выбранного формата. В прототипе не обещаем универсальную дату открытия."
         />
-
-        {/* Desktop: horizontal timeline */}
-        <div className="hidden lg:block">
-          <div className="relative">
-            {/* connecting line */}
-            <div className="absolute top-[60px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-sky-200 via-amber-200 to-violet-200" />
-
-            <div className="grid grid-cols-5 gap-4">
-              {launchSteps.map((step, i) => (
-                <div
-                  key={i}
-                  className="blur-reveal relative flex flex-col items-center text-center"
-                  style={{ transitionDelay: `${0.1 + i * 0.08}s` } as React.CSSProperties}
-                >
-                  {/* icon on line */}
-                  <div
-                    className={`relative z-10 w-[120px] h-[120px] rounded-full ${step.light} ring-[8px] ${step.ring} flex items-center justify-center mb-6`}
-                  >
-                    <div className={`w-14 h-14 rounded-full ${step.color} flex items-center justify-center shadow-md`}>
-                      <step.icon className="w-7 h-7 text-white" />
-                    </div>
-                  </div>
-
-                  {/* number */}
-                  <span className={`text-sm font-bold tracking-widest uppercase mb-2 ${step.color.replace('bg-', 'text-')}`}>
-                    Шаг {step.num}
-                  </span>
-
-                  {/* title */}
-                  <h3 className="text-lg font-bold text-[#2D3436] mb-2">{step.title}</h3>
-
-                  {/* desc */}
-                  <p className="text-sm text-[#636e72] leading-relaxed max-w-[220px]">{step.desc}</p>
+        <div className="grid lg:grid-cols-5 gap-3 sm:gap-4">
+          {steps.map(({ icon: Icon, title, desc }, index) => (
+            <div key={title} className="relative bg-white border border-black/5 rounded-[1.75rem] p-5 shadow-card">
+              <div className="flex items-center justify-between mb-4">
+                <div className="w-10 h-10 rounded-xl bg-[#00897b]/10 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-[#00796b]" />
                 </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile: vertical timeline */}
-        <div className="lg:hidden">
-          <div className="relative space-y-6">
-            {/* vertical line */}
-            <div className="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-sky-200 via-amber-200 to-violet-200" />
-
-            {launchSteps.map((step, i) => (
-              <div
-                key={i}
-                className="blur-reveal relative flex items-start gap-5"
-                style={{ transitionDelay: `${0.1 + i * 0.08}s` } as React.CSSProperties}
-              >
-                <div
-                  className={`relative z-10 flex-shrink-0 w-14 h-14 rounded-full ${step.light} ring-[6px] ${step.ring} flex items-center justify-center`}
-                >
-                  <div className={`w-9 h-9 rounded-full ${step.color} flex items-center justify-center shadow-sm`}>
-                    <step.icon className="w-5 h-5 text-white" />
-                  </div>
-                </div>
-                <div className="pt-1">
-                  <span className={`text-xs font-bold tracking-widest uppercase ${step.color.replace('bg-', 'text-')}`}>
-                    Шаг {step.num}
-                  </span>
-                  <h3 className="text-lg font-bold text-[#2D3436] mt-0.5 mb-1">{step.title}</h3>
-                  <p className="text-sm text-[#636e72] leading-relaxed">{step.desc}</p>
-                </div>
+                <span className="text-xs font-black tracking-[.14em] text-[#2D3436]/25">0{index + 1}</span>
               </div>
-            ))}
-          </div>
+              <h3 className="text-base font-bold text-[#2D3436] mb-2 leading-snug">{title}</h3>
+              <p className="text-sm text-[#636e72] leading-relaxed">{desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

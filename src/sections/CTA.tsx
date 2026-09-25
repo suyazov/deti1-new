@@ -52,8 +52,8 @@ export function CTA() {
 
       <div className="relative z-10 container-content">
         <SectionHeader
-          title="Ещё думаете с чего начать?"
-          description="Оставьте заявку — Анна лично свяжется с вами и поможет выбрать подходящий формат."
+          title="Обсудим ваш проект и выберем подходящий формат"
+          description="Оставьте контакт и кратко обозначьте интерес. Следующий шаг — разговор по вашему городу, исходным условиям и нужной глубине поддержки."
         />
 
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-8 items-stretch">
@@ -61,8 +61,8 @@ export function CTA() {
             <div className="flex items-center gap-3 mb-6">
               <IconBox icon={Send} size="lg" variant="teal" />
               <div>
-                <h3 className="text-xl font-bold text-[#2D3436]">Получить презентацию</h3>
-                <p className="text-sm text-[#636e72]">Заполните форму — мы вышлем материалы</p>
+                <h3 className="text-xl font-bold text-[#2D3436]">Обсудить проект</h3>
+                <p className="text-sm text-[#636e72]">Имя и телефон — без длинной анкеты на первом шаге</p>
               </div>
             </div>
 
@@ -118,7 +118,7 @@ export function CTA() {
               {status === 'success' && (
                 <p className="flex items-center justify-center gap-2 text-sm text-[#00897b]">
                   <CheckCircle className="w-4 h-4" />
-                  Заявка отправлена. Анна свяжется с вами в ближайшее время.
+                  Заявка принята интерфейсом. Мы свяжемся с вами по указанному номеру.
                 </p>
               )}
               {status === 'error' && (

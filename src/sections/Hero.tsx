@@ -1,106 +1,76 @@
-import { ArrowRight, ChevronDown, Check } from 'lucide-react';
-import {
-  DoodleCloud,
-  DoodleStar,
-  DoodleSmile,
-  DoodleHeart,
-  DoodleMusic,
-  DoodleSpiral,
-} from '@/components/Doodles';
+import { ArrowRight, BarChart3, Check, ShieldCheck } from 'lucide-react';
 import { UiButton as Button } from '@/components/ui/UiButton';
-import { PresentationModal } from '@/components/PresentationModal';
+
+const proofPoints = [
+  'Практика в детском бизнесе с 2016 года',
+  'Финансовая модель, которую можно проверить на своих параметрах',
+  'Несколько форматов: франшиза, запуск под своим брендом или документы',
+];
 
 export function Hero() {
-  const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const scrollTo = (href: string) => {
     document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleScrollDown = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    document.querySelector('#franchise')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-[auto] hero-gradient flex items-center overflow-hidden pt-20 lg:pt-24 pb-10 lg:pb-14">
-      <div className="glow-orb w-[280px] h-[280px] md:w-[420px] md:h-[420px] bg-sky-300/25 -top-10 -right-10 animate-pulse-glow" />
-      <div className="glow-orb w-[240px] h-[240px] md:w-[380px] md:h-[380px] bg-pink-300/20 -bottom-10 -left-10" />
-      <div className="glow-orb w-[200px] h-[200px] md:w-[320px] md:h-[320px] bg-yellow-300/20 top-1/3 left-1/4" />
-      <div className="glow-orb w-[160px] h-[160px] md:w-[260px] md:h-[260px] bg-purple-300/15 bottom-1/4 right-1/3" />
+    <section className="relative overflow-hidden hero-gradient pt-24 sm:pt-28 lg:pt-32 pb-10 sm:pb-14 lg:pb-20">
+      <div className="absolute -top-24 -right-20 w-[420px] h-[420px] rounded-full bg-sky-200/35 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-28 -left-16 w-[360px] h-[360px] rounded-full bg-rose-200/30 blur-3xl pointer-events-none" />
 
-      <DoodleCloud className="absolute bottom-16 left-[3%] text-sky-300/60 rotate-[-8deg] hidden lg:block w-36 h-36" />
-      <DoodleStar className="absolute top-28 right-[5%] text-amber-300/60 rotate-[12deg] hidden lg:block w-32 h-32" />
-      <DoodleSmile className="absolute top-1/3 left-[2%] text-pink-300/50 rotate-[8deg] hidden xl:block w-28 h-28" />
-      <DoodleHeart className="absolute bottom-1/3 right-[3%] text-rose-300/40 hidden xl:block w-28 h-28" />
-      <DoodleMusic className="absolute top-1/2 right-[2%] text-violet-300/30 hidden xl:block w-20 h-24" />
-      <DoodleSpiral className="absolute bottom-[10%] left-[8%] text-amber-300/40 hidden lg:block w-24 h-24" />
+      <div className="container-content relative z-10">
+        <div className="grid lg:grid-cols-[1.05fr_.95fr] gap-8 lg:gap-14 items-center">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/75 border border-black/5 px-3.5 py-2 text-sm font-semibold text-[#005a4f] shadow-sm mb-5">
+              <ShieldCheck className="w-4 h-4" />
+              Франшиза и запуск под своим брендом
+            </div>
 
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-          backgroundSize: '60px 60px',
-        }}
-      />
+            <h1 className="text-[2.35rem] sm:text-5xl lg:text-[3.7rem] leading-[1.04] font-black tracking-[-0.035em] text-[#263234] mb-5">
+              Откройте частный детский сад с понятным планом запуска
+            </h1>
 
-      <div className="relative z-10 w-full container-content py-8 md:py-12 lg:py-16">
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="sr-only">Дети в приоритете</h1>
-          <div className="mb-5 sm:mb-7 hero-animate flex justify-center" aria-hidden="true">
-            <img
-              src="/logo.svg"
-              alt=""
-              className="h-36 sm:h-48 md:h-56 lg:h-64 w-auto"
-              loading="eager"
-            />
-          </div>
+            <p className="text-lg sm:text-xl text-[#5f6b6d] leading-relaxed max-w-xl mb-7">
+              Помогаем пройти путь от помещения и документов до команды, процессов и привлечения родителей. Вы выбираете глубину поддержки — мы показываем, что входит в каждый формат.
+            </p>
 
-          <p
-            className="text-xl sm:text-2xl lg:text-[28px] text-[#2D3436] leading-snug mb-6 sm:mb-8 max-w-2xl mx-auto hero-animate"
-            style={{ animationDelay: '0.2s' }}
-          >
-            Откройте свой детский сад с поддержкой, методикой и прибылью.
-          </p>
-
-          <div
-            className="inline-flex items-center gap-2 glass-card rounded-full px-4 py-2 mb-8 sm:mb-10 hero-animate"
-            style={{ animationDelay: '0.3s' }}
-          >
-            <span className="w-5 h-5 rounded-full bg-[#00897b]/15 flex items-center justify-center">
-              <Check className="w-3 h-3 text-[#00897b]" />
-            </span>
-            <span className="text-sm sm:text-base font-medium text-[#2D3436]">
-              420 000 ₽ чистой прибыли в месяц при загрузке 72 ребёнка
-            </span>
-          </div>
-
-          <div
-            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 hero-animate"
-            style={{ animationDelay: '0.5s' }}
-          >
-            <PresentationModal>
-              <Button size="md" className="w-full sm:w-auto">
-                Получить презентацию <ArrowRight className="w-4 h-4" />
+            <div className="flex flex-col sm:flex-row gap-3 mb-7">
+              <Button size="lg" className="w-full sm:w-auto" onClick={() => scrollTo('#pricing')}>
+                Посмотреть форматы <ArrowRight className="w-4 h-4" />
               </Button>
-            </PresentationModal>
-            <Button asChild variant="secondary" size="md" className="w-full sm:w-auto">
-              <a href="#franchise" onClick={(e) => handleScroll(e as unknown as React.MouseEvent<HTMLAnchorElement>, '#franchise')}>
-                Узнать подробнее
-              </a>
-            </Button>
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto" onClick={() => scrollTo('#calculator')}>
+                <BarChart3 className="w-4 h-4" /> Рассчитать экономику
+              </Button>
+            </div>
+
+            <ul className="grid gap-2.5 text-sm sm:text-base text-[#445052]">
+              {proofPoints.map((point) => (
+                <li key={point} className="flex items-start gap-2.5">
+                  <span className="mt-0.5 w-5 h-5 rounded-full bg-[#00897b]/12 flex items-center justify-center flex-shrink-0">
+                    <Check className="w-3.5 h-3.5 text-[#00796b]" />
+                  </span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          <div className="mt-10 sm:mt-14 hero-animate" style={{ animationDelay: '0.7s' }}>
-            <button
-              onClick={handleScrollDown}
-              className="mx-auto flex flex-col items-center gap-2 text-[#636e72] hover:text-[#00897b] transition-colors group"
-              aria-label="Прокрутить вниз"
-            >
-              <span className="text-xs font-medium tracking-wide">Листайте вниз</span>
-              <div className="w-7 h-11 rounded-full border-2 border-current flex items-start justify-center p-1.5">
-                <ChevronDown className="w-4 h-4 animate-bounce group-hover:text-[#00897b]" />
+          <div className="relative min-h-[420px] sm:min-h-[500px] lg:min-h-[570px]">
+            <div className="absolute inset-0 rounded-[2.5rem] bg-white/45 border border-white/80 shadow-[0_30px_90px_rgba(45,52,54,.12)] rotate-[1.5deg]" />
+            <div className="absolute inset-3 sm:inset-4 rounded-[2.15rem] overflow-hidden -rotate-[1deg] bg-white">
+              <img
+                src="/photos/kids-classroom-floor.jpeg"
+                alt="Дети на занятии в детском саду «Дети в приоритете»"
+                className="w-full h-full object-cover"
+                width="1200"
+                height="1600"
+                loading="eager"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent" />
+              <div className="absolute left-5 right-5 bottom-5 sm:left-7 sm:right-7 sm:bottom-7 rounded-2xl bg-white/92 backdrop-blur px-5 py-4 shadow-lg">
+                <p className="text-xs uppercase tracking-[.14em] font-bold text-[#00796b] mb-1">Действующая практика</p>
+                <p className="text-base sm:text-lg font-bold text-[#263234] leading-snug">Сначала показываем, как устроена модель. Потом предлагаем выбрать формат сотрудничества.</p>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>

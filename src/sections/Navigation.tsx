@@ -5,8 +5,9 @@ import { UiButton as Button } from '@/components/ui/UiButton';
 import { useScrollHeader } from '@/hooks/useScrollHeader';
 
 const navLinks = [
-  { href: '#about', label: 'О франшизе' },
-  { href: '#franchise', label: 'Тарифы' },
+  { href: '#about', label: 'О проекте' },
+  { href: '#calculator', label: 'Калькулятор' },
+  { href: '#pricing', label: 'Тарифы' },
   { href: '#contact', label: 'Контакты' },
 ];
 
@@ -87,7 +88,7 @@ export function Navigation() {
               </a>
               <Button asChild size="sm">
                 <Link to="/#contact" onClick={(e) => handleClick(e, '#contact')}>
-                  Получить КП <ArrowRight className="w-3.5 h-3.5" />
+                  Обсудить проект <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </Button>
               <button
@@ -234,7 +235,7 @@ export function Navigation() {
               {/* CTA */}
               <div className="flex flex-col justify-end">
                 <p className="text-[#636e72] mb-4 px-2">
-                  Получите презентацию франшизы и финансовую модель
+                  Выберите формат и обсудите свой проект
                 </p>
                 <Button asChild size="lg" className="w-full">
                   <Link to="/#contact" onClick={(e) => handleClick(e, '#contact')}>

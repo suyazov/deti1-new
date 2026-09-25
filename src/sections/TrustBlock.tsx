@@ -1,102 +1,64 @@
-import { Calendar, ShieldCheck, FileBadge, Award, TrendingUp, CheckCircle } from 'lucide-react';
+import { Award, Calendar, FileBadge, LineChart } from 'lucide-react';
 import { UiCard as Card } from '@/components/ui/UiCard';
 import { SectionHeader } from '@/components/ui/SectionHeader';
-import { DoodleFlower, DoodleSpiral, DoodleSmile, DoodleZigzag } from '@/components/Doodles';
 
-const trustPoints = [
+const points = [
   {
     icon: Calendar,
-    title: 'Действующий сад с 2016 года',
-    desc: 'Мы не просто продаём франшизу — каждый день работаем в собственном детском саду и проверяем всё на себе.',
-    color: 'text-sky-600' as const,
-    bg: 'bg-sky-100' as const,
-    border: 'border-sky-200/60' as const,
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Образовательная лицензия',
-    desc: 'Официальное образование, родители могут оплачивать материнским капиталом.',
-    color: 'text-green-600' as const,
-    bg: 'bg-green-100' as const,
-    border: 'border-green-200/60' as const,
+    title: 'Работаем в детском бизнесе с 2016 года',
+    desc: 'На сайте действующего сада и в материалах Фонда поддержки предпринимательства Ставропольского края подтверждается работа проекта и руководителя в этой сфере.',
   },
   {
     icon: FileBadge,
-    title: 'Торговая марка в ФИПС',
-    desc: 'Бренд «Дети в приоритете» зарегистрирован и защищён, № 1019709.',
-    color: 'text-yellow-600' as const,
-    bg: 'bg-yellow-100' as const,
-    border: 'border-yellow-200/60' as const,
+    title: 'Товарный знак зарегистрирован',
+    desc: '«Дети в приоритете» — зарегистрированный товарный знак № 1019709. Перед юридически значимым выпуском реквизиты дополнительно сверяются с первичным реестром.',
   },
   {
     icon: Award,
-    title: 'Трёхкратный победитель «Золотого Меркурия»',
-    desc: 'Федеральная награда за качество и развитие бизнеса.',
-    color: 'text-pink-600' as const,
-    bg: 'bg-pink-100' as const,
-    border: 'border-pink-200/60' as const,
+    title: 'Есть подтверждённые результаты в социальном предпринимательстве',
+    desc: 'В 2024 году Анна Суязова указана среди победителей номинаций регионального этапа конкурса «Мой добрый бизнес».',
   },
   {
-    icon: TrendingUp,
-    title: 'Реальные цифры, а не «золотые горы»',
-    desc: 'Показываем риски, точки роста и проверенную финансовую модель — честно и открыто.',
-    color: 'text-purple-600' as const,
-    bg: 'bg-purple-100' as const,
-    border: 'border-purple-200/60' as const,
-  },
-  {
-    icon: CheckCircle,
-    title: 'Только то, что работает вживую',
-    desc: 'Во франшизу входят только инструменты, которые мы сами используем каждый день.',
-    color: 'text-teal-600' as const,
-    bg: 'bg-teal-100' as const,
-    border: 'border-teal-200/60' as const,
+    icon: LineChart,
+    title: 'Экономику не прячем за заявкой',
+    desc: 'На странице остаётся открытый интерактивный калькулятор. Можно менять загрузку, средний чек и аренду и видеть операционный результат.',
   },
 ];
 
 export function TrustBlock() {
   return (
-    <section className="section-base section-light section-padding overflow-hidden">
-      <DoodleFlower className="absolute top-14 right-[4%] text-violet-300/50 rotate-[10deg] hidden lg:block w-32 h-32" />
-      <DoodleSpiral className="absolute bottom-14 left-[3%] text-emerald-300/40 rotate-[-12deg] hidden lg:block w-32 h-32" />
-      <DoodleSmile className="absolute top-1/3 left-[2%] text-amber-300/50 rotate-[8deg] hidden xl:block w-28 h-28" />
-      <DoodleZigzag className="absolute bottom-1/4 right-[3%] text-pink-300/40 rotate-[-6deg] hidden xl:block w-32 h-12" />
-
-      <div className="relative z-10 container-content">
+    <section id="about" className="section-base section-light section-padding overflow-hidden">
+      <div className="container-content relative z-10">
         <SectionHeader
-          badge="Почему нам доверяют"
-          title="Мы не теоретики. Мы работаем в этом бизнесе каждый день"
-          description="с 2016 года"
+          badge="Сначала — основания доверия"
+          title="Действующая практика вместо набора громких обещаний"
+          description="В новой версии оставляем только те тезисы, которые можно объяснить и проверить. Спорные награды и маркетинговые цифры не используем как доказательство."
         />
 
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
-          <Card padding="none" className="relative overflow-hidden group min-h-[400px] lg:min-h-0">
+        <div className="grid lg:grid-cols-[.9fr_1.1fr] gap-6 lg:gap-8 items-stretch">
+          <Card padding="none" className="overflow-hidden relative min-h-[430px]">
             <img
-              src="/anna-white-laptop.jpg"
-              alt="Анна Суязова, основатель сети «Дети в приоритете»"
+              src="/photos/anna-white.jpeg"
+              alt="Анна Суязова, основатель проекта «Дети в приоритете»"
+              className="absolute inset-0 w-full h-full object-cover object-top"
               loading="lazy"
-              width="853"
-              height="1280"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-              <blockquote className="text-white text-base md:text-lg font-medium leading-relaxed mb-3">
-                «Я сама прошла через трудности и хочу, чтобы вы не повторяли этих ошибок. Моя цель — помочь открыть детский сад правильно, спокойно и без финансовых потерь.»
-              </blockquote>
-              <p className="text-white/80 text-sm md:text-base">Анна Суязова, основатель сети</p>
+            <div className="absolute inset-0 bg-gradient-to-t from-[#17292a]/85 via-[#17292a]/15 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 text-white">
+              <p className="text-xs uppercase tracking-[.14em] font-bold text-white/70 mb-2">Анна Суязова</p>
+              <h3 className="text-2xl sm:text-3xl font-bold leading-tight mb-3">Основатель и практик, который остаётся лицом продукта</h3>
+              <p className="text-sm sm:text-base text-white/85 leading-relaxed">На сайте важно не обещать идеальный бизнес, а показать процесс, материалы, экономику и границы поддержки.</p>
             </div>
           </Card>
 
-          <div className="grid sm:grid-cols-2 gap-4 stagger-children">
-            {trustPoints.map((p, i) => (
-              <Card key={i} variant="hover" padding="lg" className="relative overflow-hidden">
-                <div className={`absolute top-0 left-0 right-0 h-1 ${p.bg.replace('bg-', 'bg-gradient-to-r from-')} to-white/0`} />
-                <div className={`w-12 h-12 rounded-xl ${p.bg} border ${p.border} flex items-center justify-center mb-4`}>
-                  <p.icon className={`w-6 h-6 ${p.color}`} />
+          <div className="grid sm:grid-cols-2 gap-4">
+            {points.map(({ icon: Icon, title, desc }) => (
+              <Card key={title} variant="hover" padding="lg" className="h-full">
+                <div className="w-11 h-11 rounded-xl bg-[#00897b]/10 flex items-center justify-center mb-4">
+                  <Icon className="w-5 h-5 text-[#00796b]" />
                 </div>
-                <h3 className="text-base lg:text-lg font-semibold text-[#2D3436] mb-2 leading-tight">{p.title}</h3>
-                <p className="text-sm text-[#636e72] leading-relaxed">{p.desc}</p>
+                <h3 className="text-lg font-bold text-[#2D3436] mb-2 leading-snug">{title}</h3>
+                <p className="text-sm text-[#636e72] leading-relaxed">{desc}</p>
               </Card>
             ))}
           </div>
