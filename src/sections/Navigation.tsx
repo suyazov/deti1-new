@@ -239,7 +239,7 @@ export function Navigation() {
                 </p>
                 <Button asChild size="lg" className="w-full">
                   <Link to="/#contact" onClick={(e) => handleClick(e, '#contact')}>
-                    Получить презентацию
+                    Обсудить проект
                     <ArrowRight className="w-5 h-5" />
                   </Link>
                 </Button>
