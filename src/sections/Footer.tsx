@@ -15,7 +15,7 @@ export function Footer() {
 
   const navLinks = [
     { href: '#about', label: 'О франшизе' },
-    { href: '#franchise', label: 'Тарифы' },
+    { href: '#pricing', label: 'Тарифы' },
     { href: '#contact', label: 'Контакты' },
   ];
 
