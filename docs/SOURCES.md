@@ -100,3 +100,12 @@
 | `420 000 ₽` при 72 детях | Код/SEO/материалы используют число; владелец отдельно подтвердил честность существующего калькулятора. Первичные данные филиала для аудированной фактической прибыли в DETI-03 не получены | calculator/model scenario; не называть аудированным фактом филиала |
 
 Дополнительный индекс официальных документов ЦИСС: [ФПП СК — Центр инноваций социальной сферы](https://fppsk26.ru/centr-innovacij-socialnoj-sfery/) перечисляет итоговые протоколы конкурсов 2022–2025. Перед публичным релизом спорной награды предпочтителен конкретный протокол/диплом вместо архивной ленты.
+
+
+## S-10 — Version 2 preview deployment, 25.09.2026
+
+Владелец после визуального макета дал точное указание сделать его сайтом и опубликовать по `http://deti1.ru/2`. Реализация принята через [PR #4](https://github.com/suyazov/deti1-new/pull/4), merge `b960175e348bdb574d8f58d49e28137725382e91`; независимый exact-head review перед merge — PASS после исправления CTA contrast. [Live receipt](https://github.com/suyazov/deti1-new/pull/4#issuecomment-5839451353).
+
+Production scope: создан только `/var/www/deti1.ru/2` и два nginx location для `/2`/`/2/`; перед изменением активная nginx-конфигурация сохранена в `/var/backups/deti1-v2-20260925T205112Z`. `nginx -t` PASS, reload успешен. `/2/` — 200, `X-Robots-Tag: noindex, nofollow, noarchive`; 10/10 live-файлов совпали по SHA-256 с `preview-v2/` принятого merge. Корневой `index.html` SHA-256 до/после: `8c4f676e693a203f2aa305d15f46af93a47ff25683bb36b34915c08bf040f386`.
+
+Live browser acceptance: 1440/768/390 без horizontal overflow, anchors/relative assets валидны, console/page errors 0, mobile menu работает. Калькулятор совпал с текущей формулой на default/min/max и кадровых порогах 15/16, 30/31; default: выручка 945 000 ₽, расходы 812 075 ₽, операционная прибыль 132 925 ₽. DNS, секреты, `/api`, `/v1`, корневые файлы и общие assets не изменялись. Rollback: удалить `/2`, восстановить сохранённый active nginx config, `nginx -t`, reload.
