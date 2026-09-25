@@ -1,73 +1,25 @@
-# React + TypeScript + Vite
+# Дети в приоритете — deti1.ru
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Сайт для предпринимателей: франшиза частного детского сада, сопровождение открытия под своим брендом и материалы для самостоятельного запуска. Не сайт записи детей и не Kids CRM.
 
-Currently, two official plugins are available:
+## Начать здесь
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[Контекст и следующий шаг](docs/PROJECT_CONTEXT.md) · [Правила исполнителя](AGENTS.md) · [Решения](docs/DECISIONS.md) · [Содержание](docs/CONTENT_MODEL.md) · [Зверюшки и дизайн](docs/VISUAL_DIRECTION.md) · [План работ](docs/WORKPLAN.md) · [Источники](docs/SOURCES.md).
 
-## React Compiler
+Текущая задача DETI-00 выполняется напрямую через GitHub по указанию владельца, без Bridge. Ограничения и источник выбора — D-09 в журнале решений. Калькулятор сохраняется; нынешние зверюшки требуют замены и визуального выбора Анны.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Разработка
 
-## Expanding the ESLint configuration
+Существующий стек — React, TypeScript, Vite, Tailwind. Команды из `package.json`:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```sh
+npm ci
+npm run dev
+npm run build
+npm run lint
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Перечень команд не означает, что они выполнены в документационной задаче. Для неё проверяются восемь документов и неизменность всех остальных файлов. Источники и роли прежних репозиториев перечислены в SOURCES.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Изменения и merge документации не разрешают публикацию сайта. Production требует отдельного точного решения, проверки резервной копии и отката. Старые инструкции копирования на сервер не являются действующим разрешением.
