@@ -8,87 +8,79 @@
   <title>Дети в приоритете — версия 2</title>
   <meta name="description" content="Прототип новой версии сайта «Дети в приоритете»: форматы сотрудничества, открытый калькулятор и этапы запуска частного детского сада." />
   <link rel="icon" href="/favicon.ico" />
+  <link rel="preload" as="image" href="./assets/hero-art.webp" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main">К содержанию</a>
   <header class="site-header" id="top">
     <div class="shell header-inner">
-      <a class="brand" href="#top" aria-label="Дети в приоритете — наверх">
-        <img src="/logo.svg" alt="" />
-        <span><strong>Дети в приоритете</strong><small>частные детские сады</small></span>
+      <a class="brand" href="#top">
+        <img src="./assets/brand-mark.svg" alt="" />
+        <span><strong>Дети в приоритете</strong><small>Франшиза и поддержка открытия</small></span>
       </a>
       <nav class="desktop-nav" aria-label="Основная навигация">
-        <a href="#formats">Форматы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">О нас</a><a href="#contact">Контакты</a>
+        <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">О нас</a><a href="#contact">Контакты</a>
       </nav>
-      <a class="btn btn-green header-cta" href="#contact">Получить презентацию <span>→</span></a>
-      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню"><span></span><span></span><span></span></button>
+      <a class="btn btn-green header-cta" href="#contact">Обсудить проект <span>→</span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню" type="button"><span></span><span></span><span></span></button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация">
-      <a href="#formats">Форматы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">О нас</a><a href="#contact">Контакты</a>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert>
+      <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">О нас</a><a href="#contact">Контакты</a>
     </nav>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="shell hero-grid">
         <div class="hero-copy">
-          <div class="eyebrow">С 2016 года помогаем развивать частные детские сады</div>
-          <h1>Откройте частный<br />детский сад <span>с поддержкой экспертов</span></h1>
-          <p class="hero-lead">Проверенная практика, документы, обучение команды и сопровождение на ключевых этапах — от выбора помещения до запуска и устойчивой работы.</p>
+          <div class="eyebrow">Проект «Дети в приоритете» работает с 2016 года</div>
+          <h1>Откройте частный <span class="hero-noun">детский сад</span> <span class="hero-accent">с поддержкой экспертов</span></h1>
+          <p class="hero-lead">Практика действующего сада, документы, обучение команды и сопровождение на ключевых этапах — от выбора помещения до запуска.</p>
           <div class="hero-actions">
-            <a class="btn btn-green" href="#contact">Получить презентацию <span>→</span></a>
-            <a class="btn btn-light" href="#formats">Посмотреть форматы</a>
+            <a class="btn btn-green" href="#contact">Обсудить финансовую модель <span>→</span></a>
+            <a class="btn btn-light" href="#formats">Посмотреть тарифы</a>
           </div>
-          <p class="micro-note"><span>🎁</span> Презентация и пример расчётов — после обращения</p>
+          <p class="micro-note"><span>✦</span> Пример расчёта можно обсудить после обращения</p>
         </div>
-        <div class="hero-visual">
-          <div class="photo-card">
-            <img class="hero-photo" src="/photos/kids-classroom-floor.jpeg" alt="Дети в пространстве детского сада «Дети в приоритете»" />
-            <div class="photo-wash"></div>
-            <div class="scribble scribble-left">Больше,<br />чем просто<br />детский сад <b>♥</b></div>
-            <div class="scribble scribble-right">Счастливые<br />дети —<br />успешный<br />бизнес <b>♥</b></div>
-          </div>
-          <img class="mascot hero-bunny" src="./assets/bunny.svg" alt="" aria-hidden="true" />
-          <img class="mascot hero-fox" src="./assets/fox.svg" alt="" aria-hidden="true" />
-          <img class="bird" src="./assets/bird.svg" alt="" aria-hidden="true" />
-        </div>
+        <div class="hero-visual"><img class="hero-art" src="./assets/hero-art.webp" width="650" height="334" fetchpriority="high" alt="Воспитатель и дети играют в саду; рядом иллюстрации зайчика и лисёнка. Надписи: «Больше, чем просто детский сад» и «Счастливые дети — успешный бизнес»." /></div>
       </div>
       <div class="shell trust-strip" aria-label="Ключевые преимущества">
-        <div class="trust-item"><span class="round-icon amber">◷</span><p><strong>С 2016 года</strong><br />в детском бизнесе</p></div>
-        <div class="trust-item"><span class="round-icon mint">⌂</span><p><strong>Действующая практика</strong><br />и реальные процессы</p></div>
-        <div class="trust-item"><span class="round-icon violet">◎</span><p><strong>Комплексная поддержка</strong><br />по выбранному формату</p></div>
-        <div class="trust-item"><span class="round-icon orange">▥</span><p><strong>Честная экономика</strong><br />и прозрачные допущения</p></div>
+        <div class="trust-item"><span class="round-icon amber">◷</span><p><strong>С 2016 года</strong><br />работает проект</p></div>
+        <div class="trust-item"><span class="round-icon mint">⌂</span><p><strong>Действующий сад</strong><br />и реальная практика</p></div>
+        <div class="trust-item"><span class="round-icon violet">◎</span><p><strong>Поддержка</strong><br />по выбранному формату</p></div>
+        <div class="trust-item"><span class="round-icon orange">▥</span><p><strong>Открытая экономика</strong><br />и прозрачные допущения</p></div>
       </div>
     </section>
 
     <section class="section formats" id="formats">
       <div class="shell">
-        <div class="section-head compact-head"><div><span class="kicker">Форматы сотрудничества</span><h2>Выберите подходящую глубину поддержки</h2></div><a href="#contact" class="text-link">Обсудить свой проект →</a></div>
+        <div class="section-head compact-head"><div><h2>Выберите формат сотрудничества</h2></div><a href="#contact" class="text-link">Обсудить подходящий формат →</a></div>
         <div class="format-grid">
-          <article class="format-card green-card"><img src="./assets/fox.svg" alt="" aria-hidden="true" /><div><h3>Франшиза</h3><p class="format-sub">Откройте сад под брендом «Дети в приоритете»</p><ul><li>Готовая бизнес-модель</li><li>Поддержка на ключевых этапах</li><li>Обучение команды</li><li>Роялти: 40 000 ₽ в месяц</li></ul><div class="format-bottom"><strong>650 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
-          <article class="format-card peach-card"><img src="./assets/bear.svg" alt="" aria-hidden="true" /><div><h3>Открытие под своим брендом</h3><p class="format-sub">Запустите сад со своей айдентикой и нашей поддержкой</p><ul><li>Помощь с запуском</li><li>Документы и рабочие материалы</li><li>Обучение и консультации</li><li>Без роялти</li></ul><div class="format-bottom"><strong>450 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
-          <article class="format-card violet-card"><img src="./assets/owl.svg" alt="" aria-hidden="true" /><div><h3>Документы и методики</h3><p class="format-sub">Для самостоятельной организации запуска</p><ul><li>Комплект документов</li><li>Финансовая модель</li><li>Инструкции и шаблоны</li><li>Ограниченная консультационная поддержка</li></ul><div class="format-bottom"><strong>300 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
+          <article class="format-card green-card"><img src="./assets/fox-watercolor.webp" width="620" height="720" loading="lazy" alt="" aria-hidden="true" /><div><h3>Франшиза</h3><p class="format-sub">Откройте сад под брендом «Дети в приоритете»</p><ul><li>Готовая бизнес-модель</li><li>Поддержка на ключевых этапах</li><li>Обучение команды</li><li>Роялти: 40 000 ₽ в месяц</li></ul><div class="format-bottom"><strong>650 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
+          <article class="format-card peach-card"><img src="./assets/bear-watercolor.webp" width="620" height="720" loading="lazy" alt="" aria-hidden="true" /><div><h3>Открытие под своим брендом</h3><p class="format-sub">Запустите сад со своей айдентикой и нашей поддержкой</p><ul><li>Помощь с запуском</li><li>Документы и рабочие материалы</li><li>Обучение и консультации</li><li>Без роялти</li></ul><div class="format-bottom"><strong>450 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
+          <article class="format-card violet-card"><img src="./assets/owl-watercolor.webp" width="620" height="720" loading="lazy" alt="" aria-hidden="true" /><div><h3>Документы и методики</h3><p class="format-sub">Для самостоятельной организации запуска</p><ul><li>Комплект документов</li><li>Финансовая модель</li><li>Инструкции и шаблоны</li><li>Ограниченная консультационная поддержка</li></ul><div class="format-bottom"><strong>300 000 ₽</strong><a href="#contact">Подробнее →</a></div></div></article>
         </div>
-        <p class="price-note">Цены — текущая рабочая матрица видимой версии сайта. Финальные условия и состав конкретного пакета подтверждаются до договора; стоимость пакета не равна полному бюджету открытия.</p>
+        <p class="price-note">Цены для preview — рабочая матрица, не утверждённая публичная оферта. Финальные условия и состав конкретного пакета подтверждаются до договора; стоимость пакета не равна полному бюджету открытия.</p>
       </div>
     </section>
 
     <section class="section calc-section" id="calculator">
       <div class="shell calc-card">
-        <div class="calc-mascot-wrap"><img src="./assets/raccoon.svg" alt="" aria-hidden="true" /></div>
-        <div class="calc-intro"><span class="kicker">Честная экономика</span><h2>Рассчитайте экономику своего сада</h2><p>Меняйте параметры и смотрите операционный результат. Расчёт открыт — телефон для него не нужен.</p></div>
+        <div class="calc-mascot-wrap"><img src="./assets/raccoon-watercolor.webp" width="620" height="720" loading="lazy" alt="" aria-hidden="true" /></div>
+        <div class="calc-intro"><span class="kicker">Честная экономика</span><h2>Рассчитайте экономику своего сада</h2><p>Меняйте параметры и оценивайте операционный результат. Расчёт открыт без заявки.</p></div>
         <div class="calc-controls">
-          <label><span>Количество детей <b id="children-value">30</b></span><input id="children" type="range" min="10" max="200" step="1" value="30" /></label>
-          <label><span>Средний чек <b id="check-value">31 500 ₽</b></span><input id="avg-check" type="range" min="20000" max="100000" step="500" value="31500" /></label>
-          <label><span>Аренда <b id="rent-value">85 000 ₽</b></span><input id="rent" type="range" min="50000" max="1000000" step="5000" value="85000" /></label>
+          <label for="children"><span>Количество детей <output id="children-value" for="children">30</output></span><input id="children" type="range" min="10" max="200" step="1" value="30" /></label>
+          <label for="avg-check"><span>Средний чек <output id="check-value" for="avg-check">31 500 ₽</output></span><input id="avg-check" type="range" min="20000" max="100000" step="500" value="31500" /></label>
+          <label for="rent"><span>Аренда <output id="rent-value" for="rent">85 000 ₽</output></span><input id="rent" type="range" min="50000" max="1000000" step="5000" value="85000" /></label>
         </div>
-        <div class="calc-result"><small>Прогноз операционной прибыли в месяц</small><strong id="profit-value">—</strong><div class="calc-mini"><span>Выручка <b id="revenue-value">—</b></span><span>Расходы <b id="expenses-value">—</b></span></div></div>
-        <div class="calc-disclaimer">Включены персонал, питание, эквайринг, аренда, коммунальные расходы и базовый маркетинг. Не включены амортизация, капитальные затраты и отдельные налоговые режимы. Формула совпадает с текущим калькулятором сайта.</div>
+        <div class="calc-result"><small>Операционная прибыль в месяц</small><strong id="profit-value">—</strong><div class="calc-mini"><span>Выручка <b id="revenue-value">—</b></span><span>Расходы <b id="expenses-value">—</b></span></div></div><span class="sr-only" id="calc-announcement" role="status" aria-live="polite"></span>
+        <div class="calc-disclaimer">ⓘ В расходы включены персонал, питание, эквайринг, аренда, коммунальные услуги и базовый маркетинг. Это ориентир: точный расчёт подготовим индивидуально под ваш проект. Не включены капитальные затраты, амортизация и отдельные налоговые режимы.</div>
       </div>
     </section>
 
     <section class="section process" id="process">
-      <div class="shell"><div class="section-head"><div><span class="kicker">Как мы помогаем</span><h2>Путь от идеи до работающего сада</h2><p>Без универсальных обещаний по срокам: этапы зависят от города, помещения и исходных условий.</p></div></div>
+      <div class="shell"><div class="section-head"><div><span class="kicker">Как мы помогаем</span><h2>Путь от идеи до работающего сада</h2><p>Этапы зависят от города, помещения и исходных условий. Мы рядом на каждом шаге.</p></div></div>
         <div class="steps">
           <article><span>01</span><b>⌕</b><h3>Выбор помещения</h3><p>Исходные требования, оценка площадки и план действий.</p></article>
           <article><span>02</span><b>▤</b><h3>Документы</h3><p>Подготовка материалов и процессов в рамках выбранного пакета.</p></article>
@@ -101,15 +93,15 @@
     </section>
 
     <section class="section about" id="about">
-      <div class="shell about-grid"><div class="about-photo"><img src="/photos/anna-white.jpeg" alt="Анна Суязова, основатель «Дети в приоритете»" /></div><div class="about-copy"><span class="kicker">За продуктом стоит практик</span><h2>Анна Суязова</h2><p>Основатель проекта «Дети в приоритете». В новой версии сайта мы не усиливаем доверие непроверенными рейтингами и громкими цифрами — показываем действующую практику, документы, экономику и конкретные этапы работы.</p><div class="about-facts"><div><strong>2016</strong><span>год начала работы проекта</span></div><div><strong>№ 1019709</strong><span>зарегистрированный товарный знак</span></div></div><a class="btn btn-light" href="#contact">Задать вопрос →</a></div></div>
+      <div class="shell about-grid"><div class="about-photo"><img src="/photos/anna-white.jpeg" width="720" height="840" loading="lazy" alt="Анна Суязова, основатель «Дети в приоритете»" /></div><div class="about-copy"><span class="kicker">Практика действующего сада</span><h2>Анна Суязова</h2><p>Основатель проекта «Дети в приоритете». Делится практикой действующего сада и помогает партнёрам пройти этапы запуска в рамках выбранного формата.</p><div class="about-facts"><div><strong>2016</strong><span>год начала работы проекта</span></div><div><strong>№ 1019709</strong><span>зарегистрированный товарный знак</span></div></div><a class="btn btn-light" href="#contact">Задать вопрос →</a></div></div>
     </section>
 
     <section class="section contact" id="contact">
-      <div class="shell contact-card"><div><span class="kicker">Следующий шаг</span><h2>Обсудим ваш город, помещение и формат запуска</h2><p>Без длинной анкеты. Выберите удобный канал — Анна и команда уточнят исходные данные и предложат следующий шаг.</p></div><div class="contact-actions"><a class="btn btn-green" href="https://wa.me/79614691333" target="_blank" rel="noopener">WhatsApp →</a><a class="btn btn-light" href="https://t.me/anna_suyazova" target="_blank" rel="noopener">Telegram →</a><a class="phone-link" href="tel:+79614691333">+7 (961) 469-13-33</a></div></div>
+      <div class="shell contact-card"><img class="contact-deer" src="./assets/deer-watercolor.webp" width="620" height="720" loading="lazy" alt="" /><div><span class="kicker">Следующий шаг</span><h2>Обсудим ваш город, помещение и формат запуска</h2><p>Расскажите о проекте удобным способом. Уточним исходные данные и предложим следующий шаг.</p></div><div class="contact-actions"><a class="btn btn-green" href="https://wa.me/79614691333" target="_blank" rel="noopener">Написать в WhatsApp →</a><a class="btn btn-light" href="https://t.me/anna_suyazova" target="_blank" rel="noopener">Написать в Telegram →</a><a class="phone-link" href="tel:+79614691333">+7 (961) 469-13-33</a></div></div>
     </section>
   </main>
 
-  <footer><div class="shell footer-inner"><div class="brand"><img src="/logo.svg" alt="" /><span><strong>Дети в приоритете</strong><small>версия 2 · preview</small></span></div><p>© 2026 · Preview `/2` не индексируется поисковыми системами.</p><a href="#top">Наверх ↑</a></div></footer>
+  <footer><div class="shell footer-inner"><div class="brand"><img src="./assets/brand-mark.svg" alt="" /><span><strong>Дети в приоритете</strong><small>версия 2 · preview</small></span></div><p>© 2026 · Preview `/2` не индексируется поисковыми системами.</p><a href="#top">Наверх ↑</a></div></footer>
   <script src="./app.js" defer></script>
 </body>
 </html>
