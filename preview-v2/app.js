@@ -72,6 +72,6 @@ mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click',
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
 });
-window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
   if (event.matches && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
 });
