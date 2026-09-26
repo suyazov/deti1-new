@@ -57,6 +57,38 @@ let announcementTimer;
 }));
 renderCalculator();
 
+const whatsappContact = document.querySelector('#whatsapp-contact');
+const contactInterest = document.querySelector('#contact-interest');
+const interestLabels = {
+  franchise: ['франшиза «Дети в приоритете»', 'франшизу «Дети в приоритете»'],
+  'own-brand': ['открытие сада под своим брендом', 'открытие сада под своим брендом'],
+  documents: ['документы и методики', 'документы и методики'],
+  calculator: ['расчёт экономики сада', 'расчёт экономики сада'],
+};
+let selectedInterest = '';
+function updateContact(interest) {
+  selectedInterest = interest;
+  const label = interestLabels[interest];
+  contactInterest.textContent = label ? `Тема обращения: ${label[0]}.` : '';
+  let message = label
+    ? `Здравствуйте! Хочу обсудить ${label[1]}.`
+    : 'Здравствуйте! Хочу обсудить открытие частного детского сада.';
+  if (interest === 'calculator') {
+    message += ` Мой расчёт: количество детей — ${refs.children.value}, средний чек — ${refs.avgCheck.value} ₽, аренда — ${refs.rent.value} ₽ в месяц.`;
+  }
+  message += ' Город: ';
+  whatsappContact.href = `https://wa.me/79614691333?text=${encodeURIComponent(message)}`;
+}
+document.querySelectorAll('[data-interest]').forEach((link) => {
+  link.addEventListener('click', () => updateContact(link.dataset.interest));
+});
+[refs.children, refs.avgCheck, refs.rent].forEach((input) => {
+  input.addEventListener('input', () => {
+    if (selectedInterest === 'calculator') updateContact(selectedInterest);
+  });
+});
+updateContact('');
+
 const menuButton = document.querySelector('.menu-btn');
 const mobileNav = document.querySelector('#mobile-nav');
 function setMenu(open, restoreFocus = false) {
