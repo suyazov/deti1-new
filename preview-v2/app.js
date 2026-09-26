@@ -82,6 +82,9 @@ function updateContact(interest) {
 document.querySelectorAll('[data-interest]').forEach((link) => {
   link.addEventListener('click', () => updateContact(link.dataset.interest));
 });
+document.querySelectorAll('a[href="#contact"]:not([data-interest])').forEach((link) => {
+  link.addEventListener('click', () => updateContact(''));
+});
 [refs.children, refs.avgCheck, refs.rent].forEach((input) => {
   input.addEventListener('input', () => {
     if (selectedInterest === 'calculator') updateContact(selectedInterest);
