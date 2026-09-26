@@ -10,6 +10,7 @@ const refs = {
   profit: document.querySelector('#profit-value'),
   revenue: document.querySelector('#revenue-value'),
   expenses: document.querySelector('#expenses-value'),
+  announcement: document.querySelector('#calc-announcement'),
 };
 
 function calculate(children, avgCheck, rent) {
@@ -46,7 +47,14 @@ function renderCalculator() {
   refs.profit.classList.toggle('negative', result.operatingProfit < 0);
 }
 
-[refs.children, refs.avgCheck, refs.rent].forEach((input) => input.addEventListener('input', renderCalculator));
+let announcementTimer;
+[refs.children, refs.avgCheck, refs.rent].forEach((input) => input.addEventListener('input', () => {
+  renderCalculator();
+  clearTimeout(announcementTimer);
+  announcementTimer = setTimeout(() => {
+    refs.announcement.textContent = `Операционная прибыль в месяц: ${refs.profit.textContent}`;
+  }, 500);
+}));
 renderCalculator();
 
 const menuButton = document.querySelector('.menu-btn');
