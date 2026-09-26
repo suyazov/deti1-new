@@ -51,11 +51,19 @@ renderCalculator();
 
 const menuButton = document.querySelector('.menu-btn');
 const mobileNav = document.querySelector('#mobile-nav');
-menuButton.addEventListener('click', () => {
-  const open = mobileNav.classList.toggle('open');
+function setMenu(open) {
+  mobileNav.classList.toggle('open', open);
+  mobileNav.inert = !open;
+  document.body.classList.toggle('menu-open', open);
   menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+  if (!open) menuButton.focus();
+}
+menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => setMenu(false)));
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
 });
-mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  mobileNav.classList.remove('open');
-  menuButton.setAttribute('aria-expanded', 'false');
-}));
+window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  if (event.matches && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
+});
