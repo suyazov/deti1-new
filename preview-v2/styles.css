@@ -66,13 +66,23 @@
 .contact-card .contact-interest:empty{display:none}
 @media(max-width:680px){.hero h1 .hero-accent{display:block}.quiet-details{font-size:13px}.formats{padding-bottom:23px}.calc-section{padding-top:0}.calc-card{min-height:0}.calc-mascot-wrap img{height:150px}.contact{padding-top:22px}}
 
+/* FAQ uses the same soft surfaces and rounded forms as the calculator and contact. */
 .faq{padding:28px 0 12px}
-.faq h2{margin-bottom:18px}
-.faq-list{max-width:900px}
-.faq-list details{border-bottom:1px solid var(--line)}
-.faq-list summary{padding:16px 24px 16px 0;min-height:48px;cursor:pointer;font-size:17px;font-weight:700;line-height:1.4}
-.faq-list p{max-width:740px;margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.5}
-@media(max-width:680px){.faq-list summary{font-size:16px}.faq-list p{font-size:15px}}
+.faq-card{display:grid;grid-template-columns:minmax(220px,.7fr) minmax(0,1.5fr);align-items:start;gap:48px;padding:38px;border-radius:34px;background:radial-gradient(ellipse at 5% 5%,#fff5df,transparent 45%),linear-gradient(120deg,#eef6ef,#edf5f2);box-shadow:0 14px 35px rgba(34,57,61,.04)}
+.faq-heading h2{font-size:clamp(28px,2.65vw,40px);line-height:1.12;letter-spacing:-.04em;margin:16px 0 0;max-width:300px}
+.faq-list{display:grid;gap:10px;min-width:0}
+.faq-list details{border:1px solid #e1e9e2;border-radius:20px;background:rgba(255,255,255,.88);overflow:hidden}
+.faq-list summary{position:relative;display:block;padding:20px 66px 20px 22px;min-height:64px;cursor:pointer;font-size:17px;font-weight:700;line-height:1.4;list-style:none}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::before,.faq-list summary::after{content:"";position:absolute;right:26px;top:calc(50% - 1px);width:14px;height:2px;border-radius:2px;background:#458c61}
+.faq-list summary::after{transform:rotate(90deg)}
+.faq-list details[open] summary::after{transform:rotate(0)}
+.faq-list details[open]{border-color:#b9d4c2;background:#fff}
+.faq-list summary:focus-visible{outline:3px solid #d68137;outline-offset:-4px;border-radius:18px}
+.faq-list p{margin:0;padding:0 22px 22px;color:var(--muted);font-size:16px;line-height:1.6;max-width:740px}
+@media(max-width:900px){.faq-card{grid-template-columns:1fr;gap:24px}.faq-heading h2{max-width:none}}
+@media(max-width:680px){.faq-card{padding:22px 16px;border-radius:25px;gap:20px}.faq-heading h2{font-size:29px;margin-top:12px}.faq-list summary{font-size:16px;padding:17px 50px 17px 17px}.faq-list summary::before,.faq-list summary::after{right:20px}.faq-list p{font-size:15px;padding:0 17px 18px}.faq-list details{border-radius:17px}}
+
 
 .site-header .brand img{width:72px;height:72px}
 .footer-inner .brand img{width:56px;height:56px}
