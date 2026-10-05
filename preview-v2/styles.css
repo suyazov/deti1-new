@@ -2786,7 +2786,11 @@ footer {
 .offer-panel h2 { margin-top: 0; }
 .offer-panel p { font-size: 18px; line-height: 1.65; color: var(--muted); margin-bottom: 0; }
 .offer-panel ul { margin-bottom: 0; }
-.offer-presentation .presentation-note { margin-bottom: 0; }
+.offer-presentation { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.offer-presentation h2 { margin: 0 0 12px; font-size: 24px; line-height: 1.25; }
+.offer-presentation .presentation-note { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+.offer-presentation .presentation-link { flex-shrink: 0; }
+@media (max-width: 1100px) { .offer-presentation { align-items: stretch; flex-direction: column; } }
 .offer-page .document-group { margin-top: 0; }
 .offer-summary { background: var(--offer-mint); box-shadow: var(--panel-shadow); }
 .offer-peach .offer-summary { background: var(--offer-peach); }
