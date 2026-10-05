@@ -2631,7 +2631,17 @@ footer {
 }
 
 @media (max-width: 680px) {
-  /* Shared design system: semantic tokens and component appearance. */
+  /* FAQ expanded state is interactive, not an unused selector. */
+.faq-list details[open] summary::after {
+  transform: rotate(0deg);
+}
+
+.faq-list details[open] {
+  border-color: #b9d4c2;
+  background: #fff;
+}
+
+/* Shared design system: semantic tokens and component appearance. */
 :root {
     --space-7: 32px;
     --radius-panel: 24px;
