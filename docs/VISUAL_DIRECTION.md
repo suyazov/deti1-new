@@ -49,3 +49,11 @@
 **Значок наград, 05.10.2026:** `preview-v2/assets/award-watercolor-v1.webp`. Built-in imagegen prompt: single generic golden award medallion with embossed star, soft sage ribbon tails and tiny leaf; hand-painted watercolor/colored-pencil, matte texture, transparent background, simple silhouette readable at 56px; no text/logos/official insignia. WebP256 quality90, alpha сохранена. Общая декоративная иллюстрация используется во всех шести карточках, не является изображением настоящего диплома/награды.
 
 **Преимущества под hero, 05.10.2026:** `preview-v2/assets/trust-clock-watercolor-v1.webp` и `trust-house-watercolor-v1.webp`. Built-in imagegen prompts: one isolated honey-gold round clock with cream face/sage hands/four marks/leaf; one cozy cream kindergarten house with sage roof/ochre door/windows/leaf. Общие условия: watercolor washes and colored-pencil edges, matte paper texture within object, readable silhouette at60px, transparent background, no words/logos/background badges/glossy3D. WebP256 quality90, alpha сохранена.
+
+### Акварельные детали и воспитатель со зверятами — 05.10.2026
+Built-in imagegen, прозрачный фон. Assets в `preview-v2/assets/`:
+- `footer-class-watercolor-v1.webp`, 720×480: воспитатель-зайка читает книгу лисёнку, медвежонку и ёжику. Подвал четырёх страниц.
+- `books-pencils-watercolor-v1.webp`, 320×265: две книги, три карандаша и маленькая веточка. Будущий сад и FAQ.
+- `toy-blocks-watercolor-v1.webp`, 320×320: деревянные кубики и звезда. Заголовок форматов.
+Промпты: illustration-story, compact isolated watercolor nursery vignette, matte watercolor washes/fine colored pencil, cream/honey ochre/muted sage/blush, transparent background, no lettering/logos/opaque backdrop/glossy 3D. Footer: warm adult rabbit teacher visibly larger than three pupils (baby fox, bear, hedgehog), sitting reading an open sage picture book, whole bodies, wide compact group readable at 260px. Books: two cream/sage books and three ochre/blush/sage pencils with tiny leaf. Toys: three wooden blocks and little star, simple silhouettes readable at 90px.
+Конвертация cwebp quality 90 с сохранением alpha. Иллюстрации декоративны: пустой alt/aria-hidden. Фотозаглушки остаются до получения настоящих снимков.
