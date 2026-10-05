@@ -2804,3 +2804,27 @@ footer {
   .offer-panel, .offer-presentation { padding: 20px; }
   .offer-panel p { font-size: 17px; }
 }
+
+/* Own-brand offer: benefits first, full composition on demand. */
+.offer-value-lead { margin-top: 0; }
+.own-brand-inclusions dd > p { margin: 0 0 12px; }
+.offer-detail summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  color: var(--action);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+.offer-detail summary::-webkit-details-marker { display: none; }
+.offer-detail summary::after { content: '+'; font-size: 22px; flex: 0 0 auto; }
+.offer-detail[open] summary::after { content: '−'; }
+.offer-detail summary:hover { color: var(--action-hover); }
+.offer-content .offer-detail ul { font-size: 16px; margin: 8px 0 0; padding-left: 20px; }
+.offer-summary-label { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.offer-summary-inclusions { padding-left: 20px; margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.offer-summary-inclusions li { margin-bottom: 6px; }
