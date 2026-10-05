@@ -88,3 +88,7 @@ body:has(.format-dialog[open]){overflow:hidden}
 .faq-list summary{padding:16px 24px 16px 0;min-height:48px;cursor:pointer;font-size:17px;font-weight:700;line-height:1.4}
 .faq-list p{max-width:740px;margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.5}
 @media(max-width:680px){.faq-list summary{font-size:16px}.faq-list p{font-size:15px}}
+
+.site-header .brand img{width:72px;height:72px}
+.footer-inner .brand img{width:56px;height:56px}
+@media(max-width:680px){.site-header .brand img{width:56px;height:56px}}
