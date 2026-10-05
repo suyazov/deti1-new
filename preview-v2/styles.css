@@ -176,3 +176,10 @@
 .offer-content .document-item ul{font-size:16px;margin:0 0 16px;line-height:1.6}
 .document-choice{display:inline-flex;align-items:center;min-height:44px;color:#286b49;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:680px){.document-item{padding:20px;border-radius:20px}.document-item h3{font-size:21px}.document-benefit,.document-group-intro{font-size:17px}.offer-content .document-item ul{font-size:16px}}
+
+.calc-result{position:relative}
+.profit-help{display:inline-block;vertical-align:super;line-height:1;margin-left:1px}
+.profit-info{display:grid;place-items:center;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:transparent;color:#458c61;cursor:pointer}
+.profit-info:hover,.profit-info:focus-visible{background:#e9f4ed}
+.profit-tooltip{position:absolute;bottom:calc(100% - 18px);left:14px;right:14px;z-index:10;padding:14px 16px;border:1px solid #cddfd2;border-radius:16px;background:#fffdf8;box-shadow:0 10px 25px rgba(34,57,61,.15);color:#43536c;font-size:13px;font-weight:400;line-height:1.55;text-align:left}
+.profit-tooltip[hidden]{display:none}
