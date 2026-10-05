@@ -80,3 +80,11 @@ body:has(.format-dialog[open]){overflow:hidden}
 .contact-card .contact-interest{margin-top:10px;color:#2b704a;font-size:13px;font-weight:700}
 .contact-card .contact-interest:empty{display:none}
 @media(max-width:680px){.hero h1 .hero-accent{display:block}.quiet-details{font-size:13px}.formats{padding-bottom:23px}.calc-section{padding-top:0}.calc-card{min-height:0}.calc-mascot-wrap img{height:150px}.contact{padding-top:22px}}
+
+.faq{padding:28px 0 12px}
+.faq h2{margin-bottom:18px}
+.faq-list{max-width:900px}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{padding:16px 24px 16px 0;min-height:48px;cursor:pointer;font-size:17px;font-weight:700;line-height:1.4}
+.faq-list p{max-width:740px;margin:0 0 18px;color:var(--muted);font-size:16px;line-height:1.5}
+@media(max-width:680px){.faq-list summary{font-size:16px}.faq-list p{font-size:15px}}
