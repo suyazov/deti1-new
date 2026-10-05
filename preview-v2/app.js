@@ -137,22 +137,33 @@ window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
 const profitHelp = document.querySelector('.profit-help');
 const profitInfo = document.querySelector('.profit-info');
 const profitTooltip = document.querySelector('#profit-tooltip');
+let profitNoteHideTimer;
 const showProfitNote = () => {
-  profitTooltip.classList.remove('below-result');
+  clearTimeout(profitNoteHideTimer);
   profitTooltip.hidden = false;
-  if (profitTooltip.getBoundingClientRect().top < 8) {
-    profitTooltip.classList.add('below-result');
-    const gap = profitTooltip.getBoundingClientRect().top - profitInfo.getBoundingClientRect().bottom;
-    profitTooltip.style.setProperty('--tooltip-bridge-height', `${Math.max(0, gap) + 1}px`);
-  }
+  const button = profitInfo.getBoundingClientRect();
+  const note = profitTooltip.getBoundingClientRect();
+  const left = Math.max(16, Math.min(button.right - note.width, innerWidth - note.width - 16));
+  const preferredTop = button.bottom + 8;
+  const top = preferredTop + note.height <= innerHeight - 16
+    ? preferredTop
+    : Math.max(16, button.top - note.height - 8);
+  profitTooltip.style.left = `${left}px`;
+  profitTooltip.style.top = `${top}px`;
 };
-const hideProfitNote = () => { profitTooltip.hidden = true; };
+const hideProfitNote = () => {
+  clearTimeout(profitNoteHideTimer);
+  profitTooltip.hidden = true;
+};
 profitHelp.addEventListener('pointerenter', (event) => {
   if (event.pointerType === 'mouse' && matchMedia('(hover: hover)').matches) showProfitNote();
 });
 profitHelp.addEventListener('pointerleave', (event) => {
-  if (event.pointerType === 'mouse' && !profitHelp.contains(document.activeElement)) hideProfitNote();
+  if (event.pointerType === 'mouse' && !profitHelp.contains(document.activeElement)) {
+    profitNoteHideTimer = setTimeout(hideProfitNote, 180);
+  }
 });
+window.addEventListener('resize', hideProfitNote);
 profitInfo.addEventListener('focus', showProfitNote);
 profitHelp.addEventListener('focusout', (event) => {
   if (!profitHelp.contains(event.relatedTarget)) hideProfitNote();
