@@ -142,12 +142,16 @@ const showProfitNote = () => {
   clearTimeout(profitNoteHideTimer);
   profitTooltip.hidden = false;
   const button = profitInfo.getBoundingClientRect();
+  profitTooltip.style.maxHeight = 'calc(100dvh - 32px)';
+  const naturalHeight = profitTooltip.getBoundingClientRect().height;
+  const below = Math.max(0, innerHeight - button.bottom - 24);
+  const above = Math.max(0, button.top - 24);
+  const placeBelow = naturalHeight <= below || (naturalHeight > above && below >= above);
+  const availableHeight = placeBelow ? below : above;
+  profitTooltip.style.maxHeight = `${Math.max(1, availableHeight)}px`;
   const note = profitTooltip.getBoundingClientRect();
   const left = Math.max(16, Math.min(button.right - note.width, innerWidth - note.width - 16));
-  const preferredTop = button.bottom + 8;
-  const top = preferredTop + note.height <= innerHeight - 16
-    ? preferredTop
-    : Math.max(16, button.top - note.height - 8);
+  const top = placeBelow ? button.bottom + 8 : button.top - note.height - 8;
   profitTooltip.style.left = `${left}px`;
   profitTooltip.style.top = `${top}px`;
 };
