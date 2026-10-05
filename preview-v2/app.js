@@ -82,7 +82,6 @@ function updateContact(interest) {
 }
 document.querySelectorAll('[data-interest]').forEach((link) => {
   link.addEventListener('click', () => {
-    link.closest('dialog')?.close();
     updateContact(link.dataset.interest);
   });
 });
@@ -94,21 +93,8 @@ document.querySelectorAll('[data-clear-interest]').forEach((link) => {
     if (selectedInterest === 'calculator') updateContact(selectedInterest);
   });
 });
-updateContact('');
-
-document.querySelectorAll('[data-format-dialog]').forEach((button) => {
-  button.addEventListener('click', () => {
-    document.getElementById(button.dataset.formatDialog).showModal();
-  });
-});
-document.querySelectorAll('.format-dialog').forEach((dialog) => {
-  dialog.addEventListener('click', (event) => {
-    if (event.target !== dialog) return;
-    const bounds = dialog.getBoundingClientRect();
-    if (event.clientX < bounds.left || event.clientX > bounds.right ||
-        event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-  });
-});
+const requestedInterest = new URLSearchParams(location.search).get('interest');
+updateContact(Object.hasOwn(interestLabels, requestedInterest) ? requestedInterest : '');
 
 const menuButton = document.querySelector('.menu-btn');
 const mobileNav = document.querySelector('#mobile-nav');
