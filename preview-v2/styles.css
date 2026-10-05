@@ -229,3 +229,10 @@
 @media(min-width:1001px) and (max-width:1250px),(max-width:680px){.calc-mini{grid-template-columns:1fr}.calc-mini span{display:flex;align-items:baseline;justify-content:space-between;gap:8px}.calc-mini b{margin-top:0;font-size:20px}}
 
 @media(max-width:400px){.calc-mini span{font-size:13px;padding:10px;gap:6px}.calc-mini b{font-size:18px}}
+
+/* Match parameter and result column heights; keep the action with the result. */
+.calc-controls{align-self:stretch;align-content:space-between}
+.calc-result{align-self:stretch;display:flex;flex-direction:column}
+.calc-action{width:100%;margin-top:22px;white-space:normal;text-align:center;font-size:16px;min-height:52px}
+.calc-result .calc-mini{margin-top:auto}
+@media(max-width:680px){.calc-action{font-size:14px;margin-top:18px}}
