@@ -23,4 +23,3 @@ document.addEventListener('keydown', (event) => {
 window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
   if (event.matches && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
 });
-
