@@ -33,3 +33,17 @@ Origin read-only headers: HTTPS200, gzip включён, Cache-Control no-cache/
 ## Доказательства
 
 Артефакты сервера: `/var/lib/sy3/project-artifacts/deti1/audits/2026-10-05-refactor/`: три trace, Lighthouse before/after JSON/HTML, размеры файлов и список variants. PR содержит review exact head, deploy SHA и rollback receipt.
+
+## Уточнение по PageSpeed владельца, 05.10.2026, 12:48 МСК
+
+Новый публичный мобильный лабораторный отчёт: Performance 99, FCP 0,9s, LCP 1,4s, TBT 10ms, CLS 0, Speed Index 3,7s. В отличие от первого PDF, это уже версия после PR44. Оставшиеся предупреждения: CSS render-blocking (оценка 140ms), image delivery (331KiB), CSS minification (2KiB). 99 вместо 100 само по себе не доказывает регрессию; режимы и единичные лабораторные проходы имеют разброс.
+
+Исправлено по этому отчёту:
+- Читаемый styles.css сохранён. Четыре страницы подключают styles.min.css, созданный esbuild 0.25.10. Сборка: bash preview-v2/scripts/build-css.sh. Generated CSS должен обновляться вместе с исходником.
+- CSS: 44 269 → 33 256 bytes; оценка gzip 8 652 → 7 729 bytes (−10,7%). Обычный stylesheet link сохранён: полный CSS нужен первому экрану. Асинхронное подключение с риском вспышки неоформленной страницы не вводилось; предупреждение render-blocking может оставаться.
+- 22 responsive WebP пересозданы непосредственно из оригиналов с quality78/method6, alpha сохранена. 5 дополнительных launch192 под mobile DPR1.75; trust/award/books/blocks получили 80/160 варианты. Оригиналы не изменялись.
+- В сравнении одного полного выбранного набора на 390px/DPR1.75 расчёт по байтам файлов: 434 376 → 198 806 bytes (−54,2%). Before использует прежние соответствующие srcset-файлы, after — фактический currentSrc браузера. Это расчёт веса полного набора, а не измерение начальной сетевой загрузки или ускорения LCP.
+
+Проверено: computed styles исходного и минифицированного CSS совпали на главной desktop/mobile и трёх страницах предложений mobile390; на320 нет overflow, FAQ open сохраняет минус, range меняет результат и возвращает132925₽. Все изображения декодированы, мобильный screenshot этапов просмотрен. app.js/формула, тексты/цены/noindex и исходники illustrations сохранены. git diff --check. Публичный PageSpeed после этого дополнительного выпуска ещё не выполнялся; балл100 и полное исчезновение предупреждений не заявлены.
+
+Scope только /2. Корневой llms.txt и серверные заголовки не менялись. Review exact head, origin hashes и rollback receipt фиксируются в PR.
