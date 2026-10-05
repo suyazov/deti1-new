@@ -1351,17 +1351,10 @@ footer {
   display: grid;
   grid-template-columns: minmax(0px, 1fr) 300px;
   align-items: start;
-  gap: 60px;
+  gap: 32px;
   max-width: 1180px;
   padding-top: 48px;
   padding-bottom: 60px;
-}
-
-.offer-content h1 {
-  font-size: clamp(30px, 3.4vw, 46px);
-  line-height: 1.15;
-  letter-spacing: -0.03em;
-  margin: 18px 0px 22px;
 }
 
 .offer-content > p {
@@ -1389,13 +1382,15 @@ footer {
 }
 
 .offer-content .franchise-inclusions {
-  grid-template-columns: 1fr;
-  gap: 0px;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
+  gap: 20px;
 }
 
 .offer-content .franchise-inclusions > div {
-  padding: 20px 0px;
-  border-bottom: 1px solid var(--line);
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--offer-mint);
 }
 
 .offer-content .franchise-inclusions dt {
@@ -2745,4 +2740,67 @@ footer {
   display: flex;
   width: fit-content;
   margin-bottom: var(--space-4);
+}
+
+/* Offer pages reuse the homepage pastel palette, radii and CTA roles. */
+.offer-page {
+  --offer-mint: #eff7f3;
+  --offer-peach: #fff7f1;
+  --offer-lavender: #f5f3ff;
+}
+.offer-intro {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-panel);
+  background: linear-gradient(120deg, var(--offer-peach), var(--offer-mint));
+}
+.offer-peach .offer-intro { background: var(--offer-peach); }
+.offer-lavender .offer-intro { background: var(--offer-lavender); }
+.offer-intro-copy { min-width: 0; }
+.offer-intro h1 {
+  font-size: clamp(30px, 3.4vw, 46px);
+  line-height: 1.15;
+  letter-spacing: -.03em;
+  margin: 18px 0 20px;
+}
+.offer-intro p { font-size: 20px; line-height: 1.6; color: var(--muted); margin: 0; }
+.offer-intro-art { width: 160px; height: 190px; object-fit: contain; }
+.offer-intro .offer-breadcrumb { margin-bottom: 12px; }
+.offer-content > h2:first-child { margin-top: 0; }
+.offer-content .franchise-inclusions > div:nth-child(3n + 2) { background: var(--offer-peach); }
+.offer-content .franchise-inclusions > div:nth-child(3n) { background: var(--offer-lavender); }
+.offer-content .franchise-inclusions > div:last-child { grid-column: 1 / -1; }
+.offer-panel, .offer-presentation {
+  padding: var(--space-5);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--offer-mint);
+  margin-bottom: var(--space-4);
+}
+.offer-panel-warm, .offer-presentation { background: var(--offer-peach); }
+.offer-panel h2 { margin-top: 0; }
+.offer-panel p { font-size: 18px; line-height: 1.65; color: var(--muted); margin-bottom: 0; }
+.offer-panel ul { margin-bottom: 0; }
+.offer-presentation .presentation-note { margin-bottom: 0; }
+.offer-page .document-group { margin-top: 0; }
+.offer-summary { background: var(--offer-mint); box-shadow: var(--panel-shadow); }
+.offer-peach .offer-summary { background: var(--offer-peach); }
+.offer-lavender .offer-summary { background: var(--offer-lavender); }
+@media (max-width: 900px) {
+  .offer-summary { grid-row: 2; }
+  .offer-content { grid-row: 3; }
+}
+@media (max-width: 680px) {
+  .offer-intro { grid-template-columns: minmax(0, 1fr); padding: var(--space-4); gap: 12px; }
+  .offer-intro-art { width: 96px; height: 112px; justify-self: end; }
+  .offer-intro p { font-size: 17px; }
+  .offer-content .franchise-inclusions { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  .offer-content .franchise-inclusions > div { padding: 20px; }
+  .offer-panel, .offer-presentation { padding: 20px; }
+  .offer-panel p { font-size: 17px; }
 }
