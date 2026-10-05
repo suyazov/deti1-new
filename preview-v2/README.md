@@ -13,3 +13,7 @@ Production `/2` требует отдельной точной authority, backup
 ## CSS для публикации
 
 Редактировать `styles.css`, затем выполнять `bash preview-v2/scripts/build-css.sh` (npm скачивает фиксированный esbuild 0.25.10 при первом запуске). Четыре HTML подключают сгенерированный `styles.min.css`; коммитить и публиковать оба CSS вместе. Для preview сервер сохраняет ревалидацию кеша; конфигурация nginx не меняется.
+
+## Общая шапка и подвал
+
+Редактировать `partials/header.html` / `partials/footer.html`, затем `node preview-v2/scripts/sync-layout.mjs`. Проверка соответствия четырёх HTML: `node preview-v2/scripts/sync-layout.mjs --check`. Коммитить и публиковать готовые HTML; partials и генератор нужны только при разработке. `menu.js` подключён на всех страницах; `app.js` содержит калькулятор/обращение/подсказку только главной. После правки CSS выполнить сборку выше.
