@@ -8,7 +8,6 @@
   <title>Откройте частный детский сад — Дети в приоритете</title>
   <meta name="description" content="Откройте частный детский сад с поддержкой команды «Дети в приоритете». Три формата сотрудничества, калькулятор экономики и помощь на пути к открытию." />
   <link rel="icon" href="/favicon.ico" />
-  <link rel="preload" as="image" href="./assets/hero-art.webp" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -20,13 +19,13 @@
         <span><strong>Дети в приоритете</strong></span>
       </a>
       <nav class="desktop-nav" aria-label="Основная навигация">
-        <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">Анна Суязова</a><a href="#contact">Контакты</a>
+        <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">Ваш сад</a><a href="#contact">Контакты</a>
       </nav>
       <a class="btn btn-green header-cta" href="#contact">Обсудить проект <span>→</span></a>
       <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню" type="button"><span></span><span></span><span></span></button>
     </div>
     <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert>
-      <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">Анна Суязова</a><a href="#contact">Контакты</a>
+      <a href="#formats">Тарифы</a><a href="#calculator">Калькулятор</a><a href="#process">Как это работает</a><a href="#about">Ваш сад</a><a href="#contact">Контакты</a>
     </nav>
   </header>
 
@@ -42,7 +41,7 @@
             <a class="btn btn-light" href="#formats">Посмотреть тарифы</a>
           </div>
         </div>
-        <div class="hero-visual"><img class="hero-art" src="./assets/hero-art.webp" width="650" height="334" fetchpriority="high" alt="Воспитатель и дети играют в саду; рядом иллюстрации зайчика и лисёнка. Надписи: «Больше, чем просто детский сад» и «Счастливые дети — успешный бизнес»." /></div>
+        <div class="hero-visual hero-photo-pending" data-photo-slot="hero" aria-hidden="true"></div>
       </div>
       <div class="shell trust-strip" aria-label="Ключевые преимущества">
         <div class="trust-item"><span class="round-icon amber" aria-hidden="true">◷</span><p><strong>С 2016 года</strong></p></div>
@@ -88,12 +87,31 @@
       </div>
     </section>
 
-    <section class="section about" id="about">
-      <div class="shell about-grid"><div class="about-photo"><img src="/photos/anna-white.jpeg" width="720" height="840" loading="lazy" alt="Анна Суязова, руководитель сада «Дети в приоритете»" /></div><div class="about-copy"><span class="kicker">Опыт действующего сада</span><h2>Анна Суязова</h2><p>Руководит действующим детским садом «Дети в приоритете». Делится своим опытом открытия и работы сада и помогает обсуждать реальные задачи вашего проекта.</p><div class="about-facts"><div><strong>2016</strong><span>год начала работы проекта</span></div><div><strong>Действующий сад</strong><span>практика команды</span></div></div><div class="about-links"><a href="https://t.me/suyazovaa" target="_blank" rel="noopener noreferrer">Канал Анны в Telegram ↗</a><a href="https://www.instagram.com/annasuyazova/" target="_blank" rel="noopener noreferrer">Блог Анны ↗</a></div><a class="btn btn-light" href="#contact">Обсудить проект →</a></div></div>
+    <section class="section garden" id="about" aria-labelledby="garden-title">
+      <div class="shell garden-grid">
+        <div class="garden-copy">
+          <span class="kicker">Ваш будущий сад</span>
+          <h2 id="garden-title">Каким может быть ваш сад</h2>
+          <p>Место, где детям интересно, а родителям спокойно.</p>
+          <ul>
+            <li>Видеонаблюдение для родителей</li>
+            <li>Безопасные и уютные помещения</li>
+            <li>Полноценное питание и режим дня</li>
+            <li>Забота о здоровье детей</li>
+            <li>Праздники и совместные занятия</li>
+            <li>Развитие и подготовка к школе</li>
+          </ul>
+        </div>
+        <div class="garden-gallery" aria-hidden="true">
+          <div class="garden-photo garden-photo-main" data-photo-slot="garden-main"></div>
+          <div class="garden-photo" data-photo-slot="garden-children"></div>
+          <div class="garden-photo" data-photo-slot="garden-room"></div>
+        </div>
+      </div>
     </section>
 
     <section class="section contact" id="contact">
-      <div class="shell contact-card"><img class="contact-deer" src="./assets/deer-watercolor.webp" width="620" height="720" loading="lazy" alt="" /><div><span class="kicker">Следующий шаг</span><h2>Обсудим ваш город, помещение и формат запуска</h2><p>Расскажите, где планируете открыть сад. Начнём с ваших вопросов и найдём подходящий путь.</p><p class="contact-interest" id="contact-interest" role="status" aria-live="polite"></p></div><div class="contact-actions"><a class="btn btn-green" id="whatsapp-contact" href="https://wa.me/79614691333" target="_blank" rel="noopener noreferrer">Написать в WhatsApp →</a><a class="btn btn-light" href="https://t.me/anna_suyazova" target="_blank" rel="noopener noreferrer">Написать Анне в Telegram →</a><a class="phone-link" href="tel:+79614691333">+7 (961) 469-13-33</a></div></div>
+      <div class="shell contact-card"><img class="contact-deer" src="./assets/deer-watercolor.webp" width="620" height="720" loading="lazy" alt="" /><div><span class="kicker">Следующий шаг</span><h2>Обсудим ваш город, помещение и формат запуска</h2><p>Расскажите, где планируете открыть сад. Начнём с ваших вопросов и найдём подходящий путь.</p><p class="contact-interest" id="contact-interest" role="status" aria-live="polite"></p></div><div class="contact-actions"><a class="btn btn-green" id="whatsapp-contact" href="https://wa.me/79614691333" target="_blank" rel="noopener noreferrer">Написать в WhatsApp →</a><a class="phone-link" href="tel:+79614691333">+7 (961) 469-13-33</a></div></div>
     </section>
   </main>
 
