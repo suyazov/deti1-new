@@ -60,6 +60,7 @@ renderCalculator();
 const whatsappContact = document.querySelector('#whatsapp-contact');
 const contactInterest = document.querySelector('#contact-interest');
 const interestLabels = {
+  presentation: ['заявка на презентацию франшизы', 'презентацию франшизы «Дети в приоритете»'],
   franchise: ['франшиза «Дети в приоритете»', 'франшизу «Дети в приоритете»'],
   'own-brand': ['открытие сада под своим брендом', 'открытие сада под своим брендом'],
   documents: ['документы и методики', 'документы и методики'],
@@ -70,14 +71,24 @@ let selectedInterest = '';
 function updateContact(interest) {
   selectedInterest = interest;
   const label = interestLabels[interest];
-  contactInterest.textContent = label ? `Тема обращения: ${label[0]}.` : '';
+  contactInterest.textContent = interest === 'presentation'
+    ? 'Отправьте заявку в WhatsApp — презентацию вышлем в ответ.'
+    : label ? `Тема обращения: ${label[0]}.` : '';
+  whatsappContact.textContent = interest === 'presentation'
+    ? 'Оставить заявку в WhatsApp →'
+    : 'Написать в WhatsApp →';
   let message = label
     ? `Здравствуйте! Хочу обсудить ${label[1]}.`
     : 'Здравствуйте! Хочу обсудить открытие частного детского сада.';
   if (interest === 'calculator') {
     message += ` Мой расчёт: количество детей — ${refs.children.value}, средний чек — ${refs.avgCheck.value} ₽, аренда — ${refs.rent.value} ₽ в месяц.`;
   }
-  message += ' Город: ';
+  if (interest === 'presentation') {
+    message = 'Здравствуйте! Хочу получить презентацию франшизы «Дети в приоритете». Меня зовут: ';
+    message += '\nГород: ';
+  } else {
+    message += ' Город: ';
+  }
   whatsappContact.href = `https://wa.me/79614691333?text=${encodeURIComponent(message)}`;
 }
 document.querySelectorAll('[data-interest]').forEach((link) => {
