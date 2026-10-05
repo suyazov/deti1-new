@@ -92,3 +92,12 @@ body:has(.format-dialog[open]){overflow:hidden}
 .site-header .brand img{width:72px;height:72px}
 .footer-inner .brand img{width:56px;height:56px}
 @media(max-width:680px){.site-header .brand img{width:56px;height:56px}}
+
+.hero-photo-pending,.garden-photo:has(.photo-placeholder){display:grid;place-items:center;background:radial-gradient(ellipse at 15% 10%,#fff7e6,transparent 55%),linear-gradient(135deg,#eef5ed,#e6efeb);border:1px solid #dbe6dd}
+.photo-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:24px;text-align:center;color:#526d5c}
+.photo-placeholder svg{opacity:.65}
+.photo-placeholder span{font-size:20px;font-weight:600;line-height:1.3}
+.photo-placeholder small{max-width:220px;font-size:13px;line-height:1.5;color:#62786c}
+.garden-photo:not(.garden-photo-main) .photo-placeholder{gap:8px;padding:16px}
+.garden-photo:not(.garden-photo-main) .photo-placeholder span{font-size:16px}
+@media(max-width:680px){.photo-placeholder span{font-size:18px}.garden-photo:not(.garden-photo-main) .photo-placeholder svg{width:32px;height:32px}.garden-photo:not(.garden-photo-main) .photo-placeholder small{font-size:11px}.garden-photo:not(.garden-photo-main) .photo-placeholder span{font-size:14px}}
