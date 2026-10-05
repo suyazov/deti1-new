@@ -121,3 +121,43 @@ document.addEventListener('keydown', (event) => {
 window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
   if (event.matches && menuButton.getAttribute('aria-expanded') === 'true') setMenu(false);
 });
+
+// The note is available on hover, keyboard focus, and touch.
+const profitHelp = document.querySelector('.profit-help');
+const profitInfo = document.querySelector('.profit-info');
+const profitTooltip = document.querySelector('#profit-tooltip');
+const showProfitNote = () => {
+  profitTooltip.classList.remove('below-result');
+  profitTooltip.hidden = false;
+  if (profitTooltip.getBoundingClientRect().top < 8) {
+    profitTooltip.classList.add('below-result');
+    const gap = profitTooltip.getBoundingClientRect().top - profitInfo.getBoundingClientRect().bottom;
+    profitTooltip.style.setProperty('--tooltip-bridge-height', `${Math.max(0, gap) + 1}px`);
+  }
+};
+const hideProfitNote = () => { profitTooltip.hidden = true; };
+profitHelp.addEventListener('pointerenter', (event) => {
+  if (event.pointerType === 'mouse' && matchMedia('(hover: hover)').matches) showProfitNote();
+});
+profitHelp.addEventListener('pointerleave', (event) => {
+  if (event.pointerType === 'mouse' && !profitHelp.contains(document.activeElement)) hideProfitNote();
+});
+profitInfo.addEventListener('focus', showProfitNote);
+profitHelp.addEventListener('focusout', (event) => {
+  if (!profitHelp.contains(event.relatedTarget)) hideProfitNote();
+});
+let noteVisibleBeforePress = false;
+profitInfo.addEventListener('pointerdown', () => {
+  noteVisibleBeforePress = !profitTooltip.hidden;
+});
+profitInfo.addEventListener('click', (event) => {
+  const shouldClose = event.detail === 0 ? !profitTooltip.hidden : noteVisibleBeforePress;
+  if (shouldClose) hideProfitNote();
+  else showProfitNote();
+});
+document.addEventListener('pointerdown', (event) => {
+  if (!profitHelp.contains(event.target)) hideProfitNote();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') hideProfitNote();
+});
