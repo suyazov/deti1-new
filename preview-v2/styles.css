@@ -110,3 +110,8 @@
 .offer-summary .offer-back{margin-top:14px}
 @media(max-width:900px){.offer-layout{grid-template-columns:1fr;gap:30px;padding-top:30px}.offer-summary{position:static;grid-row:1}.offer-summary .dialog-price{margin-bottom:14px}.offer-content>p{font-size:18px}.offer-content h2{font-size:23px}}
 @media(max-width:680px){.offer-page .header-inner{gap:12px;flex-wrap:wrap;padding:10px 0}.offer-back{font-size:13px}.offer-layout{padding-top:20px;padding-bottom:35px}.offer-content .franchise-inclusions dt{font-size:19px}.offer-content .franchise-inclusions dd,.offer-content ul,.offer-content .document-catalog li{font-size:17px}}
+
+.line-icon{display:block;width:26px;height:26px;flex:none}
+.steps article>b{width:48px;height:48px;font-weight:normal}
+.steps article>b .line-icon{width:25px;height:25px}
+@media(max-width:680px){.round-icon .line-icon{width:22px;height:22px}}
