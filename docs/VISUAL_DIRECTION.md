@@ -60,3 +60,9 @@ Built-in imagegen, прозрачный фон. Assets в `preview-v2/assets/`:
 
 ### Общая дизайн-система — 05.10.2026
 Кнопки, типографика разделов, шаг отступов, скругления и тени приведены к общей системе четырёх страниц /2. Канонические правила и назначение компонентов: [DESIGN_SYSTEM](DESIGN_SYSTEM.md); runtime tokens — секция Shared design system в styles.css. Акварель, зверята и фотозаглушки сохранены.
+
+## FAQ: отдельная акварельная иллюстрация, 05.10.2026
+
+Вместо повторной картинки книг в FAQ — две акварельные реплики диалога. Книги остаются только у «Ваш будущий сад». Built-in image_gen, transparent_background=true; PNG сохранён инструментом в `/root/.codex/generated_images/01a0dc71-50a4-77d3-a304-153ee9ca36da/exec-a92b6480-dc9d-48e7-8347-fbba0c14a48b.png`. Проектные финальные assets: `preview-v2/assets/faq-dialog-watercolor-v1.webp` (320×265), `-160.webp`, `-80.webp`; cwebp q78/m6, alpha сохранена. Не официальный знак, декоративная иллюстрация.
+
+Промпт: “Small decorative hand-painted watercolor FAQ icon for a private kindergarten website: two softly rounded overlapping speech bubbles, pale sage green and warm cream/ochre; question mark in front and three dots behind; small sage leaves at the base. Organic edges, delicate watercolor pigment, restrained pastel colors, compact composition recognizable at64–105px. Transparent alpha. No books, pencils, animals, logos, captions, frames, background scenery or watermarks.”
