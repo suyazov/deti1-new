@@ -2445,6 +2445,7 @@ footer {
   }
 }
 
+/* Shared design system: semantic tokens and component appearance. */
 :root {
   --action: #34754d;
   --action-hover: #28633e;
@@ -2631,18 +2632,7 @@ footer {
 }
 
 @media (max-width: 680px) {
-  /* FAQ expanded state is interactive, not an unused selector. */
-.faq-list details[open] summary::after {
-  transform: rotate(0deg);
-}
-
-.faq-list details[open] {
-  border-color: #b9d4c2;
-  background: #fff;
-}
-
-/* Shared design system: semantic tokens and component appearance. */
-:root {
+  :root {
     --space-7: 32px;
     --radius-panel: 24px;
     --radius-card: 20px;
@@ -2741,4 +2731,14 @@ footer {
   .calc-result-top {
     margin-bottom: 18px;
   }
+}
+
+/* FAQ expanded state is interactive, not an unused selector. */
+.faq-list details[open] summary::after {
+  transform: rotate(0deg);
+}
+
+.faq-list details[open] {
+  border-color: #b9d4c2;
+  background: #fff;
 }
