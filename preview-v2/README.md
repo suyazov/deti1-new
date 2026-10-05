@@ -9,3 +9,7 @@
 - Внешние контакты: WhatsApp, Telegram, телефон; реальная форма `/api/send.php` в этой preview не используется.
 
 Production `/2` требует отдельной точной authority, backup nginx и существующего `/2`, `nginx -t`, reload и live desktop/mobile/readback. Корневые файлы сайта не перезаписывать.
+
+## CSS для публикации
+
+Редактировать `styles.css`, затем выполнять `bash preview-v2/scripts/build-css.sh` (npm скачивает фиксированный esbuild 0.25.10 при первом запуске). Четыре HTML подключают сгенерированный `styles.min.css`; коммитить и публиковать оба CSS вместе. Для preview сервер сохраняет ревалидацию кеша; конфигурация nginx не меняется.
