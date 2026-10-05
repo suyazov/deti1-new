@@ -188,3 +188,5 @@
 .profit-tooltip.below-result{bottom:auto;top:calc(100% + 8px)}
 
 .profit-tooltip.below-result::before{content:'';position:absolute;left:0;right:0;bottom:100%;height:var(--tooltip-bridge-height,0px)}
+
+.offer-content>p.presentation-note{margin:3px 0 24px;font-size:14px;color:var(--muted);line-height:1.5}
