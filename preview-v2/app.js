@@ -129,7 +129,11 @@ const profitTooltip = document.querySelector('#profit-tooltip');
 const showProfitNote = () => {
   profitTooltip.classList.remove('below-result');
   profitTooltip.hidden = false;
-  if (profitTooltip.getBoundingClientRect().top < 8) profitTooltip.classList.add('below-result');
+  if (profitTooltip.getBoundingClientRect().top < 8) {
+    profitTooltip.classList.add('below-result');
+    const gap = profitTooltip.getBoundingClientRect().top - profitInfo.getBoundingClientRect().bottom;
+    profitTooltip.style.setProperty('--tooltip-bridge-height', `${Math.max(0, gap) + 1}px`);
+  }
 };
 const hideProfitNote = () => { profitTooltip.hidden = true; };
 profitHelp.addEventListener('pointerenter', (event) => {

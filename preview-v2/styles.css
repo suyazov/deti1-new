@@ -186,3 +186,5 @@
 .profit-tooltip[hidden]{display:none}
 
 .profit-tooltip.below-result{bottom:auto;top:calc(100% + 8px)}
+
+.profit-tooltip.below-result::before{content:'';position:absolute;left:0;right:0;bottom:100%;height:var(--tooltip-bridge-height,0px)}
