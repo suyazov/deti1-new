@@ -177,6 +177,7 @@
 .document-choice{display:inline-flex;align-items:center;min-height:44px;color:#286b49;font-size:15px;font-weight:700;text-decoration:underline;text-underline-offset:4px}
 @media(max-width:680px){.document-item{padding:20px;border-radius:20px}.document-item h3{font-size:21px}.document-benefit,.document-group-intro{font-size:17px}.offer-content .document-item ul{font-size:16px}}
 
+.calc-card{overflow:visible}
 .calc-result{position:relative}
 .profit-help{display:inline-block;vertical-align:super;line-height:1;margin-left:1px}
 .profit-info{display:grid;place-items:center;width:24px;height:24px;padding:0;border:0;border-radius:50%;background:transparent;color:#458c61;cursor:pointer}
