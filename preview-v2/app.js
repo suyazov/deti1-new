@@ -168,6 +168,7 @@ profitHelp.addEventListener('pointerleave', (event) => {
   }
 });
 window.addEventListener('resize', hideProfitNote);
+window.addEventListener('scroll', hideProfitNote, { passive: true });
 profitInfo.addEventListener('focus', showProfitNote);
 profitHelp.addEventListener('focusout', (event) => {
   if (!profitHelp.contains(event.relatedTarget)) hideProfitNote();
