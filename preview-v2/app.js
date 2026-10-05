@@ -137,22 +137,38 @@ window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
 const profitHelp = document.querySelector('.profit-help');
 const profitInfo = document.querySelector('.profit-info');
 const profitTooltip = document.querySelector('#profit-tooltip');
+let profitNoteHideTimer;
 const showProfitNote = () => {
-  profitTooltip.classList.remove('below-result');
+  clearTimeout(profitNoteHideTimer);
   profitTooltip.hidden = false;
-  if (profitTooltip.getBoundingClientRect().top < 8) {
-    profitTooltip.classList.add('below-result');
-    const gap = profitTooltip.getBoundingClientRect().top - profitInfo.getBoundingClientRect().bottom;
-    profitTooltip.style.setProperty('--tooltip-bridge-height', `${Math.max(0, gap) + 1}px`);
-  }
+  const button = profitInfo.getBoundingClientRect();
+  profitTooltip.style.maxHeight = 'calc(100dvh - 32px)';
+  const naturalHeight = profitTooltip.getBoundingClientRect().height;
+  const below = Math.max(0, innerHeight - button.bottom - 24);
+  const above = Math.max(0, button.top - 24);
+  const placeBelow = naturalHeight <= below || (naturalHeight > above && below >= above);
+  const availableHeight = placeBelow ? below : above;
+  profitTooltip.style.maxHeight = `${Math.max(1, availableHeight)}px`;
+  const note = profitTooltip.getBoundingClientRect();
+  const left = Math.max(16, Math.min(button.right - note.width, innerWidth - note.width - 16));
+  const top = placeBelow ? button.bottom + 8 : button.top - note.height - 8;
+  profitTooltip.style.left = `${left}px`;
+  profitTooltip.style.top = `${top}px`;
 };
-const hideProfitNote = () => { profitTooltip.hidden = true; };
+const hideProfitNote = () => {
+  clearTimeout(profitNoteHideTimer);
+  profitTooltip.hidden = true;
+};
 profitHelp.addEventListener('pointerenter', (event) => {
   if (event.pointerType === 'mouse' && matchMedia('(hover: hover)').matches) showProfitNote();
 });
 profitHelp.addEventListener('pointerleave', (event) => {
-  if (event.pointerType === 'mouse' && !profitHelp.contains(document.activeElement)) hideProfitNote();
+  if (event.pointerType === 'mouse' && !profitHelp.contains(document.activeElement)) {
+    profitNoteHideTimer = setTimeout(hideProfitNote, 180);
+  }
 });
+window.addEventListener('resize', hideProfitNote);
+window.addEventListener('scroll', hideProfitNote, { passive: true });
 profitInfo.addEventListener('focus', showProfitNote);
 profitHelp.addEventListener('focusout', (event) => {
   if (!profitHelp.contains(event.relatedTarget)) hideProfitNote();
