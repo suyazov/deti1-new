@@ -227,3 +227,8 @@
 
 .profit-note-intro{display:block;margin-bottom:12px}
 .profit-note-title{display:block;margin-bottom:6px;font-size:14px;color:var(--ink)}
+
+.footer-messengers{display:flex;flex-wrap:wrap;gap:8px;margin:5px 0}
+.footer-messengers a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 13px;border:1px solid #d6e4d7;border-radius:999px;background:rgba(255,255,255,.8);font-size:13px;font-weight:600;color:#286b49}
+
+@media(max-width:400px){.footer-contacts>a.footer-phone{font-size:15px;white-space:nowrap}}
