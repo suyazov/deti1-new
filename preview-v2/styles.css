@@ -1340,10 +1340,6 @@ footer {
   background: var(--cream);
 }
 
-.offer-page .header-inner {
-  justify-content: space-between;
-}
-
 .offer-back {
   display: inline-flex;
   align-items: center;
@@ -1470,12 +1466,6 @@ footer {
 }
 
 @media (max-width: 680px) {
-  .offer-page .header-inner {
-    gap: 12px;
-    flex-wrap: wrap;
-    padding: 10px 0px;
-  }
-
   .offer-layout {
     padding-top: 20px;
     padding-bottom: 35px;
@@ -2741,4 +2731,18 @@ footer {
 .faq-list details[open] {
   border-color: #b9d4c2;
   background: #fff;
+}
+
+/* Shared navigation: highlight the offer section consistently. */
+.desktop-nav a[aria-current], .mobile-nav a[aria-current] {
+  color: var(--action);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+.offer-breadcrumb {
+  display: flex;
+  width: fit-content;
+  margin-bottom: var(--space-4);
 }

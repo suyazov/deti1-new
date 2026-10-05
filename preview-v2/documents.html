@@ -12,9 +12,27 @@
 </head>
 <body class="offer-page">
 <a class="skip-link" href="#offer-content">К содержанию</a>
-<header class="site-header"><div class="shell header-inner"><a class="brand" href="./"><img src="./assets/logo.svg" width="1000" height="1000" alt="" /><span><strong>Дети в приоритете</strong></span></a><a class="offer-back" href="./#formats">← Все предложения</a></div></header>
+<!-- shared:header:start -->
+<header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="./">
+        <img src="./assets/logo.svg" width="1000" height="1000" alt="" />
+        <span><strong>Дети в приоритете</strong></span>
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="./#formats" aria-current="true">Тарифы</a><a href="./#calculator">Калькулятор</a><a href="./#process">Как это работает</a><a href="./#about">Ваш сад</a><a href="./#contact">Контакты</a>
+      </nav>
+      <a class="btn btn-green btn-sm header-cta" href="./?interest=documents#contact">Обсудить проект <span>→</span></a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Открыть меню" type="button"><span></span><span></span><span></span></button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Мобильная навигация" inert>
+      <a href="./#formats" aria-current="true">Тарифы</a><a href="./#calculator">Калькулятор</a><a href="./#process">Как это работает</a><a href="./#about">Ваш сад</a><a href="./#contact">Контакты</a>
+    </nav>
+  </header>
+<!-- shared:header:end -->
 <main class="shell offer-layout" id="offer-content">
 <article class="offer-content">
+    <a class="offer-back offer-breadcrumb" href="./#formats">← Все форматы</a>
     <span class="kicker">Для самостоятельного открытия</span>
     <h1>Документы и методики</h1>
 <p>Можно выбрать отдельный мини-пакет или весь комплект. Ниже — что входит в каждый и как это помогает в работе сада. В полном комплекте также есть финансовая модель сада.</p>
@@ -37,6 +55,7 @@
 </article>
 <aside class="offer-summary" aria-label="Стоимость и обращение">    <p class="dialog-price"><strong>300 000 ₽</strong><span>Полный комплект<br />Без сопровождения и поддержки</span></p>    <a class="btn btn-green" href="./?interest=documents#contact">Обсудить комплект →</a><a class="offer-back" href="./#formats">Сравнить предложения</a></aside>
 </main>
+<!-- shared:footer:start -->
 <footer class="site-footer">
     <div class="shell footer-grid">
       <div class="footer-brand">
@@ -51,7 +70,9 @@
       <img class="footer-animal footer-class" src="./assets/footer-class-watercolor-v1-320.webp" srcset="./assets/footer-class-watercolor-v1-320.webp 320w, ./assets/footer-class-watercolor-v1-480.webp 480w, ./assets/footer-class-watercolor-v1.webp 720w" sizes="(max-width: 900px) 190px, 260px" width="720" height="480" loading="lazy" alt="" aria-hidden="true" />
     </div>
     <div class="shell footer-legal"><a href="/privacy-policy">Политика конфиденциальности</a><a href="/consent">Согласие на обработку данных</a><a href="https://www1.fips.ru/fips_servl/fips_servlet?DB=RUTM&amp;DocNumber=1019709" target="_blank" rel="noopener noreferrer">Торговая марка № 1019709 ↗</a></div>
-    <div class="shell footer-bottom"><p>© 2026 «Дети в приоритете». Все права защищены.</p><a href="./#top">Наверх ↑</a></div>
+    <div class="shell footer-bottom"><p>© 2026 «Дети в приоритете». Все права защищены.</p><a href="#top">Наверх ↑</a></div>
   </footer>
+<!-- shared:footer:end -->
+  <script src="./menu.js" defer></script>
 </body>
 </html>
