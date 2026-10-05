@@ -126,7 +126,11 @@ window.matchMedia('(min-width: 1101px)').addEventListener('change', (event) => {
 const profitHelp = document.querySelector('.profit-help');
 const profitInfo = document.querySelector('.profit-info');
 const profitTooltip = document.querySelector('#profit-tooltip');
-const showProfitNote = () => { profitTooltip.hidden = false; };
+const showProfitNote = () => {
+  profitTooltip.classList.remove('below-result');
+  profitTooltip.hidden = false;
+  if (profitTooltip.getBoundingClientRect().top < 8) profitTooltip.classList.add('below-result');
+};
 const hideProfitNote = () => { profitTooltip.hidden = true; };
 profitHelp.addEventListener('pointerenter', (event) => {
   if (event.pointerType === 'mouse' && matchMedia('(hover: hover)').matches) showProfitNote();
@@ -143,11 +147,9 @@ profitInfo.addEventListener('pointerdown', () => {
   noteVisibleBeforePress = !profitTooltip.hidden;
 });
 profitInfo.addEventListener('click', (event) => {
-  if (event.detail === 0) {
-    profitTooltip.hidden = !profitTooltip.hidden;
-  } else {
-    profitTooltip.hidden = noteVisibleBeforePress;
-  }
+  const shouldClose = event.detail === 0 ? !profitTooltip.hidden : noteVisibleBeforePress;
+  if (shouldClose) hideProfitNote();
+  else showProfitNote();
 });
 document.addEventListener('pointerdown', (event) => {
   if (!profitHelp.contains(event.target)) hideProfitNote();

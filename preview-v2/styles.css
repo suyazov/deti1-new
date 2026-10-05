@@ -184,3 +184,5 @@
 .profit-info:hover,.profit-info:focus-visible{background:#e9f4ed}
 .profit-tooltip{position:absolute;bottom:calc(100% - 18px);left:14px;right:14px;z-index:10;padding:14px 16px;border:1px solid #cddfd2;border-radius:16px;background:#fffdf8;box-shadow:0 10px 25px rgba(34,57,61,.15);color:#43536c;font-size:13px;font-weight:400;line-height:1.55;text-align:left}
 .profit-tooltip[hidden]{display:none}
+
+.profit-tooltip.below-result{bottom:auto;top:calc(100% + 8px)}
