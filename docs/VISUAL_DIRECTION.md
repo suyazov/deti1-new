@@ -57,3 +57,6 @@ Built-in imagegen, прозрачный фон. Assets в `preview-v2/assets/`:
 - `toy-blocks-watercolor-v1.webp`, 320×320: деревянные кубики и звезда. Заголовок форматов.
 Промпты: illustration-story, compact isolated watercolor nursery vignette, matte watercolor washes/fine colored pencil, cream/honey ochre/muted sage/blush, transparent background, no lettering/logos/opaque backdrop/glossy 3D. Footer: warm adult rabbit teacher visibly larger than three pupils (baby fox, bear, hedgehog), sitting reading an open sage picture book, whole bodies, wide compact group readable at 260px. Books: two cream/sage books and three ochre/blush/sage pencils with tiny leaf. Toys: three wooden blocks and little star, simple silhouettes readable at 90px.
 Конвертация cwebp quality 90 с сохранением alpha. Иллюстрации декоративны: пустой alt/aria-hidden. Фотозаглушки остаются до получения настоящих снимков.
+
+### Общая дизайн-система — 05.10.2026
+Кнопки, типографика разделов, шаг отступов, скругления и тени приведены к общей системе четырёх страниц /2. Канонические правила и назначение компонентов: [DESIGN_SYSTEM](DESIGN_SYSTEM.md); runtime tokens — секция Shared design system в styles.css. Акварель, зверята и фотозаглушки сохранены.
