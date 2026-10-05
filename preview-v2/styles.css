@@ -2828,3 +2828,20 @@ footer {
 .offer-summary-label { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
 .offer-summary-inclusions { padding-left: 20px; margin: 0 0 24px; font-size: 15px; line-height: 1.6; color: var(--muted); }
 .offer-summary-inclusions li { margin-bottom: 6px; }
+
+/* A year at the kindergarten: owner-supplied programme figures. */
+.garden-year { margin-top: 48px; }
+.garden-year-heading { max-width: 720px; margin: 0 auto 28px; text-align: center; }
+.garden-year-heading h3 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 16px 0 12px; }
+.garden-year-heading p, .garden-year-caption { color: var(--muted); }
+.garden-year-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; padding: 0; margin: 0; list-style: none; }
+.garden-year-card { display: flex; align-items: center; flex-direction: column; padding: 24px 16px 28px; border: 1px solid #e1ebe5; border-radius: 28px; background: #f0f7f2; text-align: center; }
+.garden-year-card:nth-child(2) { background: #fff7ea; border-color: #f1e5d3; }
+.garden-year-card:nth-child(3) { background: #f5f0fb; border-color: #e9e0f4; }
+.garden-year-card:nth-child(4) { background: #eff6fa; border-color: #dfeaf0; }
+.garden-year-card img { width: 160px; height: 160px; object-fit: contain; margin-bottom: 16px; }
+.garden-year-card strong { color: var(--green); font-size: clamp(34px, 4vw, 46px); line-height: 1.15; }
+.garden-year-card span { margin-top: 10px; font-size: 18px; line-height: 1.4; }
+.garden-year-caption { max-width: 650px; margin: 24px auto 0; text-align: center; }
+@media (max-width: 900px) { .garden-year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 680px) { .garden-year-grid { gap: 12px; } .garden-year-card { padding: 16px 8px 20px; border-radius: 22px; } .garden-year-card img { width: 120px; height: 120px; max-width: 100%; } .garden-year-card span { font-size: 16px; } }
