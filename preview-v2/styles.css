@@ -1,8 +1,8 @@
 /* /2 component and responsive styles. Shared design tokens are near the end. */
 
 :root {
-  --ink: #1b2849;
-  --muted: #52627b;
+  --ink: #252b24;
+  --muted: #454c43;
   --green: #458c61;
   --cream: #fbfaf5;
   --line: #dce6e0;
@@ -913,8 +913,8 @@ footer {
 .garden-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  align-items: center;
-  gap: 48px;
+  align-items: start;
+  gap: 32px;
 }
 
 .garden-copy h2 {
@@ -932,21 +932,36 @@ footer {
   padding: 0px;
   margin: 24px 0px 0px;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
 .garden-copy li {
-  padding-left: 27px;
+  padding: 20px 18px 20px 46px;
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 650;
   line-height: 1.4;
+  border-radius: 20px;
+  background: #f7df9f;
+  border: 1px solid #e8cb80;
+}
+
+.garden-copy li:nth-child(3n + 2) {
+  background: #dcebd5;
+  border-color: #bfd4b5;
+}
+
+.garden-copy li:nth-child(3n) {
+  background: #eee0ef;
+  border-color: #d9c5dc;
 }
 
 .garden-copy li::before {
   content: "✓";
   position: absolute;
-  left: 0px;
-  color: rgb(69, 140, 97);
+  left: 18px;
+  color: #2e663e;
   font-weight: 700;
 }
 
@@ -979,12 +994,14 @@ footer {
   }
 
   .garden-copy ul {
+    grid-template-columns: 1fr;
     gap: 11px;
     margin-top: 19px;
   }
 
   .garden-copy li {
-    font-size: 15px;
+    font-size: 18px;
+    padding-block: 16px;
   }
 
   .garden-gallery {
@@ -2449,9 +2466,9 @@ footer {
   --radius-card: 24px;
   --radius-small: 16px;
   --panel-shadow: 0 12px 32px rgba(34,57,61,.05);
-  --font-heading: clamp(28px,2.5vw,36px);
-  --font-card: 18px;
-  --font-body: 16px;
+  --font-heading: clamp(36px,3.2vw,46px);
+  --font-card: 22px;
+  --font-body: 20px;
   --button-height: 52px;
   --button-small-height: 44px;
   --button-font: 15px;
@@ -2621,9 +2638,9 @@ footer {
     --space-7: 32px;
     --radius-panel: 24px;
     --radius-card: 20px;
-    --font-heading: 28px;
-    --font-card: 17px;
-    --font-body: 15px;
+    --font-heading: 30px;
+    --font-card: 19px;
+    --font-body: 17px;
   }
 
   .btn {
@@ -2834,6 +2851,39 @@ footer {
 .offer-summary-inclusions li { margin-bottom: 6px; }
 
 /* A year at the kindergarten: owner-supplied programme figures. */
+.garden {
+  background: #fff6e8;
+}
+
+.garden-gallery {
+  padding-top: 12px;
+}
+
+:is(.format-card, .launch-step) p,
+.format-card li,
+.garden-year-heading p,
+.garden-year-caption {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.garden-year-card span {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .garden-grid { grid-template-columns: 1fr; }
+  .garden-gallery { padding-top: 0; }
+}
+
+@media (max-width: 680px) {
+  :is(.format-card, .launch-step) p,
+  .format-card li,
+  .garden-year-heading p,
+  .garden-year-caption { font-size: 17px; }
+}
+
 .garden-year { margin-top: 48px; }
 .garden-year-heading { max-width: 720px; margin: 0 auto 28px; text-align: center; }
 .garden-year-heading h3 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 16px 0 12px; }
