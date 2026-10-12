@@ -2899,3 +2899,77 @@ footer {
 .garden-year-caption { max-width: 650px; margin: 24px auto 0; text-align: center; }
 @media (max-width: 900px) { .garden-year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .garden-year-grid { gap: 12px; } .garden-year-card { padding: 16px 8px 20px; border-radius: 22px; } .garden-year-card img { width: 120px; height: 120px; max-width: 100%; } .garden-year-card span { font-size: 16px; } }
+
+/* Real photographs with readable text over the first screen. */
+.hero-photo-background { padding: 0; background: #26382f; }
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-photo-background::before {
+  inset: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  filter: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(13, 31, 24, .85), rgba(13, 31, 24, .72) 43%, rgba(13, 31, 24, .18) 76%, rgba(13, 31, 24, .32));
+}
+.hero-photo-background::after { display: none; }
+.hero-photo-background .hero-grid {
+  z-index: 2;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  min-height: 730px;
+  padding-block: 46px 260px;
+}
+.hero-photo-background .hero-copy { padding: 0; text-align: center; }
+.hero-photo-background h1 {
+  max-width: 1100px;
+  margin: 18px auto 22px;
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1.08;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+}
+.hero-photo-background h1 .hero-noun { display: inline; color: #fff; }
+.hero-photo-background h1 .hero-accent { color: #ffe082; }
+.hero-photo-background .hero-lead { max-width: 780px; margin: 0 auto 26px; color: #fff; font-size: 22px; line-height: 1.55; }
+.hero-photo-background .hero-actions { justify-content: center; }
+.hero-photo-background .hero-actions .btn-green { background: #f7c94b; border-color: #f7c94b; color: #262e20; }
+.hero-photo-background .hero-actions .btn-green:hover { background: #ffde79; border-color: #ffde79; }
+.hero-photo-background .hero-actions .btn-outline { color: #fff; background: rgba(13, 31, 24, .55); border-color: #fff; }
+.hero-photo-background .hero-actions .btn-outline:hover { background: rgba(13, 31, 24, .85); }
+.hero-photo-background .trust-strip { z-index: 2; background: #fff8e7; }
+
+/* Bright franchise cards retain the full offer descriptions. */
+.offer-content .franchise-inclusions-bright > div {
+  --card-accent: #8051ad;
+  --card-paper: #e0c9f4;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--card-accent);
+  background: var(--card-paper);
+  padding: 24px;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--card-accent) 16%, transparent);
+}
+.offer-content .franchise-inclusions-bright > div:nth-child(3n + 2) { --card-accent: #ba8909; --card-paper: #ffdf70; }
+.offer-content .franchise-inclusions-bright > div:nth-child(3n) { --card-accent: #29814f; --card-paper: #b3e1b0; }
+.offer-content .franchise-inclusions-bright > div:nth-child(n) { background: var(--card-paper); }
+.offer-content .franchise-inclusions-bright > div:last-child { grid-column: auto; }
+.offer-content .franchise-inclusions-bright dt { font-size: 24px; line-height: 1.25; font-weight: 800; color: #242b25; margin-bottom: 14px; }
+.offer-content .franchise-inclusions-bright dd { display: flex; flex-direction: column; flex: 1; gap: 20px; color: #354036; font-size: 19px; line-height: 1.55; }
+.inclusion-photo { width: 100%; height: 185px; margin-top: auto; object-fit: cover; object-position: center 65%; border-radius: 22px; }
+
+@media (max-width: 680px) {
+  .hero-photo-background .hero-grid { min-height: 980px; padding-block: 32px 250px; }
+  .hero-photo-background h1 { font-size: clamp(34px, 8.4vw, 44px); }
+  .hero-photo-background .hero-lead { font-size: 18px; }
+  .hero-photo-background .hero-actions { flex-direction: column; align-items: stretch; }
+  .offer-content .franchise-inclusions-bright dt { font-size: 22px; }
+  .offer-content .franchise-inclusions-bright dd { font-size: 18px; }
+}
