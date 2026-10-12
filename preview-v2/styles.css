@@ -2975,6 +2975,12 @@ footer {
 }
 
 /* Room photographs for the hero and the three cooperation formats. */
+.offer-intro:has(.offer-intro-photo) { grid-template-columns: minmax(0, 1fr) 280px; }
+.offer-intro .offer-intro-photo { width: 280px; height: 210px; object-fit: cover; border-radius: 20px; }
+@media (max-width: 680px) {
+  .offer-intro:has(.offer-intro-photo) { grid-template-columns: minmax(0, 1fr); }
+  .offer-intro .offer-intro-photo { width: 100%; height: auto; justify-self: stretch; }
+}
 .hero-photo-background .hero-background { object-position: center 65%; }
 .hero-photo-background .hero-grid { min-height: 580px; padding-block: 46px 70px; }
 .format-grid-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
