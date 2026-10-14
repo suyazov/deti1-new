@@ -2354,14 +2354,27 @@ footer {
 }
 
 .formats-heading {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 18px;
 }
 
 .formats-heading > div {
+  grid-area: 1 / 1;
   min-width: 0px;
+  padding-inline: 104px;
+  text-align: center;
+}
+
+.formats-heading > img {
+  grid-area: 1 / 1;
+  justify-self: end;
+}
+
+@media (max-width: 680px) {
+  .formats-heading > div { padding-inline: 0; }
+  .formats-heading > img { grid-area: 2 / 1; justify-self: center; }
 }
 
 .blocks-detail {
