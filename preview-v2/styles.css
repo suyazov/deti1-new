@@ -3068,3 +3068,35 @@ footer {
   .format-grid-photos .format-bottom { flex-direction: column; align-items: stretch; }
   .format-grid-photos .format-card:last-child .format-bottom { flex-direction: column; }
 }
+
+/* Balance photo formats, supporting illustrations and readable offer rows. */
+.format-grid-photos .violet-card {
+  background: #fff1c7;
+  color: #242e27;
+  border: 1px solid #ebd497;
+}
+.format-grid-photos .violet-card::before { display: none; }
+.format-grid-photos .violet-card :is(h3, .format-sub, li, .format-bottom strong) { color: #242e27; }
+.format-grid-photos .violet-card li::before { color: #34734e; }
+.format-grid-photos .violet-card .format-bottom .btn { background: #34734e; border-color: #34734e; color: #fff; }
+.format-grid-photos .violet-card .format-bottom .btn:hover { background: #285a3c; }
+.process .launch-art, .process .launch-art img { height: 104px; }
+.contact-card .contact-deer { height: 140px; }
+.offer-content .franchise-inclusions-bright { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.offer-content .franchise-inclusions-bright dd { display: block; }
+.offer-content .franchise-inclusions-bright dd:has(.inclusion-photo) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  align-items: center;
+  gap: 24px;
+}
+.offer-content .franchise-inclusions-bright dd > p { margin: 0; color: inherit; font: inherit; }
+.franchise-inclusions-bright .inclusion-photo { height: 160px; margin: 0; border-radius: 16px; }
+@media (max-width: 680px) {
+  .hero-photo-background .hero-grid { min-height: 0; padding-block: 32px 40px; }
+  .process .launch-step { grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; }
+  .process .launch-art, .process .launch-art img { height: 96px; }
+  .contact-card .contact-deer { height: 100px; }
+  .offer-content .franchise-inclusions-bright dd:has(.inclusion-photo) { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .franchise-inclusions-bright .inclusion-photo { height: 185px; }
+}
