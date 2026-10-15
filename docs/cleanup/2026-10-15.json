@@ -1,0 +1,262 @@
+{
+  "date": "2026-10-15",
+  "project": "deti1.ru",
+  "status": "completed",
+  "worktrees": [
+    {
+      "path": "/root/worktrees/deti2-centered-formats-heading",
+      "head": "e237c7f5bdb5691a1980f3a04e1077b06ee7f8e0",
+      "branch": "refs/heads/codex/deti2-centered-formats-heading",
+      "bytes": 14490667,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-children-first",
+      "head": "eee665a0f7337c0062a4f679086232dea2b4e18b",
+      "branch": "refs/heads/codex/deti2-children-first",
+      "bytes": 14501784,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-franchise-unique-photos",
+      "head": "eca9df002a1c72b40739e63fde25e19f90824506",
+      "branch": "refs/heads/codex/deti2-franchise-unique-photos",
+      "bytes": 14488925,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-franchise-value",
+      "head": "51dbae6448b8bdb05e73c3c220dd08a24c26f495",
+      "branch": "refs/heads/codex/deti2-franchise-value",
+      "bytes": 14185271,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-garden-gallery",
+      "head": "9a75f6a90ee1b8d8dbe95691409a081de1732f89",
+      "branch": "refs/heads/codex/deti2-garden-gallery",
+      "bytes": 14305577,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-hero-copy",
+      "head": "3e51e999a8f4012aa5716c38d2c5751191c86b98",
+      "branch": "refs/heads/codex/deti2-hero-copy",
+      "bytes": 13225444,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-photos-bright-cards",
+      "head": "4e74f0888e52590e8c94392ca2fd628c5268f026",
+      "branch": "refs/heads/codex/deti2-photos-bright-cards",
+      "bytes": 13588440,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-room-photos",
+      "head": "81c79a39a51d2b519bd5eb333fbc0b4bac1f30ac",
+      "branch": "refs/heads/codex/deti2-room-photos",
+      "bytes": 14176388,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-visual-balance",
+      "head": "e41be597e6869033a7f144120750643f1437e604",
+      "branch": "refs/heads/codex/deti2-visual-balance",
+      "bytes": 14495949,
+      "removed": true
+    },
+    {
+      "path": "/root/worktrees/deti2-warm-typography",
+      "head": "647d1ce45ec30880049d83cda2593130054190a0",
+      "branch": "refs/heads/codex/deti2-warm-typography",
+      "bytes": 13228735,
+      "removed": true
+    }
+  ],
+  "files": [
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-08-warm-typography/styles.css",
+      "sha256": "eff76e0ea2a73a1a260a3234b3a8da13877cb02201d9883e3162f1a0c989b662",
+      "restore_commit": "fcd0259823a23bb79031b024c72522144fd991ee",
+      "restore_git_path": "preview-v2/styles.css",
+      "bytes": 50134,
+      "inode": 2630462,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-08-warm-typography/styles.min.css",
+      "sha256": "a068a03b808efb2278d5b86ffd422276667f4d4e909f0b8dc3b1336883d050e1",
+      "restore_commit": "fcd0259823a23bb79031b024c72522144fd991ee",
+      "restore_git_path": "preview-v2/styles.min.css",
+      "bytes": 38159,
+      "inode": 2630463,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/styles.css",
+      "sha256": "30338f81c7525df7428b61e999854ff42f68ba7bdfc41885c027ce083e21f98c",
+      "restore_commit": "a2562add88d677d9d9d6de5dc7e395928d762ac0",
+      "restore_git_path": "preview-v2/styles.css",
+      "bytes": 49741,
+      "inode": 2705210,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/styles.min.css",
+      "sha256": "5a07e88d373519636997bde3245b09ed4253579f3f2f1affcadf73a64e333cc7",
+      "restore_commit": "a2562add88d677d9d9d6de5dc7e395928d762ac0",
+      "restore_git_path": "preview-v2/styles.min.css",
+      "bytes": 37795,
+      "inode": 2705211,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/franchise.html",
+      "sha256": "6e79d4efb3e25d9b2a51ab3222cf4a9e4f555c05264003d27c1a66c5e7c30d86",
+      "restore_commit": "842df53cf64671e6b91181740307ddbaba7e364a",
+      "restore_git_path": "preview-v2/franchise.html",
+      "bytes": 7968,
+      "inode": 2705209,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-harmony/mobile-top.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "9d25bca8ea6f37e754f0a80fef98587027cec85784217e1ef3eb733a45ef4108",
+      "bytes": 74459,
+      "inode": 2393101,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-harmony/desktop.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "a2b2a760dddec6917b87a3f3d8ca3b3141d8646e0709038cff76e370001927fa",
+      "bytes": 859858,
+      "inode": 2393099,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-visual-balance/mobile-hero.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "f4f9180567afe6f39990a7165a2b80b2722fe48b8c97ee796da1db101c900518",
+      "bytes": 69801,
+      "inode": 2399614,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-visual-balance/formats.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "0545eaf14445130f374689cc3ff3ad114f0711b5076c0c067e22cdfb4c42baef",
+      "bytes": 173692,
+      "inode": 2399613,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-visual-balance/franchise.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "701d83b8e0f55f3978f854bf24b5bd8f9b31247861937b74cd3def1654fb9e32",
+      "bytes": 169573,
+      "inode": 2399615,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-children-first/hero-desktop.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "e63813111c5b34ae6ae324e59862047b0cfdcd18e135d142a6f26e1122698bc2",
+      "bytes": 202899,
+      "inode": 2400608,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-children-first/formats.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "089ba8a9c1265c0453c422761f7b6c5bc57c8e19518f0ce2f1687b43e9e43e84",
+      "bytes": 199806,
+      "inode": 2400610,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/reviews/2026-10-14-children-first/hero-mobile.jpg",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "034825693ba3d1ac7f97561868c362c71e85a7641828412bfa79f634e97df073",
+      "bytes": 77760,
+      "inode": 2400609,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/deti1-presentation-cta-review.log",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "67ed8b14c9ed091e659f12e4ad7c942a184a6e5d5f860fbd1d1900c354b33424",
+      "bytes": 199806,
+      "inode": 2705213,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/deti1-presentation-cta-desktop.png",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "dd0f00995e07927c9fe712d350419b0c87688793fa5e73e46ba6bf043fb31eb7",
+      "bytes": 308137,
+      "inode": 2705214,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-05-pr52-153528/deti1-presentation-cta-mobile.png",
+      "purpose": "Completed visual/test output; reproducible from published Git",
+      "sha256": "c34b0d8535f4ee7d75cf541b18f5982aeccf74cfeec9e8321d056aefc291bd64",
+      "bytes": 72991,
+      "inode": 2705215,
+      "removed": true
+    },
+    {
+      "path": "/tmp/deti2-typography-pr.md",
+      "purpose": "Completed PR scratch/visual output",
+      "sha256": "a9b2fea88e108279ca5cc339164388053a8ac2b4b74584974508ff902a4d18f9",
+      "bytes": 1702,
+      "inode": 75126,
+      "removed": true
+    },
+    {
+      "path": "/tmp/deti2-warm-desktop.png",
+      "purpose": "Completed PR scratch/visual output",
+      "sha256": "0095c3283589019c7ca27ad26dec080b74838b5c601ad7676fffebc76265d14f",
+      "bytes": 264786,
+      "inode": 75155,
+      "removed": true
+    },
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/cleanup-candidates-2026-10-15.json",
+      "purpose": "Candidate list consolidated into this journal",
+      "sha256": "16b5576222d1b8735531a2fa6ab7b57b9c391a5f6ddb516a3d28e29641aeb388",
+      "bytes": 1534,
+      "inode": 2363302,
+      "removed": true
+    }
+  ],
+  "locks": [
+    "project",
+    "storage"
+  ],
+  "open_references": false,
+  "retained": [
+    {
+      "path": "/var/lib/sy3/project-artifacts/deti1/releases/2026-10-08-warm-typography/nginx.conf",
+      "reason": "Unique older nginx state, differs from current config; independent restoration not proven",
+      "review_on": "2026-10-22"
+    },
+    {
+      "path": "/etc/nginx/sites-available/deti1.ru.conf.backup-no-ssl",
+      "reason": "Earlier server configuration; restoration coverage not proven",
+      "review_on": "2026-10-22"
+    },
+    {
+      "path": "/etc/nginx/ssl.backup/deti1.ru",
+      "reason": "Certificate/key material; no verified restoration or current use evidence, preserved without opening secrets",
+      "review_on": "2026-10-22"
+    }
+  ],
+  "website_unchanged": true,
+  "removed_worktrees": 10,
+  "removed_files": 19,
+  "reclaimed_content_bytes": 143547781
+}
