@@ -3158,3 +3158,10 @@ footer {
   .format-grid-compact .format-card-body { grid-template-columns: 80px minmax(0, 1fr); gap: 12px; }
   .format-grid-compact .format-child-photo { width: 80px; height: 112px; }
 }
+
+/* Owner-provided audience checklist in place of the generic introduction. */
+.franchise-audience { display: grid; gap: 12px; list-style: none; margin: 0 0 32px; padding: 0; }
+.franchise-audience li { margin: 0; padding: 14px 18px; border-left: 3px solid #34734e; border-radius: 0 14px 14px 0; background: #f1f6ef; color: #28392e; font-size: 19px; line-height: 1.5; }
+@media (max-width: 680px) {
+  .franchise-audience li { padding: 12px 14px; font-size: 17px; }
+}
