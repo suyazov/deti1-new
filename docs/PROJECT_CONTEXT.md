@@ -1,3 +1,7 @@
+## Заголовок «Обучение команды» — 16.10.2026
+
+В `/2/franchise.html` сокращён только заголовок обучения до «Обучение команды». Описание/фото и предыдущая замена на «звонки» сохранены. Проверены одна замена, shared-layout/diff --check. Публикация одного HTML, восстановление из опубликованногоf414afd; без ручной копии и временных остатков. Receipt: `/var/lib/sy3/project-artifacts/deti1/releases/2026-10-16-training-heading/receipt.json`. Ветка продолжения `codex/deti2-training-heading`, одноимённый worktree в `/root/worktrees/`, контроль необходимости23.10.2026; перед merge требуется независимое review.
+
 ## «Звонки» в обучении команды — 16.10.2026
 
 В `/2/franchise.html` в блоке обучения «первый звонок» заменён на «звонки». Остальной текст и верстка сохранены, CONTENT_MODEL обновлён. Проверены ровно одна замена, shared-layout/diff --check. Публикация одного HTML; восстановление из опубликованного27e5901, без ручного дубля и временных остатков. Receipt: `/var/lib/sy3/project-artifacts/deti1/releases/2026-10-16-calls-wording/receipt.json`. Ветка продолжения `codex/deti2-calls-wording`, одноимённый worktree в `/root/worktrees/`, контроль необходимости23.10.2026; перед merge требуется независимое review.
