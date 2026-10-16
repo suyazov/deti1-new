@@ -3191,3 +3191,10 @@ footer {
   .offer-content .own-brand-inclusions > div { padding: 20px; }
   .own-brand-inclusions dt { font-size: 22px; }
 }
+
+/* Full catalogue: compact nested lists and independently sized expanded cards. */
+.own-brand-inclusions { align-items: start; }
+.offer-content .own-brand-inclusions .offer-detail[open] ul ul { padding: 8px 0 0 18px; margin: 0; border-radius: 0; background: transparent; }
+.own-brand-inclusions .offer-detail li { margin-bottom: 8px; overflow-wrap: anywhere; }
+.own-brand-inclusions .offer-detail li:last-child { margin-bottom: 0; }
+.own-brand-inclusions .offer-detail li strong { color: #242b25; }
