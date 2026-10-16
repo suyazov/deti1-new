@@ -3129,3 +3129,32 @@ footer {
   .format-grid-children .format-card .format-room-photo { height: 230px; }
   .format-grid-children .format-card:has(.format-room-photo) > div { padding: 24px; }
 }
+
+/* Three comparable formats, price first and small child photo accents. */
+.format-grid-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.format-grid-compact .format-card { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 24px; min-height: 0; }
+.format-grid-compact .format-card h3 { min-height: 2.5em; margin: 0 0 12px; font-size: 24px; line-height: 1.25; }
+.format-grid-compact .format-price { margin: 0 0 16px; font-size: 30px; line-height: 1.2; color: var(--ink); }
+.format-grid-compact .format-sub { min-height: 4.65em; margin: 0 0 18px; font-size: 18px; line-height: 1.55; }
+.format-grid-compact .format-card-body { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; gap: 16px; margin-bottom: 24px; }
+.format-grid-compact .format-child-photo { width: 104px; height: 140px; object-fit: cover; object-position: center 40%; border-radius: 20px; }
+.format-grid-compact .format-card ul { margin: 0; }
+.format-grid-compact .format-card li { font-size: 16px; line-height: 1.5; margin: 0 0 9px; }
+.format-grid-compact .format-bottom { padding: 0; margin-top: auto; }
+.format-grid-compact .format-bottom .btn { width: 100%; background: #34734e; border-color: #34734e; color: #fff; }
+.format-grid-compact .format-bottom .btn:hover { background: #285a3c; }
+@media (min-width: 901px) and (max-width: 1150px) {
+  .format-grid-compact .format-card { padding: 20px; }
+  .format-grid-compact .format-card-body { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  .format-grid-compact .format-child-photo { width: 72px; height: 104px; border-radius: 16px; }
+  .format-grid-compact .format-card h3 { font-size: 22px; min-height: 3.75em; }
+}
+@media (max-width: 900px) {
+  .format-grid-compact { grid-template-columns: minmax(0, 1fr); }
+  .format-grid-compact .format-card h3, .format-grid-compact .format-sub { min-height: 0; }
+}
+@media (max-width: 360px) {
+  .format-grid-compact .format-card { padding: 20px; }
+  .format-grid-compact .format-card-body { grid-template-columns: 80px minmax(0, 1fr); gap: 12px; }
+  .format-grid-compact .format-child-photo { width: 80px; height: 112px; }
+}
