@@ -3165,3 +3165,29 @@ footer {
 @media (max-width: 680px) {
   .franchise-audience li { padding: 12px 14px; font-size: 17px; }
 }
+
+/* Own-brand cards share the franchise offer palette. */
+.offer-content .own-brand-inclusions > div {
+  --card-accent: #8051ad;
+  --card-paper: #e0c9f4;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 2px solid var(--card-accent);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--card-accent) 16%, transparent);
+}
+.offer-content .own-brand-inclusions > div:nth-child(3n + 2) { --card-accent: #ba8909; --card-paper: #ffdf70; }
+.offer-content .own-brand-inclusions > div:nth-child(3n) { --card-accent: #29814f; --card-paper: #b3e1b0; }
+.offer-content .own-brand-inclusions > div:nth-child(n) { background: var(--card-paper); }
+.own-brand-inclusions dt { color: #242b25; font-size: 24px; line-height: 1.25; margin-bottom: 14px; font-weight: 800; }
+.own-brand-inclusions dd { display: flex; flex-direction: column; flex: 1; color: #354036; }
+.own-brand-inclusions dd > p { color: inherit; }
+.own-brand-inclusions .offer-detail { margin-top: auto; padding-top: 8px; }
+.own-brand-inclusions .offer-detail summary { padding: 10px 14px; border: 1px solid var(--card-accent); border-radius: 12px; background: rgb(255 255 255 / 65%); color: #263a2b; font-size: 17px; }
+.own-brand-inclusions .offer-detail summary:hover { background: rgb(255 255 255 / 90%); }
+.own-brand-inclusions .offer-detail summary:focus-visible { outline: 3px solid #263a2b; outline-offset: 3px; }
+.own-brand-inclusions .offer-detail[open] ul { padding: 16px 16px 16px 34px; margin-bottom: 0; border-radius: 12px; background: rgb(255 255 255 / 45%); color: #28392e; }
+@media (max-width: 680px) {
+  .offer-content .own-brand-inclusions > div { padding: 20px; }
+  .own-brand-inclusions dt { font-size: 22px; }
+}
