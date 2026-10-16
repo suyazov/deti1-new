@@ -3198,3 +3198,12 @@ footer {
 .own-brand-inclusions .offer-detail li { margin-bottom: 8px; overflow-wrap: anywhere; }
 .own-brand-inclusions .offer-detail li:last-child { margin-bottom: 0; }
 .own-brand-inclusions .offer-detail li strong { color: #242b25; }
+
+/* A single document kit, with colored sections rather than separate offers. */
+.document-benefits-single .document-group { --kit-paper: #e0c9f4; --kit-accent: #8051ad; }
+.document-benefits-single .document-group:nth-child(2) { --kit-paper: #ffdf70; --kit-accent: #ba8909; }
+.document-benefits-single .document-group:nth-child(3) { --kit-paper: #b3e1b0; --kit-accent: #29814f; }
+.document-benefits-single .document-group > .kicker { background: var(--kit-paper); color: #263a2b; border: 1px solid var(--kit-accent); }
+.document-benefits-single .document-group .document-item { background: var(--kit-paper); border: 2px solid var(--kit-accent); box-shadow: 0 6px 0 color-mix(in srgb, var(--kit-accent) 16%, transparent); margin-bottom: 22px; }
+.document-benefits-single .document-item :is(h3, h4) { color: #242b25; }
+.document-benefits-single .document-benefit, .offer-content .document-benefits-single .document-item ul { color: #354036; }
