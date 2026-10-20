@@ -1,8 +1,8 @@
 /* /2 component and responsive styles. Shared design tokens are near the end. */
 
 :root {
-  --ink: #1b2849;
-  --muted: #52627b;
+  --ink: #252b24;
+  --muted: #454c43;
   --green: #458c61;
   --cream: #fbfaf5;
   --line: #dce6e0;
@@ -913,8 +913,8 @@ footer {
 .garden-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  align-items: center;
-  gap: 48px;
+  align-items: start;
+  gap: 32px;
 }
 
 .garden-copy h2 {
@@ -932,21 +932,36 @@ footer {
   padding: 0px;
   margin: 24px 0px 0px;
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 14px;
 }
 
 .garden-copy li {
-  padding-left: 27px;
+  padding: 20px 18px 20px 46px;
   position: relative;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 650;
   line-height: 1.4;
+  border-radius: 20px;
+  background: #f7df9f;
+  border: 1px solid #e8cb80;
+}
+
+.garden-copy li:nth-child(3n + 2) {
+  background: #dcebd5;
+  border-color: #bfd4b5;
+}
+
+.garden-copy li:nth-child(3n) {
+  background: #eee0ef;
+  border-color: #d9c5dc;
 }
 
 .garden-copy li::before {
   content: "✓";
   position: absolute;
-  left: 0px;
-  color: rgb(69, 140, 97);
+  left: 18px;
+  color: #2e663e;
   font-weight: 700;
 }
 
@@ -961,6 +976,13 @@ footer {
   border-radius: 25px;
   overflow: hidden;
   background: rgb(237, 242, 235);
+}
+
+.garden-photo > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .garden-photo-main {
@@ -979,12 +1001,14 @@ footer {
   }
 
   .garden-copy ul {
+    grid-template-columns: 1fr;
     gap: 11px;
     margin-top: 19px;
   }
 
   .garden-copy li {
-    font-size: 15px;
+    font-size: 18px;
+    padding-block: 16px;
   }
 
   .garden-gallery {
@@ -2330,14 +2354,27 @@ footer {
 }
 
 .formats-heading {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 18px;
 }
 
 .formats-heading > div {
+  grid-area: 1 / 1;
   min-width: 0px;
+  padding-inline: 104px;
+  text-align: center;
+}
+
+.formats-heading > img {
+  grid-area: 1 / 1;
+  justify-self: end;
+}
+
+@media (max-width: 680px) {
+  .formats-heading > div { padding-inline: 0; }
+  .formats-heading > img { grid-area: 2 / 1; justify-self: center; }
 }
 
 .blocks-detail {
@@ -2449,9 +2486,9 @@ footer {
   --radius-card: 24px;
   --radius-small: 16px;
   --panel-shadow: 0 12px 32px rgba(34,57,61,.05);
-  --font-heading: clamp(28px,2.5vw,36px);
-  --font-card: 18px;
-  --font-body: 16px;
+  --font-heading: clamp(36px,3.2vw,46px);
+  --font-card: 22px;
+  --font-body: 20px;
   --button-height: 52px;
   --button-small-height: 44px;
   --button-font: 15px;
@@ -2621,9 +2658,9 @@ footer {
     --space-7: 32px;
     --radius-panel: 24px;
     --radius-card: 20px;
-    --font-heading: 28px;
-    --font-card: 17px;
-    --font-body: 15px;
+    --font-heading: 30px;
+    --font-card: 19px;
+    --font-body: 17px;
   }
 
   .btn {
@@ -2834,6 +2871,39 @@ footer {
 .offer-summary-inclusions li { margin-bottom: 6px; }
 
 /* A year at the kindergarten: owner-supplied programme figures. */
+.garden {
+  background: #fff6e8;
+}
+
+.garden-gallery {
+  padding-top: 12px;
+}
+
+:is(.format-card, .launch-step) p,
+.format-card li,
+.garden-year-heading p,
+.garden-year-caption {
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.garden-year-card span {
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .garden-grid { grid-template-columns: 1fr; }
+  .garden-gallery { padding-top: 0; }
+}
+
+@media (max-width: 680px) {
+  :is(.format-card, .launch-step) p,
+  .format-card li,
+  .garden-year-heading p,
+  .garden-year-caption { font-size: 17px; }
+}
+
 .garden-year { margin-top: 48px; }
 .garden-year-heading { max-width: 720px; margin: 0 auto 28px; text-align: center; }
 .garden-year-heading h3 { font-size: clamp(26px, 3vw, 36px); line-height: 1.2; margin: 16px 0 12px; }
@@ -2849,3 +2919,298 @@ footer {
 .garden-year-caption { max-width: 650px; margin: 24px auto 0; text-align: center; }
 @media (max-width: 900px) { .garden-year-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 680px) { .garden-year-grid { gap: 12px; } .garden-year-card { padding: 16px 8px 20px; border-radius: 22px; } .garden-year-card img { width: 120px; height: 120px; max-width: 100%; } .garden-year-card span { font-size: 16px; } }
+
+/* Real photographs with readable text over the first screen. */
+.hero-photo-background { padding: 0; background: #26382f; }
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.hero-photo-background::before {
+  inset: 0;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  filter: none;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(13, 31, 24, .85), rgba(13, 31, 24, .72) 43%, rgba(13, 31, 24, .18) 76%, rgba(13, 31, 24, .32));
+}
+.hero-photo-background::after { display: none; }
+.hero-photo-background .hero-grid {
+  z-index: 2;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+  min-height: 730px;
+  padding-block: 46px 260px;
+}
+.hero-photo-background .hero-copy { padding: 0; text-align: center; }
+.hero-photo-background h1 {
+  max-width: 1100px;
+  margin: 18px auto 22px;
+  font-size: clamp(40px, 4vw, 58px);
+  line-height: 1.08;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .25);
+}
+.hero-photo-background h1 .hero-noun { display: inline; color: #fff; }
+.hero-photo-background h1 .hero-accent { color: #ffe082; }
+.hero-photo-background .hero-lead { max-width: 780px; margin: 0 auto 26px; color: #fff; font-size: 22px; line-height: 1.55; }
+.hero-photo-background .hero-actions { justify-content: center; }
+.hero-photo-background .hero-actions .btn-green { background: #f7c94b; border-color: #f7c94b; color: #262e20; }
+.hero-photo-background .hero-actions .btn-green:hover { background: #ffde79; border-color: #ffde79; }
+.hero-photo-background .hero-actions .btn-outline { color: #fff; background: rgba(13, 31, 24, .55); border-color: #fff; }
+.hero-photo-background .hero-actions .btn-outline:hover { background: rgba(13, 31, 24, .85); }
+.hero-photo-background .trust-strip { z-index: 2; background: #fff8e7; }
+
+/* Bright franchise cards retain the full offer descriptions. */
+.offer-content .franchise-inclusions-bright > div {
+  --card-accent: #8051ad;
+  --card-paper: #e0c9f4;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid var(--card-accent);
+  background: var(--card-paper);
+  padding: 24px;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--card-accent) 16%, transparent);
+}
+.offer-content .franchise-inclusions-bright > div:nth-child(3n + 2) { --card-accent: #ba8909; --card-paper: #ffdf70; }
+.offer-content .franchise-inclusions-bright > div:nth-child(3n) { --card-accent: #29814f; --card-paper: #b3e1b0; }
+.offer-content .franchise-inclusions-bright > div:nth-child(n) { background: var(--card-paper); }
+.offer-content .franchise-inclusions-bright > div:last-child { grid-column: auto; }
+.offer-content .franchise-inclusions-bright dt { font-size: 24px; line-height: 1.25; font-weight: 800; color: #242b25; margin-bottom: 14px; }
+.offer-content .franchise-inclusions-bright dd { display: flex; flex-direction: column; flex: 1; gap: 20px; color: #354036; font-size: 19px; line-height: 1.55; }
+.inclusion-photo { width: 100%; height: 185px; margin-top: auto; object-fit: cover; object-position: center 65%; border-radius: 22px; }
+
+@media (max-width: 680px) {
+  .hero-photo-background .hero-grid { min-height: 980px; padding-block: 32px 250px; }
+  .hero-photo-background h1 { font-size: clamp(34px, 8.4vw, 44px); }
+  .hero-photo-background .hero-lead { font-size: 18px; }
+  .hero-photo-background .hero-actions { flex-direction: column; align-items: stretch; }
+  .offer-content .franchise-inclusions-bright dt { font-size: 22px; }
+  .offer-content .franchise-inclusions-bright dd { font-size: 18px; }
+}
+
+/* Room photographs for the hero and the three cooperation formats. */
+.offer-intro:has(.offer-intro-photo) { grid-template-columns: minmax(0, 1fr) 280px; }
+.offer-intro .offer-intro-photo { width: 280px; height: 210px; object-fit: cover; border-radius: 20px; }
+@media (max-width: 680px) {
+  .offer-intro:has(.offer-intro-photo) { grid-template-columns: minmax(0, 1fr); }
+  .offer-intro .offer-intro-photo { width: 100%; height: auto; justify-self: stretch; }
+}
+.hero-photo-background .hero-background { object-position: center 65%; }
+.hero-photo-background .hero-grid { min-height: 580px; padding-block: 46px 70px; }
+.format-grid-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.format-grid-photos .format-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 510px;
+  padding: 32px;
+  background: #243b32;
+  border: 0;
+  color: #fff;
+}
+.format-grid-photos .format-card .format-room-photo {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  object-fit: cover;
+  object-position: center 60%;
+  opacity: 1;
+}
+.format-grid-photos .format-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, rgba(12, 31, 24, .78), rgba(12, 31, 24, .58));
+}
+.format-grid-photos .format-card > div { width: 100%; display: flex; flex-direction: column; flex: 1; }
+.format-grid-photos .format-card h3 { color: #fff; font-size: 30px; line-height: 1.2; margin: 0 0 14px; }
+.format-grid-photos .format-card .format-sub { color: #fff; font-size: 20px; line-height: 1.5; margin-bottom: 22px; }
+.format-grid-photos .format-card li { color: #fff; font-size: 18px; line-height: 1.5; margin-block: 8px; }
+.format-grid-photos .format-card li::before { color: #ffe082; background: transparent; }
+.format-grid-photos .format-bottom { margin-top: auto; padding-top: 20px; justify-content: space-between; }
+.format-grid-photos .format-bottom strong { color: #fff; font-size: 28px; }
+.format-grid-photos .format-bottom .btn { background: #f7c94b; border-color: #f7c94b; color: #262e20; font-size: 16px; }
+.format-grid-photos .format-bottom .btn:hover { background: #ffde79; }
+.format-grid-photos .peach-card .format-bottom .btn { background: #d8c0f6; border-color: #d8c0f6; }
+.format-grid-photos .peach-card .format-bottom .btn:hover { background: #eadbff; }
+.format-grid-photos .format-card:last-child { grid-column: 1 / -1; min-height: 280px; }
+.format-grid-photos .format-card:last-child > div { display: grid; grid-template-columns: 1fr 1.1fr .7fr; gap: 12px 32px; align-items: center; }
+.format-grid-photos .format-card:last-child h3 { grid-area: 1 / 1; margin: 0; align-self: end; }
+.format-grid-photos .format-card:last-child .format-sub { grid-area: 2 / 1; margin: 0; align-self: start; }
+.format-grid-photos .format-card:last-child ul { grid-area: 1 / 2 / 3; margin: 0; }
+.format-grid-photos .format-card:last-child .format-bottom { grid-area: 1 / 3 / 3; flex-direction: column; align-items: stretch; margin: 0; padding: 0; }
+@media (max-width: 900px) {
+  .format-grid-photos { grid-template-columns: minmax(0, 1fr); }
+  .format-grid-photos .format-card:last-child { min-height: 450px; }
+  .format-grid-photos .format-card:last-child > div { display: flex; gap: 0; }
+  .format-grid-photos .format-card:last-child h3 { margin-bottom: 14px; align-self: auto; }
+  .format-grid-photos .format-card:last-child .format-sub { margin-bottom: 22px; }
+  .format-grid-photos .format-card:last-child .format-bottom { margin-top: auto; padding-top: 20px; flex-direction: row; }
+}
+@media (max-width: 680px) {
+  .hero-photo-background .hero-grid { min-height: 720px; padding-block: 32px 48px; }
+  .format-grid-photos .format-card { padding: 24px; }
+  .format-grid-photos .format-card h3 { font-size: 26px; }
+  .format-grid-photos .format-card .format-sub { font-size: 18px; }
+  .format-grid-photos .format-bottom { flex-direction: column; align-items: stretch; }
+  .format-grid-photos .format-card:last-child .format-bottom { flex-direction: column; }
+}
+
+/* Balance photo formats, supporting illustrations and readable offer rows. */
+.format-grid-photos .violet-card {
+  background: #fff1c7;
+  color: #242e27;
+  border: 1px solid #ebd497;
+}
+.format-grid-photos .violet-card::before { display: none; }
+.format-grid-photos .violet-card :is(h3, .format-sub, li, .format-bottom strong) { color: #242e27; }
+.format-grid-photos .violet-card li::before { color: #34734e; }
+.format-grid-photos .violet-card .format-bottom .btn { background: #34734e; border-color: #34734e; color: #fff; }
+.format-grid-photos .violet-card .format-bottom .btn:hover { background: #285a3c; }
+.process .launch-art, .process .launch-art img { height: 104px; }
+.contact-card .contact-deer { height: 140px; }
+.offer-content .franchise-inclusions-bright { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+.offer-content .franchise-inclusions-bright dd { display: block; }
+.offer-content .franchise-inclusions-bright dd:has(.inclusion-photo) {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  align-items: center;
+  gap: 24px;
+}
+.offer-content .franchise-inclusions-bright dd > p { margin: 0; color: inherit; font: inherit; }
+.franchise-inclusions-bright .inclusion-photo { height: 160px; margin: 0; border-radius: 16px; }
+@media (max-width: 680px) {
+  .hero-photo-background .hero-grid { min-height: 0; padding-block: 32px 40px; }
+  .process .launch-step { grid-template-columns: 88px minmax(0, 1fr); column-gap: 12px; }
+  .process .launch-art, .process .launch-art img { height: 96px; }
+  .contact-card .contact-deer { height: 100px; }
+  .offer-content .franchise-inclusions-bright dd:has(.inclusion-photo) { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .franchise-inclusions-bright .inclusion-photo { height: 185px; }
+}
+
+/* Children and real work take priority; text never covers their faces. */
+.hero-children-story::before { display: none; }
+.hero-children-story .hero-grid { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 40px; min-height: 0; padding-block: 40px; align-items: center; }
+.hero-children-story .hero-copy { text-align: left; }
+.hero-children-story h1 { font-size: clamp(38px, 3.6vw, 54px); margin-inline: 0; }
+.hero-children-story .hero-lead { font-size: 20px; }
+.hero-children-story .hero-actions { justify-content: start; }
+.hero-children-story .hero-background { position: static; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 28px; }
+.format-grid-children .format-card:has(.format-room-photo) { background: #ecf3e8; color: #242e27; padding: 0; }
+.format-grid-children .format-card:has(.format-room-photo)::before { display: none; }
+.format-grid-children .format-card .format-room-photo { position: static; z-index: auto; height: 250px; flex-shrink: 0; object-position: center 43%; }
+.format-grid-children .format-card:has(.format-room-photo) > div { padding: 28px 32px; }
+.format-grid-children .format-card:has(.format-room-photo) :is(h3, .format-sub, li, .format-bottom strong) { color: #242e27; }
+.format-grid-children .format-card li::before { color: #34734e; }
+.format-grid-children .peach-card:has(.format-room-photo) { background: #f1e8f7; }
+@media (max-width: 900px) {
+  .hero-children-story .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .hero-children-story .hero-copy { text-align: center; }
+  .hero-children-story h1 { margin-inline: auto; }
+  .hero-children-story .hero-actions { justify-content: center; }
+}
+@media (max-width: 680px) {
+  .hero-children-story .hero-grid { padding-block: 28px; }
+  .hero-children-story h1 { font-size: 34px; }
+  .hero-children-story .hero-lead { font-size: 18px; }
+  .format-grid-children .format-card .format-room-photo { height: 230px; }
+  .format-grid-children .format-card:has(.format-room-photo) > div { padding: 24px; }
+}
+
+/* Three comparable formats, price first and small child photo accents. */
+.format-grid-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.format-grid-compact .format-card { display: flex; flex-direction: column; align-items: stretch; gap: 0; padding: 24px; min-height: 0; }
+.format-grid-compact .format-card h3 { min-height: 2.5em; margin: 0 0 12px; font-size: 24px; line-height: 1.25; }
+.format-grid-compact .format-price { margin: 0 0 16px; font-size: 30px; line-height: 1.2; color: var(--ink); }
+.format-grid-compact .format-sub { min-height: 4.65em; margin: 0 0 18px; font-size: 18px; line-height: 1.55; }
+.format-grid-compact .format-card-body { display: grid; grid-template-columns: 104px minmax(0, 1fr); align-items: start; gap: 16px; margin-bottom: 24px; }
+.format-grid-compact .format-child-photo { width: 104px; height: 140px; object-fit: cover; object-position: center 40%; border-radius: 20px; }
+.format-grid-compact .format-card ul { margin: 0; }
+.format-grid-compact .format-card li { font-size: 16px; line-height: 1.5; margin: 0 0 9px; }
+.format-grid-compact .format-bottom { padding: 0; margin-top: auto; }
+.format-grid-compact .format-bottom .btn { width: 100%; background: #34734e; border-color: #34734e; color: #fff; }
+.format-grid-compact .format-bottom .btn:hover { background: #285a3c; }
+@media (min-width: 901px) and (max-width: 1150px) {
+  .format-grid-compact .format-card { padding: 20px; }
+  .format-grid-compact .format-card-body { grid-template-columns: 72px minmax(0, 1fr); gap: 12px; }
+  .format-grid-compact .format-child-photo { width: 72px; height: 104px; border-radius: 16px; }
+  .format-grid-compact .format-card h3 { font-size: 22px; min-height: 3.75em; }
+}
+@media (max-width: 900px) {
+  .format-grid-compact { grid-template-columns: minmax(0, 1fr); }
+  .format-grid-compact .format-card h3, .format-grid-compact .format-sub { min-height: 0; }
+}
+@media (max-width: 360px) {
+  .format-grid-compact .format-card { padding: 20px; }
+  .format-grid-compact .format-card-body { grid-template-columns: 80px minmax(0, 1fr); gap: 12px; }
+  .format-grid-compact .format-child-photo { width: 80px; height: 112px; }
+}
+
+/* Owner-provided audience checklist in place of the generic introduction. */
+.franchise-audience { display: grid; gap: 12px; list-style: none; margin: 0 0 32px; padding: 0; }
+.franchise-audience li { margin: 0; padding: 14px 18px; border-left: 3px solid #34734e; border-radius: 0 14px 14px 0; background: #f1f6ef; color: #28392e; font-size: 19px; line-height: 1.5; }
+@media (max-width: 680px) {
+  .franchise-audience li { padding: 12px 14px; font-size: 17px; }
+}
+
+/* Own-brand cards share the franchise offer palette. */
+.offer-content .own-brand-inclusions > div {
+  --card-accent: #8051ad;
+  --card-paper: #e0c9f4;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  border: 2px solid var(--card-accent);
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--card-accent) 16%, transparent);
+}
+.offer-content .own-brand-inclusions > div:nth-child(3n + 2) { --card-accent: #ba8909; --card-paper: #ffdf70; }
+.offer-content .own-brand-inclusions > div:nth-child(3n) { --card-accent: #29814f; --card-paper: #b3e1b0; }
+.offer-content .own-brand-inclusions > div:nth-child(n) { background: var(--card-paper); }
+.own-brand-inclusions dt { color: #242b25; font-size: 24px; line-height: 1.25; margin-bottom: 14px; font-weight: 800; }
+.own-brand-inclusions dd { display: flex; flex-direction: column; flex: 1; color: #354036; }
+.own-brand-inclusions dd > p { color: inherit; }
+.own-brand-inclusions .offer-detail { margin-top: auto; padding-top: 8px; }
+.own-brand-inclusions .offer-detail summary { padding: 10px 14px; border: 1px solid var(--card-accent); border-radius: 12px; background: rgb(255 255 255 / 65%); color: #263a2b; font-size: 17px; }
+.own-brand-inclusions .offer-detail summary:hover { background: rgb(255 255 255 / 90%); }
+.own-brand-inclusions .offer-detail summary:focus-visible { outline: 3px solid #263a2b; outline-offset: 3px; }
+.own-brand-inclusions .offer-detail[open] ul { padding: 16px 16px 16px 34px; margin-bottom: 0; border-radius: 12px; background: rgb(255 255 255 / 45%); color: #28392e; }
+@media (max-width: 680px) {
+  .offer-content .own-brand-inclusions > div { padding: 20px; }
+  .own-brand-inclusions dt { font-size: 22px; }
+}
+
+/* Full catalogue: compact nested lists and independently sized expanded cards. */
+.own-brand-inclusions { align-items: start; }
+.offer-content .own-brand-inclusions .offer-detail[open] ul ul { padding: 8px 0 0 18px; margin: 0; border-radius: 0; background: transparent; }
+.own-brand-inclusions .offer-detail li { margin-bottom: 8px; overflow-wrap: anywhere; }
+.own-brand-inclusions .offer-detail li:last-child { margin-bottom: 0; }
+.own-brand-inclusions .offer-detail li strong { color: #242b25; }
+
+/* A single document kit, with colored sections rather than separate offers. */
+.document-benefits-single .document-group { --kit-paper: #e0c9f4; --kit-accent: #8051ad; }
+.document-benefits-single .document-group:nth-child(2) { --kit-paper: #ffdf70; --kit-accent: #ba8909; }
+.document-benefits-single .document-group:nth-child(3) { --kit-paper: #b3e1b0; --kit-accent: #29814f; }
+.document-benefits-single .document-group > .kicker { background: var(--kit-paper); color: #263a2b; border: 1px solid var(--kit-accent); }
+.document-benefits-single .document-group .document-item { background: var(--kit-paper); border: 2px solid var(--kit-accent); box-shadow: 0 6px 0 color-mix(in srgb, var(--kit-accent) 16%, transparent); margin-bottom: 22px; }
+.document-benefits-single .document-item :is(h3, h4) { color: #242b25; }
+.document-benefits-single .document-benefit, .offer-content .document-benefits-single .document-item ul { color: #354036; }
+
+/* Real children illustrate a year in our kindergartens. */
+.garden-year-heading h3 { max-width: 900px; margin-inline: auto; }
+.garden-year-card .garden-year-photo { width: 100%; height: 150px; object-fit: cover; object-position: center 40%; border-radius: 18px; }
+@media (max-width: 680px) {
+  .garden-year-card .garden-year-photo { height: 110px; border-radius: 14px; }
+}
