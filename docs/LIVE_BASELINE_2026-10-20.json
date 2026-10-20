@@ -1,0 +1,383 @@
+{
+  "source": "https://deti1.ru/2/",
+  "captured_date": "2026-10-20",
+  "scope": "Read-only live baseline; no deployment",
+  "files": [
+    {
+      "path": "styles.min.css",
+      "sha256": "25df96a2ff274e2d69a3ee7159ab477d21d55924eeccd609c6fce4176f9f9149"
+    },
+    {
+      "path": "menu.js",
+      "sha256": "50c5527303127a5b6cd29453a8809da90a015f55565c793de9d867820d8e509c"
+    },
+    {
+      "path": "styles.css",
+      "sha256": "c86415ed16e8f967fe5a9d0d4fada2d7ec2e01f50c389f5f23f06d6dcf25df36"
+    },
+    {
+      "path": "documents.html",
+      "sha256": "fcf15dcbb0906385e6a7b07a48e023a337b87f8be84c86168be14e31524b5d69"
+    },
+    {
+      "path": "own-brand.html",
+      "sha256": "ba59b31a0616fa73da698c7555c72e65ff911bda5e5fa1c29c6d96b423fe8272"
+    },
+    {
+      "path": "index.html",
+      "sha256": "67f9b62266cf85a8ba2cba22dbdc3754609c810f2916e0517098daa4ffa460c3"
+    },
+    {
+      "path": "app.js",
+      "sha256": "55eb27d8217c41a7d1a5f9a26ffb8670d589bbdd8a3ac471f6219ed85518b59f"
+    },
+    {
+      "path": "franchise.html",
+      "sha256": "106acb7703aff192b049af6d9d4767be52a9994d2eaf695cf1100d7b8e2b5a7e"
+    },
+    {
+      "path": "assets/children-classroom-1600.webp",
+      "sha256": "537cc84f7caa9109246df9a0ab9bd67f3e9c432c6651752d85ede53fb8783c6c"
+    },
+    {
+      "path": "assets/bear-watercolor.webp",
+      "sha256": "f78f6c37207da2d98e788830c3a5ddb67d69d8c082f245ee2561e2ab15f76083"
+    },
+    {
+      "path": "assets/footer-class-watercolor-v1-320.webp",
+      "sha256": "fe70b7cfca9fdfff1f9b572b75ee900151a6d45403040940ce0714179ec64861"
+    },
+    {
+      "path": "assets/trust-clock-watercolor-v1.webp",
+      "sha256": "b7ae42c255b64d164afcc9955a7a51c42f5831db57becd0f1fd816dbfae4e1b8"
+    },
+    {
+      "path": "assets/deer-watercolor-320.webp",
+      "sha256": "fcfe05ade3a4c354340849c11751173b7e823a70a23d280b57d173683a7b30ef"
+    },
+    {
+      "path": "assets/children-sofa-640.webp",
+      "sha256": "93574baac3dc374ce77b72b79485bf3b8cc66dacf0c03910b33cf2b5534a9bca"
+    },
+    {
+      "path": "assets/raccoon-watercolor.webp",
+      "sha256": "35a0d71cf58c6014b1d4d31fdb0a4f0ff0747adcdd591e7716b33cc7c5cb6bd0"
+    },
+    {
+      "path": "assets/garden-year-craft-320.webp",
+      "sha256": "f6908be3fba1ed9f21b5484fe7a7eb76c7ab0cd730982a16f5364a446ed3b2ea"
+    },
+    {
+      "path": "assets/garden-year-fruit-320.webp",
+      "sha256": "89179fd93072b41b6f2d52ed95fe3233309b9046aab15deb0dd35222c5f03ca7"
+    },
+    {
+      "path": "assets/children-outdoors-480.webp",
+      "sha256": "020368b7703c02dd8af12027b70fe6849fc8017d73a35bc1879b8217ef3519d4"
+    },
+    {
+      "path": "assets/fox-watercolor.webp",
+      "sha256": "90baccdb3931754e36f72ded6fb7bd4127c80dea8b5714a61af35f3706002077"
+    },
+    {
+      "path": "assets/children-classroom-480.webp",
+      "sha256": "5262357e36f8bd6c0168bb2bd26f8a5f2321a32759a178821869b8743cb97965"
+    },
+    {
+      "path": "assets/launch-beaver-v2.webp",
+      "sha256": "79f6da49cb8848a4759b39eaefe1019cbbfdc28ec87ea4b906dd25ed8aed9455"
+    },
+    {
+      "path": "assets/garden-year-english-320.webp",
+      "sha256": "29f88a02c9ec906ed2107df8d161b48334828e9dc9544acdbf7d3aa9dec50a68"
+    },
+    {
+      "path": "assets/toy-blocks-watercolor-v1.webp",
+      "sha256": "b985e0bd5f65a4c128020066ad92fdc47dff7d74446596831c1cc2b5a7242ce1"
+    },
+    {
+      "path": "assets/trust-house-watercolor-v1-80.webp",
+      "sha256": "32dd3a0ef7a782e609b66fcd4c83f69a11cb0eb9c57cbb615137d8405dfb7c09"
+    },
+    {
+      "path": "assets/launch-squirrel-v2.webp",
+      "sha256": "4e5a07d957a12d71842f4239d383bbd955728895c1acc6cd9a3403e23ef836b0"
+    },
+    {
+      "path": "assets/garden-year-fruit-160.webp",
+      "sha256": "d3008488b647ee9d64b3c55f6709aedd591baf6ef7a1780923388829c4082f3b"
+    },
+    {
+      "path": "assets/launch-rabbit-v2-192.webp",
+      "sha256": "bde0cdf39de095b14f46a343e1e4f4868f0b1f3b87e5658e3166b6496beeede5"
+    },
+    {
+      "path": "assets/trust-clock-watercolor-v1-80.webp",
+      "sha256": "f2e103f7c7032dbf5a0bfcfa5fb13687e47c298b431dcb3d874684aa38d566e4"
+    },
+    {
+      "path": "assets/children-reading-nook-640.webp",
+      "sha256": "17bb35888300aa71e3754fb2cd42e31ebd7be3c09944c25d6c62844f1d6336e3"
+    },
+    {
+      "path": "assets/launch-rabbit-v2-320.webp",
+      "sha256": "4e381adef65f1582f682e84a108a89f38a2e19dfe6a628ca280fd1277681f0ee"
+    },
+    {
+      "path": "assets/footer-class-watercolor-v1-480.webp",
+      "sha256": "697bb3081db4222eca2573dc511b45594a8f1eeeb25e3df3360de8d512f652c6"
+    },
+    {
+      "path": "assets/children-play-nooks-640.webp",
+      "sha256": "96eac200ae0033807c556206d8b2801b7231763f1e99f474671aa92413c5fa28"
+    },
+    {
+      "path": "assets/launch-squirrel-v2-192.webp",
+      "sha256": "b29eb48b353ba1e26f3425f15bfea935a8ef26d4c615814b2414aebc03a53e63"
+    },
+    {
+      "path": "assets/deer-watercolor.webp",
+      "sha256": "33f51064075277fd4263defdcefe8b85a341cc7d4f8c888e1ef78961f03abd67"
+    },
+    {
+      "path": "assets/launch-badger-v2-480.webp",
+      "sha256": "fff6c70c1e1e5101cbe0dd28998cf680d9dbd760d46866937d7665651fdd0e24"
+    },
+    {
+      "path": "assets/fox-watercolor-320.webp",
+      "sha256": "a04c007a2c82a0b5e8f314627a39a3846b72e9d0d781e006acdc330728ff6dd6"
+    },
+    {
+      "path": "assets/award-watercolor-v1.webp",
+      "sha256": "444f8a1258b4db109fac5cb58a7dc8200d2ccca13500aeeda2ce5a51644a6512"
+    },
+    {
+      "path": "assets/launch-beaver-v2-192.webp",
+      "sha256": "0f87143a8a46b5bd550f20890687f3c18693dcf832485a0ed0516ccfab6a15b3"
+    },
+    {
+      "path": "assets/raccoon-watercolor-160.webp",
+      "sha256": "2b00db0714d5b68a75ebcbc74fb362374a64c479a6943e576df4d6bab608b861"
+    },
+    {
+      "path": "assets/launch-beaver-v2-320.webp",
+      "sha256": "3afe9b4893ec6a08cfb740f4cd619c1d283073ee1b232e60227753f504c1f38c"
+    },
+    {
+      "path": "assets/fox.svg",
+      "sha256": "810783ab56aeb853d16a451ae5d0495cf79d87f6d88cdede599a6cc86c007c93"
+    },
+    {
+      "path": "assets/books-pencils-watercolor-v1-80.webp",
+      "sha256": "97f479704115c15d9e6b8a353c71421065fa2625e529c28a232324f9163b16d0"
+    },
+    {
+      "path": "assets/hero-art.webp",
+      "sha256": "4995acf2a63f71b1d3791eded6d2c22acc9538635aad0af01070488f6615509c"
+    },
+    {
+      "path": "assets/award-watercolor-v1-160.webp",
+      "sha256": "00b3ec6b7e1a8ae37529dc98a530064a62ee1f47db94bea715ca7fe4b80a3962"
+    },
+    {
+      "path": "assets/trust-house-watercolor-v1-160.webp",
+      "sha256": "6315c5e1ed12475ea031c315be3de5a124e278aa4c0ce93bb0fffb6cfd135a30"
+    },
+    {
+      "path": "assets/children-classroom-800.webp",
+      "sha256": "b72107518be3169ea239a2cfa8ce509de45a93eb1876c5dd0c9c893ed78a7db9"
+    },
+    {
+      "path": "assets/brand-mark.svg",
+      "sha256": "e442c5ce2fbcadaae6d6a8d406c41a59a6883ae353e526f68e114218b9066162"
+    },
+    {
+      "path": "assets/launch-rabbit-v2-480.webp",
+      "sha256": "d22f80436c65514d2ae43bef609f555d08a3574a6502230cd2a0c3ca920d3ccf"
+    },
+    {
+      "path": "assets/garden-room-lounge-640.webp",
+      "sha256": "90b8425cd111551922388423f5e041ce5b23831f0063c20213de2ed823af9642"
+    },
+    {
+      "path": "assets/bear.svg",
+      "sha256": "513d70e73ad9854490e67c2b6e15536ce1c23f5e68db6499605a76c00a697030"
+    },
+    {
+      "path": "assets/deer-watercolor-480.webp",
+      "sha256": "5ea08f489bbb98ef3e53c7b01003a0e4f52417fdef1656c51a082bc71250bccf"
+    },
+    {
+      "path": "assets/launch-badger-v2.webp",
+      "sha256": "fe4b49840a9c7c0ec7bb56e36994308bd39efc395c4155c63a273d7d15ef5458"
+    },
+    {
+      "path": "assets/books-pencils-watercolor-v1-160.webp",
+      "sha256": "358fe9483707aaf62b84e82c258ee8fed165cd157a683296f4f8e060f10c782c"
+    },
+    {
+      "path": "assets/garden-year-english-160.webp",
+      "sha256": "a1cb7f4611ebd1f2b41443f09826b591673b10d4dc2511f8a4d8354334877921"
+    },
+    {
+      "path": "assets/owl-watercolor.webp",
+      "sha256": "d85175fbcc56921aa1667e1fd90c6b7f71a71f7fe1b901985a47f469f8b8cbec"
+    },
+    {
+      "path": "assets/garden-year-lessons-320.webp",
+      "sha256": "3a2368d9dec2c727d714d4d1d2d732745230f430030765384a0adc16ec9ba862"
+    },
+    {
+      "path": "assets/books-pencils-watercolor-v1.webp",
+      "sha256": "43503ec0f9884e171359e153c290b2d5e1dd38e5654701cb077a8944fb6af4f4"
+    },
+    {
+      "path": "assets/launch-rabbit-v2.webp",
+      "sha256": "85accde9606c025e63ac5d57f1ee4a3492188d710956e894d51fc02c34170ff5"
+    },
+    {
+      "path": "assets/faq-dialog-watercolor-v1.webp",
+      "sha256": "a6297c659ed90d44b5d7815b5e3157d5146f8207643cada9434c1f3e85bdccfe"
+    },
+    {
+      "path": "assets/bird.svg",
+      "sha256": "b99a0399f2d392abc31a7ec0c2bfbb11f364a9f1529d16317f302f3e1280b2b8"
+    },
+    {
+      "path": "assets/launch-hedgehogs-v2-320.webp",
+      "sha256": "8cf0a1b589ddf34eefaafdc1f361503948256d9f87880bcc3ca2cf42c348cbf7"
+    },
+    {
+      "path": "assets/garden-room-lounge-1600.webp",
+      "sha256": "ffd65aebe0c2a7d8b93716ca4f59fe74f92f220b18892f62446400cc0183ed05"
+    },
+    {
+      "path": "assets/footer-class-watercolor-v1.webp",
+      "sha256": "cb0aba9efc1650c1e2e1e2813254c9448efdacd83bb3922d5ae95feb18d2dd1b"
+    },
+    {
+      "path": "assets/award-watercolor-v1-80.webp",
+      "sha256": "f5d9a79a1df439b1eb031f4409a450d25e6056053a8099ed252b397427ba6564"
+    },
+    {
+      "path": "assets/bunny.svg",
+      "sha256": "6d672bad90887a2892c1e86b8f50721b9b832545b90676b4da6ed6be3af51037"
+    },
+    {
+      "path": "assets/launch-badger-v2-192.webp",
+      "sha256": "4f2e353cfd9db1cf5cafd411646540e664db7bbcb0a686722d11a88bc2c98b28"
+    },
+    {
+      "path": "assets/garden-year-lessons-160.webp",
+      "sha256": "d3682477e2be62b8da3d48b52584feaa69273f132db54b3531b9be9bd7dfcf07"
+    },
+    {
+      "path": "assets/launch-squirrel-v2-480.webp",
+      "sha256": "45d044c3d4447faa49f86827ebb5ba4bea463ed8ded8e529f2d60e5507fccf09"
+    },
+    {
+      "path": "assets/bear-watercolor-160.webp",
+      "sha256": "2c349252c2f4fde822cab102f1f946d0edf3e6721b1e621c5ede164c5fb6a1bb"
+    },
+    {
+      "path": "assets/launch-hedgehogs-v2.webp",
+      "sha256": "83c0ef574ad2eff0ca0ede021be0e1bf75630c77f29afa6472604b3a781b8ab0"
+    },
+    {
+      "path": "assets/owl-watercolor-320.webp",
+      "sha256": "b2e94c758f35be3cc9ab2bd97e01a9c241702eb90f41ce2086f5a44740ec9a4a"
+    },
+    {
+      "path": "assets/children-playing-480.webp",
+      "sha256": "9bec331faffe55b8b1681d7ac9aff15ba3d5958a2e52147bf9c3f2a8929c4022"
+    },
+    {
+      "path": "assets/raccoon.svg",
+      "sha256": "ba05b01c08d73bf04598563768d84d966047ddbce4e4e1acf95730b5bdffb638"
+    },
+    {
+      "path": "assets/bear-watercolor-320.webp",
+      "sha256": "bd3cfb86af18a962e2a2c4f1495302ad6fcdf80bda2fe0c0d74c70dcd5593ac8"
+    },
+    {
+      "path": "assets/trust-house-watercolor-v1.webp",
+      "sha256": "3e02f9f493f7714c580d9db7f2b187b9ab55ace6630ff26f712c8dbcd9c93e77"
+    },
+    {
+      "path": "assets/garden-year-craft-160.webp",
+      "sha256": "078fb8a7c59e99c8513502f493134681e112c85e95c54c6eaa0c7a2da626647d"
+    },
+    {
+      "path": "assets/launch-hedgehogs-v2-480.webp",
+      "sha256": "09ec58be9547fb74f9772e96b2daed12a44833899d6c592de62b7c7e3af85677"
+    },
+    {
+      "path": "assets/owl-watercolor-160.webp",
+      "sha256": "9e3ba38deb457a4fb944de77d8b651c8f1cd6ea72f09c4b395a6e96e25cc2611"
+    },
+    {
+      "path": "assets/garden-room-play-640.webp",
+      "sha256": "f70b539ff6bad51d8196c1d4548ed559873b2d8414f8a256dc6a3e04a564439f"
+    },
+    {
+      "path": "assets/raccoon-watercolor-320.webp",
+      "sha256": "bd17053d4e4828a27aff01aa489ed6a05f120e0295606be1b0b48cf629728aa8"
+    },
+    {
+      "path": "assets/toy-blocks-watercolor-v1-160.webp",
+      "sha256": "9b9df28330a6bbdac3c3f0b62c73eccd54b294b2ecb35477eaf6bf38aaf45fdc"
+    },
+    {
+      "path": "assets/faq-dialog-watercolor-v1-160.webp",
+      "sha256": "9c295fb722eb5fff4d6a5291e5c54900411480a96bdc1aca81fe7cdabae38157"
+    },
+    {
+      "path": "assets/faq-dialog-watercolor-v1-80.webp",
+      "sha256": "59df2961fe76147628c653c4236390a23201840e14d3a10b137c0521948a548f"
+    },
+    {
+      "path": "assets/fox-watercolor-160.webp",
+      "sha256": "5d4fe50308bed4524e3e59dc00cb468ed91beeef67016286c0d7f4a9f3b4f3f2"
+    },
+    {
+      "path": "assets/garden-lesson-800.webp",
+      "sha256": "0d63881401cccccd96e4d91621f8743d12c65471efe59fcd613977b1f682bb0c"
+    },
+    {
+      "path": "assets/launch-badger-v2-320.webp",
+      "sha256": "ef1b7e4c624aeada36e6b72de746d6c499c59098262499199cbfe5fda18fb534"
+    },
+    {
+      "path": "assets/launch-hedgehogs-v2-192.webp",
+      "sha256": "434f258ec79f1e5b1710aea0b9adb59b9005435220cb2fe7de3cd35693d86410"
+    },
+    {
+      "path": "assets/toy-blocks-watercolor-v1-80.webp",
+      "sha256": "04a9c231f6c8faf0947a51dd857a620f33b72a95f2594905ca252e19ddc71dde"
+    },
+    {
+      "path": "assets/launch-beaver-v2-480.webp",
+      "sha256": "49251eff7e5ee4895985cc59946564ddf62168494dc4833248ac993cefeff370"
+    },
+    {
+      "path": "assets/logo.svg",
+      "sha256": "17732e16f874a188cf7f136c9e5dba2fd632dbe0a86a341db627e6ce622be43e"
+    },
+    {
+      "path": "assets/owl.svg",
+      "sha256": "db6b768f3fb3503fbe4c3e1bf6a1faa6813199de95b14ba37b6ecd3dbc794ec9"
+    },
+    {
+      "path": "assets/trust-clock-watercolor-v1-160.webp",
+      "sha256": "8d6b773af9a545e5c3671e1c781889c869d9ccebd9335850c25dd993b8dd6a5e"
+    },
+    {
+      "path": "assets/launch-squirrel-v2-320.webp",
+      "sha256": "194df0d5ebb3bf7bba13ad2e693acdea9b7f4caf4056abc1a558b6a7a8f09e32"
+    },
+    {
+      "path": "assets/garden-room-play-1200.webp",
+      "sha256": "45bd808a6c1a7fb6a7d1e3c74273ccd8a7da2eb8da4ee34665962868e47b18b0"
+    }
+  ]
+}
